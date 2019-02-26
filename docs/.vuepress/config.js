@@ -128,7 +128,8 @@ function genGuideSidebar(title) {
       collapsable: false,
       children: [
         '',
-        'JavaSE',
+        'JavaSE_P1',
+        'JavaSE_P2',
         'JavaEE'
       ]
     }
