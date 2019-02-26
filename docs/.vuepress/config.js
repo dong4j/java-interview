@@ -94,7 +94,7 @@ module.exports = {
             link: 'https://github.com/dong4j'
           },
           {
-            text: '所有文档',
+            text: 'Archive',
             link: '/all'
           },
           {

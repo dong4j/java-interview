@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 
-# Java 中创建对象的 5 种方式
+# Java 中创建对象的几种方式
 
 | 使用new关键字 | 调用了构造函数 |
 | 使用Class类的newInstance方法 | 调用了构造函数 |

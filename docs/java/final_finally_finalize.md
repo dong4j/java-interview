@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 
-# final、finally 和 finalize 的区别是什么？
+# final finally finalize 的区别
 
 这是一道再经典不过的面试题了，我们在各个公司的面试题中几乎都能看到它的身影。final、finally 和 finalize 虽然长得像孪生三兄弟一样，但是它们的含义和用法却是大相径庭。这一次我们就一起来回顾一下这方面的知识。
 ***final 关键字***

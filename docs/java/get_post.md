@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 
-# get 和 post 区别
+# GET 和 POST 区别
 
 # 1 前言
 
