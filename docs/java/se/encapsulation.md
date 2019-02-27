@@ -36,6 +36,7 @@ getter也可以这么做,还可以在返回值的时候做一些动作;
 - 用private修饰getter方法或不提供,这个属性就是只写;
 
 ### 一个简单的封装
+
 ```java
 class Person {
    private String name;
@@ -102,6 +103,7 @@ public class EncapsulationDemo{
 ```
 
 **数组的封装**
+
 ```java
 public class ArrayClass {
 	private int[]	array;
@@ -128,7 +130,7 @@ public class ArrayClass {
 
 --------
 
-## 方法的重载 (Overload)
+## 方法的重载-Overload
 **同一个类中的方法名相同,参数列表不同;和返回值类型无关**
 重载是静态多态的前提
 
@@ -136,6 +138,7 @@ public class ArrayClass {
 >妈,我饿了,我想吃蛋炒饭   -->然后我妈给我炒了蛋炒饭吃
 >我,我饿了,我想吃饺子   -->然后我妈给我煮了饺子吃
 >我,我饿了   -->  然后我妈给了我一杯白开水.....
+
 ```java
 //伪代码
 //妈妈类

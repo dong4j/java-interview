@@ -242,7 +242,7 @@ class Circle extends Shape {
 ![](imgs/e62d304f.png)
 
 
-## 重写 Override
+## 重写-Override
 发生在继承的时候,子类方法跟父类方法重名,发生了覆盖,重写子类方法的实现;
 
 1. 方法名相同

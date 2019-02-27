@@ -126,6 +126,8 @@ function gentStartSidebar(title) {
       collapsable: false,
       children: [
         '',
+        'foreword',
+        'how-to-write-resume',
         'java_se',
         'java_ee',
         'collection',
