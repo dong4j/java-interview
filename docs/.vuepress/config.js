@@ -126,7 +126,7 @@ function gentStartSidebar(title) {
       collapsable: false,
       children: [
         '',
-        'java_se_p1',
+        'java_se',
         'java_ee',
         'collection',
         'concurrent',

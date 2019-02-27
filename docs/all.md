@@ -4,8 +4,7 @@ sidebar: auto
 
 ## Java SE
 
-- [JavaSE 总结1](start/java_se_p1.md)
-- [JavaSE 总结2](start/java_se_p2.md)
+- [JavaSE 总结](start/java_se.md)
 - [面向对象之关键字](java/se/key_word.md)
 - [面向对象之抽象和接口](java/se/abstract_interface.md)
 - [面向对象之访问修饰符](java/se/access_modifier.md)
