@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # String 相关
 
 ##  String 为什么是不可变的
@@ -81,7 +77,7 @@ String str1 = "helloworld";
 String str2 = new String("helloworld");
 ```
 
-![](./imgs/3207817b.png)
+![](imgs/3207817b.png)
 
 对于上面2行代码,会在不同的区域创建2个对象.
 
@@ -240,7 +236,7 @@ String str2 = new String("hello");
 
 从一个经典的示意图讲起，以hotspot虚拟机为例，此内存模型需建立在JDK1.7之前的版本来讨论，JDK1.7之后有所改变，但是原理还是一样的。
 
-![](./imgs/23d2a9e2.png)
+![](imgs/23d2a9e2.png)
 
 Java虚拟机管理的内存是运行时数据区那一部分，简单概括一下其中各个区域的区别：
 
@@ -258,7 +254,7 @@ Java虚拟机管理的内存是运行时数据区那一部分，简单概括一�
 
 此外，Java有三种常量池，即**字符串常量池(又叫全局字符串池)、class文件常量池、运行时常量池**。
 
-![](./imgs/20f05abd.png)
+![](imgs/20f05abd.png)
 
 **1. 字符串常量池(也叫全局字符串池、string pool、string literal pool)**
 
@@ -268,7 +264,7 @@ Java虚拟机管理的内存是运行时数据区那一部分，简单概括一�
 
 当程序运行到某个类时，class文件中的信息就会被解析到内存的方法区里的运行时常量池中。看图可清晰感知到每一个类被加载进来都会产生一个**运行时常量池**，由此可知，每个类都有一个运行时常量池。它在内存中的位置如图，蓝色箭头所指向的区域，方法区中的Class Date中的运行时常量池(Run-Time Constant Pool)
 
-![](./imgs/1239b92a.png)
+![](imgs/1239b92a.png)
 
 **3. class文件常量池(class constant pool)**
 

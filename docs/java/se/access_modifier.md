@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # 面向对象之访问修饰符
 
 ## public

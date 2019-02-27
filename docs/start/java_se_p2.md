@@ -79,7 +79,7 @@ Math类中提供了三个与取整有关的方法：ceil、floor、round，这�
 
 ## 10. 类的加载机制
 
-![](./imgs/4ae35db7.png)
+![](../java/se/imgs/4ae35db7.png)
 
 类初始化时机：只有当对类的主动使用的时候才会导致类的初始化，类的主动使用包括以下六种：
 
@@ -97,7 +97,7 @@ Math类中提供了三个与取整有关的方法：ceil、floor、round，这�
 - 程序在执行过程中遇到了异常或错误而异常终止
 - 由于操作系统出现错误而导致Java虚拟机进程终止
 
-![](./imgs/0ef89b45.png)
+![](../java/se/imgs/0ef89b45.png)
 
 **启动类加载器：**
 Bootstrap ClassLoader，负责加载存放在JDK\jre\lib(JDK代表JDK的安装目录，下同)下，或被-Xbootclasspath参数指定的路径中的，并且能被虚拟机识别的类库（如rt.jar，所有的java.*开头的类均被Bootstrap ClassLoader加载）。启动类加载器是无法被Java程序直接引用的。
@@ -108,7 +108,7 @@ Extension ClassLoader，该加载器由sun.misc.Launcher$ExtClassLoader实现，
 **应用程序类加载器：**
 Application ClassLoader，该类加载器由sun.misc.Launcher$AppClassLoader来实现，它负责加载用户类路径（ClassPath）所指定的类，开发者可以直接使用该类加载器，如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。
 
-### [双亲委派模型](./jvm/parents_dlegation_mode.md)
+### [双亲委派模型](../java/jvm/parents_dlegation_mode.md)
 
 ::: tip 双亲委派模型的工作流程
 如果一个类加载器收到了类加载的请求，它首先不会自己去尝试加载这个类，而是把请求委托给父加载器去完成，依次向上，因此，所有的类加载请求最终都应该被传递到顶层的启动类加载器中，只有当父加载器在它的搜索范围中没有找到所需的类时，即无法完成该加载，子加载器才会尝试自己去加载该类。
@@ -279,7 +279,7 @@ System.out.println(s == "abcd"); // true
 
 ## 19. final, finally, finalize 的区别。
 
-[final、finally 和 finalize 的区别是什么？](./final_finally_finalize.md)
+[final、finally 和 finalize 的区别是什么？](../java/se/final_finally_finalize.md)
 
 ### final
 

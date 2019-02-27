@@ -2,7 +2,7 @@
 home: true
 heroImage: /hero.png
 actionText: Fuck it →
-actionLink: /java/
+actionLink: /start/
 features:
 - title: 
   details: 

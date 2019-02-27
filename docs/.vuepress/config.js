@@ -82,10 +82,6 @@ module.exports = {
         // 导航栏
         nav: [
           {
-            text: 'db',
-            link: '/db/'
-          },
-          {
             text: '博客',
             link: 'https://dong4j.github.io/vue-blog/'
           },
@@ -113,36 +109,76 @@ module.exports = {
         ],
         // 侧边栏
         sidebar: {
-          '/java/': genGuideSidebar("Let's go"),
-          '/db/': genDbSidebar('数据库')
+          '/start/': gentStartSidebar("全部"),
+          '/java/se/': gentSESidebar("Java SE"),
+          '/java/ee/': gentEESidebar("Java EE"),
+          '/java/collection/': genCollectionSidebar("集合"),
         }
       }
     }
   }
 };
 
-function genGuideSidebar(title) {
+function gentStartSidebar(title) {
   return [
     {
       title,
       collapsable: false,
       children: [
         '',
-        'JavaSE_P1',
-        'JavaSE_P2',
-        'JavaEE'
+        'java_se_p1',
+        'java_ee',
+        'collection',
+        'concurrent',
+        'jvm'
       ]
     }
   ]
 }
 
-function genDbSidebar(title) {
+function gentSESidebar(title) {
   return [
     {
       title,
       collapsable: false,
       children: [
-        ''
+        'encapsulation',
+        'inheritance',
+        'polymorphism',
+        'abstract_interface',
+        'access_modifier',
+        'exception',
+        'final_finally_finalize',
+        'inner_class',
+        'key_word',
+        'new_instance_way',
+        'serializable',
+        'string_kind',
+        'wrapper_class'
+      ]
+    }
+  ]
+}
+
+function gentEESidebar(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        'get_post'
+      ]
+    }
+  ]
+}
+
+function genCollectionSidebar(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        'hashmap',
       ]
     }
   ]

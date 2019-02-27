@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # 面向对象之异常处理
 
 ## 概述
@@ -14,7 +10,7 @@ sidebar: auto
 
 ##Throwable类
 
-![](./imgs/173bd857.png)
+![](imgs/173bd857.png)
 
 　　Throwable是 Java 语言中所有错误或异常的超类。
 Throwable包含两个子类: Error 和 Exception。它们通常用于指示发生了异常情况。
@@ -99,7 +95,7 @@ Error类及其子类。
         - 如果都不匹配,则由JVM默认处理
 4. 不管是否有异常,都会执行finally语句,如果没有异常,执行完finally,则会继续执行之后的其他语句;如果此时有异常没有处理(没有catch匹配),那么拽会执行finally语句,但是执行完finally后,将默认交给JVM进行异常的输出,并且程序中断.
 
-![](./imgs/41da06a7.png)
+![](imgs/41da06a7.png)
 
 ## 异常的抛出
 ### **throws**
