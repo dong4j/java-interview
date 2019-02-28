@@ -13,7 +13,7 @@
 → dump 分析及获取工具
 jstack、jstat、jmap、jhat、Arthas
 
-→ 自己编写各种 outofmemory，stackoverflow 程序
+→ 自己编写各种 outofmemory, stackoverflow 程序
 HeapOutOfMemory、 Young OutOfMemory、
 
 MethodArea OutOfMemory、ConstantPool OutOfMemory、
@@ -25,12 +25,12 @@ jvm 相关、class/classloader 相关、monitor/watch/trace 相关、
 
 options、管道、后台异步任务
 
-文档：https://alibaba.github.io/arthas/advanced-use.html
+文档:https://alibaba.github.io/arthas/advanced-use.html
 
 → 常见问题解决思路
 内存溢出、线程死锁、类加载冲突
 
-→ 使用工具尝试解决以下问题，并写下总结
+→ 使用工具尝试解决以下问题, 并写下总结
 当一个 Java 程序响应很慢时如何查找问题
 
 当一个 Java 程序频繁 FullGC 时如何解决问题

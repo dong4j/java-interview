@@ -12,9 +12,9 @@ http 中 get 和 post 区别
 404、302、301、500分别代表什么
 
 → http/3
-→ Java RMI，Socket，HttpClient
+→ Java RMI, Socket, HttpClient
 → cookie 与 session
-cookie 被禁用，如何实现 session
+cookie 被禁用, 如何实现 session
 
 → 用 Java 写一个简单的静态文件的 HTTP 服务器
 → 了解 nginx 和 apache 服务器的特性并搭建一个对应的服务器
@@ -25,7 +25,7 @@ cookie 被禁用，如何实现 session
 什么是 DNS 、记录类型: A 记录、CNAME 记录、AAAA 记录等
 域名解析、根域名服务器
 
-DNS 污染、DNS 劫持、公共 DNS：114 DNS、Google DNS、OpenDNS
+DNS 污染、DNS 劫持、公共 DNS:114 DNS、Google DNS、OpenDNS
 
 → 反向代理
 正向代理、反向代理

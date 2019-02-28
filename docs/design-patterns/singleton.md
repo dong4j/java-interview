@@ -14,7 +14,7 @@
 ```java
 //一个延迟实例化的内部类的单例模式
 public final class Singleton {
-    //一个内部类的容器，调用getInstance时，JVM加载这个类
+    //一个内部类的容器, 调用getInstance时, JVM加载这个类
     private static final class SingletonHolder {
         static final Singleton singleton =  new Singleton();
     }
@@ -63,7 +63,7 @@ public class Singleton implements Serializable{
 
 ```java
 public class SerializableDemo1 {
-    //为了便于理解，忽略关闭流操作及删除文件操作。真正编码时千万不要忘记
+    //为了便于理解, 忽略关闭流操作及删除文件操作.真正编码时千万不要忘记
     //Exception直接抛出
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         //Write Obj to file

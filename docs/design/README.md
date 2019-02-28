@@ -16,7 +16,7 @@
 
 《[消息如何在网络上安全传输](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960315&idx=1&sn=8592c5cd15732096bb3b84b3074a2d37&chksm=bd2d06278a5a8f310e3ac5bcdf82b5ec0815a3175466b999d58e173c89900dec00a55aa3f0bb&scene=21#wechat_redirect)》1.2W+
 
-《[10W定时任务，如何高效触发](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959957&idx=1&sn=a82bb7e8203b20b2a0cb5fc95b7936a5&chksm=bd2d07498a5a8e5f9f8e7b5aeaa5bd8585a0ee4bf470956e7fd0a2b36d132eb46553265f4eaf&scene=21#wechat_redirect)》2.9W+
+《[10W定时任务, 如何高效触发](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959957&idx=1&sn=a82bb7e8203b20b2a0cb5fc95b7936a5&chksm=bd2d07498a5a8e5f9f8e7b5aeaa5bd8585a0ee4bf470956e7fd0a2b36d132eb46553265f4eaf&scene=21#wechat_redirect)》2.9W+
 
 《[工作线程究竟设置为多少合适](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960260&idx=1&sn=051fd566d43d7fd35724bdf55484ee5f&chksm=bd2d06188a5a8f0e64467381c7b3df5bdcb7f81ba055d5d21ec2f8b888492be15527d23070b0&scene=21#wechat_redirect)》2.1W+
 
@@ -28,7 +28,7 @@
 
 《[MySQL双主架构一致性优化](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960253&idx=1&sn=cce01d9d305024b5cc7e1e7149507ae9&chksm=bd2d06618a5a8f77db3731e8687f9a116c0c3113a4b9a8574149530610dc95fbcf7e4ab92ae5&scene=21#wechat_redirect)》1.6W+
 
-《[库存扣多了，到底怎么整](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960197&idx=1&sn=2e5c17d521772d28d39f31af5d22b34a&chksm=bd2d06598a5a8f4f9de2da89ba8fab711823935442fc632b65d461c923852485ff392c987568&scene=21#wechat_redirect)》2.1W+
+《[库存扣多了, 到底怎么整](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960197&idx=1&sn=2e5c17d521772d28d39f31af5d22b34a&chksm=bd2d06598a5a8f4f9de2da89ba8fab711823935442fc632b65d461c923852485ff392c987568&scene=21#wechat_redirect)》2.1W+
 
 《[再议库存扣减多种方案](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960200&idx=1&sn=fdec629caceee07b3946b6c338b8ceb7&chksm=bd2d06548a5a8f424dd32be960222edf5cecc3c1e5a8fcbb4cfff35e7da6787e702861131597&scene=21#wechat_redirect)》1.4W+
 
@@ -40,17 +40,17 @@
 
 《[互联网分层架构的本质](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960455&idx=1&sn=02cb2345ae9862edad11113726c49512&chksm=bd2d015b8a5a884d9619cdf7ae0dc1a480979a95abb24bac2645cecd54caec4c6bdb3aa617d7&scene=21#wechat_redirect)》2.8W+
 
-《[分层架构，为什么需要服务化](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960468&idx=1&sn=82bb21ff787f2ae3db2630e0823f3062&chksm=bd2d01488a5a885eb4bbd2470cbd5f2d92a473a45cac02a5d68f55b5d8f72cd8cbb38b18962a&scene=21#wechat_redirect)》2W+
+《[分层架构, 为什么需要服务化](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960468&idx=1&sn=82bb21ff787f2ae3db2630e0823f3062&chksm=bd2d01488a5a885eb4bbd2470cbd5f2d92a473a45cac02a5d68f55b5d8f72cd8cbb38b18962a&scene=21#wechat_redirect)》2W+
 
-《[分层架构，是否需要业务服务层](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960482&idx=1&sn=feb27bdd202093a5e4747f7c043415d1&chksm=bd2d017e8a5a8868888e553a30559cb9eefa93e0a1da557342e1a13127ca67143ea87b721363&scene=21#wechat_redirect)》1.4W+
+《[分层架构, 是否需要业务服务层](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960482&idx=1&sn=feb27bdd202093a5e4747f7c043415d1&chksm=bd2d017e8a5a8868888e553a30559cb9eefa93e0a1da557342e1a13127ca67143ea87b721363&scene=21#wechat_redirect)》1.4W+
 
-《[分层架构，为什么需要前后端分离](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960501&idx=1&sn=a452bab31c0457063241df237f955332&chksm=bd2d01698a5a887f9dfa5c6966d9e71bf492a040ab2dbe4e469ef38dd8ee5ab00b7c562a88e8&scene=21#wechat_redirect)》2.9W+
+《[分层架构, 为什么需要前后端分离](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960501&idx=1&sn=a452bab31c0457063241df237f955332&chksm=bd2d01698a5a887f9dfa5c6966d9e71bf492a040ab2dbe4e469ef38dd8ee5ab00b7c562a88e8&scene=21#wechat_redirect)》2.9W+
 
-《[分层架构，前后端分离的坏处](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960541&idx=1&sn=6e123e92e69f09c25ca1c8b81e6037d0&chksm=bd2d01018a5a881735fb37045ed187325f1102f01eaee1e78147d6dc702dccb7d9f1899227ed&scene=21#wechat_redirect)》1.8W+
+《[分层架构, 前后端分离的坏处](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960541&idx=1&sn=6e123e92e69f09c25ca1c8b81e6037d0&chksm=bd2d01018a5a881735fb37045ed187325f1102f01eaee1e78147d6dc702dccb7d9f1899227ed&scene=21#wechat_redirect)》1.8W+
 
-《[分层架构，为什么要引入数据库中间层](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960526&idx=1&sn=3fcf5a358d7166a25ba78010882616e3&chksm=bd2d01128a5a8804d2e0699ceef99c00be1635aeef956e0996f1153a0a1cdd78eb68d2fec8f0&scene=21#wechat_redirect)》1.8W+
+《[分层架构, 为什么要引入数据库中间层](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960526&idx=1&sn=3fcf5a358d7166a25ba78010882616e3&chksm=bd2d01128a5a8804d2e0699ceef99c00be1635aeef956e0996f1153a0a1cdd78eb68d2fec8f0&scene=21#wechat_redirect)》1.8W+
 
-《[分层架构，APP分层架构随想](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960548&idx=1&sn=fa268b779440f75ccd5b4cd18a48d8e9&chksm=bd2d01388a5a882e9c1cff970ab559a5580fe884b2f1e77d5c93d1e08aad52c8e8be55a7aa5c&scene=21#wechat_redirect)》1.4W+
+《[分层架构, APP分层架构随想](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960548&idx=1&sn=fa268b779440f75ccd5b4cd18a48d8e9&chksm=bd2d01388a5a882e9c1cff970ab559a5580fe884b2f1e77d5c93d1e08aad52c8e8be55a7aa5c&scene=21#wechat_redirect)》1.4W+
 
 【数据库-SQL】
 
@@ -70,79 +70,79 @@
 
 《[数据库秒级平滑扩容架构方案](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959883&idx=1&sn=e7df8510c7096a5b069e0f12eaaca010&chksm=bd2d07978a5a8e815c2ae41b16b6b4c579923502fb919008a22bb108a1e920109f25387f8903&scene=21#wechat_redirect)》1.9W+
 
-《[业界难题，跨库分页的四种方案](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959942&idx=1&sn=e9d3fe111b8a1d44335f798bbb6b9eea&chksm=bd2d075a8a5a8e4cad985b847778aa83056e22931767bb835132c04571b66d5434020fd4147f&scene=21#wechat_redirect)》3.1W+
+《[业界难题, 跨库分页的四种方案](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959942&idx=1&sn=e9d3fe111b8a1d44335f798bbb6b9eea&chksm=bd2d075a8a5a8e4cad985b847778aa83056e22931767bb835132c04571b66d5434020fd4147f&scene=21#wechat_redirect)》3.1W+
 
-《[100亿数据平滑迁移，不停服务](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959992&idx=1&sn=eb2fbd7d7922db42a593c304e50a65b7&chksm=bd2d07648a5a8e72d489022ec6006274d7e43ab48449b255d5661658c2af8e9221977a9609ed&scene=21#wechat_redirect)》1.7W+
+《[100亿数据平滑迁移, 不停服务](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959992&idx=1&sn=eb2fbd7d7922db42a593c304e50a65b7&chksm=bd2d07648a5a8e72d489022ec6006274d7e43ab48449b255d5661658c2af8e9221977a9609ed&scene=21#wechat_redirect)》1.7W+
 
 《[MySQL数据冗余的三种方案](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960255&idx=1&sn=1bf42b6d8f5658f9d8b54274d62ca714&chksm=bd2d06638a5a8f757502004f4d206f1a4e0f3e8ab4b1d3ba0635308e7d5b7a30860ae6d91e0c&scene=21#wechat_redirect)》1.5W+
 
 【数据库-容量】
 
-《[每每谈到数据库架构，我们在讨论什么](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960158&idx=1&sn=019e9dca6e074f62478b2562044cf8de&chksm=bd2d06828a5a8f945e1e6c2aa4702f48b7857ac9a79acf867496f25b28c86e2f28bed19b38e4&scene=21#wechat_redirect)》2.9W+
+《[每每谈到数据库架构, 我们在讨论什么](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960158&idx=1&sn=019e9dca6e074f62478b2562044cf8de&chksm=bd2d06828a5a8f945e1e6c2aa4702f48b7857ac9a79acf867496f25b28c86e2f28bed19b38e4&scene=21#wechat_redirect)》2.9W+
 
-《[用户中心，数据库架构优化与实践](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960212&idx=1&sn=ab4c52ab0309f7380f7e0207fa357128&chksm=bd2d06488a5a8f5e3b7c9de0cc5936818bd9a6ed4058679ae8d819175e0693c6fbd9cdea0c87&scene=21#wechat_redirect)》2.2W+
+《[用户中心, 数据库架构优化与实践](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960212&idx=1&sn=ab4c52ab0309f7380f7e0207fa357128&chksm=bd2d06488a5a8f5e3b7c9de0cc5936818bd9a6ed4058679ae8d819175e0693c6fbd9cdea0c87&scene=21#wechat_redirect)》2.2W+
 
-《[帖子中心，数据库架构优化与实践](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960274&idx=1&sn=81714a692f3c29395c6e2ff3e8f00350&chksm=bd2d060e8a5a8f188c90253a496c97661da7f3bcab9d42c48b95665fae3916b2c2cdc2ea33e6&scene=21#wechat_redirect)》1.7W+
+《[帖子中心, 数据库架构优化与实践](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960274&idx=1&sn=81714a692f3c29395c6e2ff3e8f00350&chksm=bd2d060e8a5a8f188c90253a496c97661da7f3bcab9d42c48b95665fae3916b2c2cdc2ea33e6&scene=21#wechat_redirect)》1.7W+
 
-《[好友中心，数据库架构优化与实践](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960302&idx=1&sn=ba3d794bd9cc42bead23b7877ad54643&chksm=bd2d06328a5a8f24d9d43a36093dc701c63393e61781ff7fa1e47e5d2ae0631edb7cf514bb6d&scene=21#wechat_redirect)》1.5W+
+《[好友中心, 数据库架构优化与实践](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960302&idx=1&sn=ba3d794bd9cc42bead23b7877ad54643&chksm=bd2d06328a5a8f24d9d43a36093dc701c63393e61781ff7fa1e47e5d2ae0631edb7cf514bb6d&scene=21#wechat_redirect)》1.5W+
 
-《[订单中心，如何做到数据库无限容量](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960373&idx=1&sn=abf7d36840c4d3d556b17a8776ee536c&chksm=bd2d01e98a5a88ff0cbf615cb3444668ccdfca58d5dca2da00ed0cc8948585b7509adf648db0&scene=21#wechat_redirect)》1.8W+
+《[订单中心, 如何做到数据库无限容量](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960373&idx=1&sn=abf7d36840c4d3d556b17a8776ee536c&chksm=bd2d01e98a5a88ff0cbf615cb3444668ccdfca58d5dca2da00ed0cc8948585b7509adf648db0&scene=21#wechat_redirect)》1.8W+
 
 【数据库中间件】
 
-《[数据库中间件，需求调研](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960679&idx=1&sn=aecca24f1150e353bcf9e63c9e6ae7b4&chksm=bd2d00bb8a5a89ad9820ae4b2b674cd0508be87be6b2d802b4417a864aad7db2eb9ccf19635c&scene=21#wechat_redirect)》1.4W+
+《[数据库中间件, 需求调研](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960679&idx=1&sn=aecca24f1150e353bcf9e63c9e6ae7b4&chksm=bd2d00bb8a5a89ad9820ae4b2b674cd0508be87be6b2d802b4417a864aad7db2eb9ccf19635c&scene=21#wechat_redirect)》1.4W+
 
-《[数据库中间件，cobar调研笔记](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960594&idx=1&sn=b9d39a5591ceeee4e7896627482f05f6&chksm=bd2d00ce8a5a89d885deb207bbdb4a265862888e62fd18c1091830a418b58d4dec1753c6fab9&scene=21#wechat_redirect)》1.3W+
+《[数据库中间件, cobar调研笔记](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960594&idx=1&sn=b9d39a5591ceeee4e7896627482f05f6&chksm=bd2d00ce8a5a89d885deb207bbdb4a265862888e62fd18c1091830a418b58d4dec1753c6fab9&scene=21#wechat_redirect)》1.3W+
 
-《[数据库中间件，TDDL调研笔记](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960601&idx=1&sn=4ea55404a2fc96dc5a7bb613bb9e3d32&chksm=bd2d00c58a5a89d307e062e4ad5fe5f0091d514b65881d0829e8f26c5aee965b225fd3eb1909&scene=21#wechat_redirect)》1W+
+《[数据库中间件, TDDL调研笔记](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960601&idx=1&sn=4ea55404a2fc96dc5a7bb613bb9e3d32&chksm=bd2d00c58a5a89d307e062e4ad5fe5f0091d514b65881d0829e8f26c5aee965b225fd3eb1909&scene=21#wechat_redirect)》1W+
 
-《[数据库中间件，atlas调研笔记](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960656&idx=1&sn=06717a19b6be3adfdb90e8c57d3274b8&chksm=bd2d008c8a5a899ad044dc6db27a07981937de61257112651f8d05d981a5efe86845c0248adf&scene=21#wechat_redirect)》1W+
+《[数据库中间件, atlas调研笔记](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960656&idx=1&sn=06717a19b6be3adfdb90e8c57d3274b8&chksm=bd2d008c8a5a899ad044dc6db27a07981937de61257112651f8d05d981a5efe86845c0248adf&scene=21#wechat_redirect)》1W+
 
-《[数据库中间件，mysql-proxy调研笔记](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960133&idx=1&sn=07acfeac5306f92f81dfccf4c880da4f&chksm=bd2d06998a5a8f8fc8c3bbb2c2ea01825ebe6576a35aa4d9789774dba0f7964baf4edf584f1b&scene=21#wechat_redirect)》1.5W+
+《[数据库中间件, mysql-proxy调研笔记](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960133&idx=1&sn=07acfeac5306f92f81dfccf4c880da4f&chksm=bd2d06998a5a8f8fc8c3bbb2c2ea01825ebe6576a35aa4d9789774dba0f7964baf4edf584f1b&scene=21#wechat_redirect)》1.5W+
 
 《[假如让你来设计数据库中间件](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960632&idx=1&sn=769f12c5180bdc37d71c99cdf7b4077f&chksm=bd2d00e48a5a89f2fa42e0c360e31c28cfd9cce7ab31b425cb5ef8da43bef117c95d0ca8c2cd&scene=21#wechat_redirect)》1.5W+
 
 【架构解耦】
 
-《[小小的IP，大大的耦合，如何解耦](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960643&idx=1&sn=adb2660bc1a367e118d0a3a799a312fa&chksm=bd2d009f8a5a898917ebe65caf0dc31d3f257594d5c18a468ebef344877b64e989ee292bf22e&scene=21#wechat_redirect)》1.5W+
+《[小小的IP, 大大的耦合, 如何解耦](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960643&idx=1&sn=adb2660bc1a367e118d0a3a799a312fa&chksm=bd2d009f8a5a898917ebe65caf0dc31d3f257594d5c18a468ebef344877b64e989ee292bf22e&scene=21#wechat_redirect)》1.5W+
 
-《[小小的公共库，大大的耦合，如何解耦](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960650&idx=1&sn=7c63fdc50a130e1d9fc3e5b6791ce01f&chksm=bd2d00968a5a89801861bd1665ad60fe240b5ff3d6eab984e70938d9cfd6502aca8de5686e0c&scene=21#wechat_redirect)》1.7W+
+《[小小的公共库, 大大的耦合, 如何解耦](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960650&idx=1&sn=7c63fdc50a130e1d9fc3e5b6791ce01f&chksm=bd2d00968a5a89801861bd1665ad60fe240b5ff3d6eab984e70938d9cfd6502aca8de5686e0c&scene=21#wechat_redirect)》1.7W+
 
-《[数据库耦合，如何解耦](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960667&idx=1&sn=850cc7370b7fe3fec43878e39baadb2b&chksm=bd2d00878a5a89917bf55546a0c1b44523190679849953cfcc94c886bc5b77ad136006b448f1&scene=21#wechat_redirect)》1.2W+
+《[数据库耦合, 如何解耦](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960667&idx=1&sn=850cc7370b7fe3fec43878e39baadb2b&chksm=bd2d00878a5a89917bf55546a0c1b44523190679849953cfcc94c886bc5b77ad136006b448f1&scene=21#wechat_redirect)》1.2W+
 
-《[为何服务化了，耦合却更加严重](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960690&idx=1&sn=2631832538639dde2de42e4dfc7008ac&chksm=bd2d00ae8a5a89b8e636e25d0d83723244a6462a9cfd4f477865899b7d72f3d899a1de5892ca&scene=21#wechat_redirect)》2.5W+
+《[为何服务化了, 耦合却更加严重](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960690&idx=1&sn=2631832538639dde2de42e4dfc7008ac&chksm=bd2d00ae8a5a89b8e636e25d0d83723244a6462a9cfd4f477865899b7d72f3d899a1de5892ca&scene=21#wechat_redirect)》2.5W+
 
-《[MQ，互联网架构解耦神器](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960726&idx=1&sn=0fdaf0e7040318aabfeba553f815d691&chksm=bd2d004a8a5a895ca80180443cc0f18e66b3d15dbbbd120dabaf3e6d4ef00fbc1030bf41c24b&scene=21#wechat_redirect)》2.5W+
+《[MQ, 互联网架构解耦神器](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960726&idx=1&sn=0fdaf0e7040318aabfeba553f815d691&chksm=bd2d004a8a5a895ca80180443cc0f18e66b3d15dbbbd120dabaf3e6d4ef00fbc1030bf41c24b&scene=21#wechat_redirect)》2.5W+
 
-《[配置中心，互联网架构解耦利器](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960763&idx=1&sn=63da208faee72464fa11691215229bc4&chksm=bd2d00678a5a8971fd2218247accac0f2367603c981c1d3c705d60d08a212ca2399f4bf076e0&scene=21#wechat_redirect)》1.8W+
+《[配置中心, 互联网架构解耦利器](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960763&idx=1&sn=63da208faee72464fa11691215229bc4&chksm=bd2d00678a5a8971fd2218247accac0f2367603c981c1d3c705d60d08a212ca2399f4bf076e0&scene=21#wechat_redirect)》1.8W+
 
 【MQ】
 
 《[究竟什么时候使用MQ](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960012&idx=1&sn=c6af5c79ecead98daa4d742e5ad20ce5&chksm=bd2d07108a5a8e0624ae6ad95001c4efe09d7ba695f2ddb672064805d771f3f84bee8123b8a6&scene=21#wechat_redirect)》5.4W+
 
-《[MQ，如何做到消息必达](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959966&idx=1&sn=068a2866dcc49335d613d75c4a5d1b17&chksm=bd2d07428a5a8e54162ad8ea8e1e9302dfaeb664cecc453bd16a5f299820755bd2e1e0e17b60&scene=21#wechat_redirect)》2.5W+
+《[MQ, 如何做到消息必达](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959966&idx=1&sn=068a2866dcc49335d613d75c4a5d1b17&chksm=bd2d07428a5a8e54162ad8ea8e1e9302dfaeb664cecc453bd16a5f299820755bd2e1e0e17b60&scene=21#wechat_redirect)》2.5W+
 
-《[MQ，如何做到消息幂等](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960002&idx=1&sn=c0775231bccf002c3178eabe43f1cdcb&chksm=bd2d071e8a5a8e08c3a5287247ea41dee6b2621e6ffafbf909ec1e8a866b7c816eeeea227246&scene=21#wechat_redirect)》2W+
+《[MQ, 如何做到消息幂等](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960002&idx=1&sn=c0775231bccf002c3178eabe43f1cdcb&chksm=bd2d071e8a5a8e08c3a5287247ea41dee6b2621e6ffafbf909ec1e8a866b7c816eeeea227246&scene=21#wechat_redirect)》2W+
 
-《[MQ，如何做到消息延时](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959961&idx=1&sn=afec02c8dc6db9445ce40821b5336736&chksm=bd2d07458a5a8e5314560620c240b1c4cf3bbf801fc0ab524bd5e8aa8b8ef036cf755d7eb0f6&scene=21#wechat_redirect)》2.7W+
+《[MQ, 如何做到消息延时](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959961&idx=1&sn=afec02c8dc6db9445ce40821b5336736&chksm=bd2d07458a5a8e5314560620c240b1c4cf3bbf801fc0ab524bd5e8aa8b8ef036cf755d7eb0f6&scene=21#wechat_redirect)》2.7W+
 
-《[MQ，如何做到削峰填谷](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960021&idx=1&sn=4bbe275c249a70ab20e36959fc01d4e0&chksm=bd2d07098a5a8e1fd9b505778b551002ab59c35953fa3deaaddc79e3f21bcea5ff48076b4a89&scene=21#wechat_redirect)》1.6W+
+《[MQ, 如何做到削峰填谷](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960021&idx=1&sn=4bbe275c249a70ab20e36959fc01d4e0&chksm=bd2d07098a5a8e1fd9b505778b551002ab59c35953fa3deaaddc79e3f21bcea5ff48076b4a89&scene=21#wechat_redirect)》1.6W+
 
 【搜索】
 
-《[搜索引擎的原理，架构与细节](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959895&idx=1&sn=de25ce2544c088ff9be0b93fd3ea4d15&chksm=bd2d078b8a5a8e9d5ae4339a683d3f980ff2994f3c10c4081c7bab7f0d77f37521de95e974bf&scene=21#wechat_redirect)》2.1W+
+《[搜索引擎的原理, 架构与细节](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959895&idx=1&sn=de25ce2544c088ff9be0b93fd3ea4d15&chksm=bd2d078b8a5a8e9d5ae4339a683d3f980ff2994f3c10c4081c7bab7f0d77f37521de95e974bf&scene=21#wechat_redirect)》2.1W+
 
-《[流量从小到大，检索架构演进](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959917&idx=1&sn=8faeae7419a756b0c355af2b30c255df&chksm=bd2d07b18a5a8ea75f16f7e98ea897c7e7f47a0441c64bdaef8445a2100e0bdd2a7de99786c0&scene=21#wechat_redirect)》1.9W+
+《[流量从小到大, 检索架构演进](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959917&idx=1&sn=8faeae7419a756b0c355af2b30c255df&chksm=bd2d07b18a5a8ea75f16f7e98ea897c7e7f47a0441c64bdaef8445a2100e0bdd2a7de99786c0&scene=21#wechat_redirect)》1.9W+
 
-《[全网搜索引擎，如何检索到15分钟之前生成的网页](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959949&idx=1&sn=83f78cf6293714bd1fd97a11ff7c2c35&chksm=bd2d07518a5a8e47e6fce9fc03cddec1d8a43f2b4ac67cfbbf73a55143593da8a132da7a0815&scene=21#wechat_redirect)》1.9W+
+《[全网搜索引擎, 如何检索到15分钟之前生成的网页](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959949&idx=1&sn=83f78cf6293714bd1fd97a11ff7c2c35&chksm=bd2d07518a5a8e47e6fce9fc03cddec1d8a43f2b4ac67cfbbf73a55143593da8a132da7a0815&scene=21#wechat_redirect)》1.9W+
 
 【典型系统】
 
-《[秒杀系统，架构与优化细节](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959391&idx=1&sn=fb28fd5e5f0895ddb167406d8a735548&scene=21#wechat_redirect)》5.6W+
+《[秒杀系统, 架构与优化细节](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959391&idx=1&sn=fb28fd5e5f0895ddb167406d8a735548&scene=21#wechat_redirect)》5.6W+
 
-《[广告系统，业务与架构细节](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960148&idx=1&sn=7c8a2d789fb20981355e49c3defe0229&chksm=bd2d06888a5a8f9e5ef5cf6cfa415d06800f5468148a0ba7a802e646aeec9610823ec0fc6d5d&scene=21#wechat_redirect)》1.3W+
+《[广告系统, 业务与架构细节](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960148&idx=1&sn=7c8a2d789fb20981355e49c3defe0229&chksm=bd2d06888a5a8f9e5ef5cf6cfa415d06800f5468148a0ba7a802e646aeec9610823ec0fc6d5d&scene=21#wechat_redirect)》1.3W+
 
-《[计数系统，架构与优化细节](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960185&idx=1&sn=0acd4a563c8c9684373fd05c116c4441&chksm=bd2d06a58a5a8fb3281acd95a7d9494161e75dcd27e95fdd526fce2b031ba79c4153bf255cee&scene=21#wechat_redirect)》1.9W+
+《[计数系统, 架构与优化细节](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960185&idx=1&sn=0acd4a563c8c9684373fd05c116c4441&chksm=bd2d06a58a5a8fb3281acd95a7d9494161e75dcd27e95fdd526fce2b031ba79c4153bf255cee&scene=21#wechat_redirect)》1.9W+
 
 【线上实战】
 
@@ -164,15 +164,15 @@
 
 《[1分钟了解好接口的设计原则](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960736&idx=1&sn=bdbe301539eadead10da880ce7d51d55&chksm=bd2d007c8a5a896a1ab5743438a05e8553f41bca9761d2b2b9e78f398f6f30ba69702cb7da59&scene=21#wechat_redirect)》2W+
 
-【评论比文章精彩，架构讨论】
+【评论比文章精彩, 架构讨论】
 
-《[服务读写分离，是否可行？](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960734&idx=1&sn=df69c556bcd87f9758d4c4c7d4625a7a&chksm=bd2d00428a5a89541874a438e96ded1fa5a0b27d4ba5e9cd62273b6295d740fe4e032ccd57f7&scene=21#wechat_redirect)》1.5W+
+《[服务读写分离, 是否可行？](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960734&idx=1&sn=df69c556bcd87f9758d4c4c7d4625a7a&chksm=bd2d00428a5a89541874a438e96ded1fa5a0b27d4ba5e9cd62273b6295d740fe4e032ccd57f7&scene=21#wechat_redirect)》1.5W+
 
-《[服务读写分离，绝不推荐](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960749&idx=1&sn=3577ba4bdc80cf1820e14b1610ade7b4&chksm=bd2d00718a5a896754dc53798af38ab46347f85c084c2469761961e3716f8351782cbd86cb84&scene=21#wechat_redirect)》2W+
+《[服务读写分离, 绝不推荐](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960749&idx=1&sn=3577ba4bdc80cf1820e14b1610ade7b4&chksm=bd2d00718a5a896754dc53798af38ab46347f85c084c2469761961e3716f8351782cbd86cb84&scene=21#wechat_redirect)》2W+
 
-《[服务通过缓存传递数据，是否可行？](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960768&idx=1&sn=7a10095e20208e2cb6ac2ce68f1bbd27&chksm=bd2d001c8a5a890a8db2f512ad85ddb860d8dbe0ca99afdc2af9a7eb0dc4620160111c53a26b&scene=21#wechat_redirect)》1.3W+
+《[服务通过缓存传递数据, 是否可行？](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960768&idx=1&sn=7a10095e20208e2cb6ac2ce68f1bbd27&chksm=bd2d001c8a5a890a8db2f512ad85ddb860d8dbe0ca99afdc2af9a7eb0dc4620160111c53a26b&scene=21#wechat_redirect)》1.3W+
 
-《[服务通过缓存传递数据，绝不推荐](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960786&idx=1&sn=58fce15972702181cf0711700c31e29d&chksm=bd2d000e8a5a891827bf65f3d4ff41445bb41243f1a2bbb535e09fd8fdb8a52229523261f384&scene=21#wechat_redirect)》1.5W+
+《[服务通过缓存传递数据, 绝不推荐](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960786&idx=1&sn=58fce15972702181cf0711700c31e29d&chksm=bd2d000e8a5a891827bf65f3d4ff41445bb41243f1a2bbb535e09fd8fdb8a52229523261f384&scene=21#wechat_redirect)》1.5W+
 
 【通用】
 
@@ -186,7 +186,7 @@
 
 【惊喜】
 
-《[架构师之路，支持历史文章搜索](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960699&idx=1&sn=6ce5462538893285fd7985d7ca9eee1d&chksm=bd2d00a78a5a89b1c4290045269b7cdca9e0b13a3e5b33c5f13e0d4024f10e566203a2abbd4d&scene=21#wechat_redirect)》1.6W+
+《[架构师之路, 支持历史文章搜索](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960699&idx=1&sn=6ce5462538893285fd7985d7ca9eee1d&chksm=bd2d00a78a5a89b1c4290045269b7cdca9e0b13a3e5b33c5f13e0d4024f10e566203a2abbd4d&scene=21#wechat_redirect)》1.6W+
 
 
 
@@ -198,7 +198,7 @@
 
 《[分布式ID生成器](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=403837240&idx=1&sn=ae9f2bf0cc5b0f68f9a2213485313127&scene=21#wechat_redirect)》
 
-《[互联网架构，如何进行容量设计](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959542&idx=1&sn=2494bbea9a855e0e1c3ccd6d2562a600&scene=21#wechat_redirect)》
+《[互联网架构, 如何进行容量设计](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959542&idx=1&sn=2494bbea9a855e0e1c3ccd6d2562a600&scene=21#wechat_redirect)》
 
 《[线程数究竟设多少合理](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=404369373&idx=1&sn=cab2ac9ec0edf92e744a2329662b16cd&scene=21#wechat_redirect)》
 
@@ -238,11 +238,11 @@
 
 《[互联网公司为何不使用mysql分区表](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959604&idx=1&sn=9f3e21f5ff99abc5a16038a77f31843e&scene=21#wechat_redirect)》
 
-《[即使删了全库，保证半小时恢复](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959694&idx=1&sn=4ac53b797fca64229901373e793f860a&chksm=bd2d04528a5a8d44618333de549094569f9ec58833ab64d081bc826b9361f587aca2972fc4c6&scene=21#wechat_redirect)》
+《[即使删了全库, 保证半小时恢复](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959694&idx=1&sn=4ac53b797fca64229901373e793f860a&chksm=bd2d04528a5a8d44618333de549094569f9ec58833ab64d081bc826b9361f587aca2972fc4c6&scene=21#wechat_redirect)》
 
-《[啥，又要为表增加一列属性](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959762&idx=1&sn=f7d8d7648416a0157af6ac61a6b555c8&chksm=bd2d040e8a5a8d181ec1baa2e96982991ddfc218bb6838f38da61b651e4b8de5f0bbbd94f814&scene=21#wechat_redirect)》
+《[啥, 又要为表增加一列属性](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959762&idx=1&sn=f7d8d7648416a0157af6ac61a6b555c8&chksm=bd2d040e8a5a8d181ec1baa2e96982991ddfc218bb6838f38da61b651e4b8de5f0bbbd94f814&scene=21#wechat_redirect)》
 
-《[续集：这才是真正的表扩展方案](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959765&idx=1&sn=b9916aa95c320e41035977e0a8098ca6&chksm=bd2d04098a5a8d1f3af38f658c05002151e621170949d2e3bb5b1bceea55c64b0477dba4c647&scene=21#wechat_redirect)》
+《[续集:这才是真正的表扩展方案](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959765&idx=1&sn=b9916aa95c320e41035977e0a8098ca6&chksm=bd2d04098a5a8d1f3af38f658c05002151e621170949d2e3bb5b1bceea55c64b0477dba4c647&scene=21#wechat_redirect)》
 
 《[瞬间掌握数据库垂直拆分](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959773&idx=1&sn=7e4ad0dcd050f6662dfaf39d9de36f2c&chksm=bd2d04018a5a8d17b92098b4840aac23982e32d179cdd957e4c55011f6a08f6bd31f9ba5cfee&scene=21#wechat_redirect)》
 
@@ -255,7 +255,7 @@
 
 《[微服务架构究竟多“微”合适](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959530&idx=1&sn=ff84bd74745eee1577e7dfef8ce66bbe&scene=21#wechat_redirect)》
 
-《[要想微服务，先搞定RPC框架](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959553&idx=1&sn=c1084e91875721c5f6baf544450afa38&scene=21#wechat_redirect)》
+《[要想微服务, 先搞定RPC框架](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959553&idx=1&sn=c1084e91875721c5f6baf544450afa38&scene=21#wechat_redirect)》
 
 《[RPC-client序列化原理与细节](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959558&idx=1&sn=610f06c6d62a5c22311d27cf40f758ef&scene=21#wechat_redirect)》
 
@@ -268,9 +268,9 @@
 
 《[微信为什么不丢“离线”消息](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959629&idx=1&sn=053d85a862df6e6c01147a1cf95bdbf2&chksm=bd2d04918a5a8d87a32305fa8ef1603bb0e73e5c4b78afb5a144327841e08840188c4541b4aa&scene=21#wechat_redirect)》
 
-《[群消息这么复杂，怎么做到不丢不重](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959643&idx=1&sn=844afa6a31770fa587474ecd73c3b3b3&chksm=bd2d04878a5a8d91c5c93ad8e85254185c63eb419457efbedcba54a9b8a9053da1e8980a694a&scene=21#wechat_redirect)》
+《[群消息这么复杂, 怎么做到不丢不重](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959643&idx=1&sn=844afa6a31770fa587474ecd73c3b3b3&chksm=bd2d04878a5a8d91c5c93ad8e85254185c63eb419457efbedcba54a9b8a9053da1e8980a694a&scene=21#wechat_redirect)》
 
-《[多点登陆，消息漫游架构随想](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959651&idx=1&sn=959540719a8336bd6f507a324dc7219a&chksm=bd2d04bf8a5a8da9ddfaeb106b61386adeb51c2ad7d4a32589c9a9e113f9341604a490eebb98&scene=21#wechat_redirect)》
+《[多点登陆, 消息漫游架构随想](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959651&idx=1&sn=959540719a8336bd6f507a324dc7219a&chksm=bd2d04bf8a5a8da9ddfaeb106b61386adeb51c2ad7d4a32589c9a9e113f9341604a490eebb98&scene=21#wechat_redirect)》
 
 《[QQ状态同步究竟是推还是拉](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959618&idx=1&sn=912a9af6d000c6681dc645e53590729b&chksm=bd2d049e8a5a8d884f6acb35bc5b40edf88127219542c9e3033bb4c2e33854657c315c8a93b7&scene=21#wechat_redirect)》
 
@@ -286,7 +286,7 @@
 
 **【架构实践】**
 
-《[**58同城架构演进，流量从0到10亿**](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=400276397&idx=1&sn=ea044079667b82f6cad58bcb743af7bc&scene=21#wechat_redirect)》
+《[**58同城架构演进, 流量从0到10亿**](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=400276397&idx=1&sn=ea044079667b82f6cad58bcb743af7bc&scene=21#wechat_redirect)》
 
 《[58同城推荐系统架构设计实践](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959464&idx=1&sn=81c29bf2e237499be07deba826f73c39&scene=21#wechat_redirect)》
 
@@ -298,7 +298,7 @@
 
 《[58到家快速搭建立体化监控平台之路](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959433&idx=1&sn=9c9a222c06b2426f3935b04a10f90c0b&scene=21#wechat_redirect)》
 
-《[高并发下，余额扣减一致性实践](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=400556481&idx=1&sn=42bc187b45e4e53aece4b8c1f43e8019&scene=21#wechat_redirect)》
+《[高并发下, 余额扣减一致性实践](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=400556481&idx=1&sn=42bc187b45e4e53aece4b8c1f43e8019&scene=21#wechat_redirect)》
 
 
 《[百度是怎么做长文本去重的](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=403419223&idx=1&sn=7f45d6bf8af2e2e87349570ab93af441&scene=21#wechat_redirect)》
@@ -315,11 +315,11 @@
 
 《[1分钟1副图看懂单机/集群/热备/磁盘阵列](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=400720056&idx=1&sn=10c796793e27d475603f97b23e137c12&scene=21#wechat_redirect)》
 
-《[1分钟awk够用，收藏后备用](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=400743254&idx=1&sn=147abc381ccd61e28f52699735c8748e&scene=21#wechat_redirect)》
+《[1分钟awk够用, 收藏后备用](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=400743254&idx=1&sn=147abc381ccd61e28f52699735c8748e&scene=21#wechat_redirect)》
 
-《[1分钟perl够用，收藏后备用](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=400764946&idx=1&sn=4efab1953696c2e21071e58a74da9b82&scene=21#wechat_redirect)》
+《[1分钟perl够用, 收藏后备用](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=400764946&idx=1&sn=4efab1953696c2e21071e58a74da9b82&scene=21#wechat_redirect)》
 
-《[1分钟sed够用，收藏后备用](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=403340380&idx=1&sn=9b4ced5a19f60b0cebf6fd582f1d52ae&scene=21#wechat_redirect)》
+《[1分钟sed够用, 收藏后备用](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=403340380&idx=1&sn=9b4ced5a19f60b0cebf6fd582f1d52ae&scene=21#wechat_redirect)》
 
 《[1分钟了解两阶段提交2PC](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=400856212&idx=1&sn=b9734da77f2259bdd1fa89700b47eaff&scene=21#wechat_redirect)》
 
@@ -329,20 +329,20 @@
 
 《[1分钟实现分布式锁](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959749&idx=1&sn=6727638930905089342662c24f5bba62&chksm=bd2d04198a5a8d0f619f1b9be1ead542f015e6ff87b5aac5a61af94b714459964fedb89e6516&scene=21#wechat_redirect)》
 
-《[续集：这才是真正的分布式锁](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959755&idx=1&sn=e0875b539895578ce966fdad7f3c0365&chksm=bd2d04178a5a8d01a66d30b5ac8958fc5a6108e6e1d90a265361a7d3b30197bcb51f4433f23b&scene=21#wechat_redirect)》
+《[续集:这才是真正的分布式锁](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959755&idx=1&sn=e0875b539895578ce966fdad7f3c0365&chksm=bd2d04178a5a8d01a66d30b5ac8958fc5a6108e6e1d90a265361a7d3b30197bcb51f4433f23b&scene=21#wechat_redirect)》
 
 
 **【通用素质】**
 
-《[心态：晋升的为何不是你](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=404332602&idx=1&sn=a50ed411c893f6aeadbd66a25d31b94c&scene=21#wechat_redirect)》
+《[心态:晋升的为何不是你](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=404332602&idx=1&sn=a50ed411c893f6aeadbd66a25d31b94c&scene=21#wechat_redirect)》
 
-《[鸡汤：你的收入取决于你的努力程度](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959534&idx=1&sn=1f2f3b92332439cd65a3f1e69391f55f&scene=21#wechat_redirect)》
+《[鸡汤:你的收入取决于你的努力程度](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959534&idx=1&sn=1f2f3b92332439cd65a3f1e69391f55f&scene=21#wechat_redirect)》
 
-《[爱女友：“我穿这衣服好看吗”终于破解了](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959561&idx=1&sn=60fcc75435a80280aebe8faffd28fda5&scene=21#wechat_redirect)》
+《[爱女友:“我穿这衣服好看吗”终于破解了](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959561&idx=1&sn=60fcc75435a80280aebe8faffd28fda5&scene=21#wechat_redirect)》
 
-《[管理：一分钟经理人](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959737&idx=1&sn=5d6f3fd25f6473e77f54269a1b384565&chksm=bd2d04658a5a8d7389fe8cb761dcc494498e5a330fb4b9db1d760d35f7ce8df26fc788227e6d&scene=21#wechat_redirect)》
+《[管理:一分钟经理人](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959737&idx=1&sn=5d6f3fd25f6473e77f54269a1b384565&chksm=bd2d04658a5a8d7389fe8cb761dcc494498e5a330fb4b9db1d760d35f7ce8df26fc788227e6d&scene=21#wechat_redirect)》
 
-《[访谈：架构师到底该不该写代码](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959776&idx=1&sn=10a8bcb1277fdd6bfb9e24b816697038&chksm=bd2d043c8a5a8d2a9b3e6638c855da30e2910b17a7f6d435118fb1fe09a99fb85950d98b4d63&scene=21#wechat_redirect)》
+《[访谈:架构师到底该不该写代码](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959776&idx=1&sn=10a8bcb1277fdd6bfb9e24b816697038&chksm=bd2d043c8a5a8d2a9b3e6638c855da30e2910b17a7f6d435118fb1fe09a99fb85950d98b4d63&scene=21#wechat_redirect)》
 
 《[**如何做一场B格满满的技术大会演讲**](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959675&idx=1&sn=98c61e127f4b82ca3ba86ff369dfdb3c&chksm=bd2d04a78a5a8db1f5de8c39a1398b8812ff2b9961642f7b813293ade34f602d42ea127b85aa&scene=21#wechat_redirect)》
 

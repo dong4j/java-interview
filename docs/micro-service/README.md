@@ -10,7 +10,7 @@
 2PC、3PC、CAP、BASE、 可靠消息最终一致性、最大努力通知、TCC
 
 → Dubbo
-服务注册、服务发现，服务治理
+服务注册、服务发现, 服务治理
 
 http://dubbo.apache.org/zh-cn/
 
