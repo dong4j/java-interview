@@ -154,7 +154,6 @@ function gentSESidebar(title) {
         'inner_class',
         'key_word',
         'new_instance_way',
-        'serializable',
         'string_kind',
         'wrapper_class'
       ]
