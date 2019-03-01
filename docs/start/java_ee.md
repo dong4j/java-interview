@@ -36,7 +36,7 @@ Servlet接口定义了5个方法, 其中**前三个方法与Servlet生命周期�
 
 参考:《javaweb整合开发王者归来》P81
 
-## get和post请求的区别
+## [get和post请求的区别](../java/ee/get_post.md)
 
 > 网上也有文章说:get和post请求实际上是没有区别, 大家可以自行查询相关文章！我下面给出的只是一种常见的答案.
 
@@ -98,14 +98,11 @@ Response.setHeader("Refresh","5;URL=http://localhost:8080/servlet/example.htm");
 ```
 其中5为时间, 单位为秒.URL指定就是要跳转的页面（如果设置自己的路径, 就会实现每过5秒自动刷新本页面一次）
 
-
 ## Servlet与线程安全
 **Servlet不是线程安全的, 多线程并发的读写会导致数据不同步的问题.** 解决的办法是尽量不要定义name属性, 而是要把name变量分别定义在doGet()和doPost()方法内.虽然使用synchronized(name){}语句块可以解决问题, 但是会造成线程的等待, 不是很科学的办法.
 注意:多线程的并发的读写Servlet类属性会导致数据不同步.但是如果只是并发地读取属性而不写入, 则不存在数据不同步的问题.因此Servlet里的只读属性最好定义为final类型的.
 
 参考:《javaweb整合开发王者归来》P92
-
-
 
 ## JSP和Servlet是什么关系
 其实这个问题在上面已经阐述过了, Servlet是一个特殊的Java程序, 它运行于服务器的JVM中, 能够依靠服务器的支持向浏览器提供显示内容.JSP本质上是Servlet的一种简易形式, JSP会被服务器处理成一个类似于Servlet的Java程序, 可以简化页面内容的生成.Servlet和JSP最主要的不同点在于, Servlet的应用逻辑是在Java文件中, 并且完全从表示层中的HTML分离开来.而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件.有人说, Servlet就是在Java中写HTML, 而JSP就是在HTML中写Java代码, 当然这个说法是很片面且不够准确的.JSP侧重于视图, Servlet更侧重于控制逻辑, 在MVC架构模式中, JSP适合充当视图（view）而Servlet适合充当控制器（controller）.
@@ -136,7 +133,6 @@ JSP有9个内置对象:
 - config:Web应用的配置对象；
 - page:JSP页面本身（相当于Java程序中的this）；
 - exception:封装页面抛出异常的对象.
-
 
 ## Request对象的主要方法有哪些
 - setAttribute(String name,Object):设置名字为name的request 的参数值 
@@ -203,8 +199,6 @@ JSP中的四种作用域包括page、request、session和application, 具体来�
 - **session**代表与某个用户与服务器建立的一次会话相关的对象和属性.跟某个用户相关的数据应该放在用户自己的session中.
 - **application**代表与整个Web应用程序相关的对象和属性, 它实质上是跨越整个Web应用程序, 包括多个页面、请求和会话的一个全局作用域.
 
-
-
 ## 如何实现JSP或Servlet的单线程模式
 对于JSP页面, 可以通过page指令进行设置.
 <%@page isThreadSafe=”false”%>
@@ -214,6 +208,7 @@ JSP中的四种作用域包括page、request、session和application, 具体来�
 说明:如果将JSP或Servlet设置成单线程工作模式, 会导致每个请求创建一个Servlet实例, 这种实践将导致严重的性能问题（服务器的内存压力很大, 还会导致频繁的垃圾回收）, 所以通常情况下并不会这么做.
 
 ## 实现会话跟踪的技术有哪些
+
 1. **使用Cookie**
 
 向客户端发送Cookie
@@ -263,6 +258,7 @@ if(cookies !=null){
 
 
  在所有会话跟踪技术中, HttpSession对象是最强大也是功能最多的.当一个用户第一次访问某个网站时会自动创建 HttpSession, 每个用户可以访问他自己的HttpSession.可以通过HttpServletRequest对象的getSession方 法获得HttpSession, 通过HttpSession的setAttribute方法可以将一个值放在HttpSession中, 通过调用 HttpSession对象的getAttribute方法, 同时传入属性名就可以获取保存在HttpSession中的对象.与上面三种方式不同的 是, HttpSession放在服务器的内存中, 因此不要将过大的对象放在里面, 即使目前的Servlet容器可以在内存将满时将HttpSession 中的对象移到其他存储设备中, 但是这样势必影响性能.添加到HttpSession中的值可以是任意Java对象, 这个对象最好实现了 Serializable接口, 这样Servlet容器在必要的时候可以将其序列化到文件中, 否则在序列化时就会出现异常.
+ 
 ## Cookie和Session的的区别
 
 1. 由于HTTP协议是无状态的协议, 所以服务端需要记录用户的状态时, 就需要用某种机制来识具体的用户, 这个机制就是Session.典型的场景比如购物车, 当你点击下单按钮时, 由于HTTP协议无状态, 所以并不知道是哪个用户操作的, 所以服务端要为特定的用户创建了特定的Session, 用用于标识这个用户, 并且跟踪用户, 这样才知道购物车里面有几本书.这个Session是保存在服务端的, 有一个唯一标识.在服务端保存Session的方法很多, 内存、数据库、文件都有.集群的时候也要考虑Session的转移, 在大型的网站, 一般会有专门的Session服务器集群, 用来保存用户会话, 这个时候 Session 信息都是放在内存的, 使用一些缓存服务比如Memcached之类的来放 Session.
@@ -306,3 +302,7 @@ if(cookies !=null){
 86.如何实现跨域？
 
 87.说一下 JSONP 实现原理？
+
+## servlet是否线程安全，如何改造
+
+## # 如何防止表单重复提交

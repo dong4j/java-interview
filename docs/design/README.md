@@ -358,7 +358,354 @@
 
 
 
+**分布式技术**
+
+[到底什么是分布式系统？](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247485176&idx=1&sn=336e9d819a2e9e76445633f2b8a2fa35&chksm=eb5383cedc240ad836597607177c674d88e8cd2213af64b807f884c1744fb920d7cc06a43a77&scene=21#wechat_redirect)
+
+[分布式 ID 生成器的解决方案总结](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247485071&idx=1&sn=c27a1a0a5f0215dafe0232eb85e98929&chksm=eb5383b9dc240aaf96c66feab1fcb8000aacb54c9e34ae8f3b8b6893a9aa96a9c787627e8480&scene=21#wechat_redirect)
+
+[一张图告诉你为什么是服务网关](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247485079&idx=1&sn=ebd346159e9dd3bb107237855c154443&chksm=eb5383a1dc240ab7c1e93cdd7da4810e9016a3c910c53296064fa27b87750d2c8f1b141d2d7e&scene=21#wechat_redirect)
+
+[一文告诉你 Java RMI 和 RPC 的区别](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486403&idx=1&sn=3ec98d1553969ad38fbd225aef2c9807&chksm=eb538ef5dc2407e3ee906c378776baf473d2a27ae0e98ebd0970c1050eb2cb30a0467c84ceb5&scene=21#wechat_redirect)
+
+[大型网站架构利器－CDN技术](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484046&idx=1&sn=ae59a28f56ec19de553e6ae0f40c78b4&chksm=eb5387b8dc240eae913af519cd8930bc8e5ed69d2f06103074081ab2e68f57ccca0d95314959&scene=21#wechat_redirect)
+
+[分布式系统架构常识：CAP理论](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484936&idx=1&sn=ff6f3e83f62e792881e24b88347d9ae9&chksm=eb53833edc240a286fd36397032e8263fe5e0a856eb97016509a87c525d5f61f77e7bd8e16f5&scene=21#wechat_redirect)
+
+[分布式服务防雪崩熔断器 Hystrix 理论实战](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484850&idx=1&sn=842408941864d7531a672b7e3bf8c55f&chksm=eb538084dc240992ebb8143fda8dab96b870eb965c19d9efb9f97f271278ec45a72c063a26d1&scene=21#wechat_redirect)
+
+[5 分钟带你理解一致性 Hash 算法](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484848&idx=1&sn=d1bc4865d9fe7d679469f936efc175ca&chksm=eb538086dc240990e72b267a44c77a7e43f0c66604a913bcb73e985b8d1ffc91b733e19abf4a&scene=21#wechat_redirect)
+
+[分布式 Session 共享解决方案](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484903&idx=1&sn=62a16276714b046e776cc132c49fff8f&chksm=eb5380d1dc2409c7ba2263b276e95cf078b1af8befde2087d9b646155bd74ad000703c696cf4&scene=21#wechat_redirect)
+
+[分布式事务 TCC 的服务设计和实现](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483910&idx=1&sn=f3158b2c5226064dd6d9ab99746f9e79&chksm=9f211792a8569e84524073db5ede1a7a5d9fac3a1694558072b3c602232864c52ac8eb6c7c91&scene=21#wechat_redirect)
+
+[分布式系统中处理参数配置的 4 种方案](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247487426&idx=1&sn=fcf42e630fcb364df9ad3c2be3371de4&chksm=eb538af4dc2403e2d458c60d37135a768441433fae0de9f9c1dbd444b39942678eb6ba96f654&scene=21#wechat_redirect)
+
+[牛逼哄哄的 RPC 框架，底层到底什么原理？](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247487507&idx=1&sn=7511f822bf95b25a2586dfdb0c06546f&chksm=eb539525dc241c33507a02d137bd48b9d9e2a33c8b76030f6cc372d0cfa478c8d83d230a9e96&scene=21#wechat_redirect)
+
+[前后端分离与不分离的本质区别！](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247487686&idx=2&sn=12a6c80af67371bcc8990b84032f3d4b&chksm=eb5395f0dc241ce6d9d2e3cb4c35c80415b501bea78d9c0813dccca66cc8e0c17a49f7a6617d&scene=21#wechat_redirect)
+
+[分布式事务不理解？一次给你讲清楚！](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247487861&idx=1&sn=1e041eb56eaec737f95af0b3e65ac0e8&chksm=eb539443dc241d55bdbcee140ab8b33182bcf9768f21a13ba4b03fcccf331ca1eb757ba6b90e&scene=21#wechat_redirect)
+
+[老大难的分布式锁与幂等性问题，如何解决？](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247488612&idx=1&sn=da9e2759035d14ef1d9656ac9fd95971&chksm=eb539152dc2418445d74b384da03fccfc3ab47c3b0db11abc2f63d8c31692005a9812f7d709d&scene=21#wechat_redirect)
+
+**架构方案**
+
+[微服务架构及分布式事务解决方案](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486512&idx=1&sn=01ce7459e71ffe204025fb66248a0c08&chksm=eb538906dc240010f561e14f4a71f98db2e35eee892523e71456675bdbe30c56b0096433d975&scene=21#wechat_redirect)
+
+[微信扫码登录是如何实现的？](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247487661&idx=1&sn=954cc0c9742128ba2bb9095276403ba3&chksm=eb53959bdc241c8d268789a78dacc335c7525a78eea5a21b567c4b915caf111d8ec2ae3a8e23&scene=21#wechat_redirect)
+
+[高可用高并发的 9 种技术架构](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486132&idx=1&sn=2a5a05edd7c99af1a030938d790c3ff9&chksm=eb538f82dc24069427239bd3be1971d6c80eabaf2b03f4ab31c3de4b4e5623f559d589d17289&scene=21#wechat_redirect)
+
+[17 张图揭密支付宝系统架构](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484641&idx=1&sn=5b41345d13bee9d868a76fe0f3cc5a07&chksm=eb5381d7dc2408c12800efeeb3ac2a460d8d8dd6a7435ed6911f0c044b739472d516a53f639b&scene=21#wechat_redirect)
+
+[浅谈大型网站之负载均衡架构](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484082&idx=1&sn=7130a098aa282e4d37fd5ace9f9aa900&chksm=eb538784dc240e9225acf7fefb225c96b13f90cb1364c5a5a14a70dd4effe6e26f87ed0607f9&scene=21#wechat_redirect)
+
+[完整的支付系统整体架构](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484849&idx=1&sn=92abdb83f5d5e04b86f4ebd320584962&chksm=eb538087dc24099110ed5cdf13f236341b4dc2753b77a1411c942e21284f33147c98faf8058d&scene=21#wechat_redirect)
+
+[京东购物车的 Java 架构实现原理](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486038&idx=1&sn=37c08f7aff4642bdc7838df628957439&chksm=eb538f60dc240676b8248648bfae14637624f4f5256eedd49588abd955de0767ce0bb388c9c2&scene=21#wechat_redirect)
+
+## [电商摸爬打滚出的高并发架构实战干货](https://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483833&idx=1&sn=bf54b525e810174ff90c7aeeee0bcf85&scene=21#wechat_redirect)
+
+## [高并发大流量访问处理及解决方案](https://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483795&idx=1&sn=db33f6d1d3e61cbf2f6206c31f1fd341&scene=21#wechat_redirect)
+
+[如何构建一套高可用的 APP 消息推送平台](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247487397&idx=1&sn=557f51de4b0958be0b46d9150b6c48b9&chksm=eb538a93dc240385b260a45b80eb07b47c43fa72e8a1347ee1ce40c84ff01f3351feed44f49d&scene=21#wechat_redirect)
+
+[Java 架构 6 大设计原则](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486402&idx=1&sn=1a6c6ce596d8fadb4f2c55162bf7e441&chksm=eb538ef4dc2407e2c6ef9027e79ac5e1ea93256ee9b43dc2bede74fb89668a5413822666b302&scene=21#wechat_redirect)
+
+[架构师必须掌握的 10 条设计原则](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486986&idx=1&sn=824914c6820203085dc86c85aa592fbb&chksm=eb538b3cdc24022a7dd3d9c021e5f8b521d02c0c2ec150f32d504af3ac9e8d5c4eb30a68cf15&scene=21#wechat_redirect)
+
+[服务高可用：幂等性设计](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484866&idx=1&sn=e9a6d0719003bd45ce555702d391f804&chksm=eb5380f4dc2409e27e5a1d6bdb9255d6d476bbdfd6321d637b79ef2120ca8710a50f6e08c0f7&scene=21#wechat_redirect)
+
+[服务降级的概念及应用手段](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484906&idx=1&sn=7ffa3cf4ba05cc496ce0041fa4b94c24&chksm=eb5380dcdc2409cab162e545b60908e8e6a3f04e73e9ebd7ed6af50e8e48f624074a1bf0790c&scene=21#wechat_redirect)
+
+[接口限流算法：漏桶算法 & 令牌桶算法](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484716&idx=1&sn=d2fc1055e6f7641aaa2419b4cb503a6a&chksm=eb53801adc24090c5af5383300b5df347e13bfeac06b605f51e4d5907c99b884d4de1b805694&scene=21#wechat_redirect)
+
+[秒杀系统设计的 5 个要点](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486072&idx=1&sn=8e89218da1447e7965f8c833beacc256&chksm=eb538f4edc240658cf543ec5a55436c21038c284f3913c6e20706ae96a46058a5c7a18ad6520&scene=21#wechat_redirect)
+
+[秒杀系统必须考虑的 3 个技术问题！](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247488525&idx=2&sn=6aeb174b96f47a3b516d2319cf9f8045&chksm=eb53913bdc24182de7450e83dd89aa731a57a448f5801ce33729f1f0969d11103ecc94cf8a14&scene=21#wechat_redirect)
+
+[阿里巴巴制定了这 16 条「设计规约」](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486901&idx=2&sn=41fcc26f7c04827f936b088049619669&chksm=eb538883dc240195cf1d9f8cf0488f32d53735d1f44630e0eebdda440d24e6ac8a2f254ccfbf&scene=21#wechat_redirect)
+
+[RESTful  API 设计技巧经验总结](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486775&idx=2&sn=870da6b84065df709d292724b6f2244f&chksm=eb538801dc24011703683679c126acac04aa5ea7992e5915e3b4ae0be2f4e56c3700d29fec12&scene=21#wechat_redirect)
+
+[APP 架构之后端接口设计方案](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483921&idx=1&sn=ff12eaad83447fa42d625add75cc5558&chksm=9f211785a8569e9317ec3ff864430421ed9db154dcc479ae4d8436a90eb7131582bf9d950feb&scene=21#wechat_redirect)
+
+## [MVC，MVP 和 MVVM 架构区别](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483812&idx=2&sn=9b092dba78e0db06622146bb0ed60fad&chksm=9f211430a8569d269c16eac665f1ec0c8c639d8b92969ff163dca94f7c8c31e040af22fa76be&scene=21#wechat_redirect)
+
+[为什么前后端分离了，你比从前更痛苦？](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483961&idx=1&sn=5dd9f7b264553902077c8ed63fa10200&chksm=9f2117ada8569ebb6a88e3051693ab03716e990ca3256e8651fe4ea84433c2c9c750953e9490&scene=21#wechat_redirect)
 
 
+[微服务架构下静态数据通用缓存机制](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247484002&idx=1&sn=b4d78a046ac1f23e8daf11103c11bce1&chksm=9f2117f6a8569ee01eade46952a8da4197b678dba42dbdfc8ec22b4657e382f6e07c002f274d&scene=21#wechat_redirect)
+
+[如何用 Netty 设计一个百万级推送服务？](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483985&idx=1&sn=f1dd33d666f5ffe460b5ece886a84b4f&chksm=9f2117c5a8569ed3413935432086be13effeb14a5d8f34be3da8a3913f6dd60aad3cfa462acb&scene=21#wechat_redirect)
+
+[基于 Spring Boot 和 Spring Cloud 实现微服务架构](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483974&idx=1&sn=22f392fb0c274a413a3be994596ee616&chksm=9f2117d2a8569ec42d14ab62849dbc3a1a11a4b0956e53a0855aacc66898bcfc968d9334c0b6&scene=21#wechat_redirect)
+
+[为什么前后端分离了，你比从前更痛苦？](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483961&idx=1&sn=5dd9f7b264553902077c8ed63fa10200&chksm=9f2117ada8569ebb6a88e3051693ab03716e990ca3256e8651fe4ea84433c2c9c750953e9490&scene=21#wechat_redirect)
+
+[微信、淘宝类扫码登录实现原理解析](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483953&idx=1&sn=0c19dd5368ef215dcc397a1b14d4baeb&chksm=9f2117a5a8569eb3a6cd1369ac9046adea9027d8128285e79910d8d7013a11d31272f90678e6&scene=21#wechat_redirect)
+
+[老板让你抗住千万级流量，如何做架构设计？](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247487713&idx=1&sn=a59c4fbf67ec11da63c25064c5e21bb4&chksm=eb5395d7dc241cc1a1fc80fcfa65c58064560ecb8880387a9f21a575f66490b69dc238fad844&scene=21#wechat_redirect)
+
+
+[阿里巴巴是如何打通 CMDB，实现就近访问的？](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247488145&idx=2&sn=0b21c0c37ba51dae29106970ef979091&chksm=eb5397a7dc241eb1ccd2a2ee680da70e2f456b9d49e72a9f1eab88142c3caf091a1eb5e2f822&scene=21#wechat_redirect)
+
+
+**设计模式**
+
+[设计模式之单例模式实践](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247483742&idx=1&sn=9429b26871f19e4dafd1bf0c7ec0520e&chksm=eb538468dc240d7e968486dbdb7fa440b365ac81a3d9920013781776b601754b1a0659b92b70&scene=21#wechat_redirect)
+
+[设计模式之静态代理模式实战](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247483790&idx=1&sn=fe77ac9841f0053e7a94e5ab1ed53861&chksm=eb5384b8dc240dae71f7fab094b6bb9ce316e341b6b57bc603d747414949e688663adc6b2023&scene=21#wechat_redirect)
+
+[设计模式之动态代理模式实战](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247483791&idx=1&sn=548b40dd2ff72f5b553fa6d5f63fda7f&chksm=eb5384b9dc240daf63e6cc3a29827d7de6629cd26902c92143ac0cd88d6fe878d7bc7dc1abfa&scene=21#wechat_redirect)
+
+[详解 Java 中的三种代理模式](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486759&idx=2&sn=6769d8ff9d163babe726b6213c6d15e4&chksm=eb538811dc240107bcf2a6e65b5381b2a68175af8ff12f4e2c1b0a06f7d16850db4acb64a18e&scene=21#wechat_redirect)
+
+消息队列
+
+## [](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484823&idx=1&sn=3501d7b5376ed02f966a9806f1f1ee92&chksm=eb5380a1dc2409b77d3b05a574f18fc4b536d86910a1abedfcef5c2093dd555258a5a87e86db&scene=21#wechat_redirect)
+
+## [消息队列常见的几种使用场景介绍](https://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483886&idx=1&sn=0e34ee731772bd06c71370a5b90230c3&scene=21#wechat_redirect)
+
+[消息中间件如何选型？](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247485210&idx=1&sn=3b7aee066ff45a81ea5fbe7539bb6021&chksm=eb53822cdc240b3a720eb4f2803c7cd83afb342a124ae96719283481a449dec5f357f71a7518&scene=21#wechat_redirect)
+
+[RabbitMQ 和 Kafka 到底怎么选？](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483978&idx=1&sn=3fece80abd3ee65b7493e8024d374393&chksm=9f2117dea8569ec89c9bd19f10a1fff815cfd2111b11915e013a8740684a65d2b1f33cc9fd04&scene=21#wechat_redirect)
+
+Dubbo
+
+[Dubbo 架构设计详解](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486281&idx=1&sn=e744b1405b20a45a436f5dbf69a6dd5b&chksm=eb538e7fdc2407693ca04a7fe95d2618b8bf08962ffaaf61940e1136c84cae5ee8c2a1d358bc&scene=21#wechat_redirect)
+
+[Dubbo 服务调试管理实用命令](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247483709&idx=1&sn=afe0688c184f00902529583a85d90089&chksm=eb53840bdc240d1de00b7c68dbcd7b6251d7bec9b01f2984aad69b58f9ec0ae85d2675a6146a&scene=21#wechat_redirect)
+
+Zookeeper
+
+[Zookeeper 集群安装配置，超详细，速度收藏！](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247488169&idx=1&sn=248b75817e4a6c8e65c40a6b17603196&chksm=eb53979fdc241e8957a82741c5bed23137daf8726b88f237c771831fbbd362dead4399070de2&scene=21#wechat_redirect)
+
+**综合技术**
+
+[全球架构师峰会全程内容分享](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486411&idx=1&sn=a9fe05e3c26a5ae1672d74a53a6f2487&chksm=eb538efddc2407eb6312630c5e234d30ed5630fa338d891146e2c1d4d9810996ae375107de63&scene=21#wechat_redirect)
+
+[一张图告诉你什么是系统架构师](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247485053&idx=1&sn=ad97b0306b1760acea80740d9652e920&chksm=eb53834bdc240a5de8f57dcdddc2817dd29c8a3cd28fa27a806b10e65c0ac50d102663ccfda8&scene=21#wechat_redirect)
+
+[34 张架构史上最全技术知识图谱](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484330&idx=1&sn=30f9cbb95821d06a3a5884edd8f1cb4f&chksm=eb53869cdc240f8a237b975ec7f51817c020cfaacfaf48c6ac8a7bb9ca3516ee39db1847dfdf&scene=21#wechat_redirect)
+
+[网站性能测试各个性能指标详解](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484873&idx=1&sn=29b53be1cf632d78b52a0cd78532e3a1&chksm=eb5380ffdc2409e95183b57d2a931f44eec754a9c6b545d177e2f0590e0b023d230611a07faa&scene=21#wechat_redirect)
+
+[8 条关于 Web 前端性能的优化建议](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484905&idx=1&sn=e76cefe6958806a41b39680201ff77b6&chksm=eb5380dfdc2409c919d55a49e2a96548f824f13179c265af56fad08e6ed86e2d9283da5ad221&scene=21#wechat_redirect)
+
+[SLA 服务可用性 99.99 是什么意思？](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247485120&idx=1&sn=9b41d713eda47ca6e0f545b7d8753498&chksm=eb5383f6dc240ae0fc4ad87ff9fca94ab71b22ca5ca1cefaafecd7cb9b85b32975ddbe0c1e48&scene=21#wechat_redirect)
+
+## [高并发大容量 NoSQL 解决方案](https://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483819&idx=1&sn=5496fe56a5430ed02111a0eca4fe1151&scene=21#wechat_redirect)
+
+## [提升系统 10 倍性能的 10 个建议](https://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483892&idx=1&sn=2eda85ed57bfebd3d80ca7ae72cfdcf1&scene=21#wechat_redirect)
+
+## [优秀架构师必须掌握的架构思维](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483899&idx=1&sn=77d2e0b9b40cb920197ad2a30c2c6653&chksm=9f21146fa8569d797c75acf61233fd58c55db09b26156ef48f103cf76ce3286d235d1e540314&scene=21#wechat_redirect)
+
+[架构师的工作内容都干些什么？](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247487107&idx=1&sn=9a1d60fa41dff3af5a8532bcbca9761d&chksm=eb538bb5dc2402a338e794abfb4d523596530bb9d389055e9a5baabb56e4674563d2ec2ba7f8&scene=21#wechat_redirect)
+
+[超详细 Nginx 极简教程，傻瓜一看也会！](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247487632&idx=1&sn=e85e5174db089aa9ae60770fe3105a84&chksm=eb5395a6dc241cb066e4650997a3b1e0dc703c8db5cfd0031168a98418e80257e958c0ed99d9&scene=21#wechat_redirect)
+
+[向高手进阶，从 0 开始手写实现一个 RPC 框架！](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247488220&idx=1&sn=0223c1a3b5b0745e497ebb920a910fa9&chksm=eb5397eadc241efc9e37be34e39eadf6ab91a365ebcba925f49032df6bf22e9681b4aa2be556&scene=21#wechat_redirect)
+
+[把 14 亿人拉到一个微信群，如何实现？](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247488443&idx=1&sn=75a49a28ff58d93db5e95ffa2bed3905&chksm=eb53968ddc241f9b210be799ba09d58582eff238ddbbdcd5fdab1cec79ffdf6ef02c302cfab0&scene=21#wechat_redirect)
+
+[狗屎一样的代码！快，重构我！](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247488468&idx=1&sn=5ce2259a11bd98e9409055d3afa42fab&chksm=eb5396e3dc241ff594259c689353bb61a3870cc7c05b55bf25ad23c7&scene=21#wechat_redirect)
+
+[软件开发中的开源协议详解！](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247488573&idx=2&sn=fbec600e9c3c0740f8aa6a7078a42e2f&chksm=eb53910bdc24181da2d6331354e7f76ee67db6135ecf90b54d4ef645ba49f38f3cb451216344&scene=21#wechat_redirect)
+
+[服务端 I/O 性能大比拼：Node、PHP、Java、Go哪家强？](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247488604&idx=2&sn=ce476c9a8bec366ef6ef2ff562df6176&chksm=eb53916adc24187c9dea067506030bce5f67336e5c655a5bca1cdd88e0f78675ab36562aa7b0&scene=21#wechat_redirect)
+
+
+# 入门到放弃的 Java 架构师面试题
+
+基础题目
+
+1. Java线程的状态
+
+2. 进程和线程的区别，进程间如何通讯，线程间如何通讯
+
+3. HashMap的数据结构是什么？如何实现的。和HashTable，ConcurrentHashMap的区别
+
+4. Cookie和Session的区别
+
+5. 索引有什么用？如何建索引？
+
+6. ArrayList是如何实现的，ArrayList和LinkedList的区别？ArrayList如何实现扩容。
+
+7. equals方法实现
+
+8. 面向对象
+
+9. 线程状态，BLOCKED和WAITING有什么区别
+
+10. JVM如何加载字节码文件
+
+11. JVM GC，GC算法。
+
+12. 什么情况会出现Full GC，什么情况会出现yong GC。
+
+13. JVM内存模型
+
+14. Java运行时数据区
+
+15. 事务的实现原理
+
+技术深度
+
+1. 有没有看过JDK源码，看过的类实现原理是什么。
+
+2. HTTP协议
+
+3. TCP协议
+
+4. 一致性Hash算法
+
+5. JVM如何加载字节码文件
+
+6. 类加载器如何卸载字节码
+
+7. IO和NIO的区别，NIO优点
+
+8. Java线程池的实现原理，keepAliveTime等参数的作用。
+
+9. HTTP连接池实现原理
+
+10. 数据库连接池实现原理
+
+11. 数据库的实现原理
+
+技术框架
+
+1. 看过哪些开源框架的源码
+
+2. 为什么要用Redis，Redis有哪些优缺点？Redis如何实现扩容？
+
+3. Netty是如何使用线程池的，为什么这么使用
+
+4. 为什么要使用Spring，Spring的优缺点有哪些
+
+5. Spring的IOC容器初始化流程
+
+6. Spring的IOC容器实现原理，为什么可以通过byName和ByType找到Bean
+
+7. Spring AOP实现原理
+
+8. 消息中间件是如何实现的，技术难点有哪些
+
+系统架构
+
+1. 如何搭建一个高可用系统
+
+2. 哪些设计模式可以增加系统的可扩展性
+
+3. 介绍设计模式，如模板模式，命令模式，策略模式，适配器模式、桥接模式、装饰模式，观察者模式，状态模式，访问者模式。
+
+4. 抽象能力，怎么提高研发效率。
+
+5. 什么是高内聚低耦合，请举例子如何实现
+
+6. 什么情况用接口，什么情况用消息
+
+7. 如果AB两个系统互相依赖，如何解除依赖
+
+8. 如何写一篇设计文档，目录是什么
+
+9. 什么场景应该拆分系统，什么场景应该合并系统
+
+10. 系统和模块的区别，分别在什么场景下使用
+
+分布式系统
+
+1. 分布式事务，两阶段提交。
+
+2. 如何实现分布式锁
+
+3. 如何实现分布式Session
+
+4. 如何保证消息的一致性
+
+5. 负载均衡
+
+6. 正向代理（客户端代理）和反向代理（服务器端代理）
+
+7. CDN实现原理
+
+8. 怎么提升系统的QPS和吞吐量
+
+实战能力
+
+1. 有没有处理过线上问题？出现内存泄露，CPU利用率标高，应用无响应时如何处理的。
+
+2. 开发中有没有遇到什么技术问题？如何解决的
+
+3. 如果有几十亿的白名单，每天白天需要高并发查询，晚上需要更新一次，如何设计这个功能。
+
+4. 新浪微博是如何实现把微博推给订阅者
+
+5. Google是如何在一秒内把搜索结果返回给用户的。
+
+6. 12306网站的订票系统如何实现，如何保证不会票不被超卖。
+
+7. 如何实现一个秒杀系统，保证只有几位用户能买到某件商品。
+
+软能力
+
+1. 如何学习一项新技术，比如如何学习Java的，重点学习什么
+
+2. 有关注哪些新的技术
+
+3. 工作任务非常多非常杂时如何处理
+
+4. 项目出现延迟如何处理
+
+5. 和同事的设计思路不一样怎么处理
+
+6. 如何保证开发质量
+
+7. 职业规划是什么？短期，长期目标是什么
+
+8. 团队的规划是什么
+
+9. 能介绍下从工作到现在自己的成长在那里
+
+JAVA架构师的水准
+
+既然java架构师，首先你要是一个高级java攻城尸，熟练使用各种框架，并知道它们实现的原理。jvm虚拟机原理、调优,懂得jvm能让你写出性能更好的代码；
+
+池技术，什么对象池，连接池，线程池...:;java反射技术，写框架必备的技术，但是有严重的性能问题，替代方案java字节码技术;nio，没什么好说的，值得注意的是"直接内存"的特点，使用场景;java多线程同步异步；
+
+java各种集合对象的实现原理，了解这些可以让你在解决问题时选择合适的数据结构，高效的解决问题，比如hashmap的实现原理，好多五年以上经验的人都弄不清楚，还有为什扩容时有性能问题？不弄清楚这些原理，就写不出高效的代码，还会认为自己做的很对；
+
+总之一句话越基础的东西越重要，很多人认为自己会用它们写代码了，其实仅仅是知道如何调用api而已,离会用还差的远。
+
+熟练使用各种数据结构和算法，数组、哈希、链表、排序树...，一句话要么是时间换空间要么是空间换时间，这里展开可以说一大堆，需要有一定的应用经验，用于解决各种性能或业务上的问题；有时间再补充。
+
+熟练使用linux操作系统，必备，没什么好说的 。
+
+熟悉tcp协议，创建连接三次握手和断开连接四次握手的整个过程，不了解的话，无法对高并发网络应用做优化; 熟悉http协议，尤其是http头，我发现好多工作五年以上的都弄不清session和cookie的生命周期以及它们之间的关联。
+
+系统集群、负载均衡、反向代理、动静分离，网站静态化 。
+
+分布式存储系统nfs,fastdfs,tfs,Hadoop了解他们的优缺点，适用场景 。
+
+分布式缓存技术memcached,redis，提高系统性能必备，一句话，把硬盘上的内容放到内存里来提速，顺便提个算法一致性hash 。点击[这里](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483698&idx=1&sn=d7e19e501b7d428f3f73fcc4f5f7e322&chksm=9f2114a6a8569db0550a98d2442cfbd70f5a26aaf82995b4580d65c9c7a821dfb5b4908f8039&scene=21#wechat_redirect)有一套Redis面试题答案。
+
+工具nginx必备技能超级好用，高性能，基本不会挂掉的服务器，功能多多，解决各种问题。
+
+数据库的设计能力，mysql必备，最基础的数据库工具，免费好用，对它基本的参数优化，慢查询日志分析，主从复制的配置，至少要成为半个mysql dba。其他nosql数据库如mongodb。
+
+还有[队列中间件](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483886&idx=1&sn=0e34ee731772bd06c71370a5b90230c3&chksm=9f21147aa8569d6cc9f79132dbc03fbf633b9d4f5452f47ec0b16af1f608c12977603c880c9c&scene=21#wechat_redirect)。如消息推送，可以先把消息写入数据库，推送放队列服务器上，由推送服务器去队列获取处理，这样就可以将消息放数据库和队列里后直接给用户反馈，推送过程则由推送服务器和队列服务器完成，好处异步处理、缓解服务器压力，解藕系统。
+
+以上纯粹是常用的技术，还有很多自己慢慢去摸索吧；因为要知道的东西很多，所以要成为一名合格的架构师，必须要有强大的自学能力，没有人会手把手的教给你所有的东西。
+
+想成为架构师不是懂了一大堆技术就可以了，这些是解决问题的基础、是工具，不懂这些怎么去提解决方案呢？这是成为架构师的必要条件。
+
+架构师还要针对业务特点、系统的性能要求提出能解决问题成本最低的设计方案才合格，人家一个几百人用户的系统，访问量不大，数据量小，你给人家上集群、上分布式存储、上高端服务器，为了架构而架构，这是最扯淡的，架构师的作用就是第一满足业务需求，第二最低的硬件网络成本和技术维护成本。
+
+架构师还要根据业务发展阶段，提前预见发展到下一个阶段系统架构的解决方案，并且设计当前架构时将架构的升级扩展考虑进去，做到易于升级;否则等系统瓶颈来了，出问题了再去出方案，或现有架构无法扩展直接扔掉重做，或扩展麻烦问题一大堆，这会对企业造成损失。
+
+程序员应该需要都有自知之明，会就是会，不会就是不会，互联网发展迅速的时代，只能跟上时代的进步，才不会被淘汰。
 
 

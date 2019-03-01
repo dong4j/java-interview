@@ -250,6 +250,7 @@ function concurrent(title) {
       collapsable: false,
       children: [
         '',
+        'threadlocal',
       ]
     }
   ]
@@ -368,6 +369,7 @@ function spring(title) {
       collapsable: false,
       children: [
         '',
+        'expand_point',
       ]
     }
   ]
@@ -390,6 +392,7 @@ function spring_boot(title) {
       collapsable: false,
       children: [
         '',
+        'boot_start'
       ]
     }
   ]
