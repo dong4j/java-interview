@@ -518,3 +518,63 @@ public class ThreadTest4 {
 ## CAS的实现原理以及问题
 
 ## AQS的实现原理
+
+35.并行和并发有什么区别？
+
+36.线程和进程的区别？
+
+37.守护线程是什么？
+
+38.创建线程有哪几种方式？
+
+39.说一下 runnable 和 callable 有什么区别？
+
+40.线程有哪些状态？
+
+41.sleep() 和 wait() 有什么区别？
+
+42.notify()和 notifyAll()有什么区别？
+
+43.线程的 run()和 start()有什么区别？
+
+44.创建线程池有哪几种方式？
+
+45.线程池都有哪些状态？
+
+46.线程池中 submit()和 execute()方法有什么区别？
+
+47.在 java 程序中怎么保证多线程的运行安全？
+
+48.多线程锁的升级原理是什么？
+
+49.什么是死锁？
+
+50.怎么防止死锁？
+
+51.ThreadLocal 是什么？有哪些使用场景？
+
+52.说一下 synchronized 底层实现原理？
+
+53.synchronized 和 volatile 的区别是什么？
+
+54.synchronized 和 Lock 有什么区别？
+
+55.synchronized 和 ReentrantLock 区别是什么？
+
+56.说一下 atomic 的原理？
+
+## 在什么场景下会使用 volatile, 说下 volatile 底层实现, 画一下内存模型, 说一下内存屏障, 说一下 happen-before 原则
+
+## Synchronized 的使用和原理, 有没有看过编译后的文件, Synchronized 和 ReentrantLock 区别
+
+## ConcurrentHashMap 在1.8 之前怎么实现的? 1.8 之后怎么实现, 手写 put 和 get 部分源码, ConcurrentHashMap 在 1.8 中如何实现多线程扩容的
+
+## 解释一下线程池的几个参数, 你一般怎么创建线程池, 不同线程池有什么区别, 你一般会用哪一个, 为什么, 一般怎么顶一个线程数, 怎么统计线程池提交了多少任务, 完成了多少任务
+
+## 写一个线程安全的单例
+
+## TreeMap 是线程安全的嘛. 如何实现一个线程安全的 TreeMap, ComcurrentSkipListMap 讲一下
+
+## 什么是悲观锁, 乐观锁, 无锁几次有哪些, CAS 是如何保证的, 讲一下 AutomicLong 和 LongAdder 的区别和底层实现
+
+## Synchronized 为什么是重量级锁, Synchronized 锁的升级过程讲一下

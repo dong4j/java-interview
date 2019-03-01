@@ -5,8 +5,6 @@
 3. Integer 实际是对象的引用, 当 new 一个 Integer 时, 实际上是生成一个指针指向此对象；而 int 则是直接存储数据值
 4. Integer 的默认值是 null, int 的默认值是0
 
-## 更多小点:
-
 关于 Integer 和 int 的比较
 
 1. 由于 Integer 变量实际上是对一个 Integer 对象的引用, 所以两个通过 new 生成的 Integer 变量永远是不相等的（因为 new 生成的是两个对象, 其内存地址不同, 使用“==”时, 比较的是地址, 可以用String类比）.

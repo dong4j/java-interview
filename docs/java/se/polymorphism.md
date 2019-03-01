@@ -97,6 +97,80 @@ class InterImpl implements Inter{}
 Inter i = new InterImpl();
 ```
 
+## 深入理解JAVA多态原理
+
+多态的概念：同一操作作用于不同对象，可以有不同的解释，有不同的执行结果，这就是多态，简单来说就是：父类的引用指向子类对象。下面先看一段代码
+
+```java
+package polymorphism;
+
+class Dance {
+    public void play(){
+        System.out.println("Dance.play");
+    }
+    public void play(int i){
+        System.out.println("Dance.play" + i);
+    }
+}
+
+class Latin extends Dance {
+    public void play(){
+        System.out.println("Latin.play");
+    }
+    public void play(char c){
+        System.out.println("Latin.play" + c);
+    }
+}
+class Jazz extends Dance {
+    public void play(){
+        System.out.println("Jazz.play");
+    }
+    public void play(double d){
+        System.out.println("Jazz.play" + d);
+    }
+}
+public class Test {
+    public void perform(Dance dance){
+        dance.play();
+    }
+    public static void main(String[] args){
+        new Test().perform(new Latin()); // Upcasting
+    }
+}
+```
+
+执行结果：Latin.play。这个时候你可能会发现perform（）方法里面并没有类似“if 参数类型 = Dance/Latin”这样的判断，其实这就是多态的特性，它消除了类型之间的耦合关系，令我们可以把一个对象不当做它所属的特定类型来对待，而是当做其基类的类型来对待。因为上面的Test代码完全可以这么写：
+
+```java
+public class Test {
+    public void perform(Latin dance){
+        dance.play();
+    }
+    public void perform(Jazz dance){
+        dance.play();
+    }
+    public static void main(String[] args){
+        new Test().perform(new Latin()); // Upcasting
+    }
+}
+```
+
+但是这样你会发现，如果增加更多新的类似perform（）或者自Dance导出的新类，就会增加大量的工作，而通过比较就会知道第一处代码会占优势，这正是多态的优点所在，它改善了代码的组织结构和可读性，同时保证了可扩展性。
+
+那么到底JVM是怎么指向Latin类中play（）的呢？为了解决这个问题，JAVA使用了后期绑定的概念。当向对象发送消息时，在编译阶段，编译器只保证被调用方法的存在，并对调用参数和返回类型进行检查，但是并不知道将被执行的确切代码，被调用的代码直到运行时才能确定。拿上面代码为例，JAVA在执行后期绑定时，JVM会从方法区中的Latin方法表中取到Latin对象的直接地址，这就是真正执行结果为什么是Latin.play的原因，在解释方法表之前，我们先了解一下绑定的概念。
+
+将一个方法调用同一个方法主体关联起来被称作绑定，JAVA中分为前期绑定和后期绑定（动态绑定或运行时绑定），在程序执行之前进行绑定（由编译器和连接程序实现）叫做前期绑定，因为在编译阶段被调用方法的直接地址就已经存储在方法所属类的常量池中了，程序执行时直接调用，具体解释请看最后参考资料地址。后期绑定含义就是在程序运行时根据对象的类型进行绑定，想实现后期绑定，就必须具有某种机制，以便在运行时能判断对象的类型，从而找到对应的方法，简言之就是必须在对象中安置某种“类型信”，JAVA中除了static方法、final方法（private方法属于）之外，其他的方法都是后期绑定。后期绑定会涉及到JVM管理下的一个重要的数据结构——方法表，方法表以数组的形式记录当前类及其所有父类的可见方法字节码在内存中的直接地址。
+
+动态绑定具体的调用过程为：
+
+1. 首先会找到被调用方法所属类的全限定名
+2. 在此类的方法表中寻找被调用方法，如果找到，会将方法表中此方法的索引项记录到常量池中（这个过程叫常量池解析），如果没有，编译失败。
+3. 根据具体实例化的对象找到方法区中此对象的方法表，再找到方法表中的被调用方法，最后通过直接地址找到字节码所在的内存空间。
+
+最后说明，域和静态方法都是不具有多态性的，任何的域访问操作都将由编译器解析，因此不是多态的。静态方法是跟类，而并非单个对象相关联的。对动态绑定还有不明白的请看资料链接，个人感觉分析的很到位
+
+参考资料：http://hxraid.iteye.com/blog/428891
+
 ## 总结
 
 - 使用父类类型的引用指向子类的对象;
@@ -104,4 +178,6 @@ Inter i = new InterImpl();
 - 如果子类中重写父类的方法,那么调用该方法,将会调用子类中重写后的实现; 
 - 在多态中,子类可以调用父类的所有非私有方法;
 - 父类的引用可以指向子类的对象,子类的引用不能指向父类的对象;
+
+
 

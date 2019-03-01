@@ -11,6 +11,58 @@
 ## 多并发情况下HashMap是否还会产生死循环
 ## TreeMap、HashMap、LindedHashMap的区别
 
+48) List、Set、Map 和 Queue 之间的区别 
+49）poll() 方法和 remove() 方法的区别？ 
+50）Java 中 LinkedHashMap 和 PriorityQueue 的区别是什么？ 
+51）ArrayList 与 LinkedList 的不区别？ 
+52）用哪两种方式来实现集合的排序？ 
+53）Java 中怎么打印数组？ 
+54）Java 中的 LinkedList 是单向链表还是双向链表？ 
+55）Java 中的 TreeMap 是采用什么树实现的？ 
+56) Hashtable 与 HashMap 有什么不同之处？ 
+57）Java 中的 HashSet，内部是如何工作的？ 
+58）写一段代码在遍历 ArrayList 时移除一个元素？ 
+59）我们能自己写一个容器类，然后使用 for-each 循环码？ 
+60）ArrayList 和 HashMap 的默认大小是多数？ 
+61）有没有可能两个不相等的对象有有相同的 hashcode？ 
+62）两个相同的对象会有不同的的 hash code 吗？ 
+63）我们可以在 hashcode() 中使用随机数字吗？ 
+64）Java 中，Comparator 与 Comparable 有什么不同？
+
+18.java 容器都有哪些？
+
+19.Collection 和 Collections 有什么区别？
+
+20.List、Set、Map 之间的区别是什么？
+
+21.HashMap 和 Hashtable 有什么区别？
+
+22.如何决定使用 HashMap 还是 TreeMap？
+
+23.说一下 HashMap 的实现原理？
+
+24.说一下 HashSet 的实现原理？
+
+25.ArrayList 和 LinkedList 的区别是什么？
+
+26.如何实现数组和 List 之间的转换？
+
+27.ArrayList 和 Vector 的区别是什么？
+
+28.Array 和 ArrayList 有何区别？
+
+29.在 Queue 中 poll()和 remove()有什么区别？
+
+30.哪些集合类是线程安全的？
+
+31.迭代器 Iterator 是什么？
+
+32.Iterator 怎么使用？有什么特点？
+
+33.Iterator 和 ListIterator 有什么区别？
+
+34.怎么确保一个集合不能被修改？
+
 常用集合类的使用、ArrayList 和 LinkedList 和 Vector 的区别 、SynchronizedList 和 Vector 的区别、HashMap、HashTable、ConcurrentHashMap 区别、
 
 Set 和 List 区别？Set 如何保证元素不重复？
