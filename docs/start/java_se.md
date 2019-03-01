@@ -1,4 +1,4 @@
-# Java SE 相关面试题
+# Java SE 
 
 ## 1. 什么是面向对象
 
@@ -336,13 +336,7 @@ Outer.Inner inner = new Outer.Inner();
 
 ## 32. int char long 各占多少字节数
 
-| type | 字节数 |
-|:---|:---|
-|boolean | 未指定, 至少一个字节.仅定义取字面值true和false| 
-|byte | 1 |
-|short & char | 2 |
-|int & float | 4 |
-|long & double | 8 |
+![](./imgs/44718b82.png)
 
 ## 33. [什么是单精度和双精度](../java/se/float_double.md)
 

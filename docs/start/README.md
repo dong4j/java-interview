@@ -2,66 +2,49 @@
 
 ## Java
 
-1. [Java 基础知识回顾](../java/se/)
-2. [集合相关详细解析](../java/collection/)
-3. [并发相关详细解析](../java/concurrent/)
-4. I/O
-5. JVM
+1. [Java SE](../java/se/)
+2. [集合](../java/collection/)
+3. [并发](../java/concurrent/)
+4. [I/O](../java/io/)
+5. [JVM](../java/jvm/)
 
 
 ## Web
 
-1. [Java Web 相关详细解析](../java/ee/)
+1. [Java Web](../java/ee/)
 
-## 算法
-
-## 数据结构
-
-## 数据库
-
-## 架构
-
-## 设计模式
-
+## [算法](../arithmetic/)
+## [数据结构](../structure/)
+## [数据库](../db/)
+## [架构](../design/)
+## [设计模式](../design-patterns/)
 ## 开发环境
-
-### windows
-
-### MacOS
-
-## Dubbo
-
-## Zookeeper
-
-## ElasticSearch
-
+### [Linux](../dev-env/linux-env/)
+### [MacOS](../dev-env/mac-env/)
+### [Windows](../dev-env/windows-env/)
+## [Dubbo](../dubbo/)
+## [Zookeeper](../zookeeper/)
+## [ElasticSearch](../elastic-search/)
 ## 框架
-
-### Spring
-
-### SpringMVC
-
-### Spring Boot
-
-### Spring Cloud
-
-### Mybatis
-
-## Linux
-
-## 微服务
-
-## MongoDB
-
+### [Spring](../framework/spring/)
+### [SpringMVC](../framework/spring-mvc/)
+### [Spring Boot](../framework/spring-boot/)
+### [Spring Cloud](../framework/spring-cloud/)
+### [Mybatis](../framework/mybatis/)
+## [Issues](../issue/)
+## [Linux](../linux/)
+## [微服务](../micro-service/)
+## [MongoDB](../mongodb/)
 ## MQ
-
-### ActiveMQ
-
-## Netty
-
-## Nginx
-
-## Redis
+### [ActiveMQ](../mq/activemq/)
+### [Kafka](../mq/kafka/)
+### [RabbitMQ](../mq/rabbitmq/)
+### [RocketMQ](../mq/rocketmq/)
+### [Open Message](../mq/open-message/)
+## [Netty](../netty/)
+## [Nginx](../nginx/)
+## [Redis](../redis/)
+## [Tools](../tools/)
 
 
 

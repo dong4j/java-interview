@@ -109,36 +109,82 @@ module.exports = {
         ],
         // 侧边栏
         sidebar: {
-          '/start/': gentStartSidebar("全部"),
-          '/java/se/': gentSESidebar("Java SE"),
-          '/java/ee/': gentEESidebar("Java EE"),
-          '/java/collection/': genCollectionSidebar("集合"),
+          '/start/': start(),
+          '/java/se/': se("Java SE"),
+          '/java/ee/': ee("Java EE"),
+          '/java/collection/': collection("集合"),
+          '/java/concurrent/': concurrent("多线程&&并发模型"),
+          '/java/io/': io("IO"),
+          '/java/jvm/': jvm("深入理解 Java 虚拟机"),
+          '/arithmetic/': arithmetic("算法"),
+          '/structure/': structure("数据结构"),
+          '/db/': db("数据库"),
+          '/design/': design("系统设计"),
+          '/design-patterns/': design_patterns("设计模式"),
+          '/dev-env/linux-env/': linux_env("Linux 环境配置"),
+          '/dev-env/mac-env/': mac_env("MacOS 环境配置"),
+          '/dev-env/windows-env/': windows_env("Windows 环境配置"),
+          '/dubbo/': dubbo("Dubbo"),
+          '/zookeeper/': zookeeper("Zookeeper"),
+          '/elastic-search/': elastic_search("ElasticSearch"),
+          '/framework/mybatis/': mybatis("Mybatis"),
+          '/framework/spring/': spring("Spring"),
+          '/framework/spring-mvc/': spring_mvc("Spring MVC"),
+          '/framework/spring-boot/': spring_boot("Spring Boot"),
+          '/framework/spring-cloud/': spring_cloud("Spring Cloud"),
+          '/issue/': issue("问题解决"),
+          '/linux/': linux("Linux"),
+          '/micro-service/': micro_service("微服务"),
+          '/mongodb/': mongodb("MongoDB"),
+          '/mq/activemq/': activemq("ActiveMQ"),
+          '/mq/kafka/': kafka("Kafka"),
+          '/mq/rabbitmq/': rabbitmq("RabbitMQ"),
+          '/mq/rocketmq/': rocketmq("RocketMQ"),
+          '/mq/open-message/': open_message("Open Message"),
+          '/netty/': netty("Netty"),
+          '/nginx/': nginx("Nginx"),
+          '/redis/': redis("Redis"),
+          '/tools/': tools("常用工具"),
         }
       }
     }
   }
 };
 
-function gentStartSidebar(title) {
+function start(title) {
   return [
     {
       title,
       collapsable: false,
       children: [
         '',
-        'foreword',
         'how-to-write-resume',
+        'foreword',
         'java_se',
-        'java_ee',
+        'io',
         'collection',
+        'thread',
         'concurrent',
-        'jvm'
+        'jvm',
+        'java_ee',
+        'design_patterns',
+        'kafka',
+        'myabtis',
+        'mysql',
+        'rabbitmq',
+        'redis',
+        'zookeeper',
+        'spring',
+        'springmvc',
+        'spring_boot',
+        'spring_cloud',
+        'coding',
+        'open_issus'
       ]
     }
   ]
 }
-
-function gentSESidebar(title) {
+function se(title) {
   return [
     {
       title,
@@ -162,18 +208,20 @@ function gentSESidebar(title) {
         'string_kind',
         'string_append',
         'string_switch',
+        'string_switch',
         'substring_jdk6_jdk7',
         'valueof_tostring',
         'hashcode',
         'generic',
         '一个简单问题不简单实现',
-        '原码_反码_补码'
+        '原码_反码_补码',
+        'reflect',
+        'jdk_compare'
       ]
     }
   ]
 }
-
-function gentEESidebar(title) {
+function ee(title) {
   return [
     {
       title,
@@ -184,14 +232,378 @@ function gentEESidebar(title) {
     }
   ]
 }
-
-function genCollectionSidebar(title) {
+function collection(title) {
   return [
     {
       title,
       collapsable: false,
       children: [
         'hashmap',
+      ]
+    }
+  ]
+}
+function concurrent(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function io(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function jvm(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'parents_dlegation_mode',
+        'object_reference',
+        'metaspace',
+        'gc',
+        'class',
+      ]
+    }
+  ]
+}
+function arithmetic(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function db(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function design(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function design_patterns(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'design_principles',
+        'safe_singleton',
+        'singleton',
+      ]
+    }
+  ]
+}
+function dubbo(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function elastic_search(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function mybatis(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function spring(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function spring_mvc(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function spring_boot(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function spring_cloud(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function linux_env(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function mac_env(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function windows_env(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function issue(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function linux(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function micro_service(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'distributed_transaction'
+      ]
+    }
+  ]
+}
+function mongodb(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function activemq(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function kafka(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function rabbitmq(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function rocketmq(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function open_message(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function netty(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function nginx(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function redis(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function zookeeper(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+      ]
+    }
+  ]
+}
+function tools(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'git',
+        'idea',
+        'maven',
+        'postman',
+      ]
+    }
+  ]
+}
+function structure(title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
       ]
     }
   ]

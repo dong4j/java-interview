@@ -1,4 +1,4 @@
-# Spring 相关面试题
+# Spring 
 
 90.为什么要使用 spring？
 
@@ -47,4 +47,11 @@ OOP面向名次领域，AOP面向动词领域。
 @Autowired 和 @Resource 的区别
 
 构造器注入和 setter 依赖注入，那种方式更好？ 
+
+## 简述Spring是怎么巧妙的解决bean循环依赖问题的？
+
+[Spring-bean的循环依赖以及解决方式](https://blog.csdn.net/u010853261/article/details/77940767)
+[Spring循环依赖的三种方式](https://blog.csdn.net/u010644448/article/details/59108799)
+
+
 
