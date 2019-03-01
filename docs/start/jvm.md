@@ -272,4 +272,7 @@ so you need not to create it.
 
 总结:jdbc数据库驱动程序最终的目的, 是为了程序员能拿到数据库连接, 而进行jdbc规范的数据库操作.拿到连接的过程是不需要你自己来实例化驱动程序的, 而是通过 DriverManger.getConnection(string str); .因此一般情况下, 对于程序员来说, 除非特别需求, 是不会自己去实例化一个数据库驱动使用里面的方法的.
 
-## static和final修改的成员变量的加载时机
+## static 和 final 修改的成员变量的加载时机
+
+
+## 字符串池、常量池（运行时常量池、Class 常量池）、intern

@@ -285,7 +285,7 @@ StringBuffer是线程不安全的,效率比StringBuffer高,在不考虑线程安
 		- 单线程操作大量数据,使用 `StringBuilder` ;
 		- 多线程操作大量数据,使用 `StringBuffer` ;
 	- 不建议使用 `String` 类的 "+" 进行频繁的字符串拼接,而是使用 `StringBuilder` 或者 `StringBuffer` 类;
-	- `StringBuilder` 一般使用在方法内部来完成类似"+"功能,因为线程不安全,用完后丢弃;
+	- `StringBuilder` 一般使用在方法内部来完成类似"+"功能,因为线程安全,用完后丢弃;
 	- `StringBuffer` 主要用在全局变量中;
 	- 相同情况下使用  `StirngBuilder`  相比使用 ` StringBuffer`  仅能获得 10%~15% 左右的性能提升, 但却要冒多线程不安全的风险.而在现实的模块化编程中, 负责某一模块的程序员不一定能清晰地判断该模块是否会放入多线程的环境中运行, 因此:除非确定系统的瓶颈是在  `StringBuffer`  上, 并且确定你的模块不会运行在多线程模式下, 才可以采用 `StringBuilder` ;否则还是用 `StringBuffer` .
 		

@@ -151,11 +151,23 @@ function gentSESidebar(title) {
         'access_modifier',
         'exception',
         'final_finally_finalize',
+        'value-transfer',
         'inner_class',
         'key_word',
         'new_instance_way',
+        'init_sequence',
+        'int_integer',
+        'float_double',
+        'wrapper_class',
         'string_kind',
-        'wrapper_class'
+        'string_append',
+        'string_switch',
+        'substring_jdk6_jdk7',
+        'valueof_tostring',
+        'hashcode',
+        'generic',
+        '一个简单问题不简单实现',
+        '原码_反码_补码'
       ]
     }
   ]

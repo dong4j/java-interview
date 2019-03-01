@@ -183,20 +183,22 @@ public class GenericsTestDemo {
 }
 ```
 
->运行结果:
+```
+运行结果:
 strTest.getX=Hello Generics!
 douTest.getX=33.0
 objTest.getX=java.lang.Object@19821f
+```
 
 和使用 “Object 泛型” 方式实现结果的完全一样, 但是这个 Demo 简单多了, 里面没有强制类型转换信息.
 下面解释一下上面泛型类的语法:
 
-使用 <T> 来声明一个类型持有者名称, 然后就可以把 T 当作一个类型代表来声明成员、参数和返回值类型.
+使用 `<T>` 来声明一个类型持有者名称, 然后就可以把 T 当作一个类型代表来声明成员、参数和返回值类型.
 当然 T 仅仅是个名字, 这个名字可以自行定义.
 
-class GenericsTest<T> 声明了一个泛型类, 这个 T 没有任何限制, 实际上相当于 Object 类型, 实际上相当于 class GenericsTest<T extends Object>.
+`class GenericsTest<T>` 声明了一个泛型类, 这个 T 没有任何限制, 实际上相当于 Object 类型, 实际上相当于 `class GenericsTest<T extends Object>`.
 
-与 Object 泛型类相比, 使用泛型所定义的类在声明和构造实例的时候, 可以使用 “<实际类型>” 来一并指定泛型类型持有者的真实类型.
+与 Object 泛型类相比, 使用泛型所定义的类在声明和构造实例的时候, 可以使用 `<实际类型>` 来一并指定泛型类型持有者的真实类型.
 类如
 `GenericsTest<Double> douTest=new GenericsTest<Double>(new Double("33"));`
 
@@ -209,14 +211,14 @@ class GenericsTest<T> 声明了一个泛型类, 这个 T 没有任何限制, 实
 
 **限制泛型**
 
-在上面的例子中, 由于没有限制 class GenericsTest<T> 类型持有者 T 的范围, 实际上这里的限定类型相当于 Object, 这和 “Object 泛型” 实质是一样的.
+在上面的例子中, 由于没有限制 `class GenericsTest<T>` 类型持有者 T 的范围, 实际上这里的限定类型相当于 Object, 这和 “Object 泛型” 实质是一样的.
 
 比如我们要限制 T 为集合接口类型.只需要这么做:
 `class GenericsTest<T extends Collection>`
 
 这样类中的泛型 T 只能是 Collection 接口的实现类, 传入非 Collection 接口编译会出错.
 
-注意:<T extends Collection> 这里的限定使用关键字 extends, 后面可以是类也可以是接口.
+注意:`<T extends Collection>` 这里的限定使用关键字 extends, 后面可以是类也可以是接口.
 
 但这里的 extends 已经不是继承的含义了, 
 **应该理解为 T 类型是实现 Collection 接口的类型**, 或者 **T 是继承了 XX 类的类型**.
@@ -265,7 +267,7 @@ public class Demo<T extends Comparable & Serializable> {
 
 **通配符泛型**
 
-为了解决类型被限制死了不能动态根据实例来确定的缺点, 引入了 “通配符泛型”, 针对上面的例子, 使用通配泛型格式为 <? extends Collection>
+为了解决类型被限制死了不能动态根据实例来确定的缺点, 引入了 “通配符泛型”, 针对上面的例子, 使用通配泛型格式为 `<? extends Collection>`
 
 "?" 代表未知类型, 这个类型是实现 Collection 接口.那么上面实现的方式可以写为:
 
@@ -278,8 +280,8 @@ public class CollectionGenTestDemo {
 }
 ```
 
-1. 如果只指定了 <?>, 而没有 extends, 则默认是允许 Object 及其下的任何 Java 类了.也就是任意类.
-2. 通配符泛型不单可以向上限制, 如 <? extends Collection>, 还可以向下限制, 如 <? super Double>, 表示类型只能接受 Double 及其上层父类类型, 如 Number、Object 类型的实例.
+1. 如果只指定了 `<?>`, 而没有 extends, 则默认是允许 Object 及其下的任何 Java 类了.也就是任意类.
+2. 通配符泛型不单可以向上限制, 如 `<? extends Collection>`, 还可以向下限制, 如 `<? super Double>`, 表示类型只能接受 Double 及其上层父类类型, 如 Number、Object 类型的实例.
 3. 泛型类定义可以有多个泛型参数, 中间用逗号隔开, 还可以定义泛型接口, 泛型方法.这些都与泛型类中泛型的使用规则类似.
 
 ### 泛型方法
@@ -315,17 +317,17 @@ public class Demo{
 }
 ```
 
-## List<?> 和 List<T > 的区别
+## `List<?>` 和 `List<T>` 的区别
 
-类型参数 "<T>" 和无界通配符 "<?>"
+类型参数 `<T>` 和无界通配符 `<?>`
 
-**<T> 声明一个泛型类或泛型方法.**
-**<?> 使用泛型类或泛型方法.**
+**`<T>` 声明一个泛型类或泛型方法.**
+**`<?>` 使用泛型类或泛型方法.**
 
 https://www.zhihu.com/question/31429113
 
-## Java 泛型 <? super T> 中 super 怎么 理解？与 extends 有何不同
+## Java 泛型 `<? super T>` 中 super 怎么 理解？与 extends 有何不同
 
-https://www.zhihu.com/question/20400700/answer/117464182
+https://www.zhihu.com/question/20400700/answer/117464182 
 
 
