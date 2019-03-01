@@ -1,5 +1,7 @@
 # Java 中创建对象的几种方式
 
+| 方式 | 作用|
+|:---|:---|
 | 使用new关键字 | 调用了构造函数 |
 | 使用Class类的newInstance方法 | 调用了构造函数 |
 | 使用Constructor类的newInstance方法 | 调用了构造函数 |

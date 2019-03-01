@@ -55,10 +55,6 @@ Father common block be called
 Father constructor be called
 Son common block be called
 Son constructor be called
- 
-Father common block be called
-Father constructor be called
-Son common block be called
 ```
 
 ## 总结:

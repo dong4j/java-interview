@@ -1,13 +1,5 @@
 # String 相关
 
-##  String 为什么是不可变的
-
-## 怎么改变不可变的 String 的值
-
-## 怎么向 Set 中存入相同的字符串
-
-## 在循环中拼接字符串的正确操作方式
-
 ## 1. String类
 
 字符串操作在编程中我们会大量使用,所以掌握字符串相关类对我们来说很重要.
@@ -288,10 +280,28 @@ StringBuffer是线程不安全的,效率比StringBuffer高,在不考虑线程安
 	- `StringBuilder` 一般使用在方法内部来完成类似"+"功能,因为线程安全,用完后丢弃;
 	- `StringBuffer` 主要用在全局变量中;
 	- 相同情况下使用  `StirngBuilder`  相比使用 ` StringBuffer`  仅能获得 10%~15% 左右的性能提升, 但却要冒多线程不安全的风险.而在现实的模块化编程中, 负责某一模块的程序员不一定能清晰地判断该模块是否会放入多线程的环境中运行, 因此:除非确定系统的瓶颈是在  `StringBuffer`  上, 并且确定你的模块不会运行在多线程模式下, 才可以采用 `StringBuilder` ;否则还是用 `StringBuffer` .
-		
-# 在Java虚拟机中, 字符串常量到底存放在哪
+	
+### 怎么向 Set 中存入相同的字符串
+	
+由于 StringBuilder 和 StringBuffer 都未重写 equals() 和 hashCode(), 因此可以使用 StringBuilder 或 StringBuffer 创建相同的字符串存入 Set 中
 
-## 前言
+```java
+@Test
+public void test3(){
+    StringBuffer stringBuffer1 = new StringBuffer("123");
+    StringBuffer stringBuffer2 = new StringBuffer("123");
+    StringBuilder stringBuilder1 = new StringBuilder("123");
+    StringBuilder stringBuilder2 = new StringBuilder("123");
+    Set<CharSequence> stringBuffers = new HashSet<>();
+    stringBuffers.add(stringBuffer1);
+    stringBuffers.add(stringBuffer2);
+    stringBuffers.add(stringBuilder1);
+    stringBuffers.add(stringBuilder2);
+    System.out.println(stringBuffers.size()); // 4
+}
+```
+
+### 在Java虚拟机中, 字符串常量到底存放在哪
 
 前阵子和朋友讨论一个问题: 字符串常量归常量池管理, 那比如 String str = "abc"; "abc"这个对象是放在内存中的哪个位置, 是字符串常量池中还是堆？
 

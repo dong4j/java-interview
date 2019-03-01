@@ -40,7 +40,7 @@ public static void main(String[] args) {
 }
 ```
 
-这里我们看到, jvm 是先调用 String 的 hashCode 方法得到 hash 值，然后将 case 中的常量换掉.
+这里我们看到, javac 编译后是先调用 String 的 hashCode 方法得到 hash 值，然后将 case 中的常量换掉.
 替换掉之后, 会使用 equals 进行比较, 因为 **不同的字符串 hash 后的 hashcode 可能相同**, 因此需要使用 equals 进行对比
 
 因此我们得出结论:
