@@ -61,26 +61,26 @@ module.exports = {
       .use(require('markdown-it-imsize'), { autofill: true })
     }
   },
-  themeConfig;: {
-    true,
-    searchMaxSuggestions;: 10,
+  themeConfig: {
+    editLinks: true,
+    searchMaxSuggestions: 10,
     // e'b将同时提取markdown中h2 和 h3 标题, 显示在侧边栏上.
-    sidebarDepth;: 2,
+    sidebarDepth: 2,
 
-    serviceWorker;: {
+    serviceWorker: {
       // 当网站更新（即 Service Worker 更新）时, 它会提供一个 refresh 按钮, 允许用户立刻刷新内容
       // Boolean | Object, 默认值是 undefined.
-      true,
+      updatePopup: true,
     },
-    {
-      "/";: {
-        "简体中文",
-        selectText;: "选择语言",
+    locales: {
+      "/": {
+        label: "简体中文",
+        selectText: "选择语言",
         // editLinkText: "在 GitHub 上编辑此页",
         // 文档更新时间:每个文件git最后提交的时间
-        lastUpdated;: "上次更新",
+        lastUpdated: "上次更新",
         // 导航栏
-        nav;: [
+        nav: [
           {
             text: '博客',
             link: 'https://dong4j.github.io/vue-blog/'
@@ -108,48 +108,48 @@ module.exports = {
           }
         ],
         // 侧边栏
-        sidebar;: {
-          '/start/';: start(),
-          '/java/se/';: se("Java SE"),
-          '/java/ee/';: ee("Java EE"),
-          '/java/collection/';: collection("集合"),
-          '/java/concurrent/';: concurrent("多线程&&并发模型"),
-          '/java/io/';: io("IO"),
-          '/java/jvm/';: jvm("深入理解 Java 虚拟机"),
-          '/arithmetic/';: arithmetic("算法"),
-          '/structure/';: structure("数据结构"),
-          '/db/';: db("数据库"),
-          '/design/';: design("系统设计"),
-          '/design-patterns/';: design_patterns("设计模式"),
-          '/dev-env/linux-env/';: linux_env("Linux 环境配置"),
-          '/dev-env/mac-env/';: mac_env("MacOS 环境配置"),
-          '/dev-env/windows-env/';: windows_env("Windows 环境配置"),
-          '/dubbo/';: dubbo("Dubbo"),
-          '/zookeeper/';: zookeeper("Zookeeper"),
-          '/elastic-search/';: elastic_search("ElasticSearch"),
-          '/framework/mybatis/';: mybatis("Mybatis"),
-          '/framework/spring/';: spring("Spring"),
-          '/framework/spring-mvc/';: spring_mvc("Spring MVC"),
-          '/framework/spring-boot/';: spring_boot("Spring Boot"),
-          '/framework/spring-cloud/';: spring_cloud("Spring Cloud"),
-          '/issue/';: issue("问题解决"),
-          '/linux/';: linux("Linux"),
-          '/micro-service/';: micro_service("微服务"),
-          '/mongodb/';: mongodb("MongoDB"),
-          '/mq/activemq/';: activemq("ActiveMQ"),
-          '/mq/kafka/';: kafka("Kafka"),
-          '/mq/rabbitmq/';: rabbitmq("RabbitMQ"),
-          '/mq/rocketmq/';: rocketmq("RocketMQ"),
-          '/mq/open-message/';: open_message("Open Message"),
-          '/netty/';: netty("Netty"),
-          '/nginx/';: nginx("Nginx"),
-          '/redis/';: redis("Redis"),
-          '/tools/';: tools("常用工具"),
+        sidebar: {
+          '/start/': start(),
+          '/java/se/': se("Java SE"),
+          '/java/ee/': ee("Java EE"),
+          '/java/collection/': collection("集合"),
+          '/java/concurrent/': concurrent("多线程&&并发模型"),
+          '/java/io/': io("IO"),
+          '/java/jvm/': jvm("深入理解 Java 虚拟机"),
+          '/arithmetic/': arithmetic("算法"),
+          '/structure/': structure("数据结构"),
+          '/db/': db("数据库"),
+          '/design/': design("系统设计"),
+          '/design-patterns/': design_patterns("设计模式"),
+          '/dev-env/linux-env/': linux_env("Linux 环境配置"),
+          '/dev-env/mac-env/': mac_env("MacOS 环境配置"),
+          '/dev-env/windows-env/': windows_env("Windows 环境配置"),
+          '/dubbo/': dubbo("Dubbo"),
+          '/zookeeper/': zookeeper("Zookeeper"),
+          '/elastic-search/': elastic_search("ElasticSearch"),
+          '/framework/mybatis/': mybatis("Mybatis"),
+          '/framework/spring/': spring("Spring"),
+          '/framework/spring-mvc/': spring_mvc("Spring MVC"),
+          '/framework/spring-boot/': spring_boot("Spring Boot"),
+          '/framework/spring-cloud/': spring_cloud("Spring Cloud"),
+          '/issue/': issue("问题解决"),
+          '/linux/': linux("Linux"),
+          '/micro-service/': micro_service("微服务"),
+          '/mongodb/': mongodb("MongoDB"),
+          '/mq/activemq/': activemq("ActiveMQ"),
+          '/mq/kafka/': kafka("Kafka"),
+          '/mq/rabbitmq/': rabbitmq("RabbitMQ"),
+          '/mq/rocketmq/': rocketmq("RocketMQ"),
+          '/mq/open-message/': open_message("Open Message"),
+          '/netty/': netty("Netty"),
+          '/nginx/': nginx("Nginx"),
+          '/redis/': redis("Redis"),
+          '/tools/': tools("常用工具"),
         }
       }
     }
   }
-}
+};
 function start(title) {
   return [
     {

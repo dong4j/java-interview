@@ -48,7 +48,6 @@ public class Son extends Father{
 ```
 
 ```java
-
 Father static block be called
 Son static block be called
 Father common block be called

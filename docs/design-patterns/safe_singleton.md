@@ -1,5 +1,6 @@
 # [如何创建完美的单例模式](http://sunluyao.com/2017/10/12/perfect-singleton.html)
 
+
 ![](./imgs/bbb4dfa8.png)
 
 设计模式在软件开发者中十分受欢迎。设计模式是对于常见软件问题的良好解决方案。单例模式是 Java 中[创建型设计模式](https://en.wikipedia.org/wiki/Creational_pattern)的一种。

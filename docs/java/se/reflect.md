@@ -60,7 +60,7 @@ jvm创建对象前，会先检查类是否加载，寻找类对应的class对象
 
 `java.lang.reflect` 包结构
 
-```java
+```python
 .
 ├── AccessibleObject.java
 ├── AnnotatedArrayType.java
@@ -207,7 +207,7 @@ class MethodClass {
 
 程序运行的结果如下:
 
-```java
+```python
 03-03 20:10 [ WARN] - [ main] i.d.i.r.MethodTest :: getMethods 获取的方法：
 03-03 20:10 [ INFO] - [ main] i.d.i.r.MethodTest :: public int info.dong4j.interview.reflect.MethodClass.add(int,int)
 03-03 20:10 [ INFO] - [ main] i.d.i.r.MethodTest :: public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException
@@ -269,7 +269,7 @@ Object obj = constructor.newInstance("23333");
 System.out.println(obj);
 ```
 
-[Class.newInstance() 和Constructor.newInstance() 之间的区别](./new_instance_way.md#_4-class-newinstance-和constructor-newinstance-之间的区别)
+[Class.newInstance() 和 Constructor.newInstance() 之间的区别](./new_instance_way.md#_4-class-newinstance-和constructor-newinstance-之间的区别)
 
 ### 7. 利用反射创建数组
 
@@ -409,6 +409,7 @@ Exception in thread "main" java.lang.NoSuchFieldException: count
 [单例模式](../../design-patterns/singleton.md)即一个类只有一个对象实例, 单例的实现方式有多种, 但是有几种单例的实现不安全, 我们可以使用反射来破坏单例
 
 ```java
+// todo-dong4j : (2019年03月03日 21:06) []
 
 ```
 
