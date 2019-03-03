@@ -62,11 +62,28 @@ module.exports = {
     }
   },
   themeConfig: {
+    // github 设置
+    // Assumes GitHub. Can also be a full GitLab url.
+    repo: 'https://github.com/dong4j',
+    // Customising the header label
+    // Defaults to "GitHub"/"GitLab"/"Bitbucket" depending on `themeConfig.repo`
+    repoLabel: 'Github',
+    // Optional options for generating "Edit this page" link
+    // if your docs are in a different repo from your main project:
+    docsRepo: 'https://github.com/dong4j/java-interview',
+    // if your docs are not at the root of the repo:
+    docsDir: 'docs',
+    // if your docs are in a specific branch (defaults to 'master'):
+    docsBranch: 'master',
+    // defaults to false, set to true to enable
     editLinks: true,
+    // custom text for edit link. Defaults to "Edit this page"
+    editLinkText: '在 GitHub 上编辑此页面',
+
+    sidebar: 'auto',
     searchMaxSuggestions: 10,
     // e'b将同时提取markdown中h2 和 h3 标题, 显示在侧边栏上.
     sidebarDepth: 2,
-
     serviceWorker: {
       // 当网站更新（即 Service Worker 更新）时, 它会提供一个 refresh 按钮, 允许用户立刻刷新内容
       // Boolean | Object, 默认值是 undefined.
@@ -82,26 +99,22 @@ module.exports = {
         // 导航栏
         nav: [
           {
-            text: '博客',
+            text: 'Blog',
             link: 'https://dong4j.github.io/vue-blog/'
-          },
-          {
-            text: 'GitHub',
-            link: 'https://github.com/dong4j'
           },
           {
             text: 'Archive',
             link: '/all'
           },
           {
-            text: "选择语言",
+            text: "Language",
             items: [
               {
-                text: "简体中文",
+                text: "中文",
                 link: "/"
               },
               {
-                text: "你以为我会写英文版?",
+                text: "No English",
                 link: "/"
               }
             ]
