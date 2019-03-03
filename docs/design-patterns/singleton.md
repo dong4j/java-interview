@@ -26,10 +26,11 @@ public final class Singleton {
 ```
 
 **防止反射实例化对象**
+
 利用反射生成对象
 
 ```java
-//使用反射破坏单例模式
+// 使用反射破坏单例模式
 Class c = Class.forName(Singleton.class.getName());  
 Constructor constructor = c.getDeclaredConstructor();  
 constructor.setAccessible(true);  
@@ -37,6 +38,7 @@ Singleton singleton = (Singleton)ct.newInstance();
 ```
 
 调用私有构造方法抛出异常
+
 **防止反序列化实例化对象**
 
 ```java
@@ -95,12 +97,12 @@ private Object readResolve() {
 * Singleton pattern example using Java Enumj
 */
 public enum EasySingleton{
-    INSTANCE;
+    INSTANCE
 }
 ```
 
 **使用反射破解枚举单例:**
-运行结果是抛出异常:Exception in thread "main" java.lang.NoSuchMethodException: cn.xing.test.Weekday.<init>()
+运行结果是抛出异常: `Exception in thread "main" java.lang.NoSuchMethodException: cn.xing.test.Weekday.<init>()`
 明明Weekday有一个无参的构造函数, 为何不能通过暴力反射访问?
 最新的Java Language Specification (§8.9)规定:  Reflective instantiation of enum types is prohibited. 这是java语言的内置规范.
 
@@ -126,4 +128,7 @@ private void readObjectNoData() throws ObjectStreamException {
         throw new InvalidObjectException("can't deserialize enum");  
 } 
 ```
-同暴力反射一样, Java Language Specification (§8.9)有着这样的规定: the special treatment by the serialization mechanism ensures that duplicate instances are never created as a result of deserialization.
+
+同暴力反射一样, Java Language Specification (§8.9)有着这样的规定: 
+
+the special treatment by the serialization mechanism ensures that duplicate instances are never created as a result of deserialization.

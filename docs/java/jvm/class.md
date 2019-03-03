@@ -1,4 +1,4 @@
-# [Class 文件格式详解](http://sunluyao.com/2018/12/06/class-parser.html)
+# [.class 文件格式详解](http://sunluyao.com/2018/12/06/class-parser.html)
 
 `Write once, run everywhere!`，我们都知道这是 `Java` 著名的宣传口号。
 不同的操作系统，不同的 CPU 具有不同的指令集，如何做到平台无关性，依靠的就是 Java 虚拟机。

@@ -1,4 +1,4 @@
-# 全部面试题
+# Think Deeply
 
 ## Java
 
@@ -18,13 +18,11 @@
 ## [数据库](../db/)
 ## [架构](../design/)
 ## [设计模式](../design-patterns/)
-## 开发环境
-### [Linux](../dev-env/linux-env/)
-### [MacOS](../dev-env/mac-env/)
-### [Windows](../dev-env/windows-env/)
+
 ## [Dubbo](../dubbo/)
 ## [Zookeeper](../zookeeper/)
 ## [ElasticSearch](../elastic-search/)
+
 ## 框架
 ### [Spring](../framework/spring/)
 ### [SpringMVC](../framework/spring-mvc/)
@@ -44,6 +42,12 @@
 ## [Netty](../netty/)
 ## [Nginx](../nginx/)
 ## [Redis](../redis/)
+
+## 开发环境
+### [Linux](../dev-env/linux-env/)
+### [MacOS](../dev-env/mac-env/)
+### [Windows](../dev-env/windows-env/)
+
 ## [Tools](../tools/)
 
 

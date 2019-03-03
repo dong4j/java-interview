@@ -274,8 +274,8 @@ public class MyClassLoader extends ClassLoader {
 在Java开发特别是数据库开发中, 经常会用到Class.forName( )这个方法.通过查询Java Documentation我们会发现使用Class.forName( )静态方法的目的是为了动态加载类.在加载完成后, 一般还要调用Class下的newInstance( )静态方法来实例化对象以便操作.
 
 因此, 单单使用Class.forName( )是动态加载类是没有用的, 其最终目的是为了实例化对象.
-Class.forName("")返回的是类
-Class.forName("").newInstance()返回的是object
+Class.forName("")返回的是 class 类对象
+Class.forName("").newInstance()返回的是 object
 
 刚才提到, Class.forName("");的作用是要求JVM查找并加载指定的类, 如果在类中有静态初始化器的话, JVM必然会执行该类的静态代码段.
 而在JDBC规范中明确要求这个Driver类必须向DriverManager注册自己, 即任何一个JDBC Driver的 Driver类的代码都必须类似如下:
