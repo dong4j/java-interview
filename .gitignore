@@ -65,3 +65,6 @@ typings/
 .idea
 .DS_Store
 dist
+*.ipr
+*.iws
+*.iml

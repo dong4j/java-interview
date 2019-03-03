@@ -1364,3 +1364,4 @@ java Javastack.java
 3. -XX:+UnlockCommercialFeatures以及-XX:+LogCommercialFeatures选项也不- 再需要
 4. 废弃了Pack200工具及其API
 
+[JDK11变化详解，JDK8升级JDK11详细指南](./jdk11.md)
