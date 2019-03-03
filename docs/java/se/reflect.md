@@ -26,6 +26,10 @@ Java 反射主要提供以下功能：
 
 [深入理解 Class.forName()](./class_forname.md).
 
+编译时的加载时静态, 运行时的加载是动态加载. 像 `new Student`() 就是静态加载, 如果在编译时未找到 Student 这个类, 编译会报错;
+
+`Class.forName("info.dong4j.Student")` 就是动态加载, 这种方式获取类的实例, 编译阶段不会有任何问题, 即使 Student 类不存在也能通过编译.
+
 我们在使用 IDE(Eclipse, IDEA)时, 当我们输入一个对象或类并想调用它的属性或方法时，一按点号，编译器就会自动列出它的属性或方法，这里就会用到反射。
 
 ## 反射的原理
@@ -129,33 +133,99 @@ StringBuilder str = new StringBuilder("123");
 Class<?> klass = str.getClass();
 ```
 
-通过 Class 类分别获取 Constructor, Field, Method 的方式
+**Class 的其他方法**
 
-### 2. 获取 Constructor
+| 方法 | 用途 |
+| --- | --- |
+| asSubclass(Class clazz) | 把传递的类的对象转换成代表其子类的对象 |
+| Cast | 把对象转换成代表类或是接口的对象 |
+| getClassLoader() | 获得类的加载器 |
+| getClasses() | 返回一个数组，数组中包含该类中所有公共类和接口类的对象 |
+| getDeclaredClasses() | 返回一个数组，数组中包含该类中所有类和接口类的对象 |
+| forName(String className) | 根据类名返回类的对象 |
+| getName() | 获得类的完整路径名字 |
+| newInstance() | 创建类的实例 |
+| getPackage() | 获得类的包 |
+| getSimpleName() | 获得类的名字 |
+| getSuperclass() | 获得当前类继承的父类的名字 |
+| getInterfaces() | 获得当前类实现的类或是接口 |
+
+### 2. 获取注解
+
+| 方法 | 用途 |
+| --- | --- |
+| getAnnotation(Class annotationClass) | 返回该类中与参数类型匹配的公有注解对象 |
+| getAnnotations() | 返回该类所有的公有注解对象 |
+| getDeclaredAnnotation(Class annotationClass) | 返回该类中与参数类型匹配的所有注解对象 |
+| getDeclaredAnnotations() | 返回该类所有的注解对象 |
+
+### 3. 获取泛型类型
 
 ```java
-// 获得使用特殊的参数类型的公共构造函数，
-Constructor getConstructor(Class[] params);
-// 获得类的所有公共构造函数
-Constructor[] getConstructors(); 
-// 获得使用特定参数类型的构造函数(与接入级别无关)
-Constructor getDeclaredConstructor(Class[] params);
-// 获得类的所有构造函数(与接入级别无关)
-Constructor[] getDeclaredConstructors(); 
+//People类
+public class People<T> {}
+//Person类继承People类
+public class Person<T> extends People<String> implements PersonInterface<Integer> {}
+//PersonInterface接口
+public interface PersonInterface<T> {}
+
+Person<String> person = new Person<>();
+//第一种方式 通过对象getClass方法
+Class<?> class1 = person.getClass();
+Type genericSuperclass = class1.getGenericSuperclass();//获取class对象的直接超类的 Type
+Type[] interfaceTypes = class1.getGenericInterfaces();//获取class对象的所有接口的Type集合
+
+
+getComponentType(genericSuperclass);
+getComponentType(interfaceTypes[0]);
 ```
 
-### 3. 获取 Method 与执行方法
+**getComponentType 具体实现**
 
 ```java
-// 获取一个特定的方法，其中第一个参数为方法名称，后面的参数为方法的参数对应Class的对象。
-Method getMethod(String name, Class<?>... parameterTypes); 
-// 获得某个类的所有公用（public）方法，包括其继承类的公用方法。
-Method[] getMethods();
-// 使用特写的参数类型，获得类声明的命名的方法
-Method getDeclaredMethod(String name, Class[] params); 
-// 获得类或接口声明的所有方法，包括公共、保护、默认（包）访问和私有方法，但不包括继承的方法。
-Method[] getDeclaredMethods();
+private Class<?> getComponentType(Type type) {
+    Class<?> componentType = null;
+    if (type instanceof ParameterizedType) {
+        //getActualTypeArguments()返回表示此类型实际类型参数的 Type 对象的数组。
+        Type[] actualTypeArguments = ((ParameterizedType) type).getActualTypeArguments();
+        if (actualTypeArguments != null && actualTypeArguments.length > 0) {
+        componentType = (Class<?>) actualTypeArguments[0];
+        }
+    } else if (type instanceof GenericArrayType) {
+        // 表示一种元素类型是参数化类型或者类型变量的数组类型
+        componentType = (Class<?>) ((GenericArrayType) type).getGenericComponentType();
+    } else {
+        componentType = (Class<?>) type;
+    }
+    return componentType;
+}
 ```
+
+### 3. 获取 Constructor
+
+| 方法 | 用途 |
+| --- | --- |
+| getConstructor(Class[] parameterTypes) | 获得该类中与参数类型匹配的公有构造方法 |
+| getConstructors() | 获得该类的所有公有构造方法 |
+| getDeclaredConstructor(Class[] parameterTypes) | 获得该类中与参数类型匹配的构造方法 |
+| getDeclaredConstructors() | 获得该类所有构造方法 |
+
+### 4. 获取 Method 与执行方法
+
+| 方法 | 用途 |
+| --- | --- |
+| getMethod(String name, Class<?>... parameterTypes) | 获得该类某个公有的方法 |
+| getMethods() | 获得该类所有公有的方法 |
+| getDeclaredMethod(String name, Class[] parameterTypes) | 获得该类某个方法 |
+| getDeclaredMethods() | 获得类或接口声明的所有方法，包括公共、保护、默认（包）访问和私有方法，但不包括继承的方法 |
+
+#### Method API
+
+Method代表类的方法。
+
+| 方法 | 用途 |
+| --- | --- |
+| invoke(Object obj, Object... args) | 传递object对象及参数调用该对象对应的方法 |
 
 完整的代码
 
@@ -227,28 +297,35 @@ class MethodClass {
 
 可以看到，通过 getMethods() 获取的方法可以获取到父类的方法,比如 java.lang.Object 下定义的各个方法。
 
-### 4. 获取 Field
+### 5. 获取 Field
 
-```java
-// 获得命名的公共字段 
-Field getField(String name);
-// 获得类的所有公共字段 
-Field[] getFields()
-// 获得类声明的命名的字段 
-Field getDeclaredField(String name);
-// 获得所有已声明的成员变量，但不能得到其父类的成员变量
-Field[] getDeclaredFields();
-```
+| 方法 | 用途 |
+| --- | --- |
+| getField(String name) | 获得某个公有的属性对象 |
+| getFields() | 获得所有公有的属性对象 |
+| getDeclaredField(String name) | 获得某个属性对象 |
+| getDeclaredFields() | 获得所有已声明的成员变量，但不能得到其父类的成员变量 |
 
-### 5. 判断是否为某个类的实例
+#### Field API
 
-我们用 instanceof 关键字来判断是否为某个类的实例。同时我们也可以借助反射中 Class 对象的 isInstance() 方法来判断是否为某个类的实例，它是一个 native 方法：
+Field代表类的成员变量（成员变量也称为类的属性）。
+
+| 方法 | 用途 |
+| --- | --- |
+| equals(Object obj) | 属性与obj相等则返回true |
+| get(Object obj) | 获得obj中对应的属性值 |
+| set(Object obj, Object value) | 设置obj中对应属性值 |
+
+### 6. 判断是否为某个类的实例
+
+我们用 instanceof 关键字来判断是否为某个类的实例。
+同时我们也可以借助反射中 Class 对象的 isInstance() 方法来判断是否为某个类的实例，它是一个 native 方法：
 
 ```java
 public native boolean isInstance(Object obj);
 ```
 
-### 6. 创建实例
+### 7. 创建实例
 
 - 使用 Class 对象的 newInstance() 方法来创建 Class 对象对应类的实例
 
@@ -271,7 +348,20 @@ System.out.println(obj);
 
 [Class.newInstance() 和 Constructor.newInstance() 之间的区别](./new_instance_way.md#_4-class-newinstance-和constructor-newinstance-之间的区别)
 
-### 7. 利用反射创建数组
+### 11. Class 中其他重要的方法
+
+| 方法 | 用途 |
+| --- | --- |
+| isAnnotation() | 如果是注解类型则返回true |
+| isAnnotationPresent(Class annotationClass) | 如果是指定类型注解类型则返回true |
+| isAnonymousClass() | 如果是匿名类则返回true |
+| isArray() | 如果是一个数组类则返回true |
+| isEnum() | 如果是枚举类则返回true |
+| isInterface() | 如果是接口类则返回true |
+| isLocalClass() | 如果是局部类则返回true |
+| isMemberClass() | 如果是内部类则返回true |
+
+### 8. 利用反射创建数组
 
 数组在 Java 里是比较特殊的一种类型，它可以赋值给一个 Object Reference
 
@@ -333,7 +423,7 @@ arrayOop Reflection::reflect_new_array(oop element_mirror, jint length, TRAPS) {
 
 另外，Array 类的 set 和 get 方法都为 native 方法，在 HotSpot JVM 里分别对应 Reflection::array_set 和 Reflection::array_get 方法
 
-### 8. 利用反射修改 String 的值
+### 9. 利用反射修改 String 的值
 
 我们知道 String 是不可变的类 ([String 为什么不可变](./string_immutable.md)).
 
@@ -404,14 +494,54 @@ Exception in thread "main" java.lang.NoSuchFieldException: count
 
 [JDK6 JDK7 JDK8 中 String 的区别 ](./string_resource.md#jdk6-jdk7-jdk8-中-string-的区别)
 
-### 9. 利用反射破坏单例模式
+### 10. 利用反射破坏单例模式
 
 [单例模式](../../design-patterns/singleton.md)即一个类只有一个对象实例, 单例的实现方式有多种, 但是有几种单例的实现不安全, 我们可以使用反射来破坏单例
 
 ```java
-// todo-dong4j : (2019年03月03日 21:06) []
+
 
 ```
+
+### 11. [读取配置文件]()
+
+```java
+@Slf4j
+public class ReadProperties {
+    // 获取配置文件属性
+    private static String getValue() throws Exception {
+        // 获取配置文件的对象
+        Properties properties = new Properties();
+        // 获取输入流
+
+        ClassLoader classLoader = ReadProperties.class.getClassLoader();
+        // getResource()方法会去classpath下找这个文件，获取到url resource, 得到这个资源后，调用url.getFile获取到 文件 的绝对路径
+        URL url = classLoader.getResource("app.properties");
+        assert url != null;
+        log.debug(url.getFile());
+        File file = new File(url.getFile());
+        FileReader reader = new FileReader(file);
+        // 将流加载到配置文件对象中
+        properties.load(reader);
+        reader.close();
+        return properties.getProperty("message");
+    }
+
+    public static void main(String[] args) throws Exception {
+        Class cla = Class.forName(getValue());
+        Method method = cla.getDeclaredMethod("showMessage", String.class);
+        Object object = cla.newInstance();
+        // 调用配置文件中类的方法
+        method.invoke(object, "hahaha");
+    }
+}
+```
+
+```properties
+message=info.dong4j.interview.reflect.Message
+```
+
+
 
 ## 反射与动态代理
 
