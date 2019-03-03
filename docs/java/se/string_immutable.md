@@ -1,5 +1,7 @@
 ---
 sidebar: auto
+prev: ./string_kind
+next: ./string_append
 ---
 
 # [String 为什么不可变](http://sunluyao.com/2017/09/28/why-string-final.html)

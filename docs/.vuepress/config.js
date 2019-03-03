@@ -83,7 +83,7 @@ module.exports = {
     sidebar: 'auto',
     searchMaxSuggestions: 10,
     // e'b将同时提取markdown中h2 和 h3 标题, 显示在侧边栏上.
-    sidebarDepth: 2,
+    sidebarDepth: 3,
     serviceWorker: {
       // 当网站更新（即 Service Worker 更新）时, 它会提供一个 refresh 按钮, 允许用户立刻刷新内容
       // Boolean | Object, 默认值是 undefined.
