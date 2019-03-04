@@ -4,7 +4,7 @@
 
 ![](./imgs/641df943.png)
 
-## 静态代理
+## 代码织入
 
 ### AspectJ 织入器weaver
 
@@ -20,6 +20,8 @@ post-compile weaving 对 class 文件进行织入
 
 load-time weaving(LTW) 当 class loader 加载类的时候进行织入 
 
+## 静态代理
+
 ## 动态代理
 
 ### JDK proxy
@@ -27,7 +29,6 @@ load-time weaving(LTW) 当 class loader 加载类的时候进行织入
 ### [CGLIB](./cglib.md)
 
 ### javasist
-
 
 ### JDK 动态代理和 CGLIB 动态代理的区别
 
