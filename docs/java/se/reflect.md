@@ -201,7 +201,7 @@ private Class<?> getComponentType(Type type) {
 }
 ```
 
-### 3. 获取 Constructor
+### 4. 获取 Constructor
 
 | 方法 | 用途 |
 | --- | --- |
@@ -210,7 +210,7 @@ private Class<?> getComponentType(Type type) {
 | getDeclaredConstructor(Class[] parameterTypes) | 获得该类中与参数类型匹配的构造方法 |
 | getDeclaredConstructors() | 获得该类所有构造方法 |
 
-### 4. 获取 Method 与执行方法
+### 5. 获取 Method 与执行方法
 
 | 方法 | 用途 |
 | --- | --- |
@@ -297,7 +297,7 @@ class MethodClass {
 
 可以看到，通过 getMethods() 获取的方法可以获取到父类的方法,比如 java.lang.Object 下定义的各个方法。
 
-### 5. 获取 Field
+### 6. 获取 Field
 
 | 方法 | 用途 |
 | --- | --- |
@@ -316,7 +316,7 @@ Field代表类的成员变量（成员变量也称为类的属性）。
 | get(Object obj) | 获得obj中对应的属性值 |
 | set(Object obj, Object value) | 设置obj中对应属性值 |
 
-### 6. 判断是否为某个类的实例
+### 7. 判断是否为某个类的实例
 
 我们用 instanceof 关键字来判断是否为某个类的实例。
 同时我们也可以借助反射中 Class 对象的 isInstance() 方法来判断是否为某个类的实例，它是一个 native 方法：
@@ -325,7 +325,7 @@ Field代表类的成员变量（成员变量也称为类的属性）。
 public native boolean isInstance(Object obj);
 ```
 
-### 7. 创建实例
+### 8. 创建实例
 
 - 使用 Class 对象的 newInstance() 方法来创建 Class 对象对应类的实例
 
@@ -348,7 +348,7 @@ System.out.println(obj);
 
 [Class.newInstance() 和 Constructor.newInstance() 之间的区别](./new_instance_way.md#_4-class-newinstance-和constructor-newinstance-之间的区别)
 
-### 11. Class 中其他重要的方法
+### 9. Class 中其他重要的方法
 
 | 方法 | 用途 |
 | --- | --- |
@@ -361,7 +361,7 @@ System.out.println(obj);
 | isLocalClass() | 如果是局部类则返回true |
 | isMemberClass() | 如果是内部类则返回true |
 
-### 8. 利用反射创建数组
+### 10. 利用反射创建数组
 
 数组在 Java 里是比较特殊的一种类型，它可以赋值给一个 Object Reference
 
@@ -423,7 +423,7 @@ arrayOop Reflection::reflect_new_array(oop element_mirror, jint length, TRAPS) {
 
 另外，Array 类的 set 和 get 方法都为 native 方法，在 HotSpot JVM 里分别对应 Reflection::array_set 和 Reflection::array_get 方法
 
-### 9. 利用反射修改 String 的值
+### 11. 利用反射修改 String 的值
 
 我们知道 String 是不可变的类 ([String 为什么不可变](./string_immutable.md)).
 
@@ -445,7 +445,11 @@ public final class String
     - 因为是 private 且没有对应的 setValue(), 因此外部不能访问此变量
     - 因为被 final 修饰, 意味着 String 一旦被初始化, 就不能改变.
 
-但是我们却可以通过反射来修改 String 的 value
+::: tip 这里有个小知识点
+value 数组被 [final](./final_finally_finalize.md) 修饰, 并不是说 value 数组里面的字符不能被修改, 而是 value 这个应用不能再指向其他数组.
+
+因此我们可以通过反射直接修改 value 数组里面的值
+:::
 
 ```java
 @Slf4j
@@ -494,16 +498,76 @@ Exception in thread "main" java.lang.NoSuchFieldException: count
 
 [JDK6 JDK7 JDK8 中 String 的区别 ](./string_resource.md#jdk6-jdk7-jdk8-中-string-的区别)
 
-### 10. 利用反射破坏单例模式
+### 12. 利用反射破坏单例模式
 
 [单例模式](../../design-patterns/singleton.md)即一个类只有一个对象实例, 单例的实现方式有多种, 但是有几种单例的实现不安全, 我们可以使用反射来破坏单例
 
 ```java
+@Slf4j
+public class DestroySingleton {
+
+    public static void main(String[] args) throws InvocationTargetException,
+                                                      NoSuchMethodException,
+                                                      InstantiationException,
+                                                      IllegalAccessException,
+                                                      NoSuchFieldException {
+        Singleton singleton1 = Singleton.getSingleton();
+
+        Singleton singleton2 = destroyByReflect(Singleton.class);
+
+        if (singleton1 == singleton2) {
+            log.info("destroyByReflect: 相等 singleton = {}", singleton1);
+        } else {
+            log.info("destroyByReflect: 不相等. singleton1 = {}, singleton2 = {}", singleton1, singleton2);
+        }
+    }
+
+    private static <T> T destroyByReflect(Class<T> tClass) throws NoSuchMethodException,
+                                                                  IllegalAccessException,
+                                                                  InvocationTargetException,
+                                                                  InstantiationException {
+        // 获取当前Class所表示类中指定的一个的构造器,和访问权限无关
+        Constructor<T> constructor = tClass.getDeclaredConstructor();
+        // 设置私有方法的可访问
+        constructor.setAccessible(true);
+        //实例化对象
+        return constructor.newInstance();
+    }
+}
 
 
+/**
+ * DCL方式获取单例
+ */
+class Singleton {
+    private volatile static Singleton singleton;
+
+    private Singleton() {
+    }
+
+    static Singleton getSingleton() {
+        if (singleton == null) {
+            synchronized (Singleton.class) {
+                if (singleton == null) {
+                    singleton = new Singleton();
+                    return singleton;
+                }
+            }
+        }
+        return singleton;
+    }
+}
 ```
 
-### 11. [读取配置文件]()
+输出结果:
+
+```
+不相等. singleton1 = info.dong4j.interview.reflect.Singleton@163f4c24, singleton2 = info.dong4j.interview.reflect.Singleton@159fdae5
+```
+
+### 13. [读取配置文件](https://github.com/dong4j/java-interview-code/blob/master/java-se/src/main/java/info/dong4j/interview/reflect/ReadProperties.java)
+
+通过反射读取配置文件, 从而动态加载 class
 
 ```java
 @Slf4j
@@ -541,11 +605,13 @@ public class ReadProperties {
 message=info.dong4j.interview.reflect.Message
 ```
 
-
+### 14. Apllo 动态刷新配置
 
 ## 反射与动态代理
 
 ## 反射与 Annotation
+
+通过反射解析 [Annotation](./annotation.md) 
 
 ## 反射的主要用途
 

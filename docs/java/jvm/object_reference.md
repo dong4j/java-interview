@@ -138,7 +138,7 @@ WeakReference<User>weakReference=new WeakReference<User>(new User());
 在JVM中, 虚引用是如下定义的, 下面引自JVM:
 
 ```java
-   public class PhantomReference<T> extends Reference<T> {
+public class PhantomReference<T> extends Reference<T> {
 
     /**
      * Returns this reference object's referent.  Because the referent of a
