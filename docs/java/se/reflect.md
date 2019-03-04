@@ -107,6 +107,8 @@ jvm创建对象前，会先检查类是否加载，寻找类对应的class对象
 - `java.lang.reflect.Method.java`：类的方法对象；
 - `java.lang.reflect.Field.java`：类的属性对象；
 
+通过反射解析 [Annotation](./annotation.md) 
+
 ### 1. 获取 Class 对象
 
 - 使用 Class.forName() 静态方法
@@ -180,7 +182,7 @@ getComponentType(genericSuperclass);
 getComponentType(interfaceTypes[0]);
 ```
 
-**getComponentType 具体实现**
+**getComponentType() 具体实现**
 
 ```java
 private Class<?> getComponentType(Type type) {
@@ -567,7 +569,7 @@ class Singleton {
 
 ### 13. [读取配置文件](https://github.com/dong4j/java-interview-code/blob/master/java-se/src/main/java/info/dong4j/interview/reflect/ReadProperties.java)
 
-通过反射读取配置文件, 从而动态加载 class
+通过反射读取配置文件来动态加载 class
 
 ```java
 @Slf4j
@@ -606,12 +608,6 @@ message=info.dong4j.interview.reflect.Message
 ```
 
 ### 14. Apllo 动态刷新配置
-
-## 反射与动态代理
-
-## 反射与 Annotation
-
-通过反射解析 [Annotation](./annotation.md) 
 
 ## 反射的主要用途
 
@@ -711,6 +707,260 @@ public class SelectOrderInfoRequestVO extends BaseRequestVO {
 **反射最重要的用途就是开发各种通用框架**
 
 很多框架（比如 Spring）都是配置化的（比如通过 XML 文件配置 Bean），为了保证框架的通用性，它们可能需要根据配置文件加载不同的对象或类，调用不同的方法，这个时候就必须用到反射，运行时动态加载需要加载的对象
+
+## 反射与动态代理
+
+利用Java反射机制你可以在运行期动态的创建接口的实现。
+`java.lang.reflect.Proxy` 类就可以实现这一功能。
+动态的代理的用途十分广泛，比如:
+
+1. 数据库连接和事物管理（transaction management）;
+2. 单元测试时用到的动态 mock 对象;
+3. AOP 中的方法拦截功能等等都使用到了动态代理;
+
+### 创建代理
+
+通过使用 Proxy.newProxyInstance() 方法创建动态代理。
+`newProxyInstance()` 方法有三个参数：
+
+1. 类加载器（ClassLoader）用来加载动态代理类。
+2. 一个要实现的接口的数组。
+3. 一个 InvocationHandler 把所有方法的调用都转到代理上。
+
+```java
+InvocationHandler handler = new MyInvocationHandler();
+MyInterface proxy = (MyInterface) Proxy.newProxyInstance(
+                            MyInterface.class.getClassLoader(),
+                            new Class[] { MyInterface.class },
+                            handler);
+```
+
+在执行完这段代码之后，变量 proxy 包含一个 MyInterface 接口的的动态实现。
+所有对 proxy 的调用都被转向到实现了 InvocationHandler 接口的 handler 上。
+
+### InvocationHandler 接口
+
+接口定义:
+
+```java
+public interface InvocationHandler {
+    Object invoke(Object proxy, Method method, Object[] args) throws Throwable;
+}
+```
+
+实现类定义:
+
+```java
+public class MyInvocationHandler implements InvocationHandler{
+
+  public Object invoke(Object proxy, Method method, Object[] args)
+  throws Throwable {
+    //do something "dynamic"
+  }
+}
+```
+
+传入 invoke() 方法中的 proxy 参数是实现要代理接口的动态代理对象.
+invoke() 方法中的 Method 对象参数代表了被动态代理的接口中要调用的方法，从这个method对象中你可以获取到这个方法名字，方法的参数，参数类型等等信息.
+Object数组参数包含了被动态代理的方法需要的方法参数。
+
+::: tip 注意
+原生数据类型（如int，long等等）方法参数传入等价的包装对象（如Integer， Long等等）。
+:::
+
+### 常见用例
+
+动态代理常被应用到以下几种情况中
+
+-数据库连接以及事物管理
+- 单元测试中的动态Mock对象
+- 自定义工厂与依赖注入（DI）容器之间的适配器
+- 类似AOP的方法拦截器
+
+#### 数据库连接以及事物管理
+
+```
+web controller --> proxy.execute(...);
+  proxy --> connection.setAutoCommit(false);
+  proxy --> realAction.execute();
+    realAction does database work
+  proxy --> connection.commit();
+```
+
+#### 单元测试中的动态Mock对象
+
+#### 自定义工厂与依赖注入（DI）容器之间的适配器
+
+#### 类似AOP的方法拦截器
+
+## 反射与类加载
+
+Java允许你在运行期动态加载和重载类，但是这个功能并没有像人们希望的那么简单直接.
+你可能会质疑为什么Java动态类加载特性是Java反射机制的一部分而不是Java核心平台的一部分。
+不管怎样，这篇文章被放到了Java反射系列里面而且也没有更好的系列来包含它了。
+
+### 类加载器
+
+所有Java应用中的类都是被java.lang.ClassLoader类的一系列子类加载的。因此要想动态加载类的话也必须使用java.lang.ClassLoader的子类。
+
+一个类一旦被加载时，这个类引用的所有类也同时会被加载。类加载过程是一个递归的模式，所有相关的类都会被加载。但并不一定是一个应用里面所有类都会被加载，与这个被加载类的引用链无关的类是不会被加载的，直到有引用关系的时候它们才会被加载。
+
+### 类加载体系
+
+在Java中类加载是一个有序的体系。当你新创建一个标准的Java类加载器时你必须提供它的父加载器。当一个类加载器被调用来加载一个类的时候，首先会调用这个加载器的父加载器来加载。如果父加载器无法找到这个类，这时候这个加载器才会尝试去加载这个类。
+
+### 类加载
+
+类加载器加载类的顺序如下：
+1、检查这个类是否已经被加载。
+2、如果没有被加载，则首先调用父加载器加载。
+3、如果父加载器不能加载这个类，则尝试加载这个类。
+
+当你实现一个有重载类功能的类加载器，它的顺序与上述会有些不同。类重载不会请求的他的父加载器来进行加载。在后面的段落会进行讲解。
+
+### 动态类加载
+
+动态加载一个类十分简单。你要做的就是获取一个类加载器然后调用它的loadClass()方法。下面是个例子：
+
+```java
+public class MainClass {
+
+  public static void main(String[] args){
+    ClassLoader classLoader = MainClass.class.getClassLoader();
+
+    try {
+        Class aClass = classLoader.loadClass("com.jenkov.MyClass");
+        System.out.println("aClass.getName() = " + aClass.getName());
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+    }
+
+}
+```
+
+### 动态类重载
+
+动态类重载有一点复杂。Java内置的类加载器在加载一个类之前会检查它是否已经被加载。因此重载一个类是无法使用Java内置的类加载器的，如果想要重载一个类你需要手动继承ClassLoader。
+
+在你定制ClassLoader的子类之后，你还有一些事需要做。所有被加载的类都需要被链接。这个过程是通过ClassLoader.resolve()方法来完成的。由于这是一个final方法，因此这个方法在ClassLoader的子类中是无法被重写的。resolve()方法是不会允许给定的ClassLoader实例链接一个类两次。所以每当你想要重载一个类的时候你都需要使用一个新的ClassLoader的子类。你在设计类重载功能的时候这是必要的条件。
+
+
+#### 自定义类重载
+
+在前面已经说过你不能使用已经加载过类的类加载器来重载一个类。因此你需要其他的ClassLoader实例来重载这个类。但是这又带来了一些新的挑战。
+
+所有被加载到Java应用中的类都以类的全名（包名 + 类名）作为一个唯一标识来让ClassLoader实例来加载。这意味着，类MyObject被类加载器A加载，如果类加载器B又加载了MyObject类，那么两个加载器加载出来的类是不同的。看看下面的代码：
+
+```java
+MyObject object = (MyObject)
+    myClassReloadingFactory.newInstance("com.jenkov.MyObject");
+```
+
+MyObject类在上面那段代码中被引用，它的变量名是object。这就导致了MyObject这个类会被这段代码所在类的类加载器所加载。
+
+如果myClassReloadingFactory工厂对象使用不同的类加载器重载MyObject类，你不能把重载的MyObject类的实例转换（cast）到类型为MyObject的对象变量。一旦MyObject类分别被两个类加载器加载，那么它就会被认为是两个不同的类，尽管它们的类的全名是完全一样的。你如果尝试把这两个类的实例进行转换就会报ClassCastException。
+你可以解决这个限制，不过你需要从以下两个方面修改你的代码：
+1、标记这个变量类型为一个接口，然后只重载这个接口的实现类。
+2、标记这个变量类型为一个超类，然后只重载这个超类的子类。
+
+请看下面这两个例子：
+
+```java
+MyObjectInterface object = (MyObjectInterface)
+    myClassReloadingFactory.newInstance("com.jenkov.MyObject");
+
+MyObjectSuperclass object = (MyObjectSuperclass)
+    myClassReloadingFactory.newInstance("com.jenkov.MyObject");
+```
+
+只要保证变量的类型是超类或者接口，这两个方法就可以正常运行，当它们的子类或是实现类被重载的时候超类跟接口是不会被重载的。
+
+为了保证这种方式可以运行你需要手动实现类加载器然后使得这些接口或超类可以被它的父加载器加载。当你的类加载器加载MyObject类时，超类MyObjectSuperclass或者接口MyObjectSuperclass也会被加载，因为它们是MyObject的依赖。你的类加载器必须要代理这些类的加载到同一个类加载器，这个类加载器加载这个包括接口或者超类的类。
+
+### 类加载/重载示例
+
+光说不练假把式。让我们看看一个简单的例子。下面这个例子是一个类加载器的子类。注意在这个类不想被重载的情况下它是如何把对一个类的加载代理到它的父加载器上的。如果一个类被它的父加载器加载，这个类以后将不能被重载。记住，一个类只能被同一个ClassLoader实例加载一次。
+就像我之前说的那样，这仅仅是一个简单的例子，通过这个例子会向你展示类加载器的基本行为。这并不是一个可以让你直接用于设计你项目中类加载器的模板。你自己设计的类加载器应该不仅仅只有一个，如果你想用来重载类的话你可能会设计很多加载器。并且你也不会像下面这样将需要加载的类的路径硬编码（hardcore）到你的代码中。
+
+```java
+public class MyClassLoader extends ClassLoader{
+
+    public MyClassLoader(ClassLoader parent) {
+        super(parent);
+    }
+
+    public Class loadClass(String name) throws ClassNotFoundException {
+        if(!"reflection.MyObject".equals(name))
+                return super.loadClass(name);
+
+        try {
+            String url = "file:C:/data/projects/tutorials/web/WEB-INF/" +
+                            "classes/reflection/MyObject.class";
+            URL myUrl = new URL(url);
+            URLConnection connection = myUrl.openConnection();
+            InputStream input = connection.getInputStream();
+            ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+            int data = input.read();
+
+            while(data != -1){
+                buffer.write(data);
+                data = input.read();
+            }
+
+            input.close();
+
+            byte[] classData = buffer.toByteArray();
+
+            return defineClass("reflection.MyObject",
+                    classData, 0, classData.length);
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+}
+```
+
+下面是使用MyClassLoader的例子：
+
+```java
+public static void main(String[] args) throws
+    ClassNotFoundException,
+    IllegalAccessException,
+    InstantiationException {
+
+    ClassLoader parentClassLoader = MyClassLoader.class.getClassLoader();
+    MyClassLoader classLoader = new MyClassLoader(parentClassLoader);
+    Class myObjectClass = classLoader.loadClass("reflection.MyObject");
+
+    AnInterface2       object1 =
+            (AnInterface2) myObjectClass.newInstance();
+
+    MyObjectSuperClass object2 =
+            (MyObjectSuperClass) myObjectClass.newInstance();
+
+    //create new class loader so classes can be reloaded.
+    classLoader = new MyClassLoader(parentClassLoader);
+    myObjectClass = classLoader.loadClass("reflection.MyObject");
+
+    object1 = (AnInterface2)       myObjectClass.newInstance();
+    object2 = (MyObjectSuperClass) myObjectClass.newInstance();
+
+}
+```
+
+下面这个就是被加载的reflection.MyObject类。注意它既继承了一个超类并且也实现了一个接口。这样做仅仅是为了通过例子演示这个特性。在你自定义的情况下你可能仅会实现一个类或者继承一两个接口。
+
+```java
+public class MyObject extends MyObjectSuperClass implements AnInterface2{
+    //... body of class ... override superclass methods
+    //    or implement interface methods
+}
+```
 
 ## 反射的特点
 
