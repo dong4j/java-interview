@@ -12,12 +12,13 @@
     "docs:build": "vuepress build docs"
   },
   "keywords": [],
-  "author": "",
+  "author": "dong4j",
   "license": "ISC",
   "dependencies": {
     "markdown-it": "^8.4.2",
     "markdown-it-imsize": "^2.0.1",
-    "markdown-it-task-lists": "^2.1.1"
+    "markdown-it-task-lists": "^2.1.1",
+    "vuepress-theme-reco": "^0.2.1"
   },
   "devDependencies": {
     "vuepress": "^0.14.3"

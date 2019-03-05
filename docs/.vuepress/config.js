@@ -1,4 +1,6 @@
 module.exports = {
+  // 需要 yarn add vuepress-theme-reco
+  theme: 'reco',
   locales: {
     "/": {
       lang: "zh-CN",
@@ -63,10 +65,10 @@ module.exports = {
   themeConfig: {
     // github 设置
     // Assumes GitHub. Can also be a full GitLab url.
-    repo: 'https://github.com/dong4j',
+    // repo: 'https://github.com/dong4j',
     // Customising the header label
     // Defaults to "GitHub"/"GitLab"/"Bitbucket" depending on `themeConfig.repo`
-    repoLabel: 'Github',
+    // repoLabel: 'Github',
     // Optional options for generating "Edit this page" link
     // if your docs are in a different repo from your main project:
     docsRepo: 'https://github.com/dong4j/java-interview',
@@ -99,22 +101,27 @@ module.exports = {
         nav: [
           {
             text: 'Blog',
-            link: 'https://dong4j.github.io/vue-blog/'
+            link: 'https://dong4j.github.io/vue-blog/',
+            icon: 'reco-home'
           },
+          { text: 'Tags', link: '/tags/', icon: 'reco-tag'},
           {
             text: 'Archive',
-            link: '/all'
+            link: '/all',
+            icon: 'reco-category'
           },
           {
-            text: "Language",
+            text: "Contact",
             items: [
               {
-                text: "中文",
-                link: "/"
+                text: "Github",
+                link: "https://github.com/dong4j",
+                icon: 'reco-github'
               },
               {
-                text: "No English",
-                link: "/"
+                text: "WeChat",
+                link: "/",
+                icon: 'reco-wechat'
               }
             ]
           }

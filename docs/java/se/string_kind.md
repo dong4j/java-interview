@@ -1,9 +1,18 @@
-# String 相关
+---
+sidebar: auto
+title: String 相关
+date: 2019-03-05 15:39
+author: dong4j
+tags:
+- String
+---
 
-## 1. String类
-
+::: tip
 字符串操作在编程中我们会大量使用,所以掌握字符串相关类对我们来说很重要.
 Java为我们提供了 3 种操作字符串的类.由于 `String` 类的特殊,有必要了解一下Java运行时内存的概念,才能更好的理解字符串相关类的底层操作.
+:::
+
+<!-- more -->
 
 ## Java中内存知识
 

@@ -1,4 +1,17 @@
-# Java 中拼接字符串的几种方法效率对比
+---
+sidebar: auto
+title: Java 中拼接字符串的几种方法效率对比
+date: 2019-03-05 15:39
+author: dong4j
+tags:
+- String
+---
+
+::: tip 执行效率
+StringBuffer > StringBuilder > StringUtils.join > concat > +
+:::
+
+<!-- more -->
 
 先来做一个测试
 

@@ -1,9 +1,18 @@
 ---
 sidebar: auto
-footer: MIT Licensed | Copyright © dong4j
+title: String 源码解析
+date: 2019-03-05 15:39
+author: dong4j
+tags:
+- String
+- 源码
 ---
 
-# String 源码解析 
+::: tip
+撸一撸 String 源码, 了解一下 String 的底层实现.
+:::
+
+<!-- more -->
 
 String 类的定义 (JDK8), 这里截取几个重要的字段和方法.
 
