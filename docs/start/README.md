@@ -37,7 +37,7 @@
 ## [Linux](../linux/)
 ## [微服务](../micro-service/)
 ## [MongoDB](../mongodb/)
-## MQ
+## [MQ](../mq/)
 ### [ActiveMQ](../mq/activemq/)
 ### [Kafka](../mq/kafka/)
 ### [RabbitMQ](../mq/rabbitmq/)

@@ -126,9 +126,93 @@ module.exports = {
             ]
           }
         ],
+
         // 侧边栏
         sidebar: {
-          '/start/': start("面试题"),
+          // 配置 /start/ 页的侧边栏显示
+          '/start/': [
+            {
+                title: '🛋 导读',
+              collapsable: false,
+                children: [
+                  'how-to-write-resume',
+                  'introduction',
+                ]
+            },
+            {
+              title: 'Java 相关面试题',
+              collapsable: false,
+              children: [
+                '/java/se/',
+                '/java/ee/',
+                '/java/jvm/',
+                '/java/io/',
+                '/java/collection/',
+                '/java/concurrent/'
+              ]
+            },
+            {
+              title: '框架相关面试题',
+              collapsable: false,
+              children: [
+                '/framework/mybatis/',
+                '/framework/spring-mvc/',
+                '/framework/spring-boot/',
+                '/framework/spring-cloud/'
+              ]
+            },
+            {
+              title: '消息中间件',
+              collapsable: false,
+              children: [
+                '/mq/activemq/',
+                '/mq/kafka/',
+                '/mq/rabbitmq/',
+                '/mq/rocketmq/',
+                '/mq/open-message/'
+              ]
+            },
+            {
+              title: '开放性问题',
+              collapsable: false,
+              children: [
+                'coding',
+                'open_issus',
+                'hr'
+              ]
+            },
+            {
+              collapsable: false,
+              children: [
+                '/netty/',
+                '/dubbo/',
+                '/zookeeper/',
+                '/mongodb/',
+                '/nginx/',
+                '/db/',
+                '/arithmetic/',
+                '/structure/',
+                '/design/',
+                '/design-patterns/',
+                '/micro-service/',
+                '/elastic-search/',
+                '/redis/',
+                '/issue/',
+                '/linux/',
+              ]
+            },
+            {
+              title: '开发环境',
+              children: [
+                '/dev-env/linux-env/',
+                '/dev-env/mac-env/',
+                '/dev-env/windows-env/',
+                '/tools/'
+              ]
+            }
+          ],
+
+          // 配置 /java/se/ 页的侧边栏显示
           '/java/se/': se("Think Deeply - Java SE"),
           '/java/ee/': ee("Think Deeply - Java EE"),
           '/java/collection/': collection("Think Deeply - 集合"),
@@ -163,55 +247,18 @@ module.exports = {
           '/dev-env/linux-env/': linux_env("Fuck yourself - Linux 环境配置"),
           '/dev-env/mac-env/': mac_env("Fuck yourself - MacOS 环境配置"),
           '/dev-env/windows-env/': windows_env("Fuck yourself - Windows 环境配置"),
-          '/tools/': tools("Fuck yourself - 常用工具"),
-          // fallback
-          '/': [
-            '',        /* / */
-            'contact', /* /contact.html */
-            'about'    /* /about.html */
-          ]
+          '/tools/': tools("Fuck yourself - 常用工具")
         }
       }
     }
   }
 };
-function start(title) {
-  return [
-    {
-      title,
-      // 这是是否永远为展开状态
-      // collapsable: false,
-      children: [
-        'how-to-write-resume',
-        'introduction.md',
-        '/java/se/',
-        '/java/ee/',
-        '/java/jvm/',
-        '/java/io/',
-        '/java/collection/',
-        'thread',
-        'concurrent',
-        'design_patterns',
-        'kafka',
-        'myabtis',
-        'mysql',
-        'rabbitmq',
-        'redis',
-        'zookeeper',
-        'spring',
-        'springmvc',
-        'spring_boot',
-        'spring_cloud',
-        'coding',
-        'open_issus'
-      ]
-    }
-  ]
-}
+
 function se(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
         'abstract_interface',
         'access_modifier',
@@ -257,6 +304,7 @@ function ee(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
         'get_post',
         'tomcat',
@@ -269,6 +317,7 @@ function collection(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
         'hashmap',
       ]
@@ -279,8 +328,8 @@ function concurrent(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
-        '',
         'threadlocal',
       ]
     }
@@ -290,8 +339,8 @@ function io(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
-        '',
       ]
     }
   ]
@@ -300,6 +349,7 @@ function jvm(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
         'parents_dlegation_mode',
         'object_reference',
@@ -316,6 +366,7 @@ function arithmetic(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
         '',
       ]
@@ -326,8 +377,8 @@ function db(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
-        '',
       ]
     }
   ]
@@ -336,8 +387,8 @@ function design(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
-        '',
       ]
     }
   ]
@@ -346,8 +397,8 @@ function design_patterns(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
-        '',
         'design_principles',
         'safe_singleton',
         'singleton',
@@ -361,8 +412,8 @@ function dubbo(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
-        '',
       ]
     }
   ]
@@ -371,8 +422,8 @@ function elastic_search(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
-        '',
       ]
     }
   ]
@@ -381,8 +432,8 @@ function mybatis(title) {
   return [
     {
       title,
+      collapsable: false,
       children: [
-        '',
       ]
     }
   ]
@@ -417,7 +468,8 @@ function spring_boot(title) {
       collapsable: false,
       children: [
         '',
-        'boot_start'
+        'boot_start',
+        'expand_point'
       ]
     }
   ]
@@ -517,7 +569,6 @@ function activemq(title) {
       title,
       collapsable: false,
       children: [
-        '',
       ]
     }
   ]
@@ -528,7 +579,6 @@ function kafka(title) {
       title,
       collapsable: false,
       children: [
-        '',
       ]
     }
   ]
@@ -539,7 +589,7 @@ function rabbitmq(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        'test'
       ]
     }
   ]
@@ -583,7 +633,6 @@ function nginx(title) {
       title,
       collapsable: false,
       children: [
-        '',
       ]
     }
   ]
@@ -594,7 +643,6 @@ function redis(title) {
       title,
       collapsable: false,
       children: [
-        '',
       ]
     }
   ]

@@ -856,7 +856,7 @@ JAVA反射机制是在运行状态中, 对于任意一个类, 都能够知道这
 
 ### Java 异常类层次结构图
 
-![](imgs/e145d356.png)
+![](./imgs/e145d356.png)
 
    在 Java 中, 所有的异常都有一个共同的祖先java.lang包中的 **Throwable类**.Throwable: 有两个重要的子类:**Exception(异常)** 和 **Error(错误)** , 二者都是 Java 异常处理的重要子类, 各自都包含大量子类.
 
