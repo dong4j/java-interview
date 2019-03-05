@@ -894,6 +894,55 @@ JAVA反射机制是在运行状态中, 对于任意一个类, 都能够知道这
 
 78.常见的异常类有哪些？
 
+* 基本概念
+
+* UnsupportedOperationException是什么
+
+* NullPointerException 和 ArrayIndexOutOfBoundException 之间有什么相同之处
+
+* Error 和 Exception有什么区别
+
+* 什么是受检查的异常，什么是运行时异常
+
+* 运行时异常与一般异常有何异同
+
+* 简述一个你最常见到的runtime exception(运行时异常)
+
+* finally
+
+* 如果执行finally代码块之前方法返回了结果，或者JVM退出了，finally块中的代码还会执行吗
+
+* try里有return，finally还执行么？那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后
+
+* 在什么情况下，finally语句不会执行
+
+* finally关键词在异常处理中如何使用
+
+* throw 和 throws 有什么区别？
+
+* OOM你遇到过哪些情况？你是怎么搞定的？
+
+* SOF你遇到过哪些情况？
+
+* 既然我们可以用RuntimeException来处理错误，那么你认为为什么Java中还存在检查型异常
+
+* 当自己创建异常类的时候应该注意什么
+
+* 导致空指针异常的原因
+
+* 异常处理 handle or declare 原则应该如何理解
+
+* 怎么利用 JUnit 来测试一个方法的异常
+
+* catch块里别不写代码有什么问题
+
+* 你曾经自定义实现过异常吗？怎么写的
+
+* 什么是 异常链
+
+* 在try块中可以抛出异常吗
+
+
 ## 34 获取用键盘输入常用的的两种方法
 
 方法1:通过 Scanner

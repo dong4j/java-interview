@@ -1,5 +1,9 @@
 # Think Deeply
 
+:tada: :100:
+
+[[toc]]
+
 ## Java
 
 1. [Java SE](../java/se/)

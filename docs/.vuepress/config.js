@@ -47,14 +47,13 @@ module.exports = {
   // base: '/web_accumulate/', // 这是部署到github相关的配置 下面会讲
   markdown: {
     // 代码块显示行号
-    lineNumbers: false,
+    lineNumbers: true,
     anchor: {
       permalink: true
     },
     toc: {
       includeLevel: [1, 2]
-    }
-    ,
+    },
     config: md => {
       // 使用更多 markdown-it 插件！
       md.use(require('markdown-it-task-lists'))
@@ -78,7 +77,7 @@ module.exports = {
     // defaults to false, set to true to enable
     editLinks: true,
     // custom text for edit link. Defaults to "Edit this page"
-    editLinkText: '在 GitHub 上编辑此页面',
+    editLinkText: '查看原文|编辑此页',
 
     sidebar: 'auto',
     searchMaxSuggestions: 10,
@@ -171,7 +170,6 @@ function start(title) {
       children: [
         '',
         'how-to-write-resume',
-        'foreword',
         'java_se',
         'io',
         'collection',

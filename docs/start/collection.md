@@ -28,6 +28,7 @@
 62）两个相同的对象会有不同的的 hash code 吗？ 
 63）我们可以在 hashcode() 中使用随机数字吗？ 
 64）Java 中，Comparator 与 Comparable 有什么不同？
+* fail-fast 与 fail-safe 机制有什么区别
 
 18.java 容器都有哪些？
 

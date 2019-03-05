@@ -1,12 +1,13 @@
 ---
 sidebar: auto
+footer: MIT Licensed | Copyright © dong4j
 ---
 
 # String 源码解析 
 
 String 类的定义 (JDK8), 这里截取几个重要的字段和方法.
 
-```java
+```java{1}
 public final class String
     implements java.io.Serializable, Comparable<String>, CharSequence {
     /** The value is used for character storage. */
