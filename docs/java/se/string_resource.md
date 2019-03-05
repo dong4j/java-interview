@@ -1,5 +1,5 @@
 ---
-sidebar: auto
+sidebar: false
 title: String 源码解析
 date: 2019-03-05 15:39
 author: dong4j
@@ -7,6 +7,8 @@ tags:
 - String
 - 源码
 ---
+
+[[toc]]
 
 ::: tip
 撸一撸 String 源码, 了解一下 String 的底层实现.

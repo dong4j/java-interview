@@ -1,8 +1,8 @@
-# Think Deeply
+# 项目介绍
 
 :tada: :100:
 
-[[toc]]
+<!--[[toc]]-->
 
 ## Java
 
@@ -15,7 +15,7 @@
 
 ## Web
 
-1. [Java Web](../java/ee/)
+<!--1. [Java Web](../java/ee/)-->
 
 ## [算法](../arithmetic/)
 ## [数据结构](../structure/)

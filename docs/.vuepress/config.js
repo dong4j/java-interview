@@ -1,6 +1,6 @@
 module.exports = {
   // 需要 yarn add vuepress-theme-reco
-  theme: 'reco',
+  // theme: 'reco',
   locales: {
     "/": {
       lang: "zh-CN",
@@ -128,7 +128,7 @@ module.exports = {
         ],
         // 侧边栏
         sidebar: {
-          '/start/': start(),
+          '/start/': start("面试题"),
           '/java/se/': se("Think Deeply - Java SE"),
           '/java/ee/': ee("Think Deeply - Java EE"),
           '/java/collection/': collection("Think Deeply - 集合"),
@@ -164,6 +164,12 @@ module.exports = {
           '/dev-env/mac-env/': mac_env("Fuck yourself - MacOS 环境配置"),
           '/dev-env/windows-env/': windows_env("Fuck yourself - Windows 环境配置"),
           '/tools/': tools("Fuck yourself - 常用工具"),
+          // fallback
+          '/': [
+            '',        /* / */
+            'contact', /* /contact.html */
+            'about'    /* /about.html */
+          ]
         }
       }
     }
@@ -173,17 +179,18 @@ function start(title) {
   return [
     {
       title,
-      collapsable: false,
+      // 这是是否永远为展开状态
+      // collapsable: false,
       children: [
-        '',
         'how-to-write-resume',
-        'java_se',
-        'io',
-        'collection',
+        'introduction.md',
+        '/java/se/',
+        '/java/ee/',
+        '/java/jvm/',
+        '/java/io/',
+        '/java/collection/',
         'thread',
         'concurrent',
-        'jvm',
-        'java_ee',
         'design_patterns',
         'kafka',
         'myabtis',
@@ -205,7 +212,6 @@ function se(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
         'abstract_interface',
         'access_modifier',
@@ -238,7 +244,7 @@ function se(title) {
         'string_switch',
         'substring_jdk6_jdk7',
         'try_with_resources',
-        'value-transfer',
+        'value_transfer',
         'valueof_tostring',
         'wrapper_class',
         '一个简单问题不简单实现',
@@ -251,9 +257,10 @@ function ee(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
-        'get_post'
+        'get_post',
+        'tomcat',
+        'tomcat_class_load'
       ]
     }
   ]
@@ -262,7 +269,6 @@ function collection(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
         'hashmap',
       ]
@@ -273,7 +279,6 @@ function concurrent(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
         '',
         'threadlocal',
@@ -285,7 +290,6 @@ function io(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
         '',
       ]
@@ -296,14 +300,13 @@ function jvm(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
-        '',
         'parents_dlegation_mode',
         'object_reference',
         'metaspace',
         'gc',
         'class',
+        'class_load',
         'dcl',
       ]
     }
@@ -313,7 +316,6 @@ function arithmetic(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
         '',
       ]
@@ -324,7 +326,6 @@ function db(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
         '',
       ]
@@ -335,7 +336,6 @@ function design(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
         '',
       ]
@@ -346,7 +346,6 @@ function design_patterns(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
         '',
         'design_principles',
@@ -362,7 +361,6 @@ function dubbo(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
         '',
       ]
@@ -373,7 +371,6 @@ function elastic_search(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
         '',
       ]
@@ -384,7 +381,6 @@ function mybatis(title) {
   return [
     {
       title,
-      collapsable: false,
       children: [
         '',
       ]

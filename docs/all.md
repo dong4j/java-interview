@@ -20,5 +20,5 @@ sidebar: auto
 
 ## Java EE
 
-- [JavaEE 总结](start/java_ee.md)
+- [JavaEE 总结](java/ee/)
 - [GET 和 POST 区别](java/ee/get_post.md)
