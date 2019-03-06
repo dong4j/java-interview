@@ -45,7 +45,7 @@
 
 ---
 
-## [Changelog 更新日志](./github/changelog.md)
+## [Changelog 更新日志](./docs/github/changelog.md)
 
 **Star and watch**, 时刻掌握最新面试题 💪
 
