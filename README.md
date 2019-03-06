@@ -59,7 +59,7 @@
 
 目前来讲, 此项目仍然有很多地方需要完善, 此项目的文档收集与网络, 再者由于个人能力有限, 有些知识点未理解到位或者理解错误, 希望有经验的大佬前来帮我共同完善本项目, 鞠躬. 
 
-在你着手准备给这个项目提交一些新内容前, 请务必阅读「贡献」相关内容说明与规范 > [contribute.md](./github/contribute.md)
+在你着手准备给这个项目提交一些新内容前, 请务必阅读「贡献」相关内容说明与规范 > [contribute.md](./docs/github/contribute.md)
 
 ## License 许可  [![知识共享许可协议](https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
