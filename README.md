@@ -2,10 +2,11 @@
 
 <h1 align="center">Fuck Java Interview</h1>
 
-<h3 align="center">🍳💡🎉</h3>
+<h3 align="center">🍳  💡  🎉</h3>
 
 <p align="center">
-<strong>学习整理大量 Java 面试题</strong><br>
+<strong>学习整理大量 Java 面试题</strong>
+<br />
 通过面试题检验知识点的掌握程度, 了解最新的技术栈, 时刻保持学习的热情 😎
 </p>
 
