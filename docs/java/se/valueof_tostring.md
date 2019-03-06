@@ -1,4 +1,4 @@
-# Java 中 String.valueof() 和 Integer.toString() 的不同
+# String.valueof() 和 Integer.toString() 的区别
 
 平常经常使用这两个方法进行**int**类型转**String**，一般情况也不区分，今天就深究一下，它们**的区别**，平常应该使用**那个方法更好**一些。
 

@@ -163,7 +163,7 @@ Extension ClassLoader, 该加载器由sun.misc.Launcher$ExtClassLoader实现, �
 **应用程序类加载器:**
 Application ClassLoader, 该类加载器由sun.misc.Launcher$AppClassLoader来实现, 它负责加载用户类路径(ClassPath)所指定的类, 开发者可以直接使用该类加载器, 如果应用程序中没有自定义过自己的类加载器, 一般情况下这个就是程序中默认的类加载器.
 
-### [双亲委派模型](./parents_dlegation_mode.md)
+### [👉双亲委派模型](./parents_dlegation_mode.md)
 
 ::: tip 双亲委派模型的工作流程
 如果一个类加载器收到了类加载的请求, 它首先不会自己去尝试加载这个类, 而是把请求委托给父加载器去完成, 依次向上, 因此, 所有的类加载请求最终都应该被传递到顶层的启动类加载器中, 只有当父加载器在它的搜索范围中没有找到所需的类时, 即无法完成该加载, 子加载器才会尝试自己去加载该类.

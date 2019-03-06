@@ -1,6 +1,6 @@
-# I/O NIO, BIO, AIO
+# I/O NIO BIO AIO
 
-## Java?IO与NIO
+## IO 与 NIO
 
 **NIO是为了弥补IO操作的不足而诞生的，NIO的一些新特性有：非阻塞I/O，选择器，缓冲以及管道。管道（Channel），缓冲（Buffer） ，选择器（ Selector）是其主要特征**。
 

@@ -8,10 +8,10 @@ prev: ./string_kind
 next: ./string_append
 ---
 
-# [String 为什么不可变](http://sunluyao.com/2017/09/28/why-string-final.html)
+# [👉String 为什么不可变](http://sunluyao.com/2017/09/28/why-string-final.html)
 
 ::: tip
-[String 类源码解析](./string_resource.md)
+[👉String 类源码解析](./string_resource.md)
 :::
 
 众所周知, `String` 是一个不可变的，由 `final` 修饰的类。那么它的不可变性体现在哪里呢? 看下面一段简单的代码：

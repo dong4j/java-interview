@@ -135,12 +135,12 @@ module.exports = {
                 title: '🛋 导读',
               collapsable: false,
                 children: [
-                  'how-to-write-resume',
+                  'how_to_write_resume',
                   'introduction',
                 ]
             },
             {
-              title: 'Java 相关面试题',
+              title: '💼 Java 相关面试题',
               collapsable: false,
               children: [
                 '/java/se/',
@@ -152,7 +152,7 @@ module.exports = {
               ]
             },
             {
-              title: '框架相关面试题',
+              title: '🏠 框架相关面试题',
               collapsable: false,
               children: [
                 '/framework/mybatis/',
@@ -162,7 +162,7 @@ module.exports = {
               ]
             },
             {
-              title: '消息中间件',
+              title: '📲 消息中间件',
               collapsable: false,
               children: [
                 '/mq/activemq/',
@@ -173,7 +173,7 @@ module.exports = {
               ]
             },
             {
-              title: '开放性问题',
+              title: '🦠 开放性问题',
               collapsable: false,
               children: [
                 'coding',
@@ -202,7 +202,7 @@ module.exports = {
               ]
             },
             {
-              title: '开发环境',
+              title: '💻 开发环境',
               children: [
                 '/dev-env/linux-env/',
                 '/dev-env/mac-env/',
@@ -294,8 +294,8 @@ function se(title) {
         'value_transfer',
         'valueof_tostring',
         'wrapper_class',
-        '一个简单问题不简单实现',
-        '原码_反码_补码',
+        'swap_integer',
+        'computer_code',
       ]
     }
   ]

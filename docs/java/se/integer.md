@@ -12,7 +12,7 @@
 public final class Integer extends Number implements Comparable<Integer>{}
 ```
 
-`Inetger` 是不可变类，无法被继承。关于 **不可变类** 的详细介绍，可以阅读 [String 为什么不可变](./string_immutable.md)。
+`Inetger` 是不可变类，无法被继承。关于 **不可变类** 的详细介绍，可以阅读 [👉String 为什么不可变](./string_immutable.md)。
 `Integer` 继承了抽象类 `Number`，并实现了它的下列方法: `byteValue()` `shortValue()``intValue()` `longValue()` `floatValue()` `doubleValue()`，将 `int` 转换为其他基本类型的值，实现方法都是强转。
 `Integer` 还实现了 `Comparable` 接口，因此也具备了比较对象大小的能力，其 `compareTo()` 方法具体实现如下：
 
@@ -741,5 +741,5 @@ int reverseBytes(int i) ： 以字节为单位反转二进制补码
 
 一个小小的 `Integer` 类，从头到尾读完也花了不少时间，还是那句名言，`Read the fuck sorce code!`,源代码所能给予你的回馈，肯定是你意想不到的。
 
-[带注释 `Integer.java` 源代码](./integer_source.md)
+[👉带注释 `Integer.java` 源代码](./integer_source.md)
 

@@ -34,7 +34,7 @@ Java 反射主要提供以下功能：
 
 `Class.forName("类的全限定名")` 就是通过类的全限定名来生成一个当前类的 class 对象, 然后调用 .newInstance() 来实例化当前类的实例
 
-[深入理解 Class.forName()](./class_forname.md).
+[👉深入理解 Class.forName()](./class_forname.md).
 
 编译时的加载时静态, 运行时的加载是动态加载. 像 `new Student`() 就是静态加载, 如果在编译时未找到 Student 这个类, 编译会报错;
 
@@ -52,7 +52,7 @@ Java 程序从源代码到运行需要以下 3 个步骤:
 
 当 JVM 把 .class 文件加载到内存中后, 会生成对应的 `java.lang.Class` 对象. 这个 class 对象就是对当前加载的类的一个元数据的描述, 比如 类名, 父类, 包含的方法等.
 
-[深入理解 Java 中的 Class 类](./class.md)
+[👉深入理解 Java 中的 Class 类](./class.md)
 
 ![](./imgs/6a23bb7c.png)
 
@@ -117,7 +117,7 @@ jvm创建对象前，会先检查类是否加载，寻找类对应的class对象
 - `java.lang.reflect.Method.java`：类的方法对象；
 - `java.lang.reflect.Field.java`：类的属性对象；
 
-通过反射解析 [Annotation](./annotation.md) 
+通过反射解析 [👉Annotation](./annotation.md) 
 
 ### 1. 获取 Class 对象
 

@@ -7,6 +7,7 @@
 | 使用Constructor类的newInstance方法 | 调用了构造函数 |
 | 使用clone方法 | 没有调用构造函数 |
 | 使用反序列化 | 没有调用构造函数 |
+| Objenesis | 调用了构造函数 |
 
 ## 1. 使用 new 关键字
 
@@ -71,7 +72,7 @@ Employee emp5 = (Employee) in.readObject();
 
 ## 7. [Objenesis](https://blog.csdn.net/ghaohao/article/details/80472500)
 
-Objenesis 是专门用于实例化一些特殊 Java 对象的一个工具, 如私有构造方法, 带参数的构造等不能通过class.newInstance()实例化的, 通过它可以轻松完成.
+Objenesis 是专门用于实例化一些特殊 Java 对象的一个工具, 如私有构造方法, 带参数的构造等不能通过 `class.newInstance()` 实例化的, 通过它可以轻松完成.
 
 
 

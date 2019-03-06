@@ -1,7 +1,8 @@
 # JDK6 和JDK7 中 substring 的原理及区别
   
 转一篇不错的文章, 原文地址如下: 
-[http://www.hollischuang.com/archives/1232](http://www.hollischuang.com/archives/1232)
+
+[👉http://www.hollischuang.com/archives/1232](http://www.hollischuang.com/archives/1232)
 
 `substring(int beginIndex, int endIndex)` 方法在**jdk 6**和**jdk 7**中的实现是不同的.
 了解他们的区别可以帮助你更好的使用他.
