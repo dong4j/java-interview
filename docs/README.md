@@ -4,12 +4,12 @@ heroImage: /hero.png
 actionText: Fuck it →
 actionLink: /start/
 features:
-- title: 
-  details: 
-- title: 
-  details: 
-- title: 
-  details: 
+- title: 🍳
+  details: Java 面试题收集整理, 打造最强大的面试题库
+- title: 💡
+  details: 根据面试题检验 Java 知识点是否掌握
+- title: 🎉
+  details: 附带分享开发经验, 营造和谐社会主义价值观
 footer: 2018 ©dong4j. Released under the CC BY-NC-SA 4.0 International License.
 ---
 
