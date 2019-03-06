@@ -2,11 +2,7 @@
 
 :tada: :100:
 
-![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Open Issues](http://githubbadges.herokuapp.com/boennemann/badges/issues.svg?style=flat)](https://github.com/dong4j/java-interview/issues) [![star this repo](http://githubbadges.com/star.svg?user=dong4j&repo=java-interview&style=flat)](https://github.com/dong4j/java-interview) ![](https://img.shields.io/github/last-commit/dong4j/java-interview.svg) ![](https://img.shields.io/github/repo-size/dong4j/java-interview.svg)
-
-[[toc]]
-
-[👉Contribute](../github/contribute.md)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Open Issues](http://githubbadges.herokuapp.com/boennemann/badges/issues.svg?style=flat)](https://github.com/dong4j/java-interview/issues) [![star this repo](http://githubbadges.com/star.svg?user=dong4j&repo=java-interview&style=flat)](https://github.com/dong4j/java-interview) ![](https://img.shields.io/github/last-commit/dong4j/java-interview.svg) ![](https://img.shields.io/github/repo-size/dong4j/java-interview.svg)
 
 # Todo list
 

@@ -307,6 +307,7 @@ function se(title) {
         'wrapper_class',
         'swap_integer',
         'computer_code',
+        ''
       ]
     }
   ]
@@ -319,7 +320,8 @@ function ee(title) {
       children: [
         'get_post',
         'tomcat',
-        'tomcat_class_load'
+        'tomcat_class_load',
+        ''
       ]
     }
   ]
@@ -331,6 +333,7 @@ function collection(title) {
       collapsable: false,
       children: [
         'hashmap',
+        ''
       ]
     }
   ]
@@ -342,6 +345,7 @@ function concurrent(title) {
       collapsable: false,
       children: [
         'threadlocal',
+        ''
       ]
     }
   ]
@@ -352,6 +356,7 @@ function io(title) {
       title,
       collapsable: false,
       children: [
+        ''
       ]
     }
   ]
@@ -369,6 +374,7 @@ function jvm(title) {
         'class',
         'class_load',
         'dcl',
+        ''
       ]
     }
   ]
@@ -379,7 +385,7 @@ function arithmetic(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -390,6 +396,7 @@ function db(title) {
       title,
       collapsable: false,
       children: [
+        ''
       ]
     }
   ]
@@ -400,6 +407,7 @@ function design(title) {
       title,
       collapsable: false,
       children: [
+        ''
       ]
     }
   ]
@@ -415,6 +423,7 @@ function design_patterns(title) {
         'singleton',
         'cglib',
         'proxy',
+        ''
       ]
     }
   ]
@@ -425,6 +434,7 @@ function dubbo(title) {
       title,
       collapsable: false,
       children: [
+        ''
       ]
     }
   ]
@@ -435,6 +445,7 @@ function elastic_search(title) {
       title,
       collapsable: false,
       children: [
+        ''
       ]
     }
   ]
@@ -445,6 +456,7 @@ function mybatis(title) {
       title,
       collapsable: false,
       children: [
+        ''
       ]
     }
   ]
@@ -455,8 +467,8 @@ function spring(title) {
       title,
       collapsable: false,
       children: [
-        '',
         'expand_point',
+        ''
       ]
     }
   ]
@@ -467,7 +479,7 @@ function spring_mvc(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -478,9 +490,9 @@ function spring_boot(title) {
       title,
       collapsable: false,
       children: [
-        '',
         'boot_start',
-        'expand_point'
+        'expand_point',
+        ''
       ]
     }
   ]
@@ -491,7 +503,7 @@ function spring_cloud(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -502,7 +514,7 @@ function linux_env(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -513,7 +525,7 @@ function mac_env(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -524,7 +536,7 @@ function windows_env(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -535,7 +547,7 @@ function issue(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -546,7 +558,7 @@ function linux(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -557,8 +569,8 @@ function micro_service(title) {
       title,
       collapsable: false,
       children: [
-        '',
-        'distributed_transaction'
+        'distributed_transaction',
+        ''
       ]
     }
   ]
@@ -569,7 +581,7 @@ function mongodb(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -580,6 +592,7 @@ function activemq(title) {
       title,
       collapsable: false,
       children: [
+        ''
       ]
     }
   ]
@@ -590,6 +603,7 @@ function kafka(title) {
       title,
       collapsable: false,
       children: [
+        ''
       ]
     }
   ]
@@ -600,7 +614,8 @@ function rabbitmq(title) {
       title,
       collapsable: false,
       children: [
-        'test'
+        'test',
+        ''
       ]
     }
   ]
@@ -611,7 +626,7 @@ function rocketmq(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -622,7 +637,7 @@ function open_message(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -633,7 +648,7 @@ function netty(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -644,6 +659,7 @@ function nginx(title) {
       title,
       collapsable: false,
       children: [
+        ''
       ]
     }
   ]
@@ -654,6 +670,7 @@ function redis(title) {
       title,
       collapsable: false,
       children: [
+        ''
       ]
     }
   ]
@@ -664,7 +681,7 @@ function zookeeper(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
@@ -675,11 +692,11 @@ function tools(title) {
       title,
       collapsable: false,
       children: [
-        '',
         'git',
         'idea',
         'maven',
         'postman',
+        ''
       ]
     }
   ]
@@ -690,7 +707,7 @@ function structure(title) {
       title,
       collapsable: false,
       children: [
-        '',
+        ''
       ]
     }
   ]
