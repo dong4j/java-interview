@@ -161,6 +161,7 @@ module.exports = {
               collapsable: false,
               children: [
                 '/framework/mybatis/',
+                '/framework/spring/',
                 '/framework/spring-mvc/',
                 '/framework/spring-boot/',
                 '/framework/spring-cloud/'

@@ -13,10 +13,38 @@ features:
 footer: 2018 ©dong4j. Released under the CC BY-NC-SA 4.0 International License.
 ---
 
+<div align="center">
+
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) 
+[![Open Issues](http://githubbadges.herokuapp.com/boennemann/badges/issues.svg?style=flat)](https://github.com/dong4j/java-interview/issues) 
+![](https://img.shields.io/github/last-commit/dong4j/java-interview.svg) ![](https://img.shields.io/github/repo-size/dong4j/java-interview.svg) 
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-03A9F4.svg)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
+[![GitHub stars](https://img.shields.io/github/stars/dong4j/java-interview.svg?style=social)](https://github.com/dong4j/java-interview)
+
+</div>
+
+<h3 align="center">
+    <a href="./java/se/">Java 面试题</a>
+    <span> · </span>
+    <a href="./framework/">框架</a>
+    <span> · </span>
+    <a href="./mq/">消息中间件</a>
+    <span> · </span>
+    <a href="./dev-env/">开发环境</a>
+    <span> · </span>
+    <a href="./github/contribute.html">参与贡献</a>
+</h3>
+
+<h3 align="center">
+
+**感谢以下项目的付出, 让我学到很多知识**
+
 [JavaGuide](https://github.com/Snailclimb/JavaGuide)
 [CS-Notes](https://github.com/CyC2018/CS-Notes)
 [JCSprout](https://github.com/crossoverJie/JCSprout)
 [advanced-java](https://github.com/doocs/advanced-java)
+
+</h3>
 
 ---
 
@@ -27,6 +55,8 @@ footer: 2018 ©dong4j. Released under the CC BY-NC-SA 4.0 International License.
 ## Contributing 贡献
 
 ### Contributors 贡献者
+
+**占坑**
 
 ### How to contribute 贡献规范
 

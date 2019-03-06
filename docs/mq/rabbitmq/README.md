@@ -1,4 +1,4 @@
-# RabbitMQ 面试题
+# RabbitMQ
 
 ## RabbitMQ 的使用场景有哪些
  

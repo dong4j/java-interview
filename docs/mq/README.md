@@ -1,4 +1,8 @@
-# 消息中间件面试题
+---
+sidebar: auto
+---
+
+# 消息中间件
 
 消息队列中间件是分布式系统中重要的组件, 主要解决
 
@@ -7,8 +11,13 @@
 3. 流量削锋等问题
 
 实现高性能、高可用、可伸缩和最终一致性架构. 
-使用较多的消息队列有ActiveMQ、RabbitMQ、ZeroMQ、Kafka、MetaMQ、RocketMQ. 
+使用较多的消息队列有
 
+- [ActiveMQ](./activemq/)
+- [Kafka](./kafka/)
+- [RabbitMQ](./rabbitmq/)
+- [RocketMQ](./rocketmq/)
+- [Open Message](./open-message/)
 
 ## 消息队列常见使用场景
 

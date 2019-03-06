@@ -1,4 +1,4 @@
-# Kafka 面试题
+# Kafka
 
 152.kafka 可以脱离 zookeeper 单独使用吗？为什么？
 
