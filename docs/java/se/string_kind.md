@@ -355,7 +355,7 @@ Java虚拟机管理的内存是运行时数据区那一部分, 简单概括一�
 
 * **程序计数器**:线程私有
 
-* **堆Heap**:线程共享, 是Java虚拟机所管理的内存中最大的一块, 在虚拟机启动时创建.此内存区域的唯一目的就是存放对象实例, 几乎所有的对象实例都在这里分配内存.**在Java虚拟机规范中的描述是:所有的对象实例以及数组都要在堆上分配. ** *(原文:The heap is the runtime data area from which memory for all class instances and arrays is allocated)*但有特殊情况, 随着JIT编译器的发展, 逃逸分析和标量替换技术的逐渐成熟, 对象也可以在**栈上**分配.另外, 虽说堆是线程共享, 但其中也可以划分出多个线程私有的分配缓冲区*(Thread Local Allocation Buffer, TLAB)*.
+* **堆Heap**:线程共享, 是Java虚拟机所管理的内存中最大的一块, 在虚拟机启动时创建.此内存区域的唯一目的就是存放对象实例, 几乎所有的对象实例都在这里分配内存.**在Java虚拟机规范中的描述是:所有的对象实例以及数组都要在堆上分配.** *(原文:The heap is the runtime data area from which memory for all class instances and arrays is allocated)*但有特殊情况, 随着JIT编译器的发展, 逃逸分析和标量替换技术的逐渐成熟, 对象也可以在**栈上**分配.另外, 虽说堆是线程共享, 但其中也可以划分出多个线程私有的分配缓冲区*(Thread Local Allocation Buffer, TLAB)*.
 
 * **方法区**:线程共享, 它用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据.
 
