@@ -173,10 +173,10 @@ select 最不能忍受的是一个进程所打开的FD是有一定限制的，�
 在Nginx源码文件被解压后，找到源码目录下的auto/cc/gcc文件，在其中找到如下几行：
 
   1. # debug  
-  2. CFLAGS=”$CFLAGS -g” 
+  2. CFLAGS="$CFLAGS -g" 
 注释掉或删掉这两行，即可取消debug模式。
 2.为特定的CPU指定CPU类型编译优化
-在编译Nginx时，默认的GCC编译参数是“-O”，要优化GCC编译，可以使用以下两个参数：
+在编译Nginx时，默认的GCC编译参数是"-O"，要优化GCC编译，可以使用以下两个参数：
 
   1. --with-cc-opt='-O3' 
   2. --with-cpu-opt=CPU  #为特定的 CPU 编译，有效的值包括：
@@ -214,7 +214,7 @@ local/lib" > /etc/ld.so.conf.d/usr_local_lib.conf
 
 3).重新编译Nginx
 
-为了使Nginx支持google-perftools，需要在安装过程中添加“–with-google_perftools_module”选项重新编译Nginx。安装代码如下：
+为了使Nginx支持google-perftools，需要在安装过程中添加"–with-google_perftools_module"选项重新编译Nginx。安装代码如下：
 
 1\. [root@localhostnginx-0.7.65]#./configure \  
 2\. >--with-google_perftools_module --with-http_stub_status_module  --prefix=/opt/nginx  
@@ -299,10 +299,10 @@ net.ipv4.tcp_keepalive_time选项表示当keepalive启用的时候，TCP发送ke
 1）增加FastCGI进程数
 把PHP FastCGI子进程数调到100或以上，在4G内存的服务器上200就可以建议通过压力测试获取最佳值。
 2）增加 PHP-FPM打开文件描述符的限制
-标签rlimit_files用于设置PHP-FPM对打开文件描述符的限制，默认值为1024。这个标签的值必须和Linux内核打开文件数关联起来，例如，要将此值设置为65 535，就必须在Linux命令行执行“ulimit -HSn 65536”。
+标签rlimit_files用于设置PHP-FPM对打开文件描述符的限制，默认值为1024。这个标签的值必须和Linux内核打开文件数关联起来，例如，要将此值设置为65 535，就必须在Linux命令行执行 "ulimit -HSn 65536"。
        然后 增加 PHP-FPM打开文件描述符的限制:
      # vi /path/to/php-fpm.conf
-    找到“<valuename="rlimit_files">1024</value>”
+    找到 `<valuename="rlimit_files">1024</value>`
 把1024更改为 4096或者更高.
 重启 PHP-FPM.
        ulimit -n 要调整为65536甚至更大。如何调这个参数，可以参考网上的一些文章。命令行下执行 ulimit -n65536即可修改。如果不能修改，需要设置  /etc/security/limits.conf，加入

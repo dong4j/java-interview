@@ -6,7 +6,7 @@
 
 [[toc]]
 
-[👉Contribute](../contribute.md)
+[👉Contribute](../github/contribute.md)
 
 # Todo list
 
