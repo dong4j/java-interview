@@ -1,6 +1,5 @@
 ---
 sidebar: auto
-sidebarDepth: 5
 ---
 
 # 贡献
