@@ -1,8 +1,10 @@
 # JDK6 和JDK7 中 substring 的原理及区别
+
+[👈 **相关面试题**](./README.md#_52-👉-jdk6-和-jdk7-中-substring-的原理及区别)
   
 转一篇不错的文章, 原文地址如下: 
 
-[👉http://www.hollischuang.com/archives/1232](http://www.hollischuang.com/archives/1232)
+[👉 http://www.hollischuang.com/archives/1232](http://www.hollischuang.com/archives/1232)
 
 `substring(int beginIndex, int endIndex)` 方法在**jdk 6**和**jdk 7**中的实现是不同的.
 了解他们的区别可以帮助你更好的使用他.
@@ -32,7 +34,7 @@ bc
 
 然而, 这个图不是完全正确的表示堆中发生的事情.因为在jdk6 和 jdk7中调用substring时发生的事情并不一样.
 
-## JDK 6中的substring
+## JDK 6中的 substring
 
 String是通过字符数组实现的在jdk 6 中, String类包含三个成员变量:`char value[],  int offset, int count`.他们分别用来存储真正的字符数组, 数组的第一个位置索引以及字符串中包含的字符个数.
 
@@ -64,7 +66,7 @@ public String substring(int beginIndex, int endIndex) {
 x = x.substring(x, y) + ""
 ```
 
-## JDK 7 中的substring
+## JDK 7 中的 substring
 
 上面提到的问题, 在jdk 7中得到解决.在jdk 7 中, substring方法会在堆内存中创建一个新的数组.
 
@@ -86,4 +88,4 @@ public String substring(int beginIndex, int endIndex) {
 }
 ```
   
-  
+[👈 **相关面试题**](./README.md#_52-👉-jdk6-和-jdk7-中-substring-的原理及区别)

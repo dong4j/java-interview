@@ -375,6 +375,7 @@ function jvm(title) {
         'class',
         'class_load',
         'dcl',
+        'data_storage_location',
         ''
       ]
     }

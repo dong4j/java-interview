@@ -16,6 +16,8 @@ Java为我们提供了 3 种操作字符串的类.由于 `String` 类的特殊,�
 
 ## Java中内存知识
 
+[👈 **相关面试题**](./README.md#_51-👉-string-stringbuffer-stringbuilder-的区别)
+
 在反射中我们学到,对于每一个被JVM加载到内存中的类,都会在方法区保存一份这个类的信息;
 包括:
 
@@ -449,3 +451,4 @@ str1、str2、str3 三个变量所指向的都是不同的对象.(str1 != str2 !
 * [借HSDB来探索HotSpot VM的运行时数据](https://link.juejin.im/?target=https%3A%2F%2Frednaxelafx.iteye.com%2Fblog%2F1847971) *作者:RednaxelaFX, 曾为《深入理解Java虚拟机》提推荐语*
 * [java用这样的方式生成字符串:String str = "Hello", 到底有没有在堆中创建对象？](https://link.juejin.im/?target=https%3A%2F%2Fwww.zhihu.com%2Fquestion%2F29884421%2Fanswer%2F113785601) - 胖君的回答 - 知乎
 
+[👈 **相关面试题**](./README.md#_51-👉-string-stringbuffer-stringbuilder-的区别)

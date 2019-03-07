@@ -13,6 +13,8 @@ StringBuffer > StringBuilder > StringUtils.join > concat > +
 
 <!-- more -->
 
+[👈 **相关面试题**](./README.md#_54-👉-string-对-的重载-字符串拼接的几种方式和区别)
+
 先来做一个测试
 
 ```java
@@ -294,4 +296,4 @@ public static void main(String[] args) {
 3. 如果拼接空字符串，concat会稍快，在速度上两者可以忽略不计，如果拼接更多字符串建议用StringBuilder。
 4. 从字节码来看 + 号编译后就是使用 了StringBuiler 来拼接，所以一行 + 的语句就会创建一个 StringBuilder，多条 + 语句就会创建多个，所以建议在循环内拼接时用 StringBuilder.
 
-
+[👈 **相关面试题**](./README.md#_54-👉-string-对-的重载-字符串拼接的几种方式和区别)

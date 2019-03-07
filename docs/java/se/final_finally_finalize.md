@@ -1,10 +1,12 @@
 # final finally finalize 的区别
 
+[👈 **相关面试题**](./README.md#_57-👉-final-finally-finalize-的区别)
+
 这是一道再经典不过的面试题了, 我们在各个公司的面试题中几乎都能看到它的身影.
 final、finally 和 finalize 虽然长得像孪生三兄弟一样, 但是它们的含义和用法却是大相径庭.
 这一次我们就一起来回顾一下这方面的知识.
 
-***final 关键字***
+## final
 
 我们首先来说说 final.它可以用于以下四个地方:
 
@@ -128,10 +130,10 @@ public final class FinalTest {
 
 运行上面的代码试试看, 结果是 99, 而不是初始化时的 10.
 
-***finally 语句***
+## finally
 
-接下来我们一起回顾一下 finally 的用法.这个就比较简单了, 它只能用在 try/catch 语句中, 并且附带着一个语句块, 表示这段语句最终总是被执行.请看下面的代码:
-
+接下来我们一起回顾一下 finally 的用法.这个就比较简单了, 它只能用在 try/catch 语句中, 并且附带着一个语句块, 表示这段语句最终总是被执行.
+请看下面的代码:
 
 ```java
 public final class FinallyTest {  
@@ -242,7 +244,81 @@ class ReturnClass {
 
 很明显, return、continue 和 break 都没能阻止 finally 语句块的执行.从输出的结果来看, return 语句似乎在 finally 语句块之前执行了, 事实真的如此吗？我们来想想看, return 语句的作用是什么呢？是退出当前的方法, 并将值或对象返回.如果 finally 语句块是在 return 语句之后执行的, 那么 return 语句被执行后就已经退出当前方法了, finally 语句块又如何能被执行呢？因 此, 正确的执行顺序应该是这样的:编译器在编译 return new ReturnClass(); 时, 将它分成了两个步骤, new ReturnClass() 和 return, 前一个创建对象的语句是在 finally 语句块之前被执行的, 而后一个 return 语句是在 finally 语 句块之后执行的, 也就是说 finally 语句块是在程序退出方法之前被执行的.同样, finally 语句块是在循环被跳过（continue）和中断 （break）之前被执行的.
 
-***finalize 方法***
+finally 是异常处理语句结构的一部分, 表示总是执行. 
+
+### return 的先后问题
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        System.out.println(test());
+    }
+    private static int test() {
+        int x = 1;
+        try {
+            return x;
+        } finally {
+            ++x;
+        }
+    }
+}
+```
+返回 1
+在执行到 return x 时,已经将值返回,放入到内存栈中, finally 只是执行了 +1操作,并没有改变内存栈中的值
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        System.out.println(test());
+    }
+    private static int test() {
+        int x = 1;
+        try {
+            return x;
+        } finally {
+            return ++x;
+        }
+    }
+}
+```
+返回 2
+finally 保存程序会执行,第一个 return 返回值,放入内存栈中,然后 finally 再次返回值,覆盖原来的值
+
+```java
+public class Test1 {
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        System.out.println(test());
+    }
+
+    private static int test() {
+        try {
+            return func1();
+        } finally {
+            return func2();
+        }
+    }
+
+    private static int func1() {
+        System.out.println("func1");
+        return 1;
+    }
+
+    private static int func2() {
+        System.out.println("func2");
+        return 2;
+    }
+}
+```
+返回结果
+
+```
+func1
+func2
+2
+```
+
+## finalize
 
 最后, 我们再来看看 finalize, 它是一个方法, 属于 java.lang.Object 类, 它的定义如下:
 
@@ -287,12 +363,60 @@ public static void runFinalizersOnExit(boolean value) {  
 }  
 ```
 
-
 给这个方法传入 true 就可以保证对象的 finalize() 方法在 JAVA 虚拟机停止运行前一定被运行了, 不过遗憾的是这个方法是不安全的, 它会导致有用的对象 finalize() 被误调用, 因此已经不被赞成使用了.
 
 由于 finalize() 属于 Object 类, 因此所有类都有这个方法, Object 的任意子类都可以重写（override）该方法, 在其中释放系统资源或者做其它的清理工作, 如关闭输入输出流.
 
+**JVM不保证此方法总被调用, 并且 finalize() 只会被执行一次, 所以对象有可能被复活一次**
+
+```java
+public class CanReliveObj {
+    private static CanReliveObj obj;
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("CanReliveObj finalize called");
+        obj = this;
+    }
+
+    @Override
+    public String toString() {
+        return "I am CanReliveObj";
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        obj = new CanReliveObj();
+        obj = null; // 可复活
+        System.gc();
+        Thread.sleep(1000);
+        if (obj == null) {
+            System.out.println("obj 是 null");
+        } else {
+            System.out.println("obj 可用");
+        }
+        System.out.println("第二次gc");
+        obj = null; // 不可复活
+        System.gc();
+        Thread.sleep(1000);
+        if (obj == null) {
+            System.out.println("obj 是 null");
+        } else {
+            System.out.println("obj 可用");
+        }
+    }
+}
+```
+返回结果
+
+```
+CanReliveObj finalize called
+obj 可用
+第二次gc
+obj 是 null
+```
+
 通过以上知识的回顾, 我想大家对于 final、finally、finalize 的用法区别已经很清楚了.
 
-
+[👈 **相关面试题**](./README.md#_57-👉-final-finally-finalize-的区别)
 

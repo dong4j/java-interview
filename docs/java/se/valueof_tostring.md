@@ -1,5 +1,7 @@
 # String.valueof() 和 Integer.toString() 的区别
 
+[👈 **相关面试题**](./README.md#_55-👉-string-valueof-和-integer-tostring-的区别)
+
 平常经常使用这两个方法进行**int**类型转**String**，一般情况也不区分，今天就深究一下，它们**的区别**，平常应该使用**那个方法更好**一些。
 
 ## Integer.toString()方法
@@ -128,3 +130,5 @@ public static String valueOf(double d) {
     return Double.toString(d);
 }
 ```
+
+[👈 **相关面试题**](./README.md#_55-👉-string-valueof-和-integer-tostring-的区别)

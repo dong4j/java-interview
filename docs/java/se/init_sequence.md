@@ -1,5 +1,7 @@
 # Java 中父类和子类初始化顺序
 
+[👈 **相关面试题**](./README.md#_24-👉-子类-父类初始化顺序)
+
 ```java
 public class Father {
     public String fStr1 = "father1";
@@ -64,3 +66,5 @@ Son constructor be called
 4. 执行父类的构造函数;
 5. 执行子类的类成员初始化, 并且是从上往下按出现顺序执行.
 6. 执行子类的构造函数.
+
+[👈 **相关面试题**](./README.md#_24-👉-子类-父类初始化顺序)

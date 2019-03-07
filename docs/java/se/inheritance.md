@@ -294,22 +294,22 @@ Object类一共有11个方法,作为祖宗类,而这11个方法还得以保留,�
 
 1. `protected  Object clone()` 创建并返回此对象的一个副本 
 2. `boolean equals(Object obj)` 指示其他某个对象是否与此对象“相等”. 
-- 对于Object类中,equals的底层实现就是使用的"=="运算符,而这并不能满足我们对对象的比较,所以必须重写,在String类中就重写了此方法
-- 基本思路:
-	- 先判断是否是同一个类的实例,如果是就返回true;
-	- 如果不是,再分别比较每个属性值,如果有一个不同,就返回flase
-	- 如果都相同,就返回true
+    - 对于Object类中,equals的底层实现就是使用的"=="运算符,而这并不能满足我们对对象的比较,所以必须重写,在String类中就重写了此方法
+    - 基本思路:
+        - 先判断是否是同一个类的实例,如果是就返回true;
+        - 如果不是,再分别比较每个属性值,如果有一个不同,就返回flase
+        - 如果都相同,就返回true
 3. `protected  void finalize()` 当垃圾回收器确定不存在对该对象的更多引用时, 由对象的垃圾回收器调用此方法. 
 4. `Class<?> getClass()` 返回此 Object 的运行时类(反射中用到). 
 5. `int hash Code()` 返回该对象的哈希码值 
-6.  `void notify()` 唤醒在此对象监视器上等待的单个线程 
-7.  `void notifyAll()` 唤醒在此对象监视器上等待的所有线程
-8.  `String toString()` 返回该对象的字符串表示 
-- 此方法的实现:
-	- `getClass().getName() + '@' + Integer.toHexString(hashCode())`
-- 如果不重写这个此方法,返回的是 `类名@引用值`,对于我们来说没用,所以一般使用toString方法时都需要重写
-9.  `void wait()` 在其他线程调用此对象的 notify() 方法或 notifyAll() 方法前, 导致当前线程等待. 
-10.   `void wait(long timeout)` 在其他线程调用此对象的 notify() 方法或 notifyAll() 方法, 或者超过指定的时间量前, 导致当前线程等待 
-11.  `void wait(long timeout, int nanos)` 在其他线程调用此对象的 notify() 方法或 notifyAll() 方法, 或者其他某个线程中断当前线程, 或者已超过某个实际时间量前, 导致当前线程等待.
+6. `void notify()` 唤醒在此对象监视器上等待的单个线程 
+7. `void notifyAll()` 唤醒在此对象监视器上等待的所有线程
+8. `String toString()` 返回该对象的字符串表示 
+    - 此方法的实现:
+        - `getClass().getName() + '@' + Integer.toHexString(hashCode())`
+    - 如果不重写这个此方法,返回的是 `类名@引用值`,对于我们来说没用,所以一般使用toString方法时都需要重写
+9. `void wait()` 在其他线程调用此对象的 notify() 方法或 notifyAll() 方法前, 导致当前线程等待. 
+10. `void wait(long timeout)` 在其他线程调用此对象的 notify() 方法或 notifyAll() 方法, 或者超过指定的时间量前, 导致当前线程等待 
+11. `void wait(long timeout, int nanos)` 在其他线程调用此对象的 notify() 方法或 notifyAll() 方法, 或者其他某个线程中断当前线程, 或者已超过某个实际时间量前, 导致当前线程等待.
   
 [👈 **返回到面试题**](./README.md#_1-2-面向对象的三大基本特征)

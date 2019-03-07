@@ -1,5 +1,7 @@
 # [.class 文件格式详解](http://sunluyao.com/2018/12/06/class-parser.html)
 
+[👈 **相关面试题**](../se/README.md#_3-java-如何实现的平台无关)
+
 `Write once, run everywhere!`，我们都知道这是 `Java` 著名的宣传口号。
 不同的操作系统，不同的 CPU 具有不同的指令集，如何做到平台无关性，依靠的就是 Java 虚拟机。
 计算机永远只能识别 `0` 和 `1`组成的二进制文件，虚拟机就是我们编写的代码和计算机之间的桥梁。
@@ -411,3 +413,5 @@ private void parseOther() {
 ```
 
 由于属性种类众多，这里未对属性就行详细解析，仅为了加深对 Class 文件结构的了解，相当于一个低配版的 javap 。
+
+[👈 **相关面试题**](../se/README.md#_3-java-如何实现的平台无关)

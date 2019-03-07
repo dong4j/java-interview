@@ -1,5 +1,7 @@
 # Hashcode的作用
 
+[👈 **相关面试题**](./README.md#_49-👉-hashcode-与-equals)
+
 ## HashCode的特性
 
 1. HashCode的存在主要是用于**查找的快捷性**, 如Hashtable, HashMap等, HashCode经常用于**确定对象的存储地址**.
@@ -204,3 +206,5 @@ public static void main(String[] args) {
 ```
 
 输出结果:true
+
+[👈 **相关面试题**](./README.md#_49-👉-hashcode-与-equals)

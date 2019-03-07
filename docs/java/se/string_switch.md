@@ -1,5 +1,7 @@
 # Java switch 对 String 类型的支持
 
+[👈 **相关面试题**](./README.md#_56-👉-switch-对-string-的支持)
+
 先看代码
 
 ```java
@@ -103,5 +105,6 @@ public class com.iflytek.test.common.StringTest {
 }
 ```
 
+[👈 **相关面试题**](./README.md#_56-👉-switch-对-string-的支持)****
 
 

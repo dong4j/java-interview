@@ -10,9 +10,7 @@ next: ./string_append
 
 # [👉String 为什么不可变](http://sunluyao.com/2017/09/28/why-string-final.html)
 
-::: tip
-[👉String 类源码解析](./string_resource.md)
-:::
+[👈 **相关面试题**](./README.md#_50-👉-string-为什么不可变)
 
 众所周知, `String` 是一个不可变的，由 `final` 修饰的类。那么它的不可变性体现在哪里呢? 看下面一段简单的代码：
 
@@ -184,3 +182,9 @@ value[1] = '3';
 除了 String 类，系统类库中还提供了一些其他的不可变类，基本类型的包装类、BigInteger、BigDecimal等等。
 这些不可变类比可变类更加易于设计、实现和使用，不容易出错且更加安全。
 另外，要记住并不仅仅是靠一个 `final` 关键字来实现不可变的，更多的是靠类内部的具体实现细节。
+
+::: tip 扩展阅读
+[👉String 类源码解析](./string_resource.md)
+:::
+
+[👈 **相关面试题**](./README.md#_50-👉-string-为什么不可变)
