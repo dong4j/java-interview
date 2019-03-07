@@ -596,7 +596,7 @@ public class EqualsTest {
 String 中的 equals() 是被重写过的, 因为 Object 的 equals() 是比较的对象的内存地址, 而 String 的 equals() 比较的是对象的值.
 :::
 
-##  49. [👉 hashCode()](./hashcode.md) 与 equals()
+## 49. [👉 hashCode()](./hashcode.md) 与 equals()
 
 面试官可能会问你:
 
@@ -815,17 +815,17 @@ transient 只能修饰变量, 不能修饰类和方法.
 
 ## 61. [👉 什么是反射](./reflect.md)
 
-## 58. 什么是 java 序列化, 什么情况下需要序列化 
+## 62. 动态代理是什么, 有哪些应用 
 
-## 59. 动态代理是什么, 有哪些应用 
+## 63. 怎么实现动态代理 
 
-## 60. 怎么实现动态代理 
-
-## 什么是反射机制, 反射机制的应用场景有哪些
+## 64. 什么是反射机制, 反射机制的应用场景有哪些
 
 ### 反射机制介绍
 
-JAVA反射机制是在运行状态中, 对于任意一个类, 都能够知道这个类的所有属性和方法; 对于任意一个对象, 都能够调用它的任意一个方法和属性; 这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制.
+JAVA反射机制是在运行状态中, 对于任意一个类, 都能够知道这个类的所有属性和方法; 
+对于任意一个对象, 都能够调用它的任意一个方法和属性; 
+这种动态获取的信息以及动态调用对象的方法的功能称为 Java 语言的反射机制.
 
 ### 静态编译和动态编译
 
@@ -841,18 +841,19 @@ JAVA反射机制是在运行状态中, 对于任意一个类, 都能够知道这
 
 反射是框架设计的灵魂.
 
-在我们平时的项目开发过程中, 基本上很少会直接使用到反射机制, 但这不能说明反射机制没有用, 实际上有很多设计, 开发都与反射机制有关, 例如模块化的开发, 通过反射去调用对应的字节码; 动态代理设计模式也采用了反射机制, 还有我们日常使用的 Spring／Hibernate 等框架也大量使用到了反射机制.
+在我们平时的项目开发过程中, 基本上很少会直接使用到反射机制, 但这不能说明反射机制没有用, 实际上有很多设计, 开发都与反射机制有关, 例如模块化的开发, 通过反射去调用对应的字节码;
+动态代理设计模式也采用了反射机制, 还有我们日常使用的 Spring／Hibernate 等框架也大量使用到了反射机制.
 
 举例:
 
-1. 我们在使用JDBC连接数据库时使用Class.forName()通过反射加载数据库的驱动程序; 
-2. Spring框架也用到很多反射机制, 最经典的就是xml的配置模式.Spring 通过 XML 配置模式装载 Bean 的过程:
+1. 我们在使用JDBC连接数据库时使用 Class.forName() 通过反射加载数据库的驱动程序; 
+2. Spring 框架也用到很多反射机制, 最经典的就是 XML 的配置模式. Spring 通过 XML 配置模式装载 Bean 的过程:
     1. 将程序内所有 XML 或 Properties 配置文件加载入内存中;
-    2. Java类里面解析xml或properties里面的内容, 得到对应实体类的字节码字符串以及相关的属性信息; 
-    3. 使用反射机制, 根据这个字符串获得某个类的Class实例; 
+    2. Java 类里面解析 XML 或 properties 里面的内容, 得到对应实体类的字节码字符串以及相关的属性信息; 
+    3. 使用反射机制, 根据这个字符串获得某个类的 Class实例; 
     4. 动态配置实例的属性
 
-## 32 [👉Java 中的异常处理](./exception.md)
+## 65. [👉Java 中的异常处理](./exception.md)
 
 ### Java 异常类层次结构图
 
@@ -892,63 +893,53 @@ lang包中的 **Throwable类**.Throwable: 有两个重要的子类:**Exception(�
 3. 程序所在的线程死亡.
 4. 关闭CPU.
 
-## throw 和 throws 的区别
+## 66. throw 和 throws 的区别
 
-## try-catch-finally 中哪个部分可以省略 
+## 67. try-catch-finally 中哪个部分可以省略 
 
-## try-catch-finally 中, 如果 catch 中 return 了, finally 还会执行吗 
+## 68. try-catch-finally 中, 如果 catch 中 return 了, finally 还会执行吗 
 
-## 常见的异常类有哪些 
+## 69. 常见的异常类有哪些 
 
-## 基本概念
+## 70. UnsupportedOperationException 是什么
 
-## UnsupportedOperationException 是什么
+## 71. NullPointerException 和 ArrayIndexOutOfBoundException 之间有什么相同之处
 
-##  NullPointerException 和 ArrayIndexOutOfBoundException 之间有什么相同之处
+## 72. Error 和 Exception 有什么区别
 
-## Error 和 Exception 有什么区别
+## 73. 什么是受检查的异常, 什么是运行时异常
 
-## 什么是受检查的异常, 什么是运行时异常
+## 74. 运行时异常与一般异常有何异同
 
-## 运行时异常与一般异常有何异同
+## 75. 简述一个你最常见到的 RuntimeException
 
-## 简述一个你最常见到的 runtime exception(运行时异常)
+## 77. 如果执行 finally 代码块之前方法返回了结果, 或者 JVM 退出了, finally 块中的代码还会执行吗
 
-## finally
+## 78. try 里有 return, finally 还执行么, 那么紧跟在这个 try 后的 finally {} 里的 code 会不会被执行, 什么时候被执行, 在 return 前还是后
 
-## 如果执行finally代码块之前方法返回了结果, 或者JVM退出了, finally块中的代码还会执行吗
+## 79. 在什么情况下, finally 语句不会执行
 
-## try里有return, finally还执行么, 那么紧跟在这个try后的finally {}里的code会不会被执行, 什么时候被执行, 在return前还是后
+## 80. finally 关键词在异常处理中如何使用
 
-## 在什么情况下, finally语句不会执行
+## 81. throw 和 throws 有什么区别
 
-## finally关键词在异常处理中如何使用
+## 82. 既然我们可以用 RuntimeException 来处理错误, 那么你认为为什么 Java 中还存在检查型异常
 
-## throw 和 throws 有什么区别
+## 83. 当自己创建异常类的时候应该注意什么
 
-## OOM你遇到过哪些情况 你是怎么搞定的
+## 84. 导致空指针异常的原因
 
-## SOF你遇到过哪些情况 
+## 85. 异常处理 handle or declare 原则应该如何理解
 
-## 既然我们可以用RuntimeException来处理错误, 那么你认为为什么Java中还存在检查型异常
+## 86. 怎么利用 JUnit 来测试一个方法的异常
 
-## 当自己创建异常类的时候应该注意什么
+## 87. 你曾经自定义实现过异常吗 怎么写的
 
-## 导致空指针异常的原因
+## 88. 什么是 异常链
 
-## 异常处理 handle or declare 原则应该如何理解
+## 89. 在 try 块中可以抛出异常吗
 
-## 怎么利用 JUnit 来测试一个方法的异常
-
-## catch块里别不写代码有什么问题
-
-## 你曾经自定义实现过异常吗 怎么写的
-
-## 什么是 异常链
-
-## 在try块中可以抛出异常吗
-
-## Excption 与 Error 包结构, OOM 你遇到过哪些情况, SOF 你遇到过哪些情况
+## 90. Excption 与 Error 包结构, OOM 你遇到过哪些情况, SOF 你遇到过哪些情况
 
 Throwable是 Java 语言中所有错误或异常的超类.  Throwable包含两个子类: Error 和 Exception . 它们通常用于指示发生了异常情况.  Throwable包含了其线程创建时线程执行堆栈的快照，它提供了printStackTrace()等接口用于获取堆栈跟踪数据等信息. 
 
@@ -976,7 +967,19 @@ StackOverflowError 的定义： 当应用程序递归太深而发生堆栈溢出
 
 递归调用.  大量循环或死循环.  全局变量是否过多.  数组、List、map数据过大. 
 
-## 34 获取用键盘输入常用的的两种方法
+## 91. 什么是 Java 序列化, 什么情况下需要序列化 
+
+## 92. 枚举的用法, 枚举的实现, 枚举与单例, Enum 类
+
+## 93. Java 枚举如何比较
+
+## 94. switch 对枚举的支持
+
+## 95. 枚举的序列化如何实现
+
+## 96. 枚举的线程安全性问题
+
+## 97. 获取用键盘输入常用的的两种方法
 
 方法1:通过 Scanner
 
@@ -993,17 +996,9 @@ BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 String s = input.readLine(); 
 ```
 
-## 枚举的用法, 枚举的实现, 枚举与单例, Enum 类
+## 98. Files 的常用方法都有哪些 
 
-## Java 枚举如何比较
-
-## switch 对枚举的支持
-
-## 枚举的序列化如何实现
-
-## 枚举的线程安全性问题
-
-## Serializable 的意义
+## 99. Serializable 的意义
 
 1. 比如说你的内存不够用了, 那计算机就要将内存里面的一部分对象暂时的保存到硬盘中, 等到要用的时候再读入到内存中, 硬盘的那部分存储空间就是所谓的虚拟内存.在比如过你要将某个特定的对象保存到文件中, 我隔几天在把它拿出来用, 那么这时候就要实现Serializable接口; 
 2. 在进行java的Socket编程的时候, 你有时候可能要传输某一类的对象, 那么也就要实现Serializable接口; 最常见的你传输一个字符串, 它是JDK里面的类, 也实现了Serializable接口, 所以可以在网络上传输.
@@ -1015,9 +1010,9 @@ String s = input.readLine();
 
 如果对象要经过分布式系统 进行网络传输或通过rmi 等远程调用, 这就需要在网络上传输对象, 被传输的对象就必 须实现Serializable接口.
 
-## Serializable 和 Parcelable 的区别
+## 100. Serializable 和 Parcelable 的区别
 
-## 什么是序列化与反序列化
+## 101. 什么是序列化与反序列化
 
 - 只有实现了 Serializable 和 Externalizable 接口的类的对象才能被序列化.Externalizable接口继承自 Serializable接口, 实现Externalizable接口的类完全由自身来控制序列化的行为, 而仅实现Serializable接口的类可以采用默认的序列化方式 . 
 - 默认实现Serializable接口的序列化是对于一个类的非static, 非transient的实例变量进行序列化与反序列化.刚刚上面也说了, 如果要对static实例变量进行序列化就要使用Externalizable接口, 手动实现.
@@ -1028,28 +1023,26 @@ String s = input.readLine();
 - 当持久化对象时, 可能有一个特殊的对象数据成员, 我们不想用serialization机制来保存它. 为了在一个特定对象的一个域上关闭serialization, 可以在这个域前加上关键字transient.   
 transient是Java语言的关键字, 用来表示一个域不是该对象序列化的一部分.当一个对象被序列化的时候, transient型变量的值不包括在序列化的表示中, 然而非transient型的变量是被包括进去的
 
-## 如何将一个Java对象序列化到文件里 
+## 102. 如何将一个Java对象序列化到文件里 
 
-## 序列化底层原理
+## 103. 序列化底层原理
 
-## 序列化与单例模式 
+## 104. 序列化与单例模式 
 
-## protobuf
+## 105. protobuf
 
-## 为什么说序列化并不安全
+## 106. 为什么说序列化并不安全
 
-## 什么是深拷贝和浅拷贝
+## 107. 什么是深拷贝和浅拷贝
 
-## 61.为什么要使用克隆
+## 108.为什么要使用克隆
 
-## 62.如何实现对象克隆
+## 109.如何实现对象克隆
 
-## 63.深拷贝和浅拷贝区别是什么
+## 110.深拷贝和浅拷贝区别是什么
 
-## Java 中 IO 流分为几种
+## 111. Java 中 IO 流分为几种
 
-## BIO, NIO, AIO 有什么区别 
-
-## Files的常用方法都有哪些 
+## 112. BIO, NIO, AIO 有什么区别 
 
 [[toc]]
