@@ -1,4 +1,4 @@
-<div align="center"><img src="https://github.com/dong4j/java-interview/blob/master/docs/.vuepress/public/hero.png" alt="Icon Badge" width="30%" /></div>
+<div align="center"><img src="./docs/.vuepress/public/hero.png" alt="Icon Badge" width="30%" /></div>
 
 <h1 align="center">Fuck Java Interview</h1>
 
