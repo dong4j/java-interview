@@ -1,4 +1,4 @@
-# [JDK11变化详解，JDK8升级JDK11详细指南](https://www.jianshu.com/p/81b65eded96c)
+# [JDK11 变化详解，JDK8 升级 JDK11 详细指南](https://www.jianshu.com/p/81b65eded96c)
 
 ::: tip 官方英文原版
 [https://docs.oracle.com/en/java/javase/11/migrate/index.html#JSMIG-GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A](https://docs.oracle.com/en/java/javase/11/migrate/index.html#JSMIG-GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A)

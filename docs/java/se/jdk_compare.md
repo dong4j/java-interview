@@ -285,7 +285,7 @@ public void testSequence() {
 }  
 ```
 
-#### [try-with-resources](./try_with_resources.md)
+#### [try-with-resources](./jdk7_try_with_resources.md)
 Java7之前须要在finally中关闭socket、文件、数据库连接等资源；
 Java7中在try语句中申请资源，实现资源的自己主动释放（资源类必须实现java.lang.AutoCloseable接口，一般的文件、数据库连接等均已实现该接口，close方法将被自己主动调用）
 
@@ -1364,4 +1364,4 @@ java Javastack.java
 3. -XX:+UnlockCommercialFeatures以及-XX:+LogCommercialFeatures选项也不- 再需要
 4. 废弃了Pack200工具及其API
 
-[JDK11变化详解，JDK8升级JDK11详细指南](./jdk11.md)
+[JDK11变化详解，JDK8升级JDK11详细指南](./jdk11_features.md)

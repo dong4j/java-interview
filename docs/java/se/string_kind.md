@@ -158,7 +158,7 @@ s != null && s != "";
 
 
 ## 不可变性
-　
+
 简单的来说:String 类中使用 final 关键字字符数组保存字符串, `private　final　char　value[]`, 所以 String 对象是不可变的.而StringBuilder 与 StringBuffer 都继承自 AbstractStringBuilder 类, 在 AbstractStringBuilder 中也是使用字符数组保存字符串`char[]value` 但是没有用 final 关键字修饰, 所以这两种对象都是可变的.
 
 StringBuilder 与 StringBuffer 的构造方法都是调用父类构造方法也就是 AbstractStringBuilder 实现的, 大家可以自行查阅源码.
@@ -244,7 +244,6 @@ s = Hello_World
 
 用反射可以访问私有成员,  然后反射出String对象中的value属性,  进而改变通过获得的value引用改变数组的结构.但是一般我们不会这么做, 这里只是简单提一下有这个东西.
 
-
 ---------
 
 ## StringBuffer 类
@@ -293,7 +292,7 @@ StringBuffer是线程不安全的,效率比StringBuffer高,在不考虑线程安
 	- 相同情况下使用  `StirngBuilder`  相比使用 ` StringBuffer`  仅能获得 10%~15% 左右的性能提升, 但却要冒多线程不安全的风险.而在现实的模块化编程中, 负责某一模块的程序员不一定能清晰地判断该模块是否会放入多线程的环境中运行, 因此:除非确定系统的瓶颈是在  `StringBuffer`  上, 并且确定你的模块不会运行在多线程模式下, 才可以采用 `StringBuilder` ;否则还是用 `StringBuffer` .
 	
 ### 怎么向 Set 中存入相同的字符串
-	
+
 由于 StringBuilder 和 StringBuffer 都未重写 equals() 和 hashCode(), 因此可以使用 StringBuilder 或 StringBuffer 创建相同的字符串存入 Set 中
 
 ```java
