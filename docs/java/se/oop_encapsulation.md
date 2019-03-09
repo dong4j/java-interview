@@ -1,4 +1,11 @@
-# 面向对象之封装
+---
+sidebar: auto
+title: 面向对象之封装
+date: 2019-03-05 15:39
+author: dong4j
+tags:
+- OOP
+---
 
 [👈 **相关面试题**](./README.md#_1-2-面向对象的三大基本特征)
 

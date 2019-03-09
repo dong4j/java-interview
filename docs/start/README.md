@@ -2,10 +2,15 @@
 
 :tada: :100:
 
+首先声明一下, 此项目不是因为面试, 而是想通过面试题来检验对知识点的掌握程度.
+
 # Todo list
 
-- [x] **Java 基础**
-    - [x] [SE 部分](../java/se/)
+- [x] 项目搭建
+- [ ] **Java 基础**
+    - [ ] [SE 部分](../java/se/)
+        - [ ] [OOP](../java/se/oop_definition.md)
+        - [ ] [String 知识点](../java/se/string_foreword.md)
     - [ ] [集合框架](../java/collection/)
     - [ ] [I/O](../java/io/)
     - [ ] [多线程&并发](../java/concurrent/)

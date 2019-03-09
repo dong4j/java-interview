@@ -8,7 +8,7 @@
 
 ---
 
-### 什么是面向对象
+### [👉 什么是面向对象](./oop_definition.md)
 
 #### 面向对象和面向过程的区别
 
@@ -704,7 +704,7 @@ hashCode() 的作用是获取哈希码 (散列码), 它实际上是返回一个 
 
 之所以 hashCode() 相等, 却可以 equal()不等, 就比如 ObjectA 和 ObjectB 他们都有属性 name, 那么 hashCode() 都以name 计算, 所以 hashCode() 一样, 但是两个对象属于不同类型, 所以 equal() 为 false.
 
-## String 知识点
+## [👉 String 知识点](./string_foreword.md)
 
 ---
 
