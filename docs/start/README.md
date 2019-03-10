@@ -9,7 +9,7 @@
 - [x] 项目搭建
 - **Java 基础**
     - [ ] [SE 部分](../java/se/)
-        1. [ ] [OOP](../java/se/oop_definition.md)
+        1. [ ] [OOP](../java/se/oop_foreword.md)
         2. [ ] [String 知识点](../java/se/string_foreword.md)
         3. [ ] ...
     <!--- [ ] [集合框架](../java/collection/)-->
