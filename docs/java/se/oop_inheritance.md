@@ -1,11 +1,19 @@
 ---
 sidebar: auto
+prev: ./oop_encapsulation
+next: ./oop_polymorphism
 title: 面向对象之继承
 date: 2019-03-09 22:48
 author: dong4j
 tags:
 - OOP
 ---
+
+::: tip 继承
+
+:::
+
+<!-- more -->
 
 [👈 **相关面试题**](./README.md#_1-2-面向对象的三大基本特征)
 

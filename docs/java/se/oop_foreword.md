@@ -1,15 +1,21 @@
 ---
 sidebar: false
-title: 什么是 OOP
+prev: 
+next: ./oop_encapsulation
+title: 重新认识 OOP
 date: 2019-03-09 22:45
 author: dong4j
 tags:
 - OOP
 ---
 
-# 什么是 OOP
+::: tip OOP
+面向对象编程（Object Oriented Programming 「OOP」）是一种计算机编程架构.
+:::
 
-https://www.jianshu.com/p/7a5b0043b035
+<!-- more -->
+
+# 重新认识 OOP
 
 对于概念性的东西, 需要类比和比喻才好理解, 因为我们能从已经了解过的知识对新的知识进行对比学习.
 
@@ -73,4 +79,10 @@ Python 和 Ruby 在开发时完全采用了 OOP 的思想, 而流行的 Perl 脚
 - [👉 面向对象之封装](./oop_encapsulation.md)
 - [👉 面向对象之继承](./oop_inheritance.md)
 - [👉 面向对象之多态](./oop_polymorphism.md)
+- [👉 面向对象之抽象和接口](./oop_abstract_interface.md)
 :::
+
+**参考与引用:**
+
+- [什么是面向对象](https://www.jianshu.com/p/7a5b0043b035)
+- [OOP 核心思想](https://blog.csdn.net/likesyour/article/details/79707999)

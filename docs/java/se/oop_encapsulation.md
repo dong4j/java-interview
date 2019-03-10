@@ -1,11 +1,19 @@
 ---
 sidebar: auto
+prev: ./oop_foreword
+next: ./oop_inheritance
 title: 面向对象之封装
 date: 2019-03-05 15:39
 author: dong4j
 tags:
 - OOP
 ---
+
+::: tip 封装
+
+:::
+
+<!-- more -->
 
 [👈 **相关面试题**](./README.md#_1-2-面向对象的三大基本特征)
 

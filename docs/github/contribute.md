@@ -149,6 +149,12 @@ $ yarn docs:build
 
 对于第 7 点, 是个人习惯问题, 也是问了文档看起来更加清晰.
 
+::: tip 文档模板
+- [👉 序言类模板](./template/foreword.md)
+
+- [👉 深入理解系列模板](./template/td.md)
+:::
+
 如果使用搜狗输入法, 可以按如下设置:
 
 ![](./imgs/b420cc27.png)
