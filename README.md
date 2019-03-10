@@ -34,7 +34,7 @@
 
 <h3 align="center">
 
-**感谢以下项目的付出, 让我学到很多知识**
+**感谢以下开源项目的付出, 让我学到很多知识**
 
 [JavaGuide](https://github.com/Snailclimb/JavaGuide)
 [CS-Notes](https://github.com/CyC2018/CS-Notes)
@@ -54,6 +54,8 @@
 **占坑**
 
 ### Contributors 贡献者
+
+任何有经验的同学欢迎来这里添加补充内容. Fork > PR > Review > Merge 一条龙. 💗
 
 ### How to contribute 贡献规范
 

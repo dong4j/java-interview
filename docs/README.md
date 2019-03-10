@@ -37,7 +37,7 @@ footer: 2018 ©dong4j. Released under the CC BY-NC-SA 4.0 International License.
 
 <h3 align="center">
 
-**感谢以下项目的付出, 让我学到很多知识**
+**感谢以下开源项目的付出, 让我学到很多知识**
 
 [JavaGuide](https://github.com/Snailclimb/JavaGuide)
 [CS-Notes](https://github.com/CyC2018/CS-Notes)
@@ -55,6 +55,8 @@ footer: 2018 ©dong4j. Released under the CC BY-NC-SA 4.0 International License.
 ## Contributing 贡献
 
 ### Contributors 贡献者
+
+任何有经验的同学欢迎来这里添加补充内容. Fork > PR > Review > Merge 一条龙. 💗
 
 **占坑**
 
