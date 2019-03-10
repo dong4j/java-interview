@@ -1,6 +1,6 @@
 ---
 sidebar: auto
-prev: 
+prev: ../
 next: ../collection/
 title: Java SE
 date: 2019-03-05 15:39
