@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /hero.png
-actionText: Fuck it →
+actionText: Fucking it →
 actionLink: /start/
 features:
 - title: 🍳

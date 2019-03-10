@@ -1,5 +1,5 @@
 ---
-sidebar: auto
+sidebar: false
 ---
 
 # 开发环境搭建

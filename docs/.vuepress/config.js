@@ -209,11 +209,9 @@ module.exports = {
             },
             {
               title: '💻 开发环境',
+              collapsable: false,
               children: [
-                '/dev-env/linux-env/',
-                '/dev-env/mac-env/',
-                '/dev-env/windows-env/',
-                '/tools/'
+                '/dev-env/'
               ]
             },
             {
