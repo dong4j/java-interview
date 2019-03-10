@@ -10,7 +10,7 @@ features:
   details: 根据面试题检验 Java 知识点是否掌握
 - title: 🎉
   details: 附带分享开发经验, 营造和谐社会主义价值观
-footer: 2018 ©dong4j. Released under the CC BY-NC-SA 4.0 International License.
+footer: 2019 ©dong4j. Released under the CC BY-NC-SA 4.0 International License.
 ---
 
 <div align="center">

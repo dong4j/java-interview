@@ -5,11 +5,10 @@ module.exports = {
     "/": {
       lang: "zh-CN",
       title: 'Java-Interview',
-      description: 'Fuck Java, fuck interview.'
+      description: 'Fuck Java, fuck interview.',
     }
   },
-
-  // 注入到当前页面的 HTML <head> 中的标签
+  base: '/java-interview/',
   head: [
     ['link', {
       rel: 'icon',
@@ -41,12 +40,7 @@ module.exports = {
     }]
   ],
   host: '127.0.0.1',
-  // 默认 8080
   port: '9527',
-  // 自动生成并且注册一个 service worker, 它缓存了那些已访问过的页面的内容, 用于离线访问（仅在生产环境生效）
-  // serviceWorker: true,
-  // theme: 'vue',
-  // base: '/web_accumulate/', // 这是部署到github相关的配置 下面会讲
   markdown: {
     // 代码块显示行号
     lineNumbers: true,
@@ -63,55 +57,39 @@ module.exports = {
     }
   },
   themeConfig: {
-    // github 设置
-    // Assumes GitHub. Can also be a full GitLab url.
-    // repo: 'https://github.com/dong4j',
-    // Customising the header label
-    // Defaults to "GitHub"/"GitLab"/"Bitbucket" depending on `themeConfig.repo`
-    // repoLabel: 'Github',
-    // Optional options for generating "Edit this page" link
-    // if your docs are in a different repo from your main project:
     docsRepo: 'https://github.com/dong4j/java-interview',
-    // if your docs are not at the root of the repo:
     docsDir: 'docs',
-    // if your docs are in a specific branch (defaults to 'master'):
     docsBranch: 'master',
-    // defaults to false, set to true to enable
     editLinks: true,
-    // custom text for edit link. Defaults to "Edit this page"
     editLinkText: '查看原文|编辑此页',
-
-    sidebar: 'auto',
     searchMaxSuggestions: 10,
-    // e'b将同时提取markdown中h2 和 h3 标题, 显示在侧边栏上.
     sidebarDepth: 2,
     serviceWorker: {
-      // 当网站更新（即 Service Worker 更新）时, 它会提供一个 refresh 按钮, 允许用户立刻刷新内容
-      // Boolean | Object, 默认值是 undefined.
       updatePopup: true,
     },
     locales: {
       "/": {
         label: "简体中文",
         selectText: "选择语言",
-        // editLinkText: "在 GitHub 上编辑此页",
-        // 文档更新时间:每个文件git最后提交的时间
         lastUpdated: "上次更新",
-        // 导航栏
         nav: [
           {
-            text: 'Blog',
+            text: '博客',
             link: 'https://dong4j.github.io/vue-blog/',
             icon: 'reco-home'
           },
-          { text: 'Tags', link: '/tags/', icon: 'reco-tag'},
           {
-            text: 'Archive',
+            text: '标签',
+            link: '/tags/',
+            icon: 'reco-tag'
+          },
+          {
+            text: '归档',
             link: '/all',
             icon: 'reco-category'
           },
           {
-            text: "Contact",
+            text: "联系",
             items: [
               {
                 text: "Github",
@@ -131,8 +109,6 @@ module.exports = {
             icon: 'reco-category'
           }
         ],
-
-        // 侧边栏
         sidebar: {
           // 配置 /start/ 页的侧边栏显示
           '/start/': [
@@ -254,9 +230,6 @@ module.exports = {
           '/redis/': redis("Think Deeply - Redis"),
           '/issue/': issue("Fuck yourself - 问题解决"),
           '/linux/': linux("Linux"),
-          '/dev-env/linux-env/': linux_env("Fuck yourself - Linux 环境配置"),
-          '/dev-env/mac-env/': mac_env("Fuck yourself - MacOS 环境配置"),
-          '/dev-env/windows-env/': windows_env("Fuck yourself - Windows 环境配置"),
           '/tools/': tools("Fuck yourself - 常用工具")
         }
       }
@@ -463,39 +436,6 @@ function spring_boot(title) {
   ]
 }
 function spring_cloud(title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        ''
-      ]
-    }
-  ]
-}
-function linux_env(title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        ''
-      ]
-    }
-  ]
-}
-function mac_env(title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        ''
-      ]
-    }
-  ]
-}
-function windows_env(title) {
   return [
     {
       title,

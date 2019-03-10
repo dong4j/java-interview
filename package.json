@@ -1,7 +1,7 @@
 {
-  "name": "Java-Interview",
-  "version": "1.0.0",
-  "description": "",
+  "name": "java-interview",
+  "version": "0.0.1",
+  "description": "Java interview",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -12,8 +12,9 @@
     "docs:build": "vuepress build docs"
   },
   "keywords": [],
-  "author": "dong4j",
-  "license": "ISC",
+  "repository": "https://github.com/dong4j/java-interview",
+  "author": "dong4j <dong4j@gmail.com>",
+  "license": "CC-BY-NC-SA-4.0",
   "dependencies": {
     "markdown-it": "^8.4.2",
     "markdown-it-imsize": "^2.0.1",
