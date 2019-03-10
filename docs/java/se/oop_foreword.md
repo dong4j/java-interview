@@ -33,6 +33,8 @@ Java 中的链表实现
 
 <!-- Java 实现链表 -->
 
+## 「面向过程」 与 「面向对象」 的区别
+
 ## OOP 的核心思想 
 
 面向对象编程（Object Oriented Programming 「OOP」）是一种计算机编程架构 (还有面向对象的设计 「OOD」, 面向对象的分析 「OOA」, 面向切面编程 「AOP」)

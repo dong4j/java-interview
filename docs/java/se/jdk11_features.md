@@ -106,7 +106,7 @@ TLS 1.3协议中添加了一些功能以提高向后兼容性，但有几个问�
 
 在JDK 11中删除了以下API。许多这些API在以前的版本中已被弃用，并且已被更新的API替换。有关可能的替代方案的信息，请参阅[JDK 11 API规范](https://docs.oracle.com/en/java/javase/11/docs/api/)。
 
-```
+```java
 javax.security.auth.Policy 
 java.lang.Runtime.runFinalizersOnExit(boolean)
 java.lang.SecurityManager.checkAwtEventQueueAccess() 
