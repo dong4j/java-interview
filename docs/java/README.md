@@ -20,3 +20,6 @@ tags:
 [toc]
 
 ## Java 知识体系
+
+<a data-fancybox title="Java 知识体系" href="https://dong4j-imgs.oss-cn-hangzhou.aliyuncs.com/blog/JavaKnowledgePoint.png" >![Java 知识体系](https://dong4j-imgs.oss-cn-hangzhou.aliyuncs.com/blog/JavaKnowledgePoint.png)</a>
+

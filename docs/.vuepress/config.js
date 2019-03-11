@@ -10,34 +10,17 @@ module.exports = {
   },
   base: '/java-interview/',
   head: [
-    ['link', {
-      rel: 'icon',
-      href: '/favicon.png'
-    }],
-    ['meta', {
-      name: 'theme-color',
-      content: '#00ABE9'
-    }],
-    ['meta', {
-      name: 'apple-mobile-web-app-capable',
-      content: 'yes'
-    }],
-    ['meta', {
-      name: 'apple-mobile-web-app-status-bar-style',
-      content: 'black'
-    }],
-    ['link', {
-      rel: 'apple-touch-icon',
-      href: '/favicon.png'
-    }],
-    ['meta', {
-      name: 'msapplication-TileImage',
-      content: '/favicon.png'
-    }],
-    ['meta', {
-      name: 'msapplication-TileColor',
-      content: '#06BDFF'
-    }]
+    ['link', { rel: 'icon', href: '/favicon.png' }],
+    ['meta', { name: 'theme-color', content: '#00ABE9' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['link', { rel: 'apple-touch-icon', href: '/favicon.png' }],
+    ['meta', { name: 'msapplication-TileImage', content: '/favicon.png' }],
+    ['meta', { name: 'msapplication-TileColor', content: '#06BDFF' }],
+    // 让 Vuepress 支持图片放大功能
+    ['script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js' }],
+    ['script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js' }],
+    ['link', { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css' }]
   ],
   host: '127.0.0.1',
   port: '9527',
