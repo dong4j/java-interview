@@ -1,10 +1,10 @@
-# Java 7 中的 Try-with-resources
+# JDK7 中的 Try-with-resources
 
-Try-with-resources 是 java7 中一个新的异常处理机制, 它能够很容易地关闭在 try-catch 语句块中使用的资源. 
+Try-with-resources 是 JDK7 中一个新的异常处理机制, 它能够很容易地关闭在 try-catch 语句块中使用的资源. 
 
 ## 利用 Try-Catch-Finally 管理资源（旧的代码风格）
 
-在 java7 以前, 程序中使用的资源需要被明确地关闭, 这个体验有点繁琐. 
+在 JDK7 以前, 程序中使用的资源需要被明确地关闭, 这个体验有点繁琐. 
 
 下面的方法读取文件, 然后用 System.out 打印: 
 
@@ -37,7 +37,7 @@ private static void printFile() throws IOException {
 
 即使 try 语句块中抛出的异常与异常传播更相关, 最终还是 finally 语句块中抛出的异常会根据调用栈向外传播. 
 
-在 java7 中, 对于上面的例子可以用 try-with-resource 结构这样写: 
+在 JDK7 中, 对于上面的例子可以用 try-with-resource 结构这样写: 
 
 
 ```java
