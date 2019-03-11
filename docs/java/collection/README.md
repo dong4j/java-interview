@@ -1,4 +1,25 @@
-# 集合
+---
+sidebar: auto
+prev: ../io/
+next: ../concurrent/
+title: 集合
+date: 2019-03-05 15:39
+author: dong4j
+tags:
+- Java
+- 面试题
+- 集合
+---
+
+::: tip 集合 面试题
+
+:::
+
+<!-- more -->
+
+[[toc]]
+
+[toc]
 
 ## ArrayList、LinkedList、Vector的区别
 ## Map、Set、List、Queue、Stack的特点与用法

@@ -1,4 +1,25 @@
-# I/O NIO BIO AIO
+---
+sidebar: auto
+prev: ../se/
+next: ../collection/
+title: I/O NIO BIO AIO
+date: 2019-03-05 15:39
+author: dong4j
+tags:
+- Java
+- 面试题
+- I/O
+---
+
+::: tip Java IO 面试题
+
+:::
+
+<!-- more -->
+
+[[toc]]
+
+[toc]
 
 ## IO 与 NIO
 

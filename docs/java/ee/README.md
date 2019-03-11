@@ -1,20 +1,39 @@
-# Java EE
+---
+sidebar: auto
+prev: ../jvm/
+next: ../
+title: Java EE 面试题
+date: 2019-03-05 15:39
+author: dong4j
+tags:
+- Java
+- 面试题
+- Web
+---
+
+::: tip Java EE 面试题
+
+:::
+
+<!-- more -->
 
 [[toc]]
 
-## Servlet总结
+[toc]
+
+## Servlet 总结
 
 在Java Web程序中, **Servlet**主要负责接收用户请求**HttpServletRequest**,在**doGet()**,**doPost()**中做相应的处理, 并将回应**HttpServletResponse**反馈给用户.Servlet可以设置初始化参数, 供Servlet内部使用.一个Servlet类只会有一个实例, 在它初始化时调用**init()方法**, 销毁时调用**destroy()方法**.**Servlet需要在web.xml中配置**（MyEclipse中创建Servlet会自动配置）, **一个Servlet可以设置多个URL访问**.**Servlet不是线程安全**, 因此要谨慎使用类变量.
 
-## 阐述Servlet和CGI的区别?
+## 阐述 Servlet 和 CGI 的区别?
 
-### CGI的不足之处:
+### CGI 的不足之处:
 
 1. 需要为每个请求启动一个操作CGI程序的系统进程.如果请求频繁, 这将会带来很大的开销.
 2. 需要为每个请求加载和运行一个CGI程序, 这将带来很大的开销 
 3. 需要重复编写处理网络协议的代码以及编码, 这些工作都是非常耗时的.
 
-### Servlet的优点:
+### Servlet 的优点:
 
 1. 只需要启动一个操作系统进程以及加载一个JVM, 大大降低了系统的开销
 2. 如果多个请求需要做同样处理的时候, 这时候只需要加载一个类, 这也大大降低了开销
@@ -23,9 +42,9 @@
 
 补充:Sun Microsystems公司在1996年发布Servlet技术就是为了和CGI进行竞争, Servlet是一个特殊的Java程序, 一个基于Java的Web应用通常包含一个或多个Servlet类.Servlet不能够自行创建并执行, 它是在Servlet容器中运行的, 容器将用户的请求传递给Servlet程序, 并将Servlet的响应回传给用户.通常一个Servlet会关联一个或多个JSP页面.以前CGI经常因为性能开销上的问题被诟病, 然而Fast CGI早就已经解决了CGI效率上的问题, 所以面试的时候大可不必信口开河的诟病CGI, 事实上有很多你熟悉的网站都使用了CGI技术.
 
-参考:《javaweb整合开发王者归来》P7
+参考:《Java Web 整合开发王者归来》P7
 
-## Servlet接口中有哪些方法及Servlet生命周期探秘
+## Servlet 接口中有哪些方法及 Servlet 生命周期探秘
 Servlet接口定义了5个方法, 其中**前三个方法与Servlet生命周期相关**:
 
 - **void init(ServletConfig config) throws ServletException**
@@ -36,7 +55,7 @@ Servlet接口定义了5个方法, 其中**前三个方法与Servlet生命周期�
 
 **生命周期:** **Web容器加载Servlet并将其实例化后, Servlet生命周期开始**, 容器运行其**init()方法**进行Servlet的初始化；请求到达时调用Servlet的**service()方法**, service()方法会根据需要调用与请求对应的**doGet或doPost**等方法；当服务器关闭或项目被卸载时服务器会将Servlet实例销毁, 此时会调用Servlet的**destroy()方法**.**init方法和destory方法只会执行一次, service方法客户端每次请求Servlet都会执行**.Servlet中有时会用到一些需要初始化与销毁的资源, 因此可以把初始化资源的代码放入init方法中, 销毁资源的代码放入destroy方法中, 这样就不需要每次处理客户端的请求都要初始化与销毁资源.
 
-参考:《javaweb整合开发王者归来》P81
+参考:《Java Web 整合开发王者归来》P81
 
 ## [get和post请求的区别](./get_post.md)
 
@@ -105,7 +124,7 @@ Response.setHeader("Refresh","5;URL=http://localhost:8080/servlet/example.htm");
 **Servlet不是线程安全的, 多线程并发的读写会导致数据不同步的问题.** 解决的办法是尽量不要定义name属性, 而是要把name变量分别定义在doGet()和doPost()方法内.虽然使用synchronized(name){}语句块可以解决问题, 但是会造成线程的等待, 不是很科学的办法.
 注意:多线程的并发的读写Servlet类属性会导致数据不同步.但是如果只是并发地读取属性而不写入, 则不存在数据不同步的问题.因此Servlet里的只读属性最好定义为final类型的.
 
-参考:《javaweb整合开发王者归来》P92
+参考:《Java Web 整合开发王者归来》P92
 
 ## JSP和Servlet是什么关系
 其实这个问题在上面已经阐述过了, Servlet是一个特殊的Java程序, 它运行于服务器的JVM中, 能够依靠服务器的支持向浏览器提供显示内容.JSP本质上是Servlet的一种简易形式, JSP会被服务器处理成一个类似于Servlet的Java程序, 可以简化页面内容的生成.Servlet和JSP最主要的不同点在于, Servlet的应用逻辑是在Java文件中, 并且完全从表示层中的HTML分离开来.而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件.有人说, Servlet就是在Java中写HTML, 而JSP就是在HTML中写Java代码, 当然这个说法是很片面且不够准确的.JSP侧重于视图, Servlet更侧重于控制逻辑, 在MVC架构模式中, JSP适合充当视图（view）而Servlet适合充当控制器（controller）.
@@ -121,7 +140,7 @@ JSP是一种Servlet, 但是与HttpServlet的工作方式不太一样.HttpServlet
 
 开发Web程序时经常需要修改JSP.Tomcat能够自动检测到JSP程序的改动.如果检测到JSP源代码发生了改动.Tomcat会在下次客户端请求JSP时重新编译JSP, 而不需要重启Tomcat.这种自动检测功能是默认开启的, 检测改动会消耗少量的时间, 在部署Web应用的时候可以在web.xml中将它关掉.
 
-参考:《javaweb整合开发王者归来》P97
+参考:《Java Web 整合开发王者归来》P97
 
 ## JSP有哪些内置对象、作用分别是什么
 [JSP内置对象 - CSDN博客 ](http://blog.csdn.net/qq_34337272/article/details/64310849 ) 

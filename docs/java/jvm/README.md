@@ -1,6 +1,25 @@
-# JVM  
+---
+sidebar: auto
+prev: ../concurrent/
+next: ../ee/
+title: JVM & JMM
+date: 2019-03-05 15:39
+author: dong4j
+tags:
+- Java
+- 面试题
+- JVM
+---
+
+::: tip JVM & JMM
+
+:::
+
+<!-- more -->
 
 [[toc]]
+
+[toc]
 
 194.说一下 jvm 的主要组成部分？及其作用？
 

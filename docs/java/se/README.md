@@ -1,7 +1,7 @@
 ---
 sidebar: auto
 prev: ../
-next: ../collection/
+next: ../io/
 title: Java SE
 date: 2019-03-05 15:39
 author: dong4j

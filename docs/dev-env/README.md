@@ -43,7 +43,7 @@ sidebar: false
 <br />
 <br />
 <br />
-<div align="center"><img src="https://raw.githubusercontent.com/spencerwooo/dowww/master/docs/.vuepress/public/hero.png" alt="Icon Badge" width="30%" /></div>
+<div align="center"><img src="https://dong4j-imgs.oss-cn-hangzhou.aliyuncs.com/blog/hero.png" alt="Icon Badge" width="30%" /></div>
 
 <h1 align="center">macOS 开发环境配置</h1>
 

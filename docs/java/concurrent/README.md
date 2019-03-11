@@ -1,6 +1,26 @@
-# 线程 多线程 线程池
+---
+sidebar: auto
+prev: ../collection/
+next: ../jvm/
+title: 并发 & 多线程
+date: 2019-03-05 15:39
+author: dong4j
+tags:
+- Java
+- 面试题
+- 多线程
+- 并发
+---
+
+::: tip 并发 & 多线程
+
+:::
+
+<!-- more -->
 
 [[toc]]
+
+[toc]
 
 开启线程的三种方式？
 线程和进程的区别？
