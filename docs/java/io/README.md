@@ -153,7 +153,3 @@ nio的Channel的加入，相当于增加了水龙头（有阀门），虽然一�
 * 当用System.in.read(buffer)从键盘输入一行n个字符后，存储在缓冲区buffer中的字节数是多少
 
 * 如何使用扫描器类（Scanner Class）令牌化
-
-
-
-
