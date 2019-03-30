@@ -16,7 +16,6 @@ footer: 2019 ©dong4j. Released under the CC BY-NC-SA 4.0 International License.
 <div align="center">
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) 
-[![Open Issues](http://githubbadges.herokuapp.com/boennemann/badges/issues.svg?style=flat)](https://github.com/dong4j/java-interview/issues) 
 ![](https://img.shields.io/github/last-commit/dong4j/java-interview.svg) ![](https://img.shields.io/github/repo-size/dong4j/java-interview.svg) 
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-03A9F4.svg)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
 [![GitHub stars](https://img.shields.io/github/stars/dong4j/java-interview.svg?style=social)](https://github.com/dong4j/java-interview)

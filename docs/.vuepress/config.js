@@ -8,7 +8,7 @@ module.exports = {
       description: 'Fuck Java, fuck interview.',
     }
   },
-  base: '/java-interview/',
+  // base: '/java-interview/',
   head: [
     ['link', { rel: 'icon', href: '/favicon.png' }],
     ['meta', { name: 'theme-color', content: '#00ABE9' }],
