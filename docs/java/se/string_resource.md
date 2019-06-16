@@ -18,7 +18,7 @@ tags:
 
 String 类的定义 (JDK8), 这里截取几个重要的字段和方法.
 
-```java{1}
+```java
 public final class String
     implements java.io.Serializable, Comparable<String>, CharSequence {
     /** The value is used for character storage. */
