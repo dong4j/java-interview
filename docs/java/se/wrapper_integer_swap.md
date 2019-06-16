@@ -56,9 +56,9 @@ i2  = tmp; // i2 得到 tmp 的值: 0x1234
 如果 Integer 提供一个函数, 叫做 setIntValue(int value) , 那就万事大吉了.我们可以实现这样的代码:
 
 ```java
-public **static ****void **swap(Integer i1, Integer i2) {
+public static void swap(Integer i1, Integer i2) {
 // 第二种可能的实现
-    **int **tmp = i1. getIntValue ( )
+    int tmp = i1. getIntValue ( )
     i1.setIntValue(i2. getIntValue ());
     i2. setIntValue ( tmp );
 }
@@ -71,7 +71,7 @@ public **static ****void **swap(Integer i1, Integer i2) {
 在我们快要绝望的时候, 我们突然发现了这个东东:
 
 ```java
-private **final ****int**value ;
+private final int value ;
 ```
 
 java 的 Integer 实现, 实际内部将整数值存放在一个叫 int 类型的 value 变量里.他虽然有 get 函数, 但是却没有 set 函数.因为他是 final 的（不可修改）！
@@ -93,7 +93,7 @@ sad... 我们得到了这样的异常:私有的、 final 的成员是不准�
 这时候, 老王从口袋里掏出了以前存起来的绝杀武器: 反射访问控制变量
 
 ```java
-AccessibleObject.setAccessible( **boolean **flag)
+AccessibleObject.setAccessible(boolean flag)
 ```
 
 Field 这个类是从 AccessibleObject 集成下来的, 而 AccessibleObject 提供了一个方法, 叫做 setAccessible , 他能让我们改变对于属性的访问控制.
@@ -182,7 +182,7 @@ System. *out *.println(i3 == i4);
 
 这个函数的入参: i1 和 i2 分别指向 a 和 b 对应的内存地址, 这个时候, 将 i1 的值（也就是 value ）传递给 int 型的 tmp , 则 tmp 的值为整数值 1 , 然后我们想把 i2 的整数值 2 设置给 i1 : f.set(i1, i2.intValue()); 这个地方看起来很正常吧？
 
-我们来看看这个函数的原型吧: **public ****void **set(Objectobj, Object value) 他需要的传入参数是两个 Object , 而我们传入的是什么呢？ Integer 的 i1 , 和 int 的 i2.intValue() .对于第一个参数, 是完全没问题的；而第二个参数, 编译器又给我们做了一次装箱, 最终转化出来的代码就像这样:
+我们来看看这个函数的原型吧: **public void set(Objectobj, Object value)** 他需要的传入参数是两个 Object , 而我们传入的是什么呢？ Integer 的 i1 , 和 int 的 i2.intValue() .对于第一个参数, 是完全没问题的；而第二个参数, 编译器又给我们做了一次装箱, 最终转化出来的代码就像这样:
 
 i1.value = Integer.valueOf(i2.intValue()).intValue();
 

@@ -18,7 +18,7 @@ tags:
 
 [[toc]]
 
-[toc]
+[TOC]
 
 ---
 
@@ -71,6 +71,8 @@ tags:
 
 1. 继承(多个子类对同一方法的重写).
 2. 接口(实现接口并覆盖接口中同一方法).
+
+面向对象顺口溜: **封装继承多态, 方法重载覆盖**
 
 ### 五大基本原则
 
@@ -309,29 +311,31 @@ Applet 小程序没有 main(), 主要是嵌在浏览器页面上运行(调用 in
 
 1. 发生在同一个类中, 方法名必须相同;
 2. 参数类型不同或者个数不同或者顺序不同;
-3. 方法返回值和访问修饰符可以不同 (但是不能从方法返回值不同来判断是否为 Overload);
-4. 发生在编译时. 　　
+3. 方法返回值和访问修饰符可以不同 ;
+4. 不能通过访问权限、返回类型、抛出的异常进行重载;
+5. 方法的异常类型和数目不会对重载造成影响；
+6. 发生在编译时.　
 
 **[👉重写(Override)](./oop_inheritance.md#重写-Override):**   
 
 1. 发生在父子类中;
 2. 方法名, 参数列表必须相同;
-3. 返回值范围小于等于父类;
-4. 抛出的异常范围小于等于父类;
+3. 重写的方法的返回值必须和被重写的方法的返回一致;
+4. **抛出的异常范围小于等于父类;**
 5. 访问修饰符范围大于等于父类;
-6. 如果父类方法访问修饰符为 private 或者 final, 子类就不能重写该方法;
+6. 如果父类方法访问修饰符为 private 或者 final, 子类就不能重写该方法.
 
 ### 构造方法有哪些特性
 
 1. 名字与类名相同; 
-2. 没有返回值, 但不能用 void 声明构造函数; 
+2. 没有返回值, 且不能用 void 声明构造函数; 
 3. 生成类的对象时自动执行, 无需调用;
 4. 如果不写构造方法, 编译器会自动生成一个无参构造, 如果写了, 就不会自动生成;
 5. 子类在写构造方法时, 如果父类没有无参构造, 子类构造方法必须使用 `super(param)`来显式调用父类构造, 不然将报错;
 
 ### Constructor 是否可被 Override
 
-在讲 [👉 继承](./oop_inheritance.md) 的时候就知道父类的私有属性和构造方法并不能被继承, 所以 Constructor 也就不能被 Override(重写),但是可以 Overload(重载), 所以可以看到一个类中有多个构造函数的情况.
+在讲 [👉 继承](./oop_inheritance.md) 的时候就知道父类的**私有属性**和**构造方法**并不能被继承, 所以 Constructor 也就不能被 Override(重写), 但是可以 Overload(重载), 所以可以看到一个类中有多个构造函数的情况.
 
 ### 在 Java 中定义一个不做事且没有参数的构造方法的作用
 
@@ -370,7 +374,7 @@ new 运算符, new 创建对象实例(对象实例在堆内存中), 对象引用
 
 ### 成员变量与局部变量的区别
 
-1. 从语法形式上, 看成员变量是属于类的, 而局部变量是在方法中定义的变量或是方法的参数; 成员变量可以被 public,private,static 等修饰符所修饰, 而局部变量不能被访问控制修饰符及 static 所修饰; 但是成员变量和局部变量都能被 final 所修饰; 
+1. 从语法形式上, 成员变量是属于类的, 而局部变量是在方法中定义的变量或是方法的参数; 成员变量可以被 public,private,static 等修饰符所修饰, 而局部变量不能被访问控制修饰符及 static 所修饰; 但是成员变量和局部变量都能被 final 所修饰; 
 2. 从变量在内存中的存储方式来看, 成员变量是对象的一部分, 而对象存在于堆内存, 局部变量存在于栈内存
 3. 从变量在内存中的生存时间上看, 成员变量是对象的一部分, 它随着对象的创建而存在, 而局部变量随着方法的调用而自动消失.
 4. 成员变量如果没有被赋初值, 则会自动以类型的默认值而赋值(一种情况例外:被 final 修饰的成员变量也必须显示地赋值 [**定义时就赋值或者在构造方法中赋值**]); 而局部变量则不会自动赋值.
@@ -394,7 +398,7 @@ new 运算符, new 创建对象实例(对象实例在堆内存中), 对象引用
 2. 程序运行时: 实例变量属于某个对象的属性, 必须创建了实例对象, 其中的实例变量才会被分配空间, 才能使用这个实例变量; 
     静态变量不属于某个实例对象, 而是属于类, 所以也称为类变量, 只要程序加载了类的字节码, 不用创建任何实例对象, 静态变量就会被分配空间, 静态变量就可以被使用了.
     总之, 实例变量必须创建对象后才可以通过这个对象来使用, 静态变量则可以直接使用类名来引用.
-   
+
 例如, 对于下面的程序, 无论创建多少个实例对象, 永远都只分配了一个 staticVar 变量, 并且每创建一个实例对象, 这个 staticVar 就会加 1; 
 但是每创建一个实例对象, 就会分配一个 instanceVar, 即可能分配多个 instanceVar, 并且每个 instanceVar 的值都只自加了1次.
 
@@ -414,7 +418,7 @@ public class VariantTest{
 
 [👉 内部类](./inner_class.md)
 
-### 非静态内部类初始化方式
+### 成员内部类初始化方式
 
 ```java
 Outer outer = new Outer();
@@ -441,7 +445,9 @@ Outer.Inner inner = new Outer.Inner();
 
 ### 为什么不能用浮点型表示金额
 
-浮点类型会丢失精度
+浮点类型会丢失精度, 因此一般都使用 `BigDecimal` 来表示金额.
+
+**float 和 double 只能用来做科学计算和工程计算. 商业运算中我们要使用 BigDecimal. **
 
 ### Java 中应该使用什么数据类型来代表价格
 
@@ -478,8 +484,9 @@ int 强转为 byte, 取低八位,其余丢掉.
 
 ### a = a + b 与 a += b 的区别
 
-`a += b` 是先计算出 a 的值, 然后用一个 temp 对象存储, 之后和 b 进行相加, 然后将值赋值给 a 引用.
 `a = a + b` 则是先计算 a + b, 然后再赋值给 a 引用, 给 a 引用的时候如果引用 a 有计算过程, 则会再次计算.
+
+`a += b` 是先计算出 a 的值, 然后用一个 temp 对象存储, 之后和 b 进行相加, 然后将值赋值给 a 引用.
 
 `+=` 操作时, 如果两边的操作数的精度不一样时会**自动向下转换**
 而 `a = a + b`则不会自动转化, 需要手动进行**强制类型转换**
@@ -498,7 +505,7 @@ double d =1.5;
 long longValue = d;
 ```
 
-以上代码会报错, 把大范围的数值赋给小范围的变量, 需要强制转换，这样才能通过编译，且大范围的数值会丢失精度。
+以上代码会报错, 把大范围的数值赋给小范围的变量, 需要强制转换，这样才能通过编译，且大范围的数值会丢失精度. 
 
 ```java
 long longValue = (long) d;
@@ -520,7 +527,7 @@ int baseValue = 0;
 Integer wrapperValue = new Integer(0);
 ```
 
-此时肯定是 `new Integer(0)` 占用的内存比 int 大, 因为 `new Integer(0)` 有多个静态字段, 还有一个 char 数组.
+此时肯定是 `new Integer(0)` 占用的内存比 int 大
 
 如果是下面的代码:
 
@@ -555,8 +562,9 @@ Integer wrapperValue = null;
 	4. 时间间隔到了. 
 	5. 此时该线程就可以被调度了, 如果是被中断的话就抛出一个 `InterruptedException`异常.
 6. **notify()**:  唤醒在该对象上等待的某个线程.
-7. **notifyAl()l**:  唤醒在该对象上等待的所有线程.
+7. **notifyAll()**:  唤醒在该对象上等待的所有线程.
 8. **toString()**: 转换成字符串, 一般子类都有重写, 否则打印句柄.
+9. **finalized()**: 在 gc 启动，该对象被回收的时候被调用. [没事最好别重载 finalized()](https://zhuanlan.zhihu.com/p/27850176)
 
 ### 写 clone() 时, 通常都有一行代码, 是什么  
 
@@ -594,10 +602,10 @@ Math.round(-11.5) --> -11
 例如, 对于如下语句:
 
 ```java
-final StringBuffer a = new StringBuffer("immutable"); 
+final StringBuffer a = new StringBuffer("immutable");
 
 // 报告编译期错误
-a = new StringBuffer(""); 
+a = new StringBuffer("");
 // 可以通过编译
 a.append("broken!");
 ```
@@ -618,7 +626,7 @@ param.append("a");
 
 ### 说说 & 和 && 的区别
 
-& 和 && 都可以用作逻辑与的运算符, 表示逻辑 与 (and).
+& 和 && 都可以用作**逻辑与**的运算符, 表示逻辑 与 (and).
 
 当运算符两边的表达式的结果都为 true 时, 整个运算结果才为 true, 否则只要有一方为 false, 则结果为 false.
 
@@ -689,7 +697,7 @@ String 中的 equals() 是被重写过的, 因为 Object 的 equals() 是比较�
 「你重写过 hashcode() 和 equals() 么, 为什么重写 equals() 时必须重写 hashCode()? 」
 
 ::: tip 前提
-大前提是说道的类会被存储到散列表的数据结构中, 比如 HashMap, HashSet 等,如果不是在这个前提下, 就不会需要关系 hashCode() 和 equals() 的关系了
+大前提是说到的类会被存储到散列表的数据结构中, 比如 HashMap, HashSet 等,如果不是在这个前提下, 就不会需要关系 hashCode() 和 equals() 的关系了
 :::
 
 #### hashCode() 介绍
@@ -767,7 +775,7 @@ abstract class AbstractStringBuilder implements Appendable, CharSequence {
 	- `String` 长度不可改变,其他2种长度可变;
 	- `StringBuffer` 是线程安全的,但是效率低, `StringBuilder` 线程不安全但是效率高
 	- 性能: `StringBuilder > StringBuffer > String`
-	- String 覆盖了 equals 方法和 hashCode 方法, 而 StringBuffer, StringBuilder 没有覆盖 equals 方法和 hashCode 方法, 所以, 将 StringBuffer,StringBuilder 对象存储进 Java 集合类中时会出现问题.
+	- String 覆盖了 equals 方法和 hashCode 方法, 而 StringBuffer, StringBuilder 没有覆盖 equals 方法和 hashCode 方法, 所以将 StringBuffer,StringBuilder 对象存储进 Java 集合类中时会出现问题.
 
 - 使用策略
 	- 基本原则:
@@ -913,34 +921,13 @@ StackOverflowError 的定义： 当应用程序递归太深而发生堆栈溢出
 
 ### NoClassDefFoundError 与 ClassNotFoundException 的区别
 
+| **ClassNotFoundException**                                   | **NoClassDefFoundError**                            |
+| ------------------------------------------------------------ | --------------------------------------------------- |
+| 从 java.lang.Exception 继承，是一个 Exception 类型           | 从 java.lang.Error 继承，是一个 Error 类型          |
+| 当动态加载 Class 的时候找不到类会抛出该异常                  | 当编译成功以后执行过程中 Class 找不到导致抛出该错误 |
+| 一般在执行 Class.forName ()、ClassLoader.loadClass () 或 ClassLoader.findSystemClass () 的时候抛出 | 由 JVM 的运行时系统抛出                             |
+
 ### [👉 final finally finalize 的区别](./final_finally_finalize.md)
-
-#### final
-
-- final关键字可以用于成员变量, 本地变量, 方法以及类.
-- final成员变量必须在声明的时候初始化或者在构造器中初始化, 否则就会报编译错误.
-- 你不能够对final变量再次赋值.
-- 本地变量必须在声明时赋值.
-- 在匿名类中所有变量都必须是final变量.
-- final方法不能被重写.
-- final类不能被继承.
-- final关键字不同于finally关键字, 后者用于异常处理.
-- final关键字容易与finalize()方法搞混, 后者是在Object类中定义的方法, 是在垃圾回收之前被JVM调用的方法.
-- 接口中声明的所有变量本身是final的.
-- final和abstract这两个关键字是反相关的, final类就不可能是abstract的.
-- final方法在编译阶段绑定, 称为静态绑定(static binding).
-- 没有在声明时初始化final变量的称为空白final变量(blank final variable), 它们必须在构造器中初始化, 或者调用this()初始化.不这么做的话, 编译器会报错"final变量(变量名)需要进行初始化".
-- 将类, 方法, 变量声明为final能够提高性能, 这样JVM就有机会进行估计, 然后优化.
-- final 修饰的引用变量的指针不可变,但是引用对象中的值是可以改变的
-
-[👉 内存屏障问题](../jvm/memory_barrier.md)
-
-#### finally
-
-#### finalize
-
-finalize() 是 Object 类的一个方法, 在垃圾收集器执行的时候会调用被回收对象的此方法, 可以覆盖此方法提供垃圾收集时的其他资源回收, 例如关闭文件等.
-JVM不保证此方法总被调用, 并且 finalize() 只会被执行一次, 所以对象有可能被复活一次
 
 ## 序列化 知识点
 
@@ -948,48 +935,89 @@ JVM不保证此方法总被调用, 并且 finalize() 只会被执行一次, 所�
 
 [👉 深入理解 Java 的序列化和反序列化](./serializable.md)
 
-- 只有实现了 Serializable 和 Externalizable 接口的类的对象才能被序列化.Externalizable接口继承自 Serializable接口, 实现Externalizable接口的类完全由自身来控制序列化的行为, 而仅实现Serializable接口的类可以采用默认的序列化方式 . 
-- 默认实现Serializable接口的序列化是对于一个类的非static, 非transient的实例变量进行序列化与反序列化.刚刚上面也说了, 如果要对static实例变量进行序列化就要使用Externalizable接口, 手动实现.
-- serialVersionUID的作用
+- 只有实现了 Serializable 和 Externalizable 接口的类的对象才能被序列化. Externalizable 接口继承自 Serializable接口, 实现 Externalizable 接口的类完全由自身来控制序列化的行为, 而仅实现 Serializable 接口的类可以采用默认的序列化方式 . 
+- 默认实现 Serializable 接口的序列化是对于一个类的非 static, 非 transient 的实例变量进行序列化与反序列化.刚刚上面也说了, 如果要对 static 实例变量进行序列化就要使用 Externalizable 接口, 手动实现.
+- serialVersionUID 的作用
 - 父类的序列化
-    - 要想将父类对象也序列化, 就需要让父类也实现Serializable 接口.
+    - 要想将父类对象也序列化, 就需要让父类也实现 Serializable 接口.
         如果父类不实现的话的, 就需要有默认的无参的构造函数.
         在父类没有实现 Serializable 接口时, 虚拟机是不会序列化父对象的, 而一个 Java 对象的构造必须先有父对象, 才有子对象, 反序列化也不例外.
-        所以反序列化时, 为了构造父对象, 只能调用父类的无参构造函数作为默认的父对象.因此当我们取父对象的变量值时, 它的值是调用父类无参构造函数后的值.
+        所以反序列化时, 为了构造父对象, 只能调用父类的无参构造函数作为默认的父对象. 因此当我们取父对象的变量值时, 它的值是调用父类无参构造函数后的值.
         如果你考虑到这种序列化的情况, 在父类无参构造函数中对变量进行初始化, 否则的话, 父类变量值都是默认声明的值, 如 int 型的默认是 0, string 型的默认是 null.
-- 关键字transient
-- 当持久化对象时, 可能有一个特殊的对象数据成员, 我们不想用serialization机制来保存它. 为了在一个特定对象的一个域上关闭serialization, 可以在这个域前加上关键字transient.
-transient是Java语言的关键字, 用来表示一个域不是该对象序列化的一部分.当一个对象被序列化的时候, transient型变量的值不包括在序列化的表示中, 然而非transient型的变量是被包括进去的
+- 关键字 transient
+- 当持久化对象时, 可能有一个特殊的对象数据成员, 我们不想用 serialization 机制来保存它. 为了在一个特定对象的一个域上关闭 serialization , 可以在这个域前加上关键字 transient.
+transient 是 Java 语言的关键字, 用来表示一个域不是该对象序列化的一部分.当一个对象被序列化的时候, transient 型变量的值不包括在序列化的表示中, 然而非 transient 型的变量是被包括进去的
 
 ### Serializable 的意义
 
-1. 比如说你的内存不够用了, 那计算机就要将内存里面的一部分对象暂时的保存到硬盘中, 等到要用的时候再读入到内存中, 硬盘的那部分存储空间就是所谓的虚拟内存.在比如过你要将某个特定的对象保存到文件中, 我隔几天在把它拿出来用, 那么这时候就要实现Serializable接口; 
-2. 在进行java的Socket编程的时候, 你有时候可能要传输某一类的对象, 那么也就要实现Serializable接口; 最常见的你传输一个字符串, 它是JDK里面的类, 也实现了Serializable接口, 所以可以在网络上传输.
-3. 如果要通过远程的方法调用 (RMI) 去调用一个远程对象的方法, 如在计算机A中调用另一台计算机B的对象的方法, 那么你需要通过JNDI服务获取计算机B目标对象的引用, 将对象从B传送到A, 就需要实现序列化接口.
+1. 比如说你的内存不够用了, 那计算机就要将内存里面的一部分对象暂时的保存到硬盘中, 等到要用的时候再读入到内存中, 硬盘的那部分存储空间就是所谓的虚拟内存. 再比如要将某个特定的对象保存到文件中, 隔几天在把它拿出来用, 那么这时候就要实现 Serializable 接口; 
+2. 在进行 Java 的 Socket 编程的时候, 你有时候可能要传输某一类的对象, 那么也就要实现 Serializable 接口; 最常见的传输一个字符串, 它是 JDK 里面的类, 也实现了 Serializable 接口, 所以可以在网络上传输.
+3. 如果要通过远程方法调用 (RMI) 去调用一个远程对象的方法, 如在计算机 A 中调用另一台计算机 B 的对象的方法, 那么你需要通过 JNDI 服务获取计算机 B 目标对象的引用, 将对象从 B 传送到 A, 就需要实现序列化接口.
 
 例如:
 
-在web 开发中, 如果对象被保存在了Session 中, tomcat 在重启时要把Session 对象序列化到硬盘, 这个对象就必须实现Serializable接口.
+在 web 开发中, 如果对象被保存在了 Session 中, tomcat 在重启时要把 Session 对象序列化到硬盘, 这个对象就必须实现 Serializable 接口.
 
-如果对象要经过分布式系统 进行网络传输或通过rmi 等远程调用, 这就需要在网络上传输对象, 被传输的对象就必 须实现Serializable接口.
+如果对象要经过分布式系统进行网络传输或通过 rmi 等远程调用, 这就需要在网络上传输对象, 被传输的对象就必 须实现 Serializable 接口.
 
 ### Serializable 和 Parcelable 的区别
 
+Serializable（Java 自带）:
+Serializable 是序列化的意思，表示将一个对象转换成可存储或可传输的状态. 序列化后的对象可以在网络上进行传输，也可以存储到本地. 
+
+Parcelable（android 专用）:
+除了 Serializable 之外，使用 Parcelable 也可以实现相同的效果，
+不过不同于将对象进行序列化，Parcelable 方式的实现原理是将一个完整的对象进行分解，
+而分解后的每一部分都是 Intent 所支持的数据类型，这样也就实现传递对象的功能了. 
+
 ### 如何将一个Java对象序列化到文件里 
 
-### 序列化底层原理
+假定一个 User 类，它的对象需要序列化，可以有如下三种方法：
+
+1. 若 User 类仅仅实现了 Serializable 接口，则可以按照以下方式进行序列化和反序列化
+
+   ObjectOutputStream 采用默认的序列化方式，对 User 对象的非 transient 的实例变量进行序列化.  
+   ObjcetInputStream 采用默认的反序列化方式，对对 User 对象的非 transient 的实例变量进行反序列化. 
+
+2. 若 User 类仅仅实现了 Serializable 接口，并且还定义了 readObject (ObjectInputStream in) 和 writeObject (ObjectOutputSteam out)，则采用以下方式进行序列化与反序列化. 
+
+   ObjectOutputStream 调用 User 对象的 writeObject (ObjectOutputStream out) 的方法进行序列化.  
+   ObjectInputStream 会调用 User 对象的 readObject (ObjectInputStream in) 的方法进行反序列化. 
+
+3. 若 User 类实现了 Externalnalizable 接口，且 User 类必须实现 readExternal (ObjectInput in) 和 writeExternal (ObjectOutput out) 方法，则按照以下方式进行序列化与反序列化. 
+
+   ObjectOutputStream 调用 User 对象的 writeExternal (ObjectOutput out)) 的方法进行序列化.  
+   ObjectInputStream 会调用 User 对象的 readExternal (ObjectInput in) 的方法进行反序列化. 
+
+
 
 ### 序列化与单例模式 
 
 ### 为什么说序列化并不安全
 
-### 什么是深拷贝和浅拷贝
-
 ### 为什么要使用克隆
+
+克隆可以得到任何一个时刻的对象状态，比如 你有一个 User 对象，并对 User 对象的相关属性做了赋值，现在想对当前这个 User 对象做一些操作如改变属性值等，但又不想改变当前这个对象的属性值，那么你就可以可能一个当前状态下的 User 对象，对新的这个对象操作. 
 
 ### 如何实现对象克隆
 
-### 深拷贝和浅拷贝区别是什么
+**浅拷贝:**
+
+1. 重写 clone() 方法, 并申明为 public;
+2. 在子类中的 clone() 中调用 super.clone();
+3. 子类实现 Cloneable 接口
+
+**深拷贝:**
+
+使用序列化或反射实现, 也可以将所有引用类全部实现 Cloneable 接口, 并重写 clone().
+
+### 深拷贝和浅拷贝区别
+
+**浅克隆**：创建一个新对象，新对象的属性和原来对象完全相同，对于非基本类型属性，仍指向原有属性所指向的对象的内存地址.
+
+**深克隆**：创建一个新对象，属性中引用的其他对象也会被克隆，不再指向原有对象地址.
+
+总之深浅克隆都会在堆中新分配一块区域，区别在于对象属性引用的对象是否需要进行克隆（递归性的）.
 
 ### Java 序列化中如果有些字段不想进行序列化, 怎么办
 
@@ -1101,7 +1129,7 @@ JAVA反射机制是在运行状态中, 对于任意一个类, 都能够知道这
 
 [[toc]]
 
-[toc]
+[TOC]
 
 ::: tip 所有文章
 - [👉 标题](引用的文档相对位置)

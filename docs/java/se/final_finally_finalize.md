@@ -1,6 +1,6 @@
 # final finally finalize 的区别
 
-[👈 **相关面试题**](./README.md#_57-👉-final-finally-finalize-的区别)
+[👈 **相关面试题**](./README.md#👉-final-finally-finalize-的区别)
 
 这是一道再经典不过的面试题了, 我们在各个公司的面试题中几乎都能看到它的身影.
 final、finally 和 finalize 虽然长得像孪生三兄弟一样, 但是它们的含义和用法却是大相径庭.
@@ -15,7 +15,7 @@ final、finally 和 finalize 虽然长得像孪生三兄弟一样, 但是它们�
 3. 定义方法.
 4. 定义类.
 
-我们依次来回顾一下每种情况下 final 的作用.首先来看第一种情况, 如果 final 修饰的是一个基本类型, 就表示这个变量被赋予的值是不可变 的, 即它是个常量；如果 final 修饰的是一个对象, 就表示这个变量被赋予的引用是不可变的, 这里需要提醒大家注意的是, 不可改变的只是这个变量所保存的 引用, 并不是这个引用所指向的对象.在第二种情况下, final 的含义与第一种情况相同.实际上对于前两种情况, 有一种更贴切的表述 final 的含义的描 述, 那就是, 如果一个变量或方法参数被 final 修饰, 就表示它只能被赋值一次, 但是 JAVA 虚拟机为变量设定的默认值不记作一次赋值.
+我们依次来回顾一下每种情况下 final 的作用.首先来看第一种情况, 如果 final 修饰的是一个基本类型, 就表示这个变量被赋予的值是不可变 的, 即它是个常量；如果 final 修饰的是一个对象, 就表示这个变量被赋予的引用是不可变的, 这里需要提醒大家注意的是, 不可改变的只是这个变量所保存的 引用, 并不是这个引用所指向的对象.在第二种情况下, final 的含义与第一种情况相同.实际上对于前两种情况, 有一种更贴切的表述 final 的含义的描述, 那就是, 如果一个变量或方法参数被 final 修饰, 就表示它只能被赋值一次, 但是 JAVA 虚拟机为变量设定的默认值不记作一次赋值.
 
 被 final 修饰的变量必须被初始化.初始化的方式有以下几种:
 
@@ -86,11 +86,11 @@ public class FinalTest {
 
 用 final 修饰的变量（常量）比非 final 的变量（普通变量）拥有更高的效率, 因此我们在实际编程中应该尽可能多的用常量来代替普通变量, 这也是一个很好的编程习惯.
 
-当 final 用来定义一个方法时, 会有什么效果呢？正如大家所知, 它表示这个方法不可以被子类重写, 但是它这不影响它被子类继承.我们写段代码来验证一下:
+当 final 用来定义一个方法时, 会有什么效果呢？正如大家所知, 它表示这个方法**不可以被子类重写**, 但是它这不影响它被子类继承. 我们写段代码来验证一下:
 
 ```java
 class ParentClass {  
-    public final void TestFinal() {  
+    public final void testFinal() {  
         System.out.println("父类 -- 这是一个 final 方法");  
     }  
 }  
@@ -105,7 +105,7 @@ public class SubClass extends ParentClass {
       
     public static void main(String[] args) {  
         SubClass sc = new SubClass();  
-        sc.TestFinal();  
+        sc.testFinal();  
     }  
 }
 ```
@@ -113,7 +113,7 @@ public class SubClass extends ParentClass {
 这里需要特殊说明的是, 具有 private 访问权限的方法也可以增加 final 修饰, 但是由于子类无法继承 private 方法, 因此也无法重写它.编译器在处理 private 方法时, 是按照 final 方法来对待的, 这样可以提高该方法被调用时的效率.
 不过子类仍然可以定义同父类中的 private 方法具有同样结构的方法, 但是这并不会产生重写的效果, 而且它们之间也不存在必然联系.
 
-最后我们再来回顾一下 final 用于类的情况.这个大家应该也很熟悉了, 因为我们最常用的 String 类就是 final 的.由于 final 类不允 许被继承, 编译器在处理时把它的所有方法都当作 final 的, 因此 final 类比普通类拥有更高的效率.final 的类的所有方法都不能被重写, 但这并不 表示 final 的类的属性（变量）值也是不可改变的, 要想做到 final 类的属性值不可改变, 必须给它增加 final 修饰, 请看下面的例子:
+最后我们再来回顾一下 final 用于类的情况.这个大家应该也很熟悉了, 因为我们最常用的 String 类就是 final 的.由于 final 类不允许被继承, 编译器在处理时把它的所有方法都当作 final 的, 因此 final 类比普通类拥有更高的效率. final 的类的所有方法都不能被重写, 但这并不 表示 final 的类的属性（变量）值也是不可改变的, 要想做到 final 类的属性值不可改变, 必须给它增加 final 修饰, 请看下面的例子:
 
 ```java
 public final class FinalTest {  
@@ -129,6 +129,28 @@ public final class FinalTest {
 ```
 
 运行上面的代码试试看, 结果是 99, 而不是初始化时的 10.
+
+总结一下:
+
+#### final
+
+- final 关键字可以用于成员变量, 本地变量, 方法以及类.
+- final 成员变量必须在声明的时候初始化或者在构造器中初始化, 否则就会报编译错误.
+- 你不能够对 final 变量再次赋值.
+- 本地变量必须在声明时赋值.
+- 在匿名类中所有变量都必须是 final 变量.
+- final 方法不能被重写.
+- final 类不能被继承.
+- final 关键字不同于 finally 关键字, 后者用于异常处理.
+- final 关键字容易与 finalize() 方法搞混, 后者是在 Object 类中定义的方法, 是在垃圾回收之前被 JVM 调用的方法.
+- 接口中声明的所有变量本身是 fina l的.
+- final 和 abstract 这两个关键字是反相关的, final 类就不可能是 abstract 的.
+- final 方法在编译阶段绑定, 称为静态绑定 (static binding).
+- 没有在声明时初始化 final 变量的称为空白 final 变量(blank final variable), 它们必须在构造器中初始化, 或者调用 this()初始化.不这么做的话, 编译器会报错 "final变量(变量名)需要进行初始化".
+- 将类, 方法, 变量声明为 final 能够提高性能, 这样 JVM 就有机会进行估计, 然后优化.
+- final 修饰的引用变量的指针不可变,但是引用对象中的值是可以改变的
+
+[👉 内存屏障问题](../jvm/memory_barrier.md)
 
 ## finally
 
@@ -242,7 +264,13 @@ class ReturnClass {
 执行了 finally 语句
 ```
 
-很明显, return、continue 和 break 都没能阻止 finally 语句块的执行.从输出的结果来看, return 语句似乎在 finally 语句块之前执行了, 事实真的如此吗？我们来想想看, return 语句的作用是什么呢？是退出当前的方法, 并将值或对象返回.如果 finally 语句块是在 return 语句之后执行的, 那么 return 语句被执行后就已经退出当前方法了, finally 语句块又如何能被执行呢？因 此, 正确的执行顺序应该是这样的:编译器在编译 return new ReturnClass(); 时, 将它分成了两个步骤, new ReturnClass() 和 return, 前一个创建对象的语句是在 finally 语句块之前被执行的, 而后一个 return 语句是在 finally 语 句块之后执行的, 也就是说 finally 语句块是在程序退出方法之前被执行的.同样, finally 语句块是在循环被跳过（continue）和中断 （break）之前被执行的.
+很明显, return、continue 和 break 都没能阻止 finally 语句块的执行.
+
+从输出的结果来看, return 语句似乎在 finally 语句块之前执行了, 事实真的如此吗？我们来想想看, return 语句的作用是什么呢？是退出当前的方法, 并将值或对象返回.如果 finally 语句块是在 return 语句之后执行的, 那么 return 语句被执行后就已经退出当前方法了, finally 语句块又如何能被执行呢？
+
+因此, 正确的执行顺序应该是这样的:编译器在编译 return new ReturnClass(); 时, 将它分成了两个步骤, new ReturnClass() 和 return, 前一个创建对象的语句是在 finally 语句块之前被执行的, 而后一个 return 语句是在 finally 语 句块之后执行的, 也就是说 **finally 语句块是在程序退出方法之前被执行的**.同样, finally 语句块是在循环被跳过（continue）和中断 （break）之前被执行的.
+
+`new ReturnClass() —> finally —> return`
 
 finally 是异常处理语句结构的一部分, 表示总是执行. 
 
@@ -264,7 +292,7 @@ public class Test {
 }
 ```
 返回 1
-在执行到 return x 时,已经将值返回,放入到内存栈中, finally 只是执行了 +1操作,并没有改变内存栈中的值
+在执行到 return x 时,已经将值返回,放入到内存栈中, finally 只是执行了 +1操作, 并没有改变内存栈中的值
 
 ```java
 public class Test {
@@ -318,6 +346,8 @@ func2
 2
 ```
 
+finally 会在 return 之前执行, 因此在执行到输出 "func1"后, `return 1` 之前, 会先执行 `func2()`, 最后返回 2
+
 ## finalize
 
 最后, 我们再来看看 finalize, 它是一个方法, 属于 java.lang.Object 类, 它的定义如下:
@@ -328,7 +358,7 @@ func2
 
 在此我们只说说 finalize() 方法的作用是什么呢？
 
-finalize() 方法是在 GC 清理它所从属的对象时被调用的, 如果执行它的过程中抛出了无法捕获的异常（uncaught exception）, GC 将终止对改对象的清理, 并且该异常会被忽略；直到下一次 GC 开始清理这个对象时, 它的 finalize() 会被再次调用.
+finalize() 方法是在 GC 清理它所从属的对象时被调用的, 如果执行它的过程中抛出了无法捕获的异常（uncaught exception）, GC 将终止对该对象的清理, 并且该异常会被忽略；直到下一次 GC 开始清理这个对象时, 它的 finalize() 会被再次调用.
 
 请看下面的示例:
 
@@ -367,7 +397,7 @@ public static void runFinalizersOnExit(boolean value) {  
 
 由于 finalize() 属于 Object 类, 因此所有类都有这个方法, Object 的任意子类都可以重写（override）该方法, 在其中释放系统资源或者做其它的清理工作, 如关闭输入输出流.
 
-**JVM不保证此方法总被调用, 并且 finalize() 只会被执行一次, 所以对象有可能被复活一次**
+**JVM 不保证此方法总被调用, 并且 finalize() 只会被执行一次, 所以对象有可能被复活一次**
 
 ```java
 public class CanReliveObj {
@@ -418,5 +448,5 @@ obj 是 null
 
 通过以上知识的回顾, 我想大家对于 final、finally、finalize 的用法区别已经很清楚了.
 
-[👈 **相关面试题**](./README.md#_57-👉-final-finally-finalize-的区别)
+[👈 **相关面试题**](./README.md#👉-final-finally-finalize-的区别)
 

@@ -1,6 +1,6 @@
 # 包装类
 
-[👈 **相关面试题**](./README.md#_42-👉-自动装箱与拆箱)
+[👈 **相关面试题**](./README.md#👉-自动装箱与拆箱)
 
 Java 有 8 种基本数据类型, 为什么又要出现对应的 8 种包装类:
 
@@ -241,15 +241,15 @@ public class AutoWrapperTrap
 
 在JDK 1.5中提供了自动装箱与自动拆箱, 这其实是Java 编译器的语法糖, 编译器通过调用包装类型的valueOf()方法实现自动装箱, 调用xxxValue()方法自动拆箱.自动装箱和拆箱会有一些陷阱, 那就是包装类型复用了某些对象.
 
-1. Integer默认复用了[-128,127]这些对象, 其中高位置可以修改；
-2. Byte复用了全部256个对象[-128,127]；
-3. Short服用了[-128,127]这些对象；
-4. Long服用了[-128,127];
-5. Character复用了[0,127],Charater不能表示负数;
+1. Integer 默认复用了[-128,127]这些对象, 其中高位置可以修改； 
+2. Byte 复用了全部256个对象[-128,127]；
+3. Short 复用了[-128,127]这些对象；
+4. Long 复用了[-128,127];
+5. Character 复用了[0,127],Charater不能表示负数;
 
 Double 和 Float 是连续不可数的, 所以没法复用对象, 也就不存在自动装箱复用陷阱.
 
-Boolean 没有自动装箱与拆箱, 它也复用了 Boolean.TRUE 和 Boolean.FALSE, 通过Boolean.valueOf(boolean b)返回的Blooean对象要么是 TRUE, 要么是FALSE, 这点也要注意.
+Boolean 没有自动装箱与拆箱, 它也复用了 Boolean.TRUE 和 Boolean.FALSE, 通过 Boolean.valueOf(boolean b) 返回的Blooean 对象要么是 TRUE, 要么是FALSE, 这点也要注意.
 
 ## Java 中的基本数据类型转换（自动、强制、提升）
 
@@ -271,4 +271,4 @@ Boolean 没有自动装箱与拆箱, 它也复用了 Boolean.TRUE 和 Boolean.FA
 [👉 一个简单问题不简单实现](./wrapper_integer_swap.md)
 :::
 
-[👈 **相关面试题**](./README.md#_42-👉-自动装箱与拆箱)
+[👈 **相关面试题**](./README.md#👉-自动装箱与拆箱)

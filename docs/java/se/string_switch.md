@@ -1,6 +1,6 @@
 # Java switch 对 String 类型的支持
 
-[👈 **相关面试题**](./README.md#_56-👉-switch-对-string-的支持)
+[👈 **相关面试题**](./README.md#👉-switch-对-string-的支持)
 
 先看代码
 
@@ -23,26 +23,26 @@ public static void main(String[] args) {
     String var1 = args[0];
     byte var2 = -1;
     switch(var1.hashCode()) {
-    case 65:
-        if (var1.equals("A")) {
-            var2 = 0;
-        }
-        break;
-    case 66:
-        if (var1.equals("B")) {
-            var2 = 1;
-        }
+      case 65:
+          if (var1.equals("A")) {
+              var2 = 0;
+          }
+          break;
+      case 66:
+          if (var1.equals("B")) {
+              var2 = 1;
+          }
     }
 
     switch(var2) {
-    case 0:
-    case 1:
-    default:
+      case 0:
+      case 1:
+      default:
     }
 }
 ```
 
-这里我们看到, javac 编译后是先调用 String 的 hashCode 方法得到 hash 值，然后将 case 中的常量换掉.
+这里我们看到,  javac 编译后是先调用 String 的 hashCode 方法得到 hash 值，然后将 case 中的常量换掉.
 替换掉之后, 会使用 equals 进行比较, 因为 **不同的字符串 hash 后的 hashcode 可能相同**, 因此需要使用 equals 进行对比
 
 因此我们得出结论:
@@ -105,6 +105,6 @@ public class com.iflytek.test.common.StringTest {
 }
 ```
 
-[👈 **相关面试题**](./README.md#_56-👉-switch-对-string-的支持)****
+[👈 **相关面试题**](./README.md#👉-switch-对-string-的支持)
 
 
