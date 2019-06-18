@@ -251,8 +251,10 @@ function collection(title) {
       title,
       collapsable: false,
       children: [
-        'hashmap',
-        ''
+        'collection',
+        'list',
+        'set',
+        'map'
       ]
     }
   ]

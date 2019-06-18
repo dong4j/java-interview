@@ -10,7 +10,9 @@
 
 ### Java 异常类层次结构图
 
-![](./imgs/e145d356.png)
+![img](./imgs/PPjwP.png)
+
+
 
 在 Java 中, 所有的异常都有一个共同的祖先 java.lang 包中的 **Throwable类**.
 
