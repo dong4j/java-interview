@@ -5,11 +5,11 @@
 - Map 是映射接口, Map 中存储的内容是键值对 (key-value).
 - AbstractMap 是继承于 Map 的抽象类, 它实现了 Map 中的大部分 API. 其它 Map 的实现类可以通过继承AbstractMap 来减少重复编码.
 - SortedMap 是继承于 Map 的接口. SortedMap 中的内容是排序的键值对, 排序的方法是通过比较器(Comparator).
-- NavigableMap 是继承于 SortedMap 的接口. 相比于 SortedMap,  NavigableMap 有一系列的导航方法；如"获取大于/等于某对象的键值对"、“获取小于/等于某对象的键值对”等等.
-- TreeMap 继承于 AbstractMap, 且实现了 NavigableMap 接口；因此 TreeMap 中的内容是“有序的键值对”！
-- HashMap 继承于 AbstractMap , 但没实现 NavigableMap 接口；因此 HashMap 的内容是“键值对, 但不保证次序”！
-- Hashtable 虽然不是继承于 AbstractMap , 但它继承于 Dictionary(Dictionary也是键值对的接口) , 而且也实现 Map接口；因此 Hashtable 的内容也是“键值对, 也不保证次序”.但和 HashMap 相比,  Hashtable 是线程安全的, 而且它支持通过 Enumeration 去遍历.
-- WeakHashMap 继承于 AbstractMap .它和 HashMap 的键类型不同,  WeakHashMap 的键是“弱键”.
+- NavigableMap 是继承于 SortedMap 的接口. 相比于 SortedMap,  NavigableMap 有一系列的导航方法；如"获取大于/等于某对象的键值对"、 **获取小于/等于某对象的键值对** 等等.
+- TreeMap 继承于 AbstractMap, 且实现了 NavigableMap 接口；因此 TreeMap 中的内容是 **有序的键值对** ！
+- HashMap 继承于 AbstractMap , 但没实现 NavigableMap 接口；因此 HashMap 的内容是 **键值对, 但不保证次序** ！
+- Hashtable 虽然不是继承于 AbstractMap , 但它继承于 Dictionary(Dictionary也是键值对的接口) , 而且也实现 Map接口；因此 Hashtable 的内容也是 **键值对, 也不保证次序** .但和 HashMap 相比,  Hashtable 是线程安全的, 而且它支持通过 Enumeration 去遍历.
+- WeakHashMap 继承于 AbstractMap .它和 HashMap 的键类型不同,  WeakHashMap 的键是 **弱键** .
 
 在 JDK1.6中,新添加的节点是放在头节点, JDK1.8则是放在尾节点的
 JDK1.8中,如果链表足够大时,将自动转换成红黑树保存
@@ -41,7 +41,7 @@ abstract Collection<V>        values()
   - keySet()用于返回键集的Set集合
   - values()用户返回值集的Collection集合
 - 因为Map中不能包含重复的键；每个键最多只能映射到一个值.所以, 键-值集、键集都是Set, 值集时Collection.
-- Map提供了“键-值对”、“根据键获取值”、“删除键”、“获取容量大小”等方法.
+- Map提供了 **键-值对** 、 **根据键获取值** 、 **删除键** 、 **获取容量大小** 等方法.
 
 ## HashMap
 
@@ -53,7 +53,7 @@ HashMap 的实现不是同步的, 这意味着它不是线程安全的.
 
 ::: tip
 
-JDK1.8 之前 HashMap 由 数组+链表 组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的（“拉链法”解决冲突）.JDK1.8 以后在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）时，将链表转化为红黑树，以减少搜索时间。
+JDK1.8 之前 HashMap 由 数组+链表 组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的（ **拉链法** 解决冲突）.JDK1.8 以后在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）时，将链表转化为红黑树，以减少搜索时间。
 
 :::
 
@@ -906,7 +906,7 @@ static class Entry<K,V> implements Map.Entry<K,V> {
 
 ### 拉链法原理(JDK8 之前)
 
-所谓 **“拉链法”** 就是：将链表和数组相结合。也就是说创建一个链表数组，数组中每一格就是一个链表。若遇到哈希冲突，则将冲突的值加到链表中即可。
+所谓 **拉链法** 就是：将链表和数组相结合。也就是说创建一个链表数组，数组中每一格就是一个链表。若遇到哈希冲突，则将冲突的值加到链表中即可。
 
 ```java
 HashMap<String, String> map = new HashMap<>();
@@ -2081,23 +2081,741 @@ HashMap 在并发时可能出现的问题主要是两方面：
 
 ### JDK7
 
+![](./imgs/4aaaae7b.png)
 
+
+
+如图所示，是由 Segment 数组、HashEntry 组成，和 HashMap 一样，仍然是数组加链表。
+
+
+
+核心成员变量：
+
+```java
+/**
+ * Segment 数组，存放数据时首先需要定位到具体的 Segment 中。
+ */
+final Segment<K,V>[] segments;
+
+transient Set<K> keySet;
+transient Set<Map.Entry<K,V>> entrySet;
+```
+
+
+Segment 是 ConcurrentHashMap 的一个内部类，主要的组成如下：
+
+```java
+   static final class Segment<K,V> extends ReentrantLock implements Serializable {
+
+       private static final long serialVersionUID = 2249069246763182397L;
+       
+       // 和 HashMap 中的 HashEntry 作用一样，真正存放数据的桶
+       transient volatile HashEntry<K,V>[] table;
+			 // 每个 Segment 维护了一个 count 变量来统计该 Segment 中的键值对个数
+       transient int count;
+
+       transient int modCount;
+
+       transient int threshold;
+
+       final float loadFactor;
+}
+```
+
+HashEntry 的定义如下:
+
+```java
+/**
+ * ConcurrentHashMap list entry. Note that this is never exported
+ * out as a user-visible Map.Entry.
+ */
+static final class HashEntry<K,V> {
+    final int hash;
+    final K key;
+    volatile V value;
+    volatile HashEntry<K,V> next;
+
+    HashEntry(int hash, K key, V value, HashEntry<K,V> next) {
+        this.hash = hash;
+        this.key = key;
+        this.value = value;
+        this.next = next;
+    }
+
+    /**
+     * Sets next field with volatile write semantics.  (See above
+     * about use of putOrderedObject.)
+     */
+    final void setNext(HashEntry<K,V> n) {
+        UNSAFE.putOrderedObject(this, nextOffset, n);
+    }
+
+    // Unsafe mechanics
+    static final sun.misc.Unsafe UNSAFE;
+    static final long nextOffset;
+    static {
+        try {
+            UNSAFE = sun.misc.Unsafe.getUnsafe();
+            Class k = HashEntry.class;
+            nextOffset = UNSAFE.objectFieldOffset
+                (k.getDeclaredField("next"));
+        } catch (Exception e) {
+            throw new Error(e);
+        }
+    }
+}
+```
+
+和 HashMap 非常类似，唯一的区别就是其中的核心数据如 value ，以及链表都是 volatile 修饰的，保证了获取时的可见性.
+
+
+
+ConcurrentHashMap 采用了分段锁技术，其中 Segment 继承于 ReentrantLock。不会像 HashTable 那样不管是 put 还是 get 操作都需要做同步处理，理论上 ConcurrentHashMap 支持 CurrencyLevel (Segment 数组数量, 默认 16 个) 的线程并发。每当一个线程占用锁访问一个 Segment 时，不会影响到其他的 Segment。
+
+
+
+#### size()
+
+在执行 size 操作时，需要遍历所有 Segment 然后把 count 累计起来。
+
+ConcurrentHashMap 在执行 size 操作时先尝试不加锁，如果连续两次不加锁操作得到的结果一致，那么可以认为这个结果是正确的。
+
+尝试次数使用 RETRIES_BEFORE_LOCK 定义，该值为 2，retries 初始值为 -1，因此尝试次数为 3。
+
+如果尝试的次数超过 3 次，就需要对每个 Segment 加锁。
+
+```java
+/**
+ * Number of unsynchronized retries in size and containsValue
+ * methods before resorting to locking. This is used to avoid
+ * unbounded retries if tables undergo continuous modification
+ * which would make it impossible to obtain an accurate result.
+ */
+static final int RETRIES_BEFORE_LOCK = 2;
+
+public int size() {
+    // Try a few times to get accurate count. On failure due to
+    // continuous async changes in table, resort to locking.
+    final Segment<K,V>[] segments = this.segments;
+    int size;
+    boolean overflow; // true if size overflows 32 bits
+    long sum;         // sum of modCounts
+    long last = 0L;   // previous sum
+    int retries = -1; // first iteration isn't retry
+    try {
+        for (;;) {
+            // 超过尝试次数，则对每个 Segment 加锁
+            if (retries++ == RETRIES_BEFORE_LOCK) {
+                for (int j = 0; j < segments.length; ++j)
+                    ensureSegment(j).lock(); // force creation
+            }
+            sum = 0L;
+            size = 0;
+            overflow = false;
+            for (int j = 0; j < segments.length; ++j) {
+                Segment<K,V> seg = segmentAt(segments, j);
+                if (seg != null) {
+                    sum += seg.modCount;
+                    int c = seg.count;
+                    if (c < 0 || (size += c) < 0)
+                        overflow = true;
+                }
+            }
+            // 连续两次得到的结果一致，则认为这个结果是正确的
+            if (sum == last)
+                break;
+            last = sum;
+        }
+    } finally {
+        if (retries > RETRIES_BEFORE_LOCK) {
+            for (int j = 0; j < segments.length; ++j)
+                segmentAt(segments, j).unlock();
+        }
+    }
+    return overflow ? Integer.MAX_VALUE : size;
+}
+```
+
+#### put()
+
+```java
+public V put(K key, V value) {
+    Segment<K,V> s;
+    if (value == null)
+        throw new NullPointerException();
+    int hash = hash(key);
+    int j = (hash >>> segmentShift) & segmentMask;
+    if ((s = (Segment<K,V>)UNSAFE.getObject          // nonvolatile; recheck
+         (segments, (j << SSHIFT) + SBASE)) == null) //  in ensureSegment
+        s = ensureSegment(j);
+    return s.put(key, hash, value, false);
+}
+```
+
+首先是通过 key 定位到 Segment，之后在对应的 Segment 中进行具体的 put。
+
+```java
+final V put(K key, int hash, V value, boolean onlyIfAbsent) {
+  	// 将当前 Segment 中的 table 通过 key 的 hashcode 定位到 HashEntry
+    HashEntry<K,V> node = tryLock() ? null :
+        scanAndLockForPut(key, hash, value);
+    V oldValue;
+    try {
+        HashEntry<K,V>[] tab = table;
+        int index = (tab.length - 1) & hash;
+        HashEntry<K,V> first = entryAt(tab, index);
+        for (HashEntry<K,V> e = first;;) {
+            if (e != null) {
+                K k;
+              	// 遍历该 HashEntry，如果不为空则判断传入的 key 和当前遍历的 key 是否相等，相等则覆盖旧的 value
+                if ((k = e.key) == key ||
+                    (e.hash == hash && key.equals(k))) {
+                    oldValue = e.value;
+                    if (!onlyIfAbsent) {
+                        e.value = value;
+                        ++modCount;
+                    }
+                    break;
+                }
+                e = e.next;
+            }
+          	// 不为空则需要新建一个 HashEntry 并加入到 Segment 中，同时会先判断是否需要扩容
+            else {
+                if (node != null)
+                    node.setNext(first);
+                else
+                    node = new HashEntry<K,V>(hash, key, value, first);
+                int c = count + 1;
+                if (c > threshold && tab.length < MAXIMUM_CAPACITY)
+                    rehash(node);
+                else
+                    setEntryAt(tab, index, node);
+                ++modCount;
+                count = c;
+                oldValue = null;
+                break;
+            }
+        }
+    } finally {
+      	// 最后会解除在 scanAndLockForPut 中所获取当前 Segment 的锁
+        unlock();
+    }
+    return oldValue;
+}
+```
+
+虽然 HashEntry 中的 value 是用 volatile 关键词修饰的，但是并不能保证并发的原子性，所以 put 操作时仍然需要加锁处理。
+
+首先第一步的时候会尝试获取锁，如果获取失败肯定就有其他线程存在竞争，则利用 `scanAndLockForPut()` 自旋获取锁。
+
+```java
+private HashEntry<K,V> scanAndLockForPut(K key, int hash, V value) {
+    HashEntry<K,V> first = entryForHash(this, hash);
+    HashEntry<K,V> e = first;
+    HashEntry<K,V> node = null;
+    int retries = -1; // negative while locating node
+    // 尝试使用自旋获取锁
+    while (!tryLock()) {
+      HashEntry<K,V> f; // to recheck first below
+      if (retries < 0) {
+        if (e == null) {
+          if (node == null) // speculatively create node
+            node = new HashEntry<K,V>(hash, key, value, null);
+          retries = 0;
+        }
+        else if (key.equals(e.key))
+          retries = 0;
+        else
+          e = e.next;
+      }
+      // 如果重试的次数达到了 MAX_SCAN_RETRIES 则改为阻塞锁获取，保证能获取成功
+      else if (++retries > MAX_SCAN_RETRIES) {
+        lock();
+        break;
+      }
+      else if ((retries & 1) == 0 &&
+               (f = entryForHash(this, hash)) != first) {
+        e = first = f; // re-traverse if entry changed
+        retries = -1;
+      }
+    }
+    return node;
+}
+```
+
+
+
+#### get()
+
+获取元素时, 只需要将 Key 通过 Hash 之后定位到具体的 Segment ，再通过一次 Hash 定位到具体的元素上
+
+```java
+public V get(Object key) {
+    Segment<K,V> s; // manually integrate access methods to reduce overhead
+    HashEntry<K,V>[] tab;
+    int h = hash(key);
+    long u = (((h >>> segmentShift) & segmentMask) << SSHIFT) + SBASE;
+    if ((s = (Segment<K,V>)UNSAFE.getObjectVolatile(segments, u)) != null &&
+        (tab = s.table) != null) {
+        for (HashEntry<K,V> e = (HashEntry<K,V>) UNSAFE.getObjectVolatile
+                 (tab, ((long)(((tab.length - 1) & h)) << TSHIFT) + TBASE);
+             e != null; e = e.next) {
+            K k;
+            if ((k = e.key) == key || (e.hash == h && key.equals(k)))
+                return e.value;
+        }
+    }
+    return null;
+}
+```
+
+由于 HashEntry 中的 value 属性是用 volatile 关键词修饰的，保证了内存可见性，所以每次获取时都是最新值.
+
+ConcurrentHashMap 的 get 方法是非常高效的，**因为整个过程都不需要加锁**.
+
+#### 总结
+
+1. JDK7 中的 ConcurrentHashMap 使用 Segment 分段锁机制来降低全局锁带来的性能损耗, 利用多个 Segment 维护对应桶(HashEntry)来来提高并发性, 理论上并发数等于 Segment 数(默认 16);
+2. JDK7 中使用 `自旋锁 + 阻塞锁` 的方式来获取锁, 首先使用自旋锁, 到重试次数大于 64 次后, 则使用阻塞锁, 保证能获取成功;
 
 ### JDK8
 
+1.7 已经解决了并发问题，并且能支持 N 个 Segment 这么多次数的并发，但依然存在 HashMap 在 1.7 版本中的问题,  **那就是查询遍历链表效率太低**
+
+JDK8 中抛弃了原来的 Segment 分段锁, 开始使用 `CAS + synchronized` 来保证并发安全性, 并且将 1.7 中存放数据的 HashEntry 改为 Node，但作用都是相同的.
+
+#### put()
+
+```java
+final V putVal(K key, V value, boolean onlyIfAbsent) {
+    if (key == null || value == null) throw new NullPointerException();
+  	// 根据 key 计算出 hashcode
+    int hash = spread(key.hashCode());
+    int binCount = 0;
+    for (Node<K,V>[] tab = table;;) {
+      Node<K,V> f; int n, i, fh;
+      // 判断是否需要进行初始化
+      if (tab == null || (n = tab.length) == 0)
+        tab = initTable();
+      // f 即为当前 key 定位出的 Node，如果为空表示当前位置可以写入数据，利用 CAS 尝试写入，失败则自旋保证成功
+      else if ((f = tabAt(tab, i = (n - 1) & hash)) == null) {
+        if (casTabAt(tab, i, null,
+                     new Node<K,V>(hash, key, value, null)))
+          break;                   // no lock when adding to empty bin
+      }
+      // 如果当前位置的 hashcode == MOVED == -1, 则需要进行扩容
+      else if ((fh = f.hash) == MOVED)
+        tab = helpTransfer(tab, f);
+      else {
+        V oldVal = null;
+        // 如果都不满足，则利用 synchronized 锁写入数据
+        synchronized (f) {
+          if (tabAt(tab, i) == f) {
+            if (fh >= 0) {
+              binCount = 1;
+              for (Node<K,V> e = f;; ++binCount) {
+                K ek;
+                if (e.hash == hash &&
+                    ((ek = e.key) == key ||
+                     (ek != null && key.equals(ek)))) {
+                  oldVal = e.val;
+                  if (!onlyIfAbsent)
+                    e.val = value;
+                  break;
+                }
+                Node<K,V> pred = e;
+                if ((e = e.next) == null) {
+                  pred.next = new Node<K,V>(hash, key,
+                                            value, null);
+                  break;
+                }
+              }
+            }
+            else if (f instanceof TreeBin) {
+              Node<K,V> p;
+              binCount = 2;
+              if ((p = ((TreeBin<K,V>)f).putTreeVal(hash, key,
+                                                    value)) != null) {
+                oldVal = p.val;
+                if (!onlyIfAbsent)
+                  p.val = value;
+              }
+            }
+          }
+        }
+        if (binCount != 0) {
+          // 如果数量大于 TREEIFY_THRESHOLD 则要转换为红黑树
+          if (binCount >= TREEIFY_THRESHOLD)
+            treeifyBin(tab, i);
+          if (oldVal != null)
+            return oldVal;
+          break;
+        }
+      }
+    }
+    addCount(1L, binCount);
+    return null;
+}
+```
 
 
-## EnumMap
+
+#### get ()
+
+```java
+public V get(Object key) {
+    Node<K,V>[] tab; Node<K,V> e, p; int n, eh; K ek;
+    // 根据计算出来的 hashcode 寻址，如果就在桶上那么直接返回值
+    int h = spread(key.hashCode());
+    if ((tab = table) != null && (n = tab.length) > 0 &&
+        (e = tabAt(tab, (n - 1) & h)) != null) {
+      if ((eh = e.hash) == h) {
+        if ((ek = e.key) == key || (ek != null && key.equals(ek)))
+          return e.val;
+      }
+      // 如果是红黑树那就按照树的方式获取值
+      else if (eh < 0)
+        return (p = e.find(h, key)) != null ? p.val : null;
+      // 不满足那就按照链表的方式遍历获取值
+      while ((e = e.next) != null) {
+        if (e.hash == h &&
+            ((ek = e.key) == key || (ek != null && key.equals(ek))))
+          return e.val;
+      }
+    }
+    return null;
+}
+```
+
+#### 总结
+
+1. JDK8 使用 `CAS + synchronized` 来提高并发, 先使用 CAS 获取锁, 如果获取失败, 再使用 synchronized 来获取;
+2. JDK8 中会将长链表转换为红黑树;
 
 ## LinkedHashMap
 
+HashMap 是一个无序的 `Map`，因为每次根据 `key` 的 `hashcode` 映射到 `Entry` 数组上，所以遍历出来的顺序并不是写入的顺序。
+
+因此 JDK 推出一个基于 `HashMap` 但具有顺序的 `LinkedHashMap` 来解决有排序需求的场景。
+
+它的底层是继承于 `HashMap` 实现的，由一个双向链表所构成。
+
+`LinkedHashMap` 的排序方式有两种：
+
+- 根据写入顺序排序。
+- 根据访问顺序排序 (accessOrder = true) 。
+
+其中根据访问顺序排序时，每次 `get` 都会将访问的值移动到链表末尾，这样重复操作就能得到一个按照访问顺序排序的链表。
+
+### 数据结构
+
+```java
+	@Test
+	public void test(){
+		Map<String, Integer> map = new LinkedHashMap<String, Integer>();
+		map.put("1",1) ;
+		map.put("2",2) ;
+		map.put("3",3) ;
+		map.put("4",4) ;
+		map.put("5",5) ;
+		System.out.println(map.toString());
+
+	}
+```
+
+调试可以看到 `map` 的组成：
+
+![](./imgs/df8ae485.png)
+
+打开源码可以看到：
+
+```java
+/**
+ * The head of the doubly linked list.
+ */
+private transient Entry<K,V> header;
+
+/**
+ * accessOrder 决定了顺序，默认为 false，此时维护的是插入顺序
+ */
+private final boolean accessOrder;
+
+private static class Entry<K,V> extends HashMap.Entry<K,V> {
+	// 双向链表节点定义
+	Entry<K,V> before, after;
+
+	Entry(int hash, K key, V value, HashMap.Entry<K,V> next) {
+    	super(hash, key, value, next);
+  }
+}  
+```
+
+其中 `Entry` 继承于 `HashMap` 的 `Entry`，并新增了上下节点的指针，也就形成了双向链表。
+
+还有一个 `header` 的成员变量，是这个双向链表的头结点。
+
+上边的 demo 总结成一张图如下：
+
+![](./imgs/2d9c4a1c.png)
+
+第一个类似于 `HashMap` 的结构，利用 `Entry` 中的 `next` 指针进行关联。
+
+下边则是 `LinkedHashMap` 如何达到有序的关键。
+
+就是利用了头节点和其余的各个节点之间通过 `Entry` 中的 `after` 和 `before` 指针进行关联。
+
+其中还有一个 `accessOrder` 成员变量，默认是 `false`，默认按照插入顺序排序，为 `true` 时按照访问顺序排序，也可以调用:
+
+```java
+public LinkedHashMap(int initialCapacity,
+    float loadFactor,
+    boolean accessOrder) {
+    	super(initialCapacity, loadFactor);
+    	this.accessOrder = accessOrder;
+}
+```
+
+这个构造方法可以显式的传入 `accessOrder `。
+
+### 构造方法
+
+`LinkedHashMap` 的构造方法:
+
+```java
+public LinkedHashMap() {
+    super();
+    accessOrder = false;
+}
+```
+
+其实就是调用的 `HashMap` 的构造方法:
+
+`HashMap` 实现：
+
+```java
+public HashMap(int initialCapacity, float loadFactor) {
+    if (initialCapacity < 0)
+        throw new IllegalArgumentException("Illegal initial capacity: " +
+                                           initialCapacity);
+    if (initialCapacity > MAXIMUM_CAPACITY)
+        initialCapacity = MAXIMUM_CAPACITY;
+    if (loadFactor <= 0 || Float.isNaN(loadFactor))
+        throw new IllegalArgumentException("Illegal load factor: " +
+                                           loadFactor);
+
+    this.loadFactor = loadFactor;
+    threshold = initialCapacity;
+    //HashMap 只是定义了改方法，具体实现交给了 LinkedHashMap
+    init();
+}
+```
+
+可以看到里面有一个空的 `init()`，具体是由 `LinkedHashMap` 来实现的：
+
+```java
+@Override
+void init() {
+    header = new Entry<>(-1, null, null, null);
+    header.before = header.after = header;
+}
+```
+
+其实也就是对 `header` 进行了初始化。
+
+### put() 
+
+看 `LinkedHashMap` 的 `put()` 方法之前先看看 `HashMap` 的 `put` 方法：
+
+```java
+public V put(K key, V value) {
+    if (table == EMPTY_TABLE) {
+        inflateTable(threshold);
+    }
+    if (key == null)
+        return putForNullKey(value);
+    int hash = hash(key);
+    int i = indexFor(hash, table.length);
+    for (Entry<K,V> e = table[i]; e != null; e = e.next) {
+        Object k;
+        if (e.hash == hash && ((k = e.key) == key || key.equals(k))) {
+            V oldValue = e.value;
+            e.value = value;
+            //空实现，交给 LinkedHashMap 自己实现
+            e.recordAccess(this);
+            return oldValue;
+        }
+    }
+
+    modCount++;
+    // LinkedHashMap 对其重写
+    addEntry(hash, key, value, i);
+    return null;
+}
+
+// LinkedHashMap 对其重写
+void addEntry(int hash, K key, V value, int bucketIndex) {
+    if ((size >= threshold) && (null != table[bucketIndex])) {
+        resize(2 * table.length);
+        hash = (null != key) ? hash(key) : 0;
+        bucketIndex = indexFor(hash, table.length);
+    }
+
+    createEntry(hash, key, value, bucketIndex);
+}
+
+// LinkedHashMap 对其重写
+void createEntry(int hash, K key, V value, int bucketIndex) {
+    Entry<K,V> e = table[bucketIndex];
+    table[bucketIndex] = new Entry<>(hash, key, value, e);
+    size++;
+}       
+```
+
+主体的实现都是借助于 `HashMap` 来完成的，只是对其中的 `recordAccess(), addEntry(), createEntry()` 进行了重写。
+
+`LinkedHashMap` 的实现：
+
+```java
+//就是判断是否是根据访问顺序排序，如果是则需要将当前这个 Entry 移动到链表的末尾
+void recordAccess(HashMap<K,V> m) {
+    LinkedHashMap<K,V> lm = (LinkedHashMap<K,V>)m;
+    if (lm.accessOrder) {
+        lm.modCount++;
+        remove();
+        addBefore(lm.header);
+    }
+}
+
+    
+//调用了 HashMap 的实现，并判断是否需要删除最少使用的 Entry(默认不删除)    
+void addEntry(int hash, K key, V value, int bucketIndex) {
+    super.addEntry(hash, key, value, bucketIndex);
+
+    // Remove eldest entry if instructed
+    Entry<K,V> eldest = header.after;
+    if (removeEldestEntry(eldest)) {
+        removeEntryForKey(eldest.key);
+    }
+}
+
+void createEntry(int hash, K key, V value, int bucketIndex) {
+    HashMap.Entry<K,V> old = table[bucketIndex];
+    Entry<K,V> e = new Entry<>(hash, key, value, old);
+    //就多了这一步，将新增的 Entry 加入到 header 双向链表中
+    table[bucketIndex] = e;
+    e.addBefore(header);
+    size++;
+}
+
+//写入到双向链表中
+private void addBefore(Entry<K,V> existingEntry) {
+    after  = existingEntry;
+    before = existingEntry.before;
+    before.after = this;
+    after.before = this;
+}  
+        
+```
+
+### get()
+
+LinkedHashMap 的 `get()` 方法也重写了：
+
+```java
+public V get(Object key) {
+    Entry<K,V> e = (Entry<K,V>)getEntry(key);
+    if (e == null)
+        return null;
+        
+    //多了一个判断是否是按照访问顺序排序，是则将当前的 Entry 移动到链表头部。   
+    e.recordAccess(this);
+    return e.value;
+}
+
+void recordAccess(HashMap<K,V> m) {
+    LinkedHashMap<K,V> lm = (LinkedHashMap<K,V>)m;
+    if (lm.accessOrder) {
+        lm.modCount++;
+        
+        //删除
+        remove();
+        //添加到头部
+        addBefore(lm.header);
+    }
+}
+```
+
+### clear()
+
+ 清空就要比较简单了：
+
+```java
+//只需要把指针都指向自己即可，原本那些 Entry 没有引用之后就会被 JVM 自动回收。
+public void clear() {
+    super.clear();
+    header.before = header.after = header;
+}
+```
+
+### LRU
+
+以下是使用 LinkedHashMap 实现的一个 LRU 缓存：
+
+- 设定最大缓存空间 MAX_ENTRIES 为 3；
+- 使用 LinkedHashMap 的构造函数将 accessOrder 设置为 true，开启 LRU 顺序；
+- 覆盖 removeEldestEntry() 方法实现，在节点多于 MAX_ENTRIES 就会将最近最久未使用的数据移除。
+
+```java
+class LRUCache<K, V> extends LinkedHashMap<K, V> {
+    private static final int MAX_ENTRIES = 3;
+
+    protected boolean removeEldestEntry(Map.Entry eldest) {
+        return size() > MAX_ENTRIES;
+    }
+
+    LRUCache() {
+        super(MAX_ENTRIES, 0.75f, true);
+    }
+}
+public static void main(String[] args) {
+    LRUCache<Integer, String> cache = new LRUCache<>();
+    cache.put(1, "a");
+    cache.put(2, "b");
+    cache.put(3, "c");
+    cache.get(1);
+    cache.put(4, "d");
+    System.out.println(cache.keySet());
+}
+
+输出:
+[3, 1, 4]
+```
+
+当 `accessOrder = true` 时, 每次 get() 后, 都会将元素移动到链表尾, 时间久了, 链表前面就是一些很少访问的元素了, 当删除时, 时从链表前面开始删除的, 这样就能实现一个简单 LRU 算法.
+
+```java
+// Remove eldest entry if instructed
+Entry<K,V> eldest = header.after;
+if (removeEldestEntry(eldest)) {
+  	removeEntryForKey(eldest.key);
+}
+```
+
+
+
+### 总结
+
+总的来说 `LinkedHashMap` 其实就是对 `HashMap` 进行了拓展，使用了双向链表来保证了顺序性。
+
+因为是继承于 `HashMap` 的，所以一些 `HashMap` 存在的问题 `LinkedHashMap` 也会存在，比如不支持并发等。
+
 ## TreeMap
 
-- TreeMap 是一个有序的key-value集合, 它是通过红黑树实现的.
-- TreeMap 继承于AbstractMap, 所以它是一个Map, 即一个key-value集合.
-- TreeMap 实现了NavigableMap接口, 意味着它支持一系列的导航方法.比如返回有序的key集合.
-- TreeMap 实现了Cloneable接口, 意味着它能被克隆.
-- TreeMap 实现了java.io.Serializable接口, 意味着它支持序列化.
+- TreeMap 是一个有序的 key-value 集合, 它是通过红黑树实现的.
+- TreeMap 继承于 AbstractMap , 所以它是一个 Map, 即一个 key-value 集合.
+- TreeMap 实现了 NavigableMap 接口, 意味着它支持一系列的导航方法.比如返回有序的key集合.
+- TreeMap 实现了 Cloneable 接口, 意味着它能被克隆.
+- TreeMap 实现了 java.io.Serializable 接口, 意味着它支持序列化.
 
 TreeMap基于红黑树（Red-Black tree）实现.该映射根据其键的自然顺序进行排序, 或者根据创建映射时提供的 Comparator 进行排序, 具体取决于使用的构造方法.
 TreeMap的基本操作 containsKey、get、put 和 remove 的时间复杂度是 log(n) .
@@ -2105,10 +2823,10 @@ TreeMap的基本操作 containsKey、get、put 和 remove 的时间复杂度是 
 
 ![](./imgs/006tKfTcgw1fbfmrdz22fj308c0j10t0.jpg)
 
-- TreeMap实现继承于AbstractMap, 并且实现了NavigableMap接口.
-- TreeMap的本质是R-B Tree(红黑树), 它包含几个重要的成员变量: root, size, comparator.root 是红黑数的根节点.它是Entry类型, Entry是红黑数的节点, 它包含了红黑数的6个基本组成成分:key(键)、value(值)、left(左孩子)、right(右孩子)、parent(父节点)、color(颜色).Entry节点根据key进行排序, Entry节点包含的内容为value. 
-- 红黑数排序时, 根据Entry中的key进行排序；Entry中的key比较大小是根据比较器comparator来进行判断的.
-- size是红黑数中节点的个数.
+- TreeMap 实现继承于 AbstractMap , 并且实现了 NavigableMap 接口.
+- TreeMap的本质是 R-B Tree(红黑树), 它包含几个重要的成员变量: root, size, comparator.root 是红黑数的根节点.它是Entry类型, Entry是红黑数的节点, 它包含了红黑数的6个基本组成成分:key(键)、value(值)、left(左孩子)、right(右孩子)、parent(父节点)、color(颜色).Entry节点根据key进行排序, Entry节点包含的内容为value. 
+- 红黑数排序时, 根据 Entry 中的 key 进行排序；Entry 中的 key 比较大小是根据比较器 comparator 来进行判断的.
+- size 是红黑数中节点的个数.
 
 ## WeakHashMap
 
@@ -2116,16 +2834,16 @@ TreeMap的基本操作 containsKey、get、put 和 remove 的时间复杂度是 
 
 - 和HashMap一样, WeakHashMap 也是一个散列表, 它存储的内容也是键值对(key-value)映射, 而且键和值都可以是null.
 
-- 不过WeakHashMap的键是“弱键”.在 WeakHashMap 中, 当某个键不再正常使用时, 会被从WeakHashMap中被自动移除.更精确地说, 对于一个给定的键, 其映射的存在并不阻止垃圾回收器对该键的丢弃, 这就使该键成为可终止的, 被终止, 然后被回收.某个键被终止时, 它对应的键值对也就从映射中有效地移除了.
+- 不过WeakHashMap的键是 **弱键** .在 WeakHashMap 中, 当某个键不再正常使用时, 会被从WeakHashMap中被自动移除.更精确地说, 对于一个给定的键, 其映射的存在并不阻止垃圾回收器对该键的丢弃, 这就使该键成为可终止的, 被终止, 然后被回收.某个键被终止时, 它对应的键值对也就从映射中有效地移除了.
 
-  这个“弱键”的原理呢？大致上就是, 通过WeakReference和ReferenceQueue实现的. WeakHashMap的key是“弱键”, 即是WeakReference类型的；ReferenceQueue是一个队列, 它会保存被GC回收的“弱键”.实现步骤是:
+  这个 **弱键** 的原理呢？大致上就是, 通过WeakReference和ReferenceQueue实现的. WeakHashMap的key是 **弱键** , 即是WeakReference类型的；ReferenceQueue是一个队列, 它会保存被GC回收的 **弱键** .实现步骤是:
 
-- 新建WeakHashMap, 将“键值对”添加到WeakHashMap中.
+- 新建WeakHashMap, 将 **键值对** 添加到WeakHashMap中.
       实际上, WeakHashMap是通过数组table保存Entry(键值对)；每一个Entry实际上是一个单向链表, 即Entry是键值对链表.
 
-- 当某“弱键”不再被其它对象引用, 并被GC回收时.在GC回收该“弱键”时, 这个“弱键”也同时会被添加到ReferenceQueue(queue)队列中.
+- 当某 **弱键** 不再被其它对象引用, 并被GC回收时.在GC回收该 **弱键** 时, 这个 **弱键** 也同时会被添加到ReferenceQueue(queue)队列中.
 
-- 当下一次我们需要操作WeakHashMap时, 会先同步table和queue.table中保存了全部的键值对, 而queue中保存被GC回收的键值对；同步它们, 就是删除table中被GC回收的键值对.
+- 当下一次我们需要操作 WeakHashMap 时, 会先同步 table 和 queue.table 中保存了全部的键值对, 而 queue 中保存被GC回收的键值对；同步它们, 就是删除table中被GC回收的键值对.
 
 ![](./imgs/006tKfTcgw1fbfn51abk9j30dl0fk0t2.jpg)
 
@@ -2136,28 +2854,84 @@ TreeMap的基本操作 containsKey、get、put 和 remove 的时间复杂度是 
 - threshold是Hashtable的阈值, 用于判断是否需要调整Hashtable的容量.threshold的值="容量*加载因子".
 - loadFactor就是加载因子. 
 - modCount是用来实现fail-fast机制的
-- queue保存的是“已被GC清除”的“弱引用的键”.
+- queue保存的是 **已被GC清除** 的 **弱引用的键** .
+
+### 存储结构
+
+WeakHashMap 的 Entry 继承自 WeakReference，被 WeakReference 关联的对象在下一次垃圾回收时会被回收。
+
+WeakHashMap 主要用来实现缓存，通过使用 WeakHashMap 来引用缓存对象，由 JVM 对这部分缓存进行回收。
+
+```java
+private static class Entry<K,V> extends WeakReference<Object> implements Map.Entry<K,V>
+```
+
+### ConcurrentCache
+
+Tomcat 中的 ConcurrentCache 使用了 WeakHashMap 来实现缓存功能。
+
+ConcurrentCache 采取的是分代缓存：
+
+- 经常使用的对象放入 eden 中，eden 使用 ConcurrentHashMap 实现，不用担心会被回收（伊甸园）；
+- 不常用的对象放入 longterm，longterm 使用 WeakHashMap 实现，这些老对象会被垃圾收集器回收。
+- 当调用 get() 方法时，会先从 eden 区获取，如果没有找到的话再到 longterm 获取，当从 longterm 获取到就把对象放入 eden 中，从而保证经常被访问的节点不容易被回收。
+- 当调用 put() 方法时，如果 eden 的大小超过了 size，那么就将 eden 中的所有对象都放入 longterm 中，利用虚拟机回收掉一部分不经常使用的对象。
+
+```java
+public final class ConcurrentCache<K, V> {
+
+    private final int size;
+
+    private final Map<K, V> eden;
+
+    private final Map<K, V> longterm;
+
+    public ConcurrentCache(int size) {
+        this.size = size;
+        this.eden = new ConcurrentHashMap<>(size);
+        this.longterm = new WeakHashMap<>(size);
+    }
+
+    public V get(K k) {
+        V v = this.eden.get(k);
+        if (v == null) {
+            v = this.longterm.get(k);
+            if (v != null)
+                this.eden.put(k, v);
+        }
+        return v;
+    }
+
+    public void put(K k, V v) {
+        if (this.eden.size() >= size) {
+            this.longterm.putAll(this.eden);
+            this.eden.clear();
+        }
+        this.eden.put(k, v);
+    }
+}
+```
 
 ## Map 总结
 
-- Map 是“键值对”映射的抽象接口.
-- AbstractMap 实现了Map中的绝大部分函数接口.它减少了“Map的实现类”的重复编码.
-- SortedMap 有序的“键值对”映射接口.
+- Map 是 **键值对** 映射的抽象接口.
+- AbstractMap 实现了Map中的绝大部分函数接口.它减少了 **Map的实现类** 的重复编码.
+- SortedMap 有序的 **键值对** 映射接口.
 - NavigableMap 是继承于SortedMap的, 支持导航函数的接口.
-- HashMap, Hashtable, TreeMap, WeakHashMap这4个类是“键值对”映射的实现类.它们各有区别！
-  - HashMap 是基于“拉链法”实现的散列表.一般用于单线程程序中.
-  - Hashtable 也是基于“拉链法”实现的散列表.它一般用于多线程程序中.
-  - WeakHashMap 也是基于“拉链法”实现的散列表, 它一般也用于单线程程序中.相比HashMap, WeakHashMap中的键是“弱键”, 当“弱键”被GC回收时, 它对应的键值对也会被从WeakHashMap中删除；而HashMap中的键是强键.
+- HashMap, Hashtable, TreeMap, WeakHashMap这4个类是 **键值对** 映射的实现类.它们各有区别！
+  - HashMap 是基于 **拉链法** 实现的散列表.一般用于单线程程序中.
+  - Hashtable 也是基于 **拉链法** 实现的散列表.它一般用于多线程程序中.
+  - WeakHashMap 也是基于 **拉链法** 实现的散列表, 它一般也用于单线程程序中.相比 HashMap, WeakHashMap中的键是 **弱键** , 当 **弱键** 被GC回收时, 它对应的键值对也会被从 WeakHashMap中 删除；而 HashMap 中的键是强键.
   - TreeMap 是有序的散列表, 它是通过红黑树实现的.它一般用于单线程中存储有序的映射.
 
 ### HashMap 和 Hashtable 异同
 
 **相同点**:
-HashMap和Hashtable都是存储“键值对(key-value)”的散列表, 而且都是采用拉链法实现的.
+HashMap 和 Hashtable 都是存储  **键值对(key-value)**  的散列表, 而且都是采用拉链法实现的.
 存储的思想都是:通过table数组存储, 数组的每一个元素都是一个Entry；而一个Entry就是一个单向链表, Entry链表中的每一个节点就保存了key-value键值对数据.
 
 **添加key-value键值对**:首先, 根据key值计算出哈希值, 再计算出数组索引(即, 该key-value在table中的索引).然后, 根据数组索引找到Entry(即, 单向链表), 再遍历单向链表, 将key和链表中的每一个节点的key进行对比.若key已经存在Entry链表中, 则用该value值取代旧的value值；若key不存在Entry链表中, 则新建一个key-value节点, 并将该节点插入Entry链表的表头位置.
-**删除key-value键值对**:删除键值对, 相比于“添加键值对”来说, 简单很多.首先, 还是根据key计算出哈希值, 再计算出数组索引(即, 该key-value在table中的索引).然后, 根据索引找出Entry(即, 单向链表).若节点key-value存在与链表Entry中, 则删除链表中的节点即可.
+**删除key-value键值对**:删除键值对, 相比于 **添加键值对** 来说, 简单很多.首先, 还是根据key计算出哈希值, 再计算出数组索引(即, 该key-value在table中的索引).然后, 根据索引找出Entry(即, 单向链表).若节点key-value存在与链表Entry中, 则删除链表中的节点即可.
 
 **不同点**:
 
@@ -2169,9 +2943,9 @@ HashMap和Hashtable都是存储“键值对(key-value)”的散列表, 而且都
 - Hashtable的key、value都不可以为null.
 - HashMap只支持Iterator(迭代器)遍历.
 - Hashtable支持Iterator(迭代器)和Enumeration(枚举器)两种方式遍历.
-- 通过Iterator迭代器遍历时, 遍历的顺序不同,HashMap是“从前向后”的遍历数组,Hashtabl是“从后往前”的遍历数组
-- HashMap默认的容量大小是16；增加容量时, 每次将容量变为“原始容量x2”.
-- Hashtable默认的容量大小是11；增加容量时, 每次将容量变为“原始容量x2 + 1”.
+- 通过Iterator迭代器遍历时, 遍历的顺序不同,HashMap是 **从前向后** 的遍历数组,Hashtabl是 **从后往前** 的遍历数组
+- HashMap默认的容量大小是16；增加容量时, 每次将容量变为 **原始容量x2** .
+- Hashtable默认的容量大小是11；增加容量时, 每次将容量变为 **原始容量x2 + 1** .
 - HashMap添加元素时, 是使用自定义的哈希算法.
 - Hashtable没有自定义哈希算法, 而直接采用的key的hashCode().
 
@@ -2179,18 +2953,18 @@ HashMap和Hashtable都是存储“键值对(key-value)”的散列表, 而且都
 
 相同点:
 
-- 它们都是散列表, 存储的是“键值对”映射.
+- 它们都是散列表, 存储的是 **键值对** 映射.
 - 它们都继承于AbstractMap, 并且实现Map基础.
 - 它们的构造函数都一样.
 - 它们都包括4个构造函数, 而且函数的参数都一样.
 - 默认的容量大小是16, 默认的加载因子是0.75.
-- 它们的“键”和“值”都允许为null.
-- 它们都是“非同步的”.
+- 它们的 **键** 和 **值** 都允许为null.
+- 它们都是 **非同步的** .
 
 不同点:
 
 - HashMap实现了Cloneable和Serializable接口, 而WeakHashMap没有.
-- HashMap的“键”是“强引用(StrongReference)”, 而WeakHashMap的键是“弱引用(WeakReference)”
+- HashMap的 **键** 是 **强引用(StrongReference)** , 而WeakHashMap的键是 **弱引用(WeakReference)** 
 
 ### Collections.synchronizedMap 和 ConcurrentHashMap
 

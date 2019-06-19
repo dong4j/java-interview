@@ -1053,7 +1053,7 @@ CopyOnWriteArrayList 在写操作的同时允许读操作，大大提高了读�
 
 ## List 总结
 
-![](https://ww2.sinaimg.cn/large/006tKfTcgw1fbew9l8evlj30m30eujrz.jpg)
+![](./imgs/006tKfTcgw1fbew9l8evlj30m30eujrz.jpg)
 
 - List 是一个接口, 它继承于 Collection 的接口.它代表着有序的队列.
 - AbstractList 是一个抽象类, 它继承于 AbstractCollection. AbstractList 实现 List 接口中除 size()、get(int location)之外的函数.
