@@ -294,7 +294,7 @@ public int hashCode() {
 为什么 `h = 31 * h + val[off++];` 这一行使用 `31` ，而不是别的数字，这是一个魔术吗？
  如果都结束了，不要忘了再问一句你知道 hash 攻击吗？有避免手段吗？就看面试者对各个 jdk 版本对 HashMap 的优化是否了解了. 这就引出了另一个数据结构红黑树了. 可以根据岗位需要继续考察 rb-tree，b-tree，lsm-tree 等常用数据结构以及典型应用场景. 
 
-### java.util.Arrays
+## Arrays 和 Array 的区别
 Array 是 Java 特有的数组,而  Arrays 是处理数据的工具类
 
 - Arrays.asList: 可以从 Array 转换成 List. 可以作为其他集合类型构造器的参数.
