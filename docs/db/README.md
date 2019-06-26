@@ -59,7 +59,7 @@ mysql> SELECT @@tx_isolation;
 +-----------------+
 ```
 
-这里需要注意的是：与 SQL 标准不同的地方在于 InnoDB 存储引擎在 **REPEATABLE-READ（可重读）**事务隔离级别下使用的是Next-Key Lock 锁算法，因此可以避免幻读的产生，这与其他数据库系统(如 SQL Server)是不同的。所以说InnoDB 存储引擎的默认支持的隔离级别是 REPEATABLE-READ（可重读） 已经可以完全保证事务的隔离性要求，即达到了 SQL标准的**SERIALIZABLE(可串行化)**隔离级别。
+这里需要注意的是：与 SQL 标准不同的地方在于 InnoDB 存储引擎在 **REPEATABLE-READ（可重读）**事务隔离级别下使用的是 **Next-Key Lock** 锁算法，因此可以避免幻读的产生，这与其他数据库系统(如 SQL Server)是不同的。所以说 InnoDB 存储引擎的默认支持的隔离级别是 REPEATABLE-READ（可重读） 已经可以完全保证事务的隔离性要求，即达到了 SQL标准的**SERIALIZABLE(可串行化)**隔离级别。
 
 因为隔离级别越低，事务请求的锁越少，所以大部分数据库系统的隔离级别都是**READ-COMMITTED(读取提交内容):**，但是你要知道的是InnoDB 存储引擎默认使用 **REPEATABLE-READ（可重读）**并不会有任何性能损失。
 
@@ -67,19 +67,19 @@ InnoDB 存储引擎在 **分布式事务** 的情况下一般会用到**SERIALIZ
 
 ## 锁机制与 InnoDB 锁算法
 
-**MyISAM和InnoDB存储引擎使用的锁：**
+**MyISAM 和 InnoDB 存储引擎使用的锁：**
 
-- MyISAM采用表级锁(table-level locking)。
-- InnoDB支持行级锁(row-level locking)和表级锁,默认为行级锁
+- MyISAM 采用表级锁(table-level locking)。
+- InnoDB 支持行级锁(row-level locking)和表级锁, 默认为行级锁
 
 **表级锁和行级锁对比：**
 
-- **表级锁：** MySQL中锁定 **粒度最大** 的一种锁，对当前操作的整张表加锁，实现简单，资源消耗也比较少，加锁快，不会出现死锁。其锁定粒度最大，触发锁冲突的概率最高，并发度最低，MyISAM和 InnoDB引擎都支持表级锁。
+- **表级锁：** MySQL中锁定 **粒度最大** 的一种锁，对当前操作的整张表加锁，实现简单，资源消耗也比较少，加锁快，不会出现死锁。其锁定粒度最大，触发锁冲突的概率最高，并发度最低，MyISAM 和 InnoDB 引擎都支持表级锁。
 - **行级锁：** MySQL中锁定 **粒度最小** 的一种锁，只针对当前操作的行进行加锁。 行级锁能大大减少数据库操作的冲突。其加锁粒度最小，并发度高，但加锁的开销也最大，加锁慢，会出现死锁。
 
 详细内容可以参考： MySQL锁机制简单了解一下：https://blog.csdn.net/qq_34337272/article/details/80611486
 
-**InnoDB存储引擎的锁的算法有三种：**
+**InnoDB 存储引擎的锁的算法有三种：**
 
 - Record lock：单个行记录上的锁
 - Gap lock：间隙锁，锁定一个范围，不包括记录本身
@@ -87,11 +87,11 @@ InnoDB 存储引擎在 **分布式事务** 的情况下一般会用到**SERIALIZ
 
 **相关知识点：**
 
-1. innodb对于行的查询使用next-key lock
-2. Next-locking keying为了解决Phantom Problem幻读问题
-3. 当查询的索引含有唯一属性时，将next-key lock降级为record key
-4. Gap锁设计的目的是为了阻止多个事务将记录插入到同一范围内，而这会导致幻读问题的产生
-5. 有两种方式显式关闭gap锁：（除了外键约束和唯一性检查外，其余情况仅使用record lock） A. 将事务隔离级别设置为RC B. 将参数innodb_locks_unsafe_for_binlog设置为1
+1. innodb 对于行的查询使用 next-key lock
+2. Next-locking keying 为了解决 Phantom Problem 幻读问题
+3. 当查询的索引含有唯一属性时，将 next-key lock 降级为 record key
+4. Gap 锁设计的目的是为了阻止多个事务将记录插入到同一范围内，而这会导致幻读问题的产生
+5. 有两种方式显式关闭 gap锁：（除了外键约束和唯一性检查外，其余情况仅使用record lock） A. 将事务隔离级别设置为 RC B. 将参数 innodb_locks_unsafe_for_binlog 设置为1
 
 ## 锁分类（按照是否可写分类）
 表级锁和行级锁可以进一步划分为共享锁（s）和排他锁（X）。
