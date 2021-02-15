@@ -95,28 +95,28 @@ $ yarn docs:build
 
 ```
 ├── .vuepress                       # vuepress 配置目录
-│   ├── config.js                   # 配置
-│   ├── dist                        # build 目录
-│   ├── override.styl               # 覆盖样式
-│   ├── public                      # 公共文件
-│   └── style.styl                  # 自定义样式
+│   ├── config.js                   # 配置
+│   ├── dist                        # build 目录
+│   ├── override.styl               # 覆盖样式
+│   ├── public                      # 公共文件
+│   └── style.styl                  # 自定义样式
 ├── start                           # 点击 'Fuck it' 之后跳转的目录
-│   ├── imgs                        # 当前目录文档需要的图片
-│   ├── README.md                   # 当前目录首页
-│   ├── introduction.md             # 子文档
+│   ├── imgs                        # 当前目录文档需要的图片
+│   ├── README.md                   # 当前目录首页
+│   ├── introduction.md             # 子文档
 ├── java                            # 一级分类目录
-│   ├── collection                  # 二级分类目录
-│   ├── concurrent
-│   ├── ee
-│   ├── io
-│   ├── jvm
-│   └── se
+│   ├── collection                  # 二级分类目录
+│   ├── concurrent
+│   ├── ee
+│   ├── io
+│   ├── jvm
+│   └── se
 │       └── imgs                    # 当前目录文档需要的图片
 │       └── README.md               # 当前目录首页
 │       └── access_modifier.md      # 子文档
 │       └── ...
 ├── tags                            # vuepress-theme-reco 主题标签目录
-│   └── README.md                   # 不需要修改
+│   └── README.md                   # 不需要修改
 ├── README.md                       # 项目首页
 ├── about.md                        
 ├── all.md

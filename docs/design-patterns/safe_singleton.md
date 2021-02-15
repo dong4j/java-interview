@@ -8,7 +8,7 @@
 
 单例类的目的是控制对象创建，约束对象的数量有且只有一个。单例模式只允许有一个入口来创建类实例。
 
-因为只有一个单例类实例，任何单例类的实例都将只会产生一个类，就像静态域一样。当你需要控制资源的时候，例如在数据库连接或者使用 `sockets` ，单例模式是非常有用的。
+因为只有一个单例类实例，任何单例类的实例都将只会产生一个类，就像静态域一样。当你需要控制资源的时候，例如在数据库连接或者使用 `sockets` ，单例模式是非常有用的。
 
 这看起来是一个很简单的设计模式，但是当我们真正去实现的时候，会带来许多的实现问题。单例模式的实现在开发者当中总是存在一定争议。现在，我们将会讨论一下如何创建一个单例类以完成下列目的：
 
@@ -26,7 +26,7 @@
 
 饿汉式初始化，单例类的实例在类加载时被创建，这是创建单例类最简单的方法。
 
-通过将构造器声明为 `private` ，不允许其他类来创建单例类实例。取而代之的是，创建一个静态方法（通常命名为 `getInstance`）来提供创建类实例的唯一入口。
+通过将构造器声明为 `private` ，不允许其他类来创建单例类实例。取而代之的是，创建一个静态方法（通常命名为 `getInstance`）来提供创建类实例的唯一入口。
 
 ```java
 public class SingletonClass {
@@ -43,7 +43,7 @@ public class SingletonClass {
 
 ### 懒汉式
 
-与饿汉式相反，你在 `getInstance()` 方法中初始化类实例。方法中将会判断类实例是否已经创建，如果已经存在，将返回旧的实例，反之在 JVM 中创建新的实例并返回。
+与饿汉式相反，你在 `getInstance()` 方法中初始化类实例。方法中将会判断类实例是否已经创建，如果已经存在，将返回旧的实例，反之在 JVM 中创建新的实例并返回。
 
 ```java
 public class SingletonClass {
@@ -62,7 +62,7 @@ public class SingletonClass {
 }
 ```
 
-我们都知道在 Java 中，如果两个对象是相同的，那么他们的 `hashCode` 也是相同的。让我们测试一下，如果上面的单例类都正确实现，那么将会返回同样的哈希。
+我们都知道在 Java 中，如果两个对象是相同的，那么他们的 `hashCode` 也是相同的。让我们测试一下，如果上面的单例类都正确实现，那么将会返回同样的哈希。
 
 ```java
 public class SingletonTester {
@@ -94,7 +94,7 @@ public class SingletonTester {
 
 ## 让单例类反射安全
 
-在上面的单例类中，通过反射可以创建不止一个实例。 [Java Reflection](https://docs.oracle.com/javase/tutorial/reflect/) 是一个在运行时检测或者修改类的运行时行为的过程。
+在上面的单例类中，通过反射可以创建不止一个实例。 [Java Reflection](https://docs.oracle.com/javase/tutorial/reflect/) 是一个在运行时检测或者修改类的运行时行为的过程。
 通过在运行时修改构造器的可见性并通过构造器创建实例可以产生新的单例类实例。运行下面的代码，单例类还存在吗？
 
 ```java
@@ -135,7 +135,7 @@ public class SingletonTester {
 
 ### 解决方案：
 
-为了预防反射导致的单例失败，当构造器已经初始化并且其他类再次初始化时，抛出一个运行时异常。让我们更新 `SingletonClass.java`。
+为了预防反射导致的单例失败，当构造器已经初始化并且其他类再次初始化时，抛出一个运行时异常。让我们更新 `SingletonClass.java`。
 
 
 ```java
@@ -165,7 +165,7 @@ public class SingletonClass {
 
 ## 让单例类线程安全
 
-如果两个线程几乎同时尝试初始化单例类，将会发生什么？让我们测试下面的代码，两个线程几乎同时被创建并且调用 `getInstance()`。
+如果两个线程几乎同时尝试初始化单例类，将会发生什么？让我们测试下面的代码，两个线程几乎同时被创建并且调用 `getInstance()`。
 
 ```java
 public class SingletonTester {
@@ -204,7 +204,7 @@ public class SingletonTester {
 
 ```
 
-这说明了你的单例类不是线程安全的。所有的线程同时调用 `getInstance()`方法，`sSoleInstance == null` 条件对所有线程返回值，所以两个不同的实例被创建。这打破了单例原则。
+这说明了你的单例类不是线程安全的。所有的线程同时调用 `getInstance()`方法，`sSoleInstance == null` 条件对所有线程返回值，所以两个不同的实例被创建。这打破了单例原则。
 
 ### 解决方案
 
@@ -234,7 +234,7 @@ public class SingletonClass {
 }
 
 ```
-在我们同步 `getInstance()` 方法之后，第二个线程必须等到第一个线程执行完 `getInstance()` 方法之后才能执行，这就保证了线程安全。
+在我们同步 `getInstance()` 方法之后，第二个线程必须等到第一个线程执行完 `getInstance()` 方法之后才能执行，这就保证了线程安全。
 
 但是，这个方法同样有一些缺点：
 
@@ -243,9 +243,9 @@ public class SingletonClass {
 
 #### 双检查锁
 
-使用 **双检查锁** 方法创建实例可以克服上面的问题。
+使用 **双检查锁** 方法创建实例可以克服上面的问题。
 
-这这种方法中，当实例为空时，在同步代码块中创建单例类，这样只有当 `sSoleInstance<span> </span>`为空时，同步代码块才会执行，避免了不必要的同步操作。
+这这种方法中，当实例为空时，在同步代码块中创建单例类，这样只有当 `sSoleInstance<span> </span>`为空时，同步代码块才会执行，避免了不必要的同步操作。
 
 ```java
 public class SingletonClass {
@@ -279,9 +279,9 @@ public class SingletonClass {
 
 #### 使用 volatile 关键字
 
-表面上看，这个方法看起来很完美，你只需要付出一次静态代码块的代价。但是除非你使用 [volatile](http://www.javamex.com/tutorials/synchronization_volatile.shtml) 关键字，否则单例仍然会被打破。
+表面上看，这个方法看起来很完美，你只需要付出一次静态代码块的代价。但是除非你使用 [volatile](http://www.javamex.com/tutorials/synchronization_volatile.shtml) 关键字，否则单例仍然会被打破。
 
-没有 `volatile<span> </span>`修饰符，另一个线程可能在变量 `sSoleInstance` 正在初始化尚未完成时引用它。但是通过 `volatile` 的保证 `happens-before` 关系，所有对于 `sSoleInstance` 变量的写操作都会在读操作之前发生。
+没有 `volatile<span> </span>`修饰符，另一个线程可能在变量 `sSoleInstance` 正在初始化尚未完成时引用它。但是通过 `volatile` 的保证 `happens-before` 关系，所有对于 `sSoleInstance` 变量的写操作都会在读操作之前发生。
 
 ```java
 public class SingletonClass {
@@ -317,7 +317,7 @@ public class SingletonClass {
 
 ## 让单例类序列化安全
 
-在分布式系统中，有些情况下你需要在单例类中实现 `Serializable` 接口。这样你可以在文件系统中存储它的状态并且在稍后的某一时间点取出。
+在分布式系统中，有些情况下你需要在单例类中实现 `Serializable` 接口。这样你可以在文件系统中存储它的状态并且在稍后的某一时间点取出。
 
 让我们测试一个这个单例类在序列化和反序列化之后是否仍然保持单例。
 
@@ -352,7 +352,7 @@ public class SingletonTester {
 
 ```
 
-可以看到实例的 hashCode 是不同的，违反了单例原则。序列化单例类之后，当我们反序列化时，会创建一个新的类实例。为了预防另一个实例的产生，你需要提供 `readResolve()` 方法的实现。`readResolve(）`代替了从流中读取对象。这就确保了在序列化和反序列化的过程中没人可以创建新的实例。
+可以看到实例的 hashCode 是不同的，违反了单例原则。序列化单例类之后，当我们反序列化时，会创建一个新的类实例。为了预防另一个实例的产生，你需要提供 `readResolve()` 方法的实现。`readResolve(）`代替了从流中读取对象。这就确保了在序列化和反序列化的过程中没人可以创建新的实例。
 
 
 ```java

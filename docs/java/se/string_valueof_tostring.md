@@ -31,8 +31,8 @@ public static String toString(int i) {
 
 不同于 Integer.toString(int)，valueof 有大量的重载方法，我们一一对其介绍。
 
-**public static String valueOf(Object obj)** 
-**作用**：将对象转换成 String 类型 
+**public static String valueOf(Object obj)** 
+**作用**：将对象转换成 String 类型 
 **源码**：
 
 ```java
@@ -43,8 +43,8 @@ public static String valueOf(Object obj) {
 
 可以看出这里调用对象的 toString()，所以写对象时，**最好重写其toString()方法**。
 
-**public static String valueOf(char data[])** 
-**作用**：将字符数组转换成 String 类型 
+**public static String valueOf(char data[])** 
+**作用**：将字符数组转换成 String 类型 
 **源码**：
 
 ```java
@@ -55,8 +55,8 @@ public static String valueOf(char data[]) {
 
 直接将字符数组作为 String 的构造参数入参，内部是将数组复制了一份保存在了 String 中，用来初始化 String。
 
-**public static String valueOf(char data[], int offset, int count)** 
-**作用**：将 offset 位置至 offset+count 位置的 data[] 数组转换成 String 类型 
+**public static String valueOf(char data[], int offset, int count)** 
+**作用**：将 offset 位置至 offset+count 位置的 data[] 数组转换成 String 类型 
 **源码**：
 
 ```java
@@ -65,8 +65,8 @@ public static String valueOf(char data[], int offset, int count) {
 }
 ```
 
-**public static String valueOf(boolean b)** 
-**作用**：将布尔转换成 String 类型 
+**public static String valueOf(boolean b)** 
+**作用**：将布尔转换成 String 类型 
 **源码**：
 
 ```java
@@ -77,8 +77,8 @@ public static String valueOf(boolean b) {
 
 可以看出并不能直接从 boolean 转换成字符，而是判断后，返回指定的字符串。
 
-**public static String valueOf(char c)** 
-**作用**：将字符转换成 String 类型 
+**public static String valueOf(char c)** 
+**作用**：将字符转换成 String 类型 
 **源码**：
 
 ```java
@@ -90,8 +90,8 @@ public static String valueOf(char c) {
 
 这里先将字符转换成字符数组，**可能好奇 String(data，true) 这个构造方法与上面的 String(data) 有什么不同**，String(data, true) 构造方法将引用传递给了 String 内部的 value 用来创建字符串，**data 在方法内部创建没有其他引用，所以可以直接传递，节约内存空间**。
 
-**public static String valueOf(int i)** 
-**作用**：将 int 类型转换成 String 类型 
+**public static String valueOf(int i)** 
+**作用**：将 int 类型转换成 String 类型 
 **源码**：
 
 ```java
@@ -102,8 +102,8 @@ public static String valueOf(int i) {
 
 与我们的推测相似，这里调用了 Integer.toString() 的方法，可以看出 String 的 valueof 方法是将各种类型转换成String，**内部重载了不同类型转 String 的处理，所以推荐使用 valueof 方法。**
 
-**public static String valueOf(long l)** 
-**作用**：将 long 类型转换成 String 类型 
+**public static String valueOf(long l)** 
+**作用**：将 long 类型转换成 String 类型 
 **源码**：
 
 ```java
@@ -112,8 +112,8 @@ public static String valueOf(long l) {
 }
 ```
 
-**public static String valueOf(float f)** 
-**作用**：将 float 类型转换成 String 类型 
+**public static String valueOf(float f)** 
+**作用**：将 float 类型转换成 String 类型 
 **源码**：
 
 ```java
@@ -122,8 +122,8 @@ public static String valueOf(float f) {
 }
 ```
 
-**public static String valueOf(double d)** 
-**作用**：将 double 类型转换成 String 类型 
+**public static String valueOf(double d)** 
+**作用**：将 double 类型转换成 String 类型 
 **源码**：
 
 ```java

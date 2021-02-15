@@ -352,7 +352,7 @@ finally 会在 return 之前执行, 因此在执行到输出 "func1"后, `return
 
 最后, 我们再来看看 finalize, 它是一个方法, 属于 java.lang.Object 类, 它的定义如下:
 
-`protected void finalize() throws Throwable { }  `
+`protected void finalize() throws Throwable { }  `
 
 众所周知, finalize() 方法是 GC（garbage collector）运行机制的一部分, 关于 GC 的知识我们将在后续的章节中来回顾.
 
@@ -383,14 +383,14 @@ public final class FinallyTest {
 
 程序调用了 java.lang.System 类的 gc() 方法, 引起 GC 的执行, GC 在清理 ft 对象时调用了它的 finalize() 方法, 因此才有了上面的输出结果.调用 System.gc() 等同于调用下面这行代码:
 
-`Runtime.getRuntime().gc();  `
+`Runtime.getRuntime().gc();  `
 
 调用它们的作用只是建议垃圾收集器（GC）启动, 清理无用的对象释放内存空间, 但是 GC 的启动并不是一定的, 这由 JAVA 虚拟机来决定.直到 JAVA 虚拟机停止运行, 有些对象的 finalize() 可能都没有被运行过, 那么怎样保证所有对象的这个方法在 JAVA 虚拟机停止运行之前一定被调用 呢？答案是我们可以调用 System 类的另一个方法:
 
 ```java
-public static void runFinalizersOnExit(boolean value) {  
-    //other code  
-}  
+public static void runFinalizersOnExit(boolean value) {  
+    //other code  
+}  
 ```
 
 给这个方法传入 true 就可以保证对象的 finalize() 方法在 JAVA 虚拟机停止运行前一定被运行了, 不过遗憾的是这个方法是不安全的, 它会导致有用的对象 finalize() 被误调用, 因此已经不被赞成使用了.

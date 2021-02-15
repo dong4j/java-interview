@@ -91,7 +91,7 @@ SET resource_name my_random_value NX PX 30000
 
 释放锁就是删除 key ，但是一般可以用 `lua` 脚本删除，判断 value 一样才删除：
 
-```shell
+```bash
 -- 删除锁的时候，找到 key 对应的 value，跟自己传过去的 value 做比较，如果是一样的才删除。
 if redis.call("get",KEYS[1]) == ARGV[1] then
     return redis.call("del",KEYS[1])

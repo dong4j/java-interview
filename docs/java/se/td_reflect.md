@@ -198,16 +198,16 @@ getComponentType(interfaceTypes[0]);
 private Class<?> getComponentType(Type type) {
     Class<?> componentType = null;
     if (type instanceof ParameterizedType) {
-        //getActualTypeArguments()返回表示此类型实际类型参数的 Type 对象的数组。
-        Type[] actualTypeArguments = ((ParameterizedType) type).getActualTypeArguments();
-        if (actualTypeArguments != null && actualTypeArguments.length > 0) {
-        componentType = (Class<?>) actualTypeArguments[0];
-        }
+        //getActualTypeArguments()返回表示此类型实际类型参数的 Type 对象的数组。
+        Type[] actualTypeArguments = ((ParameterizedType) type).getActualTypeArguments();
+        if (actualTypeArguments != null && actualTypeArguments.length > 0) {
+        componentType = (Class<?>) actualTypeArguments[0];
+        }
     } else if (type instanceof GenericArrayType) {
-        // 表示一种元素类型是参数化类型或者类型变量的数组类型
-        componentType = (Class<?>) ((GenericArrayType) type).getGenericComponentType();
+        // 表示一种元素类型是参数化类型或者类型变量的数组类型
+        componentType = (Class<?>) ((GenericArrayType) type).getGenericComponentType();
     } else {
-        componentType = (Class<?>) type;
+        componentType = (Class<?>) type;
     }
     return componentType;
 }

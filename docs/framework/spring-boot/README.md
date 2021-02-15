@@ -328,7 +328,7 @@ app:
 
 ```
 
-另外，.yml 格式不支持 `@PropertySource` 注解导入配置。
+另外，.yml 格式不支持 `@PropertySource` 注解导入配置。
 
 **5、Spring Boot 的核心注解是哪个？它主要由哪几个注解组成的？**
 
@@ -451,7 +451,7 @@ application-prod.properties
 
 **18、Spring Boot 可以兼容老 Spring 项目吗，如何做？**
 
-可以兼容，使用 `@ImportResource` 注解导入老 Spring 项目配置文件。
+可以兼容，使用 `@ImportResource` 注解导入老 Spring 项目配置文件。
 
 **19、保护 Spring Boot 应用有哪些方法？**
 
@@ -529,16 +529,16 @@ bootstrap 配置文件有以下几个应用场景。
 1).properties
 
 ```
-app.user.name = javastack
+app.user.name = javastack
 ```
 
 2).yml
 
 ```
-app:  user:    name: javastack
+app:  user:    name: javastack
 ```
 
-另外，.yml 格式不支持 `@PropertySource` 注解导入配置。
+另外，.yml 格式不支持 `@PropertySource` 注解导入配置。
 
 **5、Spring Boot 的核心注解是哪个？它主要由哪几个注解组成的？**
 
@@ -579,7 +579,7 @@ app:  user:    name: javastack
 **10、Spring Boot 的目录结构是怎样的？**
 
 ```
-cn +- javastack     +- MyApplication.java     |     +- customer     |   +- Customer.java     |   +- CustomerController.java     |   +- CustomerService.java     |   +- CustomerRepository.java     |     +- order         +- Order.java         +- OrderController.java         +- OrderService.java         +- OrderRepository.java
+cn +- javastack     +- MyApplication.java     |     +- customer     |   +- Customer.java     |   +- CustomerController.java     |   +- CustomerService.java     |   +- CustomerRepository.java     |     +- order         +- Order.java         +- OrderController.java         +- OrderService.java         +- OrderRepository.java
 ```
 
 这个目录结构是主流及推荐的做法，而在主入口类上加上 @SpringBootApplication 注解来开启 Spring Boot 的各项能力，如自动配置、组件扫描等。具体看这篇文章《[Spring Boot 主类及目录结构介绍](https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247487024&idx=2&sn=cfa57752f041e00b7a48739bc5178854&scene=21#wechat_redirect)》。
@@ -640,7 +640,7 @@ applcation.propertiesapplication-dev.propertiesapplication-test.propertiesapplic
 
 **18、Spring Boot 可以兼容老 Spring 项目吗，如何做？**
 
-可以兼容，使用 `@ImportResource` 注解导入老 Spring 项目配置文件。
+可以兼容，使用 `@ImportResource` 注解导入老 Spring 项目配置文件。
 
 **19、保护 Spring Boot 应用有哪些方法？**
 

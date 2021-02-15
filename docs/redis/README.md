@@ -2,7 +2,7 @@
 
 ## **1 什么是redis?**
 
-Redis 是一个基于内存的高性能key-value数据库。 (有空再补充，有理解错误或不足欢迎指正)
+Redis 是一个基于内存的高性能key-value数据库。 (有空再补充，有理解错误或不足欢迎指正)
 
 ## **2 Reids的特点**
 
@@ -19,7 +19,7 @@ Redis通过Key-Value的单值不同类型来区分, 以下是支持的类型:
 Strings
 Lists
 Sets 求交集、并集
-Sorted Set 
+Sorted Set 
 hashes
 
 
@@ -55,7 +55,7 @@ redis支持主从的模式。原则：Master会将数据同步到slave，而slav
 
 读写分离架构的缺陷在于，不管是Master还是Slave，每个节点都必须保存完整的数据，如果在数据量很大的情况下，集群的扩展能力还是受限于单个节点的存储能力，而且对于Write-intensive类型的应用，读写分离架构并不适合。
 
-                                        
+                                        
 
 ### **9 数据分片模型**
 
@@ -67,7 +67,7 @@ redis支持主从的模式。原则：Master会将数据同步到slave，而slav
 
 ## **10 Redis的回收策略**
 
- 
+ 
 
 volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰
 
@@ -115,7 +115,7 @@ no-enviction（驱逐）：禁止驱逐数据
 
 ## **14\. MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据**
 
- 相关知识：redis 内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。redis 提供 6种数据淘汰策略：
+ 相关知识：redis 内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。redis 提供 6种数据淘汰策略：
 
 voltile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰
 
@@ -190,7 +190,7 @@ Redis最适合所有数据in-momory的场景，虽然Redis也提供持久化功�
 
 再次以Magento为例，Magento提供一个插件来使用Redis作为全页缓存后端。
 
-此外，对WordPress的用户来说，Pantheon有一个非常好的插件  wp-redis，这个插件能帮助你以最快速度加载你曾浏览过的页面。
+此外，对WordPress的用户来说，Pantheon有一个非常好的插件  wp-redis，这个插件能帮助你以最快速度加载你曾浏览过的页面。
 
 **（3）、队列**
 

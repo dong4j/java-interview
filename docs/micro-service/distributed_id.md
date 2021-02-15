@@ -37,10 +37,39 @@
 
 但有一个致命的缺点:当并发量足够高的时候**唯一性**就不能保证了。
 
+### Redis 生成 ID
+
+Redis 的所有命令操作都是单线程的，本身提供像 incr 和 increby 这样的自增原子命令，所以能保证生成的 ID 肯定是唯一有序的。
+
+- 优点：不依赖于数据库，灵活方便，且性能优于数据库；数字 ID 天然排序，对分页或者需要排序的结果很有帮助。
+- 缺点：如果系统中没有 Redis，还需要引入新的组件，增加系统复杂度；需要编码和配置的工作量比较大。
+
+考虑到单节点的性能瓶颈，可以使用 Redis 集群来获取更高的吞吐量。假如一个集群中有 5 台 Redis。可以初始化每台 Redis 的值分别是 1, 2, 3, 4, 5，然后步长都是 5。各个 Redis 生成的 ID 为：
+
+```
+A：1, 6, 11, 16, 21 B：2, 7, 12, 17, 22 C：3, 8, 13, 18, 23 D：4, 9, 14, 19, 24 E：5, 10, 15, 20, 25 复制代码
+```
+
+随便负载到哪个机确定好，未来很难做修改。步长和初始值一定需要事先确定。使用 Redis 集群也可以方式单点故障的问题。
+
+另外，比较适合使用 Redis 来生成每天从 0 开始的流水号。比如订单号 = 日期 + 当日自增长号。可以每天在 Redis 中生成一个 Key ，使用 INCR 进行累加。
+
 ## Twitter 雪花算法
 
 可以基于 `Twitter` 的 `Snowflake` 算法来实现。它主要是一种划分命名空间的算法，将生成的 ID 按照机器、时间等来进行标志。
 
-<details class="details-reset details-overlay details-overlay-dark" style="box-sizing: border-box; display: block;"><summary data-hotkey="l" aria-label="Jump to line" role="button" style="box-sizing: border-box; display: list-item; cursor: pointer; list-style: none;"></summary></details>
+### 百度 UidGenerator
 
- 
+UidGenerator 是百度开源的分布式 ID 生成器，基于于 snowflake 算法的实现，看起来感觉还行。不过，国内开源的项目维护性真是担忧。
+
+具体可以参考官网说明：[github.com/baidu/uid-g…](https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2Fbaidu%2Fuid-generator%2Fblob%2Fmaster%2FREADME.zh_cn.md)
+
+### 7. 美团 Leaf
+
+Leaf 是美团开源的分布式 ID 生成器，能保证全局唯一性、趋势递增、单调递增、信息安全，里面也提到了几种分布式方案的对比，但也需要依赖关系数据库、Zookeeper 等中间件。
+
+具体可以参考官网说明：[tech.meituan.com/MT_Leaf.htm…](https://link.juejin.im/?target=https%3A%2F%2Ftech.meituan.com%2FMT_Leaf.html)
+
+# 小结
+
+这篇文章和大家分享了全局 id 生成服务的几种常用方案，同时对比了各自的优缺点和适用场景。在实际工作中，大家可以结合自身业务和系统架构体系进行合理选型。

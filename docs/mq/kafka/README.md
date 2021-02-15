@@ -106,53 +106,53 @@ linger.ms 默认是0ms，超过该时间就立即发送。
 
 1\. kafka主要特征
 
-    kafka具有近乎实时性的消息处理能力，面对海量数据，高效的存储消息和查询消息。kafka将消息保存在磁盘中，以顺序读写的方式访问磁盘，从而避免了随机读写磁盘导致的性能瓶颈
+    kafka具有近乎实时性的消息处理能力，面对海量数据，高效的存储消息和查询消息。kafka将消息保存在磁盘中，以顺序读写的方式访问磁盘，从而避免了随机读写磁盘导致的性能瓶颈
 
-    kafka支持批量读写消息，并且对消息批量压缩，提高了网络利用率和压缩效率
+    kafka支持批量读写消息，并且对消息批量压缩，提高了网络利用率和压缩效率
 
-    kafka支持消息分区，每个分区中的消息保证顺序传输，而分区之间可以并发操作，提高了kafka的并发能力
+    kafka支持消息分区，每个分区中的消息保证顺序传输，而分区之间可以并发操作，提高了kafka的并发能力
 
-    kafka支持在线增加分区，支持在线水平扩展
+    kafka支持在线增加分区，支持在线水平扩展
 
-    kafka支持为每个分区创建多个副本，其中只会有一个leader副本负责读写，其他副本只负责与leader副本同步，这种方式提高了数据的容灾能力，kafka会将leader副本均匀的分布在集群中的服务器上，实现性能最大化
+    kafka支持为每个分区创建多个副本，其中只会有一个leader副本负责读写，其他副本只负责与leader副本同步，这种方式提高了数据的容灾能力，kafka会将leader副本均匀的分布在集群中的服务器上，实现性能最大化
 
 2\. 列举kafka的应用场景
 
 3\. kafka主题分区的作用
 
-    kafka的每个topic都可以分为多个partition，每个partition都有多个replica（副本），每个分区中的消息是不同的，提高了并发读写的能力，而同一分区的不同副本中保存的是相同的消息，副本之间是一主多从关系，其中leader副本处理读写请求，follower副本只与leader副本进行消息同步，当leader副本出现故障时，则从follower副本中重新选举leader副本对外提供服务。这样，通过提高分区的数量，就可以实现水平扩展，通过提高副本数量，就可以提高容灾能力
+    kafka的每个topic都可以分为多个partition，每个partition都有多个replica（副本），每个分区中的消息是不同的，提高了并发读写的能力，而同一分区的不同副本中保存的是相同的消息，副本之间是一主多从关系，其中leader副本处理读写请求，follower副本只与leader副本进行消息同步，当leader副本出现故障时，则从follower副本中重新选举leader副本对外提供服务。这样，通过提高分区的数量，就可以实现水平扩展，通过提高副本数量，就可以提高容灾能力
 
 4\. consumer水平扩展如何实现
 
-    kafka支持consumer水平扩展，可以让多个consumer加入一个consumer group，在一个consumer group中，每个分区只能分配给一个consumer，当kafka服务端增加分区数量进行水平扩展后，可以向consumer group中增加新的consumer来提高整个consumer group的消费能力，当consumer group 中的一个consumer出现故障下线时，会通过rebalance操作下线consumer，它负责处理的分区将分配给其他consumer。。。
+    kafka支持consumer水平扩展，可以让多个consumer加入一个consumer group，在一个consumer group中，每个分区只能分配给一个consumer，当kafka服务端增加分区数量进行水平扩展后，可以向consumer group中增加新的consumer来提高整个consumer group的消费能力，当consumer group 中的一个consumer出现故障下线时，会通过rebalance操作下线consumer，它负责处理的分区将分配给其他consumer。。。
 
 5\. 消息的顺序
 
-    kafka保证一个partition内消息是有序的，但是并不保证多个partition之间的数据有顺序，每个topic可以划分成多个分区，同一个topic下的不同分区包含的消息是不同的，每个消息在被添加到分区时，都会被分配一个offset，它是此消息在分区中的唯一编号，kafka通过offset保证消息在分区内的顺序，offset顺序不跨分区，即kafka只保证在同一个分区内的消息是有序的
+    kafka保证一个partition内消息是有序的，但是并不保证多个partition之间的数据有顺序，每个topic可以划分成多个分区，同一个topic下的不同分区包含的消息是不同的，每个消息在被添加到分区时，都会被分配一个offset，它是此消息在分区中的唯一编号，kafka通过offset保证消息在分区内的顺序，offset顺序不跨分区，即kafka只保证在同一个分区内的消息是有序的
 
 6\. 为了避免磁盘被占满，kafka会周期性的删除陈旧的消息，删除策略是什么
 
-    一种是根据消息保留的时间
+    一种是根据消息保留的时间
 
-    一种是根据topic存储的数据大小
+    一种是根据topic存储的数据大小
 
 7\. 什么是日志压缩
 
-    在很多场景中，消息的key与value之间的对应关系是不断变化的，消费者只关心key对应的最新value，此时，可以开启kafka的日志压缩功能，kafka会在后台启动一个线程，定期将相同key的消息进行合并，只保留最新的value值
+    在很多场景中，消息的key与value之间的对应关系是不断变化的，消费者只关心key对应的最新value，此时，可以开启kafka的日志压缩功能，kafka会在后台启动一个线程，定期将相同key的消息进行合并，只保留最新的value值
 
 8\. 什么是broker？作用是什么?
 
-    一个单独的kafka server就是一个broker，broker主要工作就是接收生产者发过来的消息，分配offset，之后保存到磁盘中。同时，接收消费者、其他broker的请求，根据请求类型进行相应的处理并返回响应，在一般的生产环境中，一个broker独占一台物理服务器
+    一个单独的kafka server就是一个broker，broker主要工作就是接收生产者发过来的消息，分配offset，之后保存到磁盘中。同时，接收消费者、其他broker的请求，根据请求类型进行相应的处理并返回响应，在一般的生产环境中，一个broker独占一台物理服务器
 
 9\. 同一分区的多个副本包括的消息是否一致？
 
-    每个副本中包含的消息是一样的，但是再同一时刻，副本之间并不是完全一样的
+    每个副本中包含的消息是一样的，但是再同一时刻，副本之间并不是完全一样的
 
 10\. ISR集合是什么？谁维护着？如何维护？
 
-    ISR（In-Sync Replica）集合表示的是目前可用并且消息量与leader相差不多的副本集合，这是整个副本集合的一个子集
+    ISR（In-Sync Replica）集合表示的是目前可用并且消息量与leader相差不多的副本集合，这是整个副本集合的一个子集
 
-    ISR集合的副本必须满足：副本所在节点必须维持着与zookeeper的连接；副本最后一条消息的offset与leader副本最后一条消息的offset之间的差值不能超出指定的阈值
+    ISR集合的副本必须满足：副本所在节点必须维持着与zookeeper的连接；副本最后一条消息的offset与leader副本最后一条消息的offset之间的差值不能超出指定的阈值
 
-    每个分区的leader副本都会维护此分区的ISR集合，写请求首先由leader副本处理，之后follower副本会从leader副本上拉取写入的消息，这个过程会有一定的延迟，导致follower副本中保存的消息略少于leader副本，只要未超出阈值都是可以容忍的
+    每个分区的leader副本都会维护此分区的ISR集合，写请求首先由leader副本处理，之后follower副本会从leader副本上拉取写入的消息，这个过程会有一定的延迟，导致follower副本中保存的消息略少于leader副本，只要未超出阈值都是可以容忍的
 

@@ -9,7 +9,7 @@
 ## 手写一个 Spring MVC
 
 
-### Spring 的MVC
+### Spring 的MVC
 
 **64\. 什么是Spring的MVC框架？**
 
@@ -21,7 +21,7 @@ Spring的MVC框架是围绕DispatcherServlet来设计的，它用来处理所有
 
 **66\. WebApplicationContext**
 
-WebApplicationContext 继承了ApplicationContext  并增加了一些WEB应用必备的特有功能，它不同于一般的ApplicationContext ，因为它能处理主题，并找到被关联的servlet。
+WebApplicationContext 继承了ApplicationContext  并增加了一些WEB应用必备的特有功能，它不同于一般的ApplicationContext ，因为它能处理主题，并找到被关联的servlet。
 
 **67\. 什么是Spring MVC框架的控制器？**
 

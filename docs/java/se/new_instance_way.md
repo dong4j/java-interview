@@ -5,11 +5,11 @@
 | 方式 | 作用|
 |:---|:---|
 | 使用 new 关键字 | 调用了构造函数 |
-| 使用 Class 类的 newInstance 方法 | 调用了构造函数 |
+| 使用 Class 类的 newInstance 方法 | 调用了构造函数 |
 | 使用 Constructor 类的 newInstance 方法 | 调用了构造函数 |
 | 使用 clone 方法 | 没有调用构造函数 |
-| 使用反序列化 | 没有调用构造函数 |
-| Objenesis | 调用了构造函数 |
+| 使用反序列化 | 没有调用构造函数 |
+| Objenesis | 调用了构造函数 |
 
 ## 1. 使用 new 关键字
 

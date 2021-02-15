@@ -50,7 +50,7 @@ Java部署技术在JDK 9中已弃用，在JDK 11中已删除。
 
 Java applet和Web Start功能，包括Java插件，Java Applet Viewer，Java控制面板和Java Web Start，以及`javaws`工具，已在JDK 11中删除。
 
-请参阅 [删除Java部署技术](http://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#JDK-8185077)。
+请参阅 [删除Java部署技术](http://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#JDK-8185077)。
 
 ### 删除Java EE和CORBA模块
 
@@ -136,7 +136,7 @@ CORBA工具
 * `servertool`
 * `tnamesrv`
 
-此外，`rmic`（RMI编译器）将不再支持`-idl`或`-iiop`选项。请参阅 [JDK 11发行说明](http://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#JDK-8190378)。
+此外，`rmic`（RMI编译器）将不再支持`-idl`或`-iiop`选项。请参阅 [JDK 11发行说明](http://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#JDK-8190378)。
 
 Java Web服务工具
 
@@ -156,7 +156,7 @@ Java部署工具
 
 `pack 200`并且`unpack200`已被弃用，可能会在将来的JDK版本中删除。
 
-请参阅[从JDK](http://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#JDK-8198527)和[JEP中](http://openjdk.java.net/jeps/336)[删除JavaFX ](http://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#JDK-8198527)[336：弃用Pack200工具和API](http://openjdk.java.net/jeps/336)。
+请参阅[从JDK](http://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#JDK-8198527)和[JEP中](http://openjdk.java.net/jeps/336)[删除JavaFX ](http://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#JDK-8198527)[336：弃用Pack200工具和API](http://openjdk.java.net/jeps/336)。
 
 监控工具
 
@@ -170,7 +170,7 @@ JVM管理-MIB.mib中
 
 SNMP代理
 
-该 `jdk.snmp`模块已被删除。请参阅[删除SNMP代理](https://bugs.java.com/view_bug.do?bug_id=JDK-8071367)。
+该 `jdk.snmp`模块已被删除。请参阅[删除SNMP代理](https://bugs.java.com/view_bug.do?bug_id=JDK-8071367)。
 
 Oracle桌面特定删除
 
@@ -312,7 +312,7 @@ sun.misc.BASE64Encoder                   Use java.util.Base64 @since 1.8
 
 ```
 
-如果您使用Maven，则可以使用`jdeps` 插件。
+如果您使用Maven，则可以使用`jdeps` 插件。
 
 对于`jdeps`语法，请参见[`jdeps`](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSWOR-GUID-A543FEBE-908A-49BF-996C-39499367ADB4)在Java平台，标准版工具参考。
 
@@ -379,11 +379,11 @@ Jython 2.7.0 (default:9987c746f838, Apr 29 2015, 02:25:11)
 
 这次，不发出警告，因为`java`调用明确地确认了反射访问。如您所见，您可能需要指定多个`--add-opens`标志来覆盖类路径上的库尝试的所有反射访问操作。
 
-要更好地理解工具和库的行为，可以使用命令行标志。该标志导致为每个非法反射访问操作发出警告消息。此外，您还可以通过设置获取有关非法反射访问操作的详细信息，包括堆栈跟踪。 `--illegal-access=warn``--illegal-access=debug`
+要更好地理解工具和库的行为，可以使用命令行标志。该标志导致为每个非法反射访问操作发出警告消息。此外，您还可以通过设置获取有关非法反射访问操作的详细信息，包括堆栈跟踪。 `--illegal-access=warn``--illegal-access=debug`
 
-如果您更新了库，或者获得了库，那么您可以尝试使用命令行标志。除了由其他命令行选项启用的操作外，它禁用所有反射访问操作，例如。这将是未来版本中的默认模式。 `--illegal-access=deny``--add-opens`
+如果您更新了库，或者获得了库，那么您可以尝试使用命令行标志。除了由其他命令行选项启用的操作外，它禁用所有反射访问操作，例如。这将是未来版本中的默认模式。 `--illegal-access=deny``--add-opens`
 
-有两个选项可以让您以特定方式打破封装。您可以结合使用它们，或者如前所述，来抑制警告。 `--illegal-access=deny`
+有两个选项可以让您以特定方式打破封装。您可以结合使用它们，或者如前所述，来抑制警告。 `--illegal-access=deny`
 
 * 如果需要使用已无法访问的内部API，请使用[`--add-exports`](https://docs.oracle.com/en/java/javase/11/migrate/index.html#GUID-2F61F3A9-0979-46A4-8B49-325BA0EE8B66)runtime选项。您还可以`--add-exports`在编译时使用来访问内部API。
 * 如果必须允许类路径上的代码进行深入反射以访问非公共成员，请使用该[`--add-opens`](https://docs.oracle.com/en/java/javase/11/migrate/index.html#GUID-12F945EB-71D6-46AF-8C3D-D354FD0B1781)选项。
@@ -438,7 +438,7 @@ Add-Exports:java.management/sun.management
 
 有些图书馆深入反思，这意味着`setAccessible(true)`他们可以访问所有成员，包括私人成员。您可以使用命令行`--add-opens`上的选项授予此访问权限`java`。使用此选项不会生成警告消息。
 
-如果，您在运行时看到或发出消息，则可以使用运行时选项，将参数基于异常消息中显示的信息。 `--illegal-access=deny``IllegalAccessException``InaccessibleObjectException``--add-opens`
+如果，您在运行时看到或发出消息，则可以使用运行时选项，将参数基于异常消息中显示的信息。 `--illegal-access=deny``IllegalAccessException``InaccessibleObjectException``--add-opens`
 
 语法`--add-opens`是：
 
@@ -483,7 +483,7 @@ JDK 10引入了一些小的更改，以更好地适应基于时间的发布模�
 
 见[版本字符串格式](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSJIG-GUID-DCA60310-6565-4BB6-8D24-6FF07C1C4B4E)的Java平台，标准版安装指南。
 
-有关JDK 9中引入的版本字符串的更改，请参阅 [JEP 223：新版本字符串方案](http://openjdk.java.net/jeps/223)。
+有关JDK 9中引入的版本字符串的更改，请参阅 [JEP 223：新版本字符串方案](http://openjdk.java.net/jeps/223)。
 
 有关JDK 10中引入的版本字符串更改，请参阅[JEP 322：基于时间的发行版本控制](http://openjdk.java.net/jeps/322)。
 
@@ -562,7 +562,7 @@ JDK 9及更高版本维护自1.2版本以来存在的类加载器的层次结构
 
     ```
 
-* 该[java.security.CodeSource中的](https://docs.oracle.com/javase/10/docs/api/java/security/CodeSource.html) API和安全策略文件所使用的网址来命名的将被授予特定权限的代码库的位置。请参阅[策略文件语法](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSSEC-GUID-7942E6F8-8AAB-4404-9FE9-E08DD6FFCFFA)在Java平台，标准版安全开发人员指南。目前`conf/security/java.policy`，使用文件URL 在文件中标识了需要特定权限的运行时系统组件。
+* 该[java.security.CodeSource中的](https://docs.oracle.com/javase/10/docs/api/java/security/CodeSource.html) API和安全策略文件所使用的网址来命名的将被授予特定权限的代码库的位置。请参阅[策略文件语法](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSSEC-GUID-7942E6F8-8AAB-4404-9FE9-E08DD6FFCFFA)在Java平台，标准版安全开发人员指南。目前`conf/security/java.policy`，使用文件URL 在文件中标识了需要特定权限的运行时系统组件。
 
 * 较旧版本的IDE和其他开发工具需要能够枚举存储在运行时映像中的类和资源文件，并通过打开和读取`rt.jar`以及类似文件直接读取其内容。模块化图像无法实现这一点。
 
@@ -648,7 +648,7 @@ Java团队致力于向后兼容。如果应用程序在JDK 8中运行，那么�
 * JCP标准，java。*，javax。*
 * JDK特定的API，一些com.sun。*，一些jdk。*
 
-支持的API可以从JDK中删除，但只能通知。通过运行静态分析工具，了解您的代码是否使用了弃用的API [`jdeprscan`](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSWOR-GUID-2B7588B0-92DB-4A88-88D4-24D183660A62)。
+支持的API可以从JDK中删除，但只能通知。通过运行静态分析工具，了解您的代码是否使用了弃用的API [`jdeprscan`](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSWOR-GUID-2B7588B0-92DB-4A88-88D4-24D183660A62)。
 
 java。*在JDK 9中删除的API包括java.util.logging.LogManager和java.util.jar.Pack200包中以前弃用的方法：
 
@@ -941,8 +941,8 @@ JavaDB与JDK 7和JDK 8捆绑在一起。它`db`位于JDK安装目录的目录中
 
 要以`hprof`格式创建堆转储，请使用诊断命令（`jcmd`）或`jmap`工具：
 
-* 诊断命令：。见。 `jcmd <pid> GC.heap_dump`[`jcmd`](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSWOR-GUID-59153599-875E-447D-8D98-0078A5778F05)
-* jmap : `jmap -dump`. 见[`jmap`](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSWOR-GUID-D2340719-82BA-4077-B0F3-2803269B7F41)。
+* 诊断命令：。见。 `jcmd <pid> GC.heap_dump`[`jcmd`](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSWOR-GUID-59153599-875E-447D-8D98-0078A5778F05)
+* jmap : `jmap -dump`. 见[`jmap`](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSWOR-GUID-D2340719-82BA-4077-B0F3-2803269B7F41)。
 
 对于CPU分析器功能，请使用与JDK捆绑在一起的Java Flight Recorder。
 
@@ -1006,9 +1006,9 @@ Java VisualVM不再与JDK捆绑在一起，但您可以从[VisualVM开源项目�
 
 本`java.awt.Desktop`类包含了苹果专用的API的替代品`com.apple.eawt`和`com.apple.eio`套餐。新API取代了macOS API，并且与平台无关。
 
-`com.apple.eawt`和`com.apple.eio`包中的API 是封装的，因此您无法在JDK 9或更高版本中针对它们进行编译。但是，它们在运行时仍可访问，因此编译为旧版本的现有代码将继续运行。最终，使用`apple`和`com.apple` 包及其子包中的内部类的库或应用程序 将需要迁移到新的API。
+`com.apple.eawt`和`com.apple.eio`包中的API 是封装的，因此您无法在JDK 9或更高版本中针对它们进行编译。但是，它们在运行时仍可访问，因此编译为旧版本的现有代码将继续运行。最终，使用`apple`和`com.apple` 包及其子包中的内部类的库或应用程序 将需要迁移到新的API。
 
-在`com.apple.concurrent` 与`apple.applescript`包没有任何替代删除。
+在`com.apple.concurrent` 与`apple.applescript`包没有任何替代删除。
 
 请参阅[JEP 272：特定于平台的桌面功能。](http://openjdk.java.net/jeps/272)
 
@@ -1026,9 +1026,9 @@ AppleScript引擎在最近的版本中几乎无法使用。该功能仅适用于
 
 * 利用IDE的建议，使用最新功能更新代码。
 
-* 通过运行静态分析工具，了解您的代码是否使用了弃用的API [`jdeprscan`](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSWOR-GUID-2B7588B0-92DB-4A88-88D4-24D183660A62)。正如本指南中已经提到的，API可以从JDK中删除，但只能提前通知。
+* 通过运行静态分析工具，了解您的代码是否使用了弃用的API [`jdeprscan`](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSWOR-GUID-2B7588B0-92DB-4A88-88D4-24D183660A62)。正如本指南中已经提到的，API可以从JDK中删除，但只能提前通知。
 
-* 熟悉多版本JAR文件等新功能（请参阅参考资料[`jar` ](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSWOR-GUID-51C11B76-D9F6-4BC2-A805-3C847E857867)）。
+* 熟悉多版本JAR文件等新功能（请参阅参考资料[`jar` ](https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase/11/migrate&id=JSWOR-GUID-51C11B76-D9F6-4BC2-A805-3C847E857867)）。
 
 ### 文档可访问性
 

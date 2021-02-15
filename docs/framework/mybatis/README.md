@@ -46,7 +46,7 @@
 复制代码
 ```
 
-第2种： **通过来映射字段名和实体类属性名的一一对应的关系**
+第2种： **通过来映射字段名和实体类属性名的一一对应的关系**
 
 ```
  <select id="getOrder" parameterType="int" resultMap="orderresultmap">
@@ -249,7 +249,7 @@ Dao接口里的方法，**是不能重载的，因为是全限名+方法名的�
 
 > Mybatis比IBatis比较大的几个改进是什么
 
-* a.**有接口绑定,包括注解绑定sql和xml绑定Sql** ,
+* a.**有接口绑定,包括注解绑定sql和xml绑定Sql** ,
 * b.动态sql由原来的节点配置变成OGNL表达式,
 * c. 在一对一,一对多的时候引进了association,在一对多的时候引入了collection节点,不过都是在resultMap里面配置
 
@@ -832,7 +832,7 @@ Hibernate属于全自动ORM映射工具，使用Hibernate查询关联对象或�
 
 注：这道题也是京东面试官面试我时问的。
 
-答：Dao接口，就是人们常说的Mapper接口，接口的全限名，就是映射文件中的namespace的值，接口的方法名，就是映射文件中MappedStatement的id值，接口方法内的参数，就是传递给sql的参数。Mapper接口是没有实现类的，当调用接口方法时，接口全限名+方法名拼接字符串作为key值，可唯一定位一个MappedStatement，举例：com.mybatis3.mappers.StudentDao.findStudentById，可以唯一找到namespace为com.mybatis3.mappers.StudentDao下面id = findStudentById的MappedStatement。在Mybatis中，每一个、、、标签，都会被解析为一个MappedStatement对象。
+答：Dao接口，就是人们常说的Mapper接口，接口的全限名，就是映射文件中的namespace的值，接口的方法名，就是映射文件中MappedStatement的id值，接口方法内的参数，就是传递给sql的参数。Mapper接口是没有实现类的，当调用接口方法时，接口全限名+方法名拼接字符串作为key值，可唯一定位一个MappedStatement，举例：com.mybatis3.mappers.StudentDao.findStudentById，可以唯一找到namespace为com.mybatis3.mappers.StudentDao下面id = findStudentById的MappedStatement。在Mybatis中，每一个、、、标签，都会被解析为一个MappedStatement对象。
 
 Dao接口里的方法，是不能重载的，因为是全限名+方法名的保存和寻找策略。
 
@@ -846,7 +846,7 @@ Dao接口的工作原理是JDK动态代理，Mybatis运行时会使用JDK动态�
 
 分页插件的基本原理是使用Mybatis提供的插件接口，实现自定义插件，在插件的拦截方法内拦截待执行的sql，然后重写sql，根据dialect方言，添加对应的物理分页语句和物理分页参数。
 
-举例：select * from student，拦截sql后重写为：select t.* from （select * from student）t limit 0，10
+举例：select * from student，拦截sql后重写为：select t.* from （select * from student）t limit 0，10
 
 #### 5、简述Mybatis的插件运行原理，以及如何编写一个插件。
 
@@ -874,7 +874,7 @@ Dao接口的工作原理是JDK动态代理，Mybatis运行时会使用JDK动态�
 
 注：我出的。
 
-答：第一种是使用标签，逐一定义列名和对象属性名之间的映射关系。第二种是使用sql列的别名功能，将列别名书写为对象属性名，比如T_NAME AS NAME，对象属性名一般是name，小写，但是列名不区分大小写，Mybatis会忽略列名大小写，智能找到与之对应对象属性名，你甚至可以写成T_NAME AS NaMe，Mybatis一样可以正常工作。
+答：第一种是使用标签，逐一定义列名和对象属性名之间的映射关系。第二种是使用sql列的别名功能，将列别名书写为对象属性名，比如T_NAME AS NAME，对象属性名一般是name，小写，但是列名不区分大小写，Mybatis会忽略列名大小写，智能找到与之对应对象属性名，你甚至可以写成T_NAME AS NaMe，Mybatis一样可以正常工作。
 
 有了列名与属性名的映射关系后，Mybatis通过反射创建对象，同时使用反射给对象的属性逐一赋值并返回，那些找不到映射关系的属性，是无法完成赋值的。
 
@@ -892,14 +892,14 @@ Dao接口的工作原理是JDK动态代理，Mybatis运行时会使用JDK动态�
 
 举例：下面join查询出来6条记录，一、二列是Teacher对象列，第三列为Student对象列，Mybatis去重复处理后，结果为1个老师6个学生，而不是6个老师6个学生。
 
-       t_id    t_name           s_id
+       t_id    t_name           s_id
 
-|          1 | teacher      |      38 |
-|          1 | teacher      |      39 |
-|          1 | teacher      |      40 |
-|          1 | teacher      |      41 |
-|          1 | teacher      |      42 |
-|          1 | teacher      |      43 |
+|          1 | teacher      |      38 |
+|          1 | teacher      |      39 |
+|          1 | teacher      |      40 |
+|          1 | teacher      |      41 |
+|          1 | teacher      |      42 |
+|          1 | teacher      |      43 |
 
 #### 10、Mybatis是否支持延迟加载？如果支持，它的实现原理是什么？
 

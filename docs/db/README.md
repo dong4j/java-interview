@@ -415,8 +415,8 @@ SELECT VERSION();用于获取当前MySQL 的版本.
 
 我们可以通过以下命令登录: 
 
-```shell
-# [MySQL dir]/bin/mysql -h hostname -u  -p 
+```bash
+# [MySQL dir]/bin/mysql -h hostname -u  -p 
 ```
 
 ## myisamchk 是用来做什么的 
@@ -534,7 +534,7 @@ mysql_fetch_object - 从数据库返回结果行作为对象.
 
 mysql;
 
-mysql mysql.out
+mysql mysql.out
 
 ## MyISAM 表格将在哪里存储, 并且还提供其存储格式
 
@@ -698,7 +698,7 @@ DECIMAL和NUMERIC值得最大的范围与DOUBLE一样, 但是对于一个给定�
 
 服务器突然断电导致数据文件损坏. 
 
-强制关机, 没有先关闭mysql 服务等. 
+强制关机, 没有先关闭mysql 服务等. 
 
 ## MySQL 有关权限的表都有哪几个
 

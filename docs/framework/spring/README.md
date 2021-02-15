@@ -179,7 +179,7 @@ Spring 是个java企业级应用的开源开发框架。Spring主要用来开发
 
 * **异常处理：**Spring 提供方便的API把具体技术相关的异常（比如由JDBC，Hibernate or JDO抛出的）转化为一致的unchecked 异常
 
-**3\.  Spring由哪些模块组成？**
+**3\.  Spring由哪些模块组成？**
 
 以下是Spring 框架的基本模块：
 
@@ -221,19 +221,19 @@ AOP模块用于发给我们的Spring应用做面向切面的开发， 很多支�
 
 Spring 通过提供ORM模块，支持我们在直接JDBC之上使用一个对象/关系映射映射(ORM)工具，Spring 支持集成主流的ORM框架，如Hiberate,JDO和 iBATIS SQL Maps。Spring的事务管理同样支持以上所有ORM框架及JDBC。
 
-**10\.  解释WEB 模块**
+**10\.  解释WEB 模块**
 
 Spring的WEB模块是构建在application context 模块基础之上，提供一个适合web应用的上下文。这个模块也包括支持多种面向web的任务，如透明地处理多个文件上传请求和程序级请求参数的绑定到你的业务对象。它也有对Jakarta Struts的支持。
 
-**12\.  Spring配置文件**
+**12\.  Spring配置文件**
 
 Spring配置文件是个XML 文件，这个文件包含了类信息，描述了如何配置它们，以及如何相互调用。
 
-**13\.  什么是Spring IOC 容器？**
+**13\.  什么是Spring IOC 容器？**
 
 Spring IOC 负责创建对象，管理对象（通过依赖注入（DI），装配对象，配置对象，并且管理这些对象的整个生命周期。
 
-**14\.  IOC的优点是什么？**
+**14\.  IOC的优点是什么？**
 
 IOC 或 依赖注入把应用的代码量降到最低。它使应用容易测试，单元测试不再需要单例和JNDI查找机制。最小的代价和最小的侵入性使松散耦合得以实现。IOC容器支持加载服务时的饿汉式初始化和懒加载。
 
@@ -245,7 +245,7 @@ IOC 或 依赖注入把应用的代码量降到最低。它使应用容易测试
 
 * **WebXmlApplicationContext：**此容器加载一个XML文件，此文件定义了一个WEB应用的所有bean。
 
-**16\. Bean 工厂和 Application contexts  有什么区别？**
+**16\. Bean 工厂和 Application contexts  有什么区别？**
 
 Application contexts提供一种方法处理文本消息，一个通常的做法是加载文件资源（比如镜像），它们可以向注册为监听器的bean发布事件。另外，在容器或容器内的对象上执行的那些不得不由bean工厂以程序化方式处理的操作，可以在Application contexts中以声明的方式处理。Application contexts实现了MessageSource接口，该接口的实现以可插拔的方式提供获取本地化消息的方法。
 
@@ -264,7 +264,7 @@ Application contexts提供一种方法处理文本消息，一个通常的做法
 
 依赖注入，是IOC的一个方面，是个通常的概念，它有多种解释。这概念是说你不用创建对象，而只需要描述它如何被创建。你不在代码里直接组装你的组件和服务，但是要在配置文件里描述哪些组件需要哪些服务，之后一个容器（IOC容器）负责把他们组装起来。
 
-**19\.  有哪些不同类型的IOC（依赖注入）方式？**
+**19\.  有哪些不同类型的IOC（依赖注入）方式？**
 
 * **构造器依赖注入：**构造器依赖注入通过容器触发一个类的构造器来实现的，该类有一系列参数，每个参数代表一个对其他类的依赖。
 * **Setter方法注入：**Setter方法注入是容器通过调用无参构造器或无参static工厂 方法实例化bean之后，调用该bean的setter方法，即实现了基于setter的依赖注入。
@@ -274,7 +274,7 @@ Application contexts提供一种方法处理文本消息，一个通常的做法
 
 你两种依赖方式都可以使用，构造器注入和Setter方法注入。最好的解决方案是用构造器参数实现强制依赖，setter方法实现可选依赖。
 
-### Spring Beans
+### Spring Beans
 
 
 **21.什么是Spring beans？**
@@ -306,7 +306,7 @@ XML配置文件。
 
 Spring框架支持以下五种bean的作用域：
 
-* **singleton : **bean在每个Spring ioc 容器中只有一个实例。
+* **singleton : **bean在每个Spring ioc 容器中只有一个实例。
 * **prototype：**一个bean的定义可以有多个实例。
 * **request：**每次http请求都会创建一个bean，该作用域仅在基于web的Spring ApplicationContext情形下有效。
 * **session：**在一个HTTP Session中，一个bean定义对应一个实例。该作用域仅在基于web的Spring ApplicationContext情形下有效。
@@ -331,9 +331,9 @@ Spring框架支持以下五种bean的作用域：
 
 点击[这里](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247484197&idx=1&sn=028543ecb1602022ca72e26d4aad181b&chksm=eb538613dc240f057a755cb1e4d7f6bd5388fe270a6b9b80ff5cd2336382381e3a658d8513d1&scene=21#wechat_redirect)一图Spring Bean的生命周期。
 
-**28\.  哪些是重要的bean生命周期方法？ 你能重载它们吗？**
+**28\.  哪些是重要的bean生命周期方法？ 你能重载它们吗？**
 
-有两个重要的bean 生命周期方法，第一个是setup ， 它是在容器加载bean的时候被调用。第二个方法是 teardown  它是在容器卸载类的时候被调用。
+有两个重要的bean 生命周期方法，第一个是setup ， 它是在容器加载bean的时候被调用。第二个方法是 teardown  它是在容器卸载类的时候被调用。
 
 The bean 标签有两个重要的属性（init-method和destroy-method）。用它们你可以自己定制初始化和注销方法。它们也有相应的注解（@PostConstruct和@PreDestroy）。
 
@@ -399,7 +399,7 @@ Spring 容器能够自动装配相互合作的bean，这意味着容器不需要
 
 注解装配在默认情况下是不开启的，为了使用注解装配，我们必须在Spring配置文件中配置 元素。
 
-**39\. @Required  注解**
+**39\. @Required  注解**
 
 这个注解表明bean的属性必须在配置的时候设置，通过一个bean定义的显式的属性值或通过自动装配，若@Required注解的bean属性未被设置，容器将抛出BeanInitializationException。
 
@@ -430,7 +430,7 @@ Spring对数据访问对象（DAO）的支持旨在简化它和数据访问技�
 
 在Spring中有两种方式访问Hibernate：
 
-* 控制反转  Hibernate Template和 Callback
+* 控制反转  Hibernate Template和 Callback
 
 * 继承 HibernateDAOSupport提供一个AOP 拦截器
 
@@ -462,7 +462,7 @@ Spring支持两种类型的事务管理：
 
 **49\. Spring框架的事务管理有哪些优点？**
 
-* 它为不同的事务API  如 JTA，JDBC，Hibernate，JPA 和JDO，提供一个不变的编程模式。
+* 它为不同的事务API  如 JTA，JDBC，Hibernate，JPA 和JDO，提供一个不变的编程模式。
 * 它为编程式事务管理提供了一套简单的API而不是一些复杂的事务API如
 * 它支持声明式事务管理。
 * 它和Spring各种数据访问抽象层很好得集成。
@@ -474,7 +474,7 @@ Spring支持两种类型的事务管理：
 
 ### Spring面向切面编程（AOP）
 
-**51\.  解释AOP**
+**51\.  解释AOP**
 
 面向切面的编程，或AOP， 是一种编程技术，允许程序模块化横向切割关注点，或横切典型的责任划分，如日志和事务管理。
 

@@ -60,7 +60,7 @@ java.lang.annotation 提供了四种元注解, 专门注解其他的注解（在
 ### @Inherited
 
 **定义该注释和子类的关系**
-     
+     
 ### @Inherited 
 
 元注解是一个标记注解, @Inherited 阐述了某个被标注的类型是被继承的. 
@@ -69,19 +69,19 @@ java.lang.annotation 提供了四种元注解, 专门注解其他的注解（在
 ## 常见标准的Annotation：
 
 ### Override
-      
+      
 java.lang.Override 是一个标记类型注解, 它被用作标注方法. 
 它说明了被标注的方法重载了父类的方法, 起到了断言的作用. 
 如果我们使用了这种注解在一个没有覆盖父类方法的方法时, java 编译器将以一个编译错误来警示. 
 
 ### Deprecated
-     
+     
 Deprecated 也是一种标记类型注解. 
 当一个类型或者类型成员使用@Deprecated 修饰的话, 编译器将不鼓励使用这个被标注的程序元素. 
 所以使用这种修饰具有一定的“延续性”: 如果我们在代码中通过继承或者覆盖的方式使用了这个过时的类型或者成员, 虽然继承或者覆盖后的类型或者成员并不是被声明为@Deprecated, 但编译器仍然要报警. 
 
 ### SuppressWarnings
-     
+     
 SuppressWarning 不是一个标记类型注解. 
 它有一个类型为String[] 的成员, 这个成员的值为被禁止的警告名. 
 对于 javac 编译器来讲, 被-Xlint 选项有效的警告名也同样对 @SuppressWarings 有效, 同时编译器忽略掉无法识别的警告名. 

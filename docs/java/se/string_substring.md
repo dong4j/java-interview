@@ -2,7 +2,7 @@
 
 [👈 **相关面试题**](./README.md#👉-jdk6-和-jdk7-中-substring-的原理及区别)
 
-转一篇不错的文章, 原文地址如下: 
+转一篇不错的文章, 原文地址如下: 
 
 [👉 http://www.hollischuang.com/archives/1232](http://www.hollischuang.com/archives/1232)
 

@@ -24,7 +24,7 @@ Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，�
 
 ![](./imgs/f2c70911.png)
 
-```shell
+```bash
 > set hello world
 OK
 > get hello
@@ -39,7 +39,7 @@ OK
 
 ![](./imgs/559f1e5c.png)
 
-```shell
+```bash
 > rpush list-key item
 (integer) 1
 > rpush list-key item2
@@ -67,7 +67,7 @@ OK
 
 ![](./imgs/c3bfdb1c.png)
 
-```shell
+```bash
 > sadd set-key item
 (integer) 1
 > sadd set-key item2
@@ -101,7 +101,7 @@ OK
 
 ![](./imgs/d4af1668.png)
 
-```shell
+```bash
 > hset hash-key sub-key1 value1
 (integer) 1
 > hset hash-key sub-key2 value2
@@ -132,7 +132,7 @@ OK
 
 ![](./imgs/0457a3b3.png)
 
-```shell
+```bash
 > zadd zset-key 728 member1
 (integer) 1
 > zadd zset-key 982 member0

@@ -12,7 +12,7 @@ Tomcat中最顶层的容器是Server, 代表着整个服务器, 从上图中可�
 
 Service主要包含两个部分: Connector和Container. 从上图中可以看出 Tomcat 的心脏就是这两个组件, 他们的作用如下: 
 
-1.Connector用于处理连接相关的事情, 并提供Socket与Request和Response相关的转化; 
+1.Connector用于处理连接相关的事情, 并提供Socket与Request和Response相关的转化; 
 2. Container用于封装和管理Servlet, 以及具体处理Request请求; 
 
 一个Tomcat中只有一个Server, 一个Server可以包含多个Service, 一个Service只有一个Container, 但是可以有多个Connectors, 这是因为一个服务可以有多个连接, 如同时提供Http和Https链接, 也可以提供向相同协议不同端口的连接,示意图如下（Engine、Host、Context下边会说到）: 
@@ -35,10 +35,10 @@ Server标签设置的端口号为8005, shutdown=”SHUTDOWN” , 表示在8005�
 
 **Tomcat 顶层架构小结**:
 
-1. Tomcat中只有一个Server, 一个Server可以有多个Service, 一个Service可以有多个Connector和一个Container;  
-2. Server掌管着整个Tomcat的生死大权;  
-3. Service 是对外提供服务的;  
-4. Connector用于接受请求并将请求封装成Request和Response来具体处理;  
+1. Tomcat中只有一个Server, 一个Server可以有多个Service, 一个Service可以有多个Connector和一个Container;  
+2. Server掌管着整个Tomcat的生死大权;  
+3. Service 是对外提供服务的;  
+4. Connector用于接受请求并将请求封装成Request和Response来具体处理;  
 5. Container用于封装和管理Servlet, 以及具体处理request请求; 
 
 知道了整个Tomcat顶层的分层架构和各个组件之间的关系以及作用, 对于绝大多数的开发人员来说Server和Service对我们来说确实很远, 而我们开发中绝大部分进行配置的内容是属于Connector和Container的, 所以接下来介绍一下Connector和Container. 
@@ -57,9 +57,9 @@ Connector用于接受请求并将请求封装成Request和Response, 然后交给
 
 因此, 我们可以把Connector分为四个方面进行理解: 
 
-1. Connector如何接受请求的?  
-2. 如何将请求封装成Request和Response的?  
-3. 封装完之后的Request和Response如何交给Container进行处理的?  
+1. Connector如何接受请求的?  
+2. 如何将请求封装成Request和Response的?  
+3. 封装完之后的Request和Response如何交给Container进行处理的?  
 4. Container处理完之后如何交给Connector并返回给客户端的? 
 
 首先看一下Connector的结构图（图B）, 如下所示: 
@@ -84,9 +84,9 @@ Container用于封装和管理Servlet, 以及具体处理Request请求, 在Conne
 
 4个子容器的作用分别是: 
 
-1. Engine: 引擎, 用来管理多个站点, 一个Service最多只能有一个Engine;  
-2. Host: 代表一个站点, 也可以叫虚拟主机, 通过配置Host就可以添加站点;  
-3. Context: 代表一个应用程序, 对应着平时开发的一套程序, 或者一个WEB-INF目录以及下面的web.xml文件;  
+1. Engine: 引擎, 用来管理多个站点, 一个Service最多只能有一个Engine;  
+2. Host: 代表一个站点, 也可以叫虚拟主机, 通过配置Host就可以添加站点;  
+3. Context: 代表一个应用程序, 对应着平时开发的一套程序, 或者一个WEB-INF目录以及下面的web.xml文件;  
 4. Wrapper: 每一Wrapper封装着一个Servlet; 
 
 下面找一个Tomcat的文件目录对照一下, 如下图所示: 

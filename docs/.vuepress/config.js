@@ -8,6 +8,7 @@ module.exports = {
       description: 'Fuck Java, fuck interview.',
     }
   },
+  dest: './docs/dist',
   // base: '/java-interview/',
   head: [
     ['link', { rel: 'icon', href: '/favicon.png' }],
@@ -459,8 +460,12 @@ function micro_service(title) {
       title,
       collapsable: false,
       children: [
-        'distributed_transaction',
-        ''
+        'distributed_base',
+        'distributed_advanced',
+        'distributed_cache',
+        'distributed_id',
+        'distributed_limiting',
+        'distributed_lock',
       ]
     }
   ]

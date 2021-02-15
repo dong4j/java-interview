@@ -361,7 +361,7 @@ Java虚拟机管理的内存是运行时数据区那一部分, 简单概括一�
 
 * **程序计数器**:线程私有
 
-* **堆Heap**:线程共享, 是 Java 虚拟机所管理的内存中最大的一块, 在虚拟机启动时创建.此内存区域的唯一目的就是存放对象实例, 几乎所有的对象实例都在这里分配内存.**在 Java 虚拟机规范中的描述是:所有的对象实例以及数组都要在堆上分配.** *(原文:The heap is the runtime data area from which memory for all class instances and arrays is allocated)*但有特殊情况, 随着 JIT 编译器的发展, 逃逸分析和标量替换技术的逐渐成熟, 对象也可以在**栈上**分配.另外, 虽说堆是线程共享, 但其中也可以划分出多个线程私有的分配缓冲区*(Thread Local Allocation Buffer, TLAB)*.
+* **堆Heap**:线程共享, 是 Java 虚拟机所管理的内存中最大的一块, 在虚拟机启动时创建.此内存区域的唯一目的就是存放对象实例, 几乎所有的对象实例都在这里分配内存.**在 Java 虚拟机规范中的描述是:所有的对象实例以及数组都要在堆上分配.** *(原文:The heap is the runtime data area from which memory for all class instances and arrays is allocated)*但有特殊情况, 随着 JIT 编译器的发展, 逃逸分析和标量替换技术的逐渐成熟, 对象也可以在**栈上**分配.另外, 虽说堆是线程共享, 但其中也可以划分出多个线程私有的分配缓冲区*(Thread Local Allocation Buffer, TLAB)*.
 
 * **方法区**:线程共享, 它用于存储已被虚拟机加载的**类信息、常量、静态变量、即时编译器编译后的代码等数据**.
 
@@ -383,7 +383,7 @@ Java虚拟机管理的内存是运行时数据区那一部分, 简单概括一�
 
 **3. class 文件常量池(class constant pool)**
 
-class 常量池是在编译后每个class文件都有的, class 文件中除了包含类的版本、字段、方法、接口等描述信息外, 还有一项信息就是 ***常量池****(constant pool table)*, 用于存放编译器生成的各种字面量(Literal)和符号引用(Symbolic References).*字面量就是我们所说的常量概念, 如文本字符串、被声明为final的常量值等.*他在 class 文件中的位置如上图所示, Constant Pool 中.
+class 常量池是在编译后每个class文件都有的, class 文件中除了包含类的版本、字段、方法、接口等描述信息外, 还有一项信息就是 ***常量池****(constant pool table)*, 用于存放编译器生成的各种字面量(Literal)和符号引用(Symbolic References).*字面量就是我们所说的常量概念, 如文本字符串、被声明为final的常量值等.*他在 class 文件中的位置如上图所示, Constant Pool 中.
 
 ## String Pool
 
@@ -479,7 +479,7 @@ public static void main(String[] args) {
 
 回到一开始说到的这句代码, 可以来总结一下它的执行过程了.
 
-1. 首先, 字面量 "hello" 在编译期, 就会被记录在 class文件的 **class 常量池**中.
+1. 首先, 字面量 "hello" 在编译期, 就会被记录在 class文件的 **class 常量池**中.
 2. 而当 class文件被加载到内存中后, JVM 就会将 class 常量池中的**大部分内容存放到运行时常量池**中, 但是**字符串 "hello" 的本体**(对象)和其他所有对象一样, 是**会在堆中创建**, **再将引用放到字符串常量池**, 也就是图一的 Interned Strings的位置.(RednaxelaFX 的文章里, 测试结果是在新生代的Eden区.但因为一直有一个引用驻留在字符串常量池, 所以不会被GC清理掉)
 3. 而到了 `String str = "hello"` 这步, JVM 会去字符串常量池中找, 如果找到了, JVM 会在栈中的局部变量表里创建str 变量, 然后把字符串常量池中的(hello 对象的)**引用**赋值给 str 变量.
 
@@ -536,7 +536,7 @@ str1、str2、str3 三个变量所指向的都是不同的对象.(str1 != str2 !
 **推荐文章:**
 
 * [请别再拿 “String s = new String("xyz"); 创建了多少个String实例” 来面试了吧](https://link.juejin.im/?target=https%3A%2F%2Frednaxelafx.iteye.com%2Fblog%2F774673)
-* [借 HSDB 来探索HotSpot VM的运行时数据](https://link.juejin.im/?target=https%3A%2F%2Frednaxelafx.iteye.com%2Fblog%2F1847971) *作者:RednaxelaFX, 曾为《深入理解Java虚拟机》提推荐语*
-* [Java 用这样的方式生成字符串: String str = "Hello" , 到底有没有在堆中创建对象？](https://link.juejin.im/?target=https%3A%2F%2Fwww.zhihu.com%2Fquestion%2F29884421%2Fanswer%2F113785601) - 胖君的回答 - 知乎
+* [借 HSDB 来探索HotSpot VM的运行时数据](https://link.juejin.im/?target=https%3A%2F%2Frednaxelafx.iteye.com%2Fblog%2F1847971) *作者:RednaxelaFX, 曾为《深入理解Java虚拟机》提推荐语*
+* [Java 用这样的方式生成字符串: String str = "Hello" , 到底有没有在堆中创建对象？](https://link.juejin.im/?target=https%3A%2F%2Fwww.zhihu.com%2Fquestion%2F29884421%2Fanswer%2F113785601) - 胖君的回答 - 知乎
 
 [👈 **相关面试题**](./README.md#_51-👉-string-stringbuffer-stringbuilder-的区别)

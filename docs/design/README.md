@@ -428,7 +428,7 @@
 
 [阿里巴巴制定了这 16 条「设计规约」](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486901&idx=2&sn=41fcc26f7c04827f936b088049619669&chksm=eb538883dc240195cf1d9f8cf0488f32d53735d1f44630e0eebdda440d24e6ac8a2f254ccfbf&scene=21#wechat_redirect)
 
-[RESTful  API 设计技巧经验总结](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486775&idx=2&sn=870da6b84065df709d292724b6f2244f&chksm=eb538801dc24011703683679c126acac04aa5ea7992e5915e3b4ae0be2f4e56c3700d29fec12&scene=21#wechat_redirect)
+[RESTful  API 设计技巧经验总结](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486775&idx=2&sn=870da6b84065df709d292724b6f2244f&chksm=eb538801dc24011703683679c126acac04aa5ea7992e5915e3b4ae0be2f4e56c3700d29fec12&scene=21#wechat_redirect)
 
 [APP 架构之后端接口设计方案](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483921&idx=1&sn=ff12eaad83447fa42d625add75cc5558&chksm=9f211785a8569e9317ec3ff864430421ed9db154dcc479ae4d8436a90eb7131582bf9d950feb&scene=21#wechat_redirect)
 
@@ -587,7 +587,7 @@ Zookeeper
 
 [阿里巴巴制定了这 16 条「设计规约」](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486901&idx=2&sn=41fcc26f7c04827f936b088049619669&chksm=eb538883dc240195cf1d9f8cf0488f32d53735d1f44630e0eebdda440d24e6ac8a2f254ccfbf&scene=21#wechat_redirect)
 
-[RESTful  API 设计技巧经验总结](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486775&idx=2&sn=870da6b84065df709d292724b6f2244f&chksm=eb538801dc24011703683679c126acac04aa5ea7992e5915e3b4ae0be2f4e56c3700d29fec12&scene=21#wechat_redirect)
+[RESTful  API 设计技巧经验总结](http://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486775&idx=2&sn=870da6b84065df709d292724b6f2244f&chksm=eb538801dc24011703683679c126acac04aa5ea7992e5915e3b4ae0be2f4e56c3700d29fec12&scene=21#wechat_redirect)
 
 [APP 架构之后端接口设计方案](http://mp.weixin.qq.com/s?__biz=MzA3MjMwMzg2Nw==&mid=2247483921&idx=1&sn=ff12eaad83447fa42d625add75cc5558&chksm=9f211785a8569e9317ec3ff864430421ed9db154dcc479ae4d8436a90eb7131582bf9d950feb&scene=21#wechat_redirect)
 

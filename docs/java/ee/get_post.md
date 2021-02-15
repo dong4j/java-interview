@@ -6,7 +6,7 @@
 
 # 2 标准答案
 
-在开撸之前吗, 让我们先看一下标准答案长什么样子 [w3school: GET 对比 POST](http://www.w3school.com.cn/tags/html_ref_httpmethods.asp).标准答案很美好, 但是在面试的时候把下面的表格甩面试官一脸, 估计会装逼不成反被*.
+在开撸之前吗, 让我们先看一下标准答案长什么样子 [w3school: GET 对比 POST](http://www.w3school.com.cn/tags/html_ref_httpmethods.asp).标准答案很美好, 但是在面试的时候把下面的表格甩面试官一脸, 估计会装逼不成反被*.
 
 | 分类 | GET | POST |
 | :-- | :-- | :-- |
@@ -37,9 +37,9 @@ GET 和 POST 只是 HTTP 协议中两种请求方式, 而 HTTP 协议是基于 T
 
 报文格式上, 不带参数时, 最大区别就是第一行方法名不同
 
-POST方法请求报文第一行是这样的 `POST /uri HTTP/1.1 \r\n`
+POST方法请求报文第一行是这样的 `POST /uri HTTP/1.1 \r\n`
 
-GET方法请求报文第一行是这样的 `GET /uri HTTP/1.1 \r\n`
+GET方法请求报文第一行是这样的 `GET /uri HTTP/1.1 \r\n`
 
 是的, 不带参数时他们的区别就仅仅是报文的前几个字符不同而已
 
@@ -70,11 +70,11 @@ name=qiming.c&age=22
 
 ## GET 方法参数写法是固定的吗？
 
-在约定中, 我们的参数是写在 `?` 后面, 用 `&` 分割.
+在约定中, 我们的参数是写在 `?` 后面, 用 `&` 分割.
 
 我们知道, 解析报文的过程是通过获取 TCP 数据, 用正则等工具从数据中获取 Header 和 Body, 从而提取参数.
 
-也就是说, 我们可以自己约定参数的写法, 只要服务端能够解释出来就行, 一种比较流行的写法是 `http://www.example.com/user/name/chengqm/age/22`.
+也就是说, 我们可以自己约定参数的写法, 只要服务端能够解释出来就行, 一种比较流行的写法是 `http://www.example.com/user/name/chengqm/age/22`.
 
 ## POST 方法比 GET 方法安全？
 

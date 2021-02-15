@@ -558,19 +558,19 @@ Integer wrapperValue = null;
 
 **Object 是所有类的父类, 任何类都默认继承 Object**
 
-1. **clone()**:  保护方法, 实现对象的浅复制, 只有实现了 Cloneable 接口才可以调用该方法, 否则抛出 `CloneNotSupportedException`异常.
-2. **equals()**: 在 Object 中与 == 是一样的, 子类一般需要重写该方法.
+1. **clone()**:  保护方法, 实现对象的浅复制, 只有实现了 Cloneable 接口才可以调用该方法, 否则抛出 `CloneNotSupportedException`异常.
+2. **equals()**: 在 Object 中与 == 是一样的, 子类一般需要重写该方法.
 3. **hashCode()**: 该方法用于哈希查找, 重写了 equals 方法一般都要重写 hashCode 方法.这个方法在一些具有哈希功能的 Collection 中用到.
-4. **getClass()**:  final修饰, 获得运行时类型.
-5. **wait()**:  使当前线程等待该对象的锁, 当前线程必须是该对象的拥有者, 也就是具有该对象的锁.  **wait()** 一直等待, 直到获得锁或者被中断.  **wait(long timeout)**  设定一个超时间隔, 如果在规定时间内没有获得锁就返回.
+4. **getClass()**:  final修饰, 获得运行时类型.
+5. **wait()**:  使当前线程等待该对象的锁, 当前线程必须是该对象的拥有者, 也就是具有该对象的锁.  **wait()** 一直等待, 直到获得锁或者被中断.  **wait(long timeout)**  设定一个超时间隔, 如果在规定时间内没有获得锁就返回.
 **调用该方法后当前线程进入睡眠状态, 直到以下事件发生**
 	1. 其他线程调用了该对象的 notify(). 
 	2. 其他线程调用了该对象的 notifyAll(). 
 	3. 其他线程调用了 interrupt() 中断该线程. 
 	4. 时间间隔到了. 
 	5. 此时该线程就可以被调度了, 如果是被中断的话就抛出一个 `InterruptedException`异常.
-6. **notify()**:  唤醒在该对象上等待的某个线程.
-7. **notifyAll()**:  唤醒在该对象上等待的所有线程.
+6. **notify()**:  唤醒在该对象上等待的某个线程.
+7. **notifyAll()**:  唤醒在该对象上等待的所有线程.
 8. **toString()**: 转换成字符串, 一般子类都有重写, 否则打印句柄.
 9. **finalized()**: 在 gc 启动，该对象被回收的时候被调用. [没事最好别重载 finalized()](https://zhuanlan.zhihu.com/p/27850176)
 
@@ -610,10 +610,10 @@ Math.round(-11.5) --> -11
 例如, 对于如下语句:
 
 ```java
-final StringBuffer a = new StringBuffer("immutable");
+final StringBuffer a = new StringBuffer("immutable");
 
 // 报告编译期错误
-a = new StringBuffer("");
+a = new StringBuffer("");
 // 可以通过编译
 a.append("broken!");
 ```
